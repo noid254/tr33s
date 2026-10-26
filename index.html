@@ -85,7 +85,92 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:8px;font-size:.92rem;color:var(--muted)}
 .facts b{display:block;font:700 1.35rem/1.1 var(--display);color:var(--fg)}
 .hero-art{position:relative;min-width:0}
-.hero-art svg{width:100%;height:auto;display:block}
+.photo{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--skin),#5f8f2a 55%,var(--flesh));margin:0}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-photo{aspect-ratio:4/5;border-radius:28px;max-width:100%}
+.hero-art{padding-bottom:28px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.gallery .photo{border-radius:var(--r);aspect-ratio:4/3}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;font:500 .74rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:rgba(14,20,10,.72);color:#eef3dc;padding:7px 10px;border-radius:999px}
+@media (max-width:700px){.gallery{grid-template-columns:1fr}.gallery .photo{aspect-ratio:16/10}}
+
+/* verification simulator */
+.sim{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
+.sim-copy{min-width:0}
+.sim-steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:st}
+.sim-steps li{counter-increment:st;display:grid;grid-template-columns:34px 1fr;gap:2px 12px;padding:12px 14px;border-radius:12px;cursor:pointer;color:color-mix(in srgb, var(--skin-fg) 62%, transparent);transition:background .25s,color .25s}
+.sim-steps li::before{content:counter(st);grid-row:span 2;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:600 .85rem var(--mono);border:1.5px solid currentColor}
+.sim-steps li b{font-weight:600}
+.sim-steps li span{font-size:.92rem}
+.sim-steps li.on{background:color-mix(in srgb, var(--skin-fg) 10%, transparent);color:var(--skin-fg)}
+.sim-steps li.on::before{background:var(--flesh);border-color:var(--flesh);color:#18210f}
+.sim-steps li.done::before{content:"✓";color:var(--flesh);border-color:var(--flesh)}
+.sim-device{display:grid;gap:18px;justify-items:center}
+.phone{width:290px;max-width:100%;aspect-ratio:9/18.5;background:#0b0e09;border-radius:44px;padding:12px;position:relative;box-shadow:0 30px 60px -25px rgba(0,0,0,.6),inset 0 0 0 2px #2a3322}
+.notch{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:84px;height:22px;background:#0b0e09;border-radius:999px;z-index:3}
+.screen{position:relative;height:100%;background:var(--bg);color:var(--fg);border-radius:33px;overflow:hidden}
+.app-bar{display:flex;align-items:center;gap:8px;padding:46px 16px 10px;border-bottom:1px solid var(--line);font-size:.82rem}
+.app-logo{font:800 1rem/1 var(--display)}
+.app-logo span{color:var(--seed)}
+.app-title{font-weight:600;flex:1}
+.scr{position:absolute;inset:96px 0 0;padding:14px 16px 18px;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateX(24px);pointer-events:none;transition:opacity .35s,transform .35s}
+.scr.on{opacity:1;transform:none;pointer-events:auto}
+.scr-label{font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--seed)}
+.scr-note{font-size:.8rem;color:var(--muted)}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;font-size:.82rem}
+.job-id{font:500 1.15rem var(--mono)}
+.job-row{display:flex;justify-content:space-between;color:var(--muted)}
+.job-row span:last-child{color:var(--fg)}
+.app-btn{margin-top:auto;font:600 .9rem var(--body);background:var(--skin);color:var(--skin-fg);border:0;border-radius:12px;padding:13px;cursor:pointer}
+.app-btn:disabled{opacity:.4;cursor:not-allowed}
+.app-btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--line)}
+.map{width:100%;height:auto;border-radius:14px;display:block}
+#walker{transition:cx .1s linear, cy .1s linear}
+.dist{font-size:.85rem;color:var(--muted)}
+.dist b{font:800 1.6rem var(--display);color:var(--fg);font-variant-numeric:tabular-nums}
+.gate{font-size:.78rem;padding:8px 10px;border-radius:10px;background:var(--flesh-soft)}
+.gate.ok{background:#5f8f2a;color:#fff}
+.scr[data-s="2"]{inset:96px 0 0;padding:0;gap:0;background:#000}
+.vf{position:relative;flex:1;background:linear-gradient(170deg,#3d5a2a,#6f9a3a 60%,#2a3a1c);overflow:hidden}
+.vf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.br{position:absolute;width:34px;height:34px;border:3px solid #fff;opacity:.9}
+.br.tl{top:22%;left:14%;border-right:0;border-bottom:0}.br.tr{top:22%;right:14%;border-left:0;border-bottom:0}
+.br.bl{bottom:30%;left:14%;border-right:0;border-top:0}.br.bot{bottom:30%;right:14%;border-left:0;border-top:0}
+.stamp{position:absolute;left:10px;right:10px;bottom:10px;font:500 .68rem/1.4 var(--mono);color:#fff;background:rgba(0,0,0,.5);padding:6px 8px;border-radius:8px}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.flash.go{animation:flash .45s ease-out}
+@keyframes flash{0%{opacity:.9}100%{opacity:0}}
+.shutter{align-self:center;margin:16px 0 22px;width:62px;height:62px;border-radius:50%;background:#fff;border:5px solid #9aa58a;cursor:pointer}
+.thumb{position:relative;height:120px;border-radius:12px;overflow:hidden;background:linear-gradient(170deg,#3d5a2a,#6f9a3a)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.scan{position:absolute;left:0;right:0;height:3px;background:var(--flesh);box-shadow:0 0 14px var(--flesh);top:0;animation:scan 1.6s ease-in-out infinite alternate}
+@keyframes scan{to{top:calc(100% - 3px)}}
+.ai{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:.82rem}
+.ai li{display:flex;gap:8px;align-items:center;opacity:.25;transition:opacity .3s}
+.ai li::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid var(--line);flex:none}
+.ai li.ok{opacity:1}
+.ai li.ok::before{background:#5f8f2a;border-color:#5f8f2a;box-shadow:inset 0 0 0 3px var(--bg)}
+.ai-result{font:700 1rem var(--display);color:#5f8f2a;opacity:0;transition:opacity .3s}
+.ai-result.on{opacity:1}
+.rate{display:flex;gap:6px}
+.rate button{font-size:1.9rem;line-height:1;background:none;border:0;color:var(--line);cursor:pointer;padding:0}
+.rate button.on{color:var(--seed)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.75rem;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--flesh-soft);color:var(--fg);border-color:transparent}
+.note-box{font-size:.82rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.done-tick{width:64px;height:64px;border-radius:50%;background:#5f8f2a;color:#fff;display:grid;place-items:center;font-size:2rem;margin:10px auto 0}
+.done-title{text-align:center;font:700 1.05rem var(--display)}
+.tl-mini{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.8rem;color:var(--muted)}
+.tl-mini li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.tl-mini b{color:var(--fg)}
+.sim-ctrl{display:flex;align-items:center;gap:14px}
+.sim-ctrl .btn{padding:10px 18px;font-size:.9rem}
+.band .sim-ctrl .btn-ghost{color:var(--skin-fg);border-color:color-mix(in srgb, var(--skin-fg) 30%, transparent)}
+.band .sim-ctrl .btn-main{background:var(--flesh);color:#18210f}
+.sim-count{font:500 .8rem var(--mono);color:color-mix(in srgb, var(--skin-fg) 70%, transparent)}
+@media (max-width:860px){.sim{grid-template-columns:1fr;gap:32px}.sim-device{order:-1}}
+@media (prefers-reduced-motion: reduce){.scan{animation:none}}
 .tag{font-family:var(--mono);font-size:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:6px;box-shadow:0 18px 40px -22px rgba(24,33,15,.45)}
 .hero-art .tag{position:absolute;right:0;bottom:2%;width:min(260px,72%)}
 .tag .row{display:flex;justify-content:space-between;gap:12px}
@@ -281,7 +366,7 @@ footer .wrap{display:grid;gap:18px}
     <li><a href="#why">Why avocado</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#acre">The acre</a></li>
-    <li><a href="#verify">Verification</a></li>
+    <li><a href="#check">Verification</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a class="btn btn-main" href="#join">Join the list</a>
@@ -304,16 +389,11 @@ footer .wrap{display:grid;gap:18px}
       <div><b>60%</b>of its fruit is yours</div>
     </div>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <svg viewBox="0 0 400 440" role="img">
-      <ellipse cx="190" cy="230" rx="150" ry="195" fill="var(--skin)"/>
-      <ellipse cx="190" cy="232" rx="128" ry="172" fill="var(--flesh)"/>
-      <ellipse cx="190" cy="232" rx="110" ry="152" fill="var(--flesh-soft)" opacity=".55"/>
-      <circle cx="190" cy="270" r="66" fill="var(--seed)"/>
-      <circle cx="172" cy="250" r="16" fill="#ffffff" opacity=".18"/>
-      <path d="M190 36 C 200 10, 230 6, 246 18 C 226 22, 206 30, 196 44 Z" fill="var(--skin)"/>
-    </svg>
-    <div class="tag">
+  <div class="hero-art">
+    <div class="photo hero-photo">
+      <img src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&amp;fit=crop&amp;w=1000&amp;q=70" alt="Young Hass avocados hanging on an orchard tree" loading="eager" onerror="this.remove()">
+    </div>
+    <div class="tag" aria-hidden="true">
       <div class="id"><span>LK-A3-117</span><span class="example">Example</span></div>
       <div class="row"><span>Variety</span><span>Hass, grafted</span></div>
       <div class="row"><span>Block</span><span>A3 · row 9</span></div>
@@ -334,6 +414,11 @@ footer .wrap{display:grid;gap:18px}
     <div class="who"><h3>Kenyans abroad</h3><p>Keep a living link to home. Every tree has photos, GPS and check-in history you can open from anywhere.</p></div>
     <div class="who"><h3>Families and gifts</h3><p>A tree for a child's birth, a graduation or a wedding. It fruits for decades and carries their name on its tag.</p></div>
     <div class="who"><h3>Companies and groups</h3><p>Chamas, staff welfare groups and businesses can hold a block of trees together, with one shared register.</p></div>
+  </div>
+  <div class="gallery">
+    <figure class="photo"><img src="https://images.unsplash.com/photo-1585242902894-e8a65ecbe1ef?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Green avocado fruit setting on a tree" loading="lazy" onerror="this.remove()"><figcaption>Fruit setting on the branch</figcaption></figure>
+    <figure class="photo"><img src="https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="An avocado hanging among the leaves" loading="lazy" onerror="this.remove()"><figcaption>Growing toward harvest</figcaption></figure>
+    <figure class="photo"><img src="https://images.unsplash.com/photo-1704960961383-67dd63756199?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="A ripe avocado cut in half" loading="lazy" onerror="this.remove()"><figcaption>Ripe and ready</figcaption></figure>
   </div>
 </div></section>
 
@@ -530,7 +615,116 @@ footer .wrap{display:grid;gap:18px}
   </div>
 </div></section>
 
-<section id="verify" style="padding-top:0"><div class="wrap verify">
+<section class="band" id="check"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">See a check happen</span>
+    <h2>How a verifier checks a tree, on their phone</h2>
+    <p class="lead">Tap through a random check, from the job arriving to the tree's record updating.</p>
+  </div>
+  <div class="sim">
+  <div class="sim-copy">
+    <ol class="sim-steps" id="simSteps">
+      <li data-s="0"><b>A random check arrives</b><span>The app picks a tree at random and sends it to a nearby verifier.</span></li>
+      <li data-s="1"><b>Walk to the tree</b><span>The camera only unlocks within 50 m of the tree's GPS pin.</span></li>
+      <li data-s="2"><b>Take the photo</b><span>The app stamps the photo with location and time. Gallery uploads aren't accepted.</span></li>
+      <li data-s="3"><b>The photo is read</b><span>The app checks the photo for a living tree, healthy leaves and fruit, and compares it with the tree's last photo.</span></li>
+      <li data-s="4"><b>Rate and comment</b><span>The verifier adds a star rating and a short note.</span></li>
+      <li data-s="5"><b>The record updates</b><span>The owner sees the new check, and a second verifier is picked at random to recheck it.</span></li>
+    </ol>
+  </div>
+  <div class="sim-device">
+    <div class="phone" aria-live="polite">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="app-bar"><span class="app-logo">tr<span>33</span>s</span><span class="app-title">Verify</span><span class="example">Demo</span></div>
+
+        <div class="scr" data-s="0">
+          <p class="scr-label">New job · random check</p>
+          <div class="job">
+            <div class="job-id">LK-A3-117</div>
+            <div class="job-row"><span>Block</span><span>A3 · row 9</span></div>
+            <div class="job-row"><span>Variety</span><span>Hass</span></div>
+            <div class="job-row"><span>Last check</span><span>14 days ago</span></div>
+            <div class="job-row"><span>Due</span><span>Today, 17:00</span></div>
+          </div>
+          <p class="scr-note">You were picked at random from verifiers near Block A3.</p>
+          <button class="app-btn" type="button" data-go="1">Start check</button>
+        </div>
+
+        <div class="scr" data-s="1">
+          <p class="scr-label">Walk to the tree</p>
+          <svg class="map" viewBox="0 0 240 200" aria-hidden="true">
+            <rect width="240" height="200" fill="var(--flesh-soft)"/>
+            <g fill="#5f8f2a" opacity=".55">
+              <circle cx="30" cy="30" r="7"/><circle cx="80" cy="30" r="7"/><circle cx="130" cy="30" r="7"/><circle cx="180" cy="30" r="7"/>
+              <circle cx="30" cy="80" r="7"/><circle cx="80" cy="80" r="7"/><circle cx="130" cy="80" r="7"/><circle cx="180" cy="80" r="7"/>
+              <circle cx="30" cy="130" r="7"/><circle cx="80" cy="130" r="7"/><circle cx="130" cy="130" r="7"/>
+              <circle cx="30" cy="180" r="7"/><circle cx="80" cy="180" r="7"/><circle cx="130" cy="180" r="7"/><circle cx="180" cy="180" r="7"/>
+            </g>
+            <circle cx="180" cy="130" r="30" fill="#5f8f2a" opacity=".15"/>
+            <circle cx="180" cy="130" r="9" fill="var(--seed)"/>
+            <circle id="walker" cx="20" cy="190" r="7" fill="#2b6fd6" stroke="#fff" stroke-width="3"/>
+          </svg>
+          <div class="dist"><b id="distNum">240</b> m to tree LK-A3-117</div>
+          <div class="gate" id="gate">Get within 50 m to unlock the camera</div>
+          <button class="app-btn" type="button" data-go="2" id="camBtn" disabled>Open camera</button>
+        </div>
+
+        <div class="scr" data-s="2">
+          <div class="vf">
+            <img src="https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="" onerror="this.remove()">
+            <span class="br tl"></span><span class="br tr"></span><span class="br bl"></span><span class="br bot"></span>
+            <div class="stamp">0.0281° N 36.9104° E · ±4 m<br>26 Oct 2026 · 09:31</div>
+            <div class="flash" id="flash"></div>
+          </div>
+          <button class="shutter" type="button" data-go="3" aria-label="Take photo"></button>
+        </div>
+
+        <div class="scr" data-s="3">
+          <p class="scr-label">Reading the photo</p>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="" onerror="this.remove()"><div class="scan"></div></div>
+          <ul class="ai" id="aiList">
+            <li>Tree found at the pin</li>
+            <li>Leaves green, no wilting</li>
+            <li>Fruit visible: 7</li>
+            <li>Same tree as last photo</li>
+          </ul>
+          <div class="ai-result" id="aiResult">Alive · healthy</div>
+          <button class="app-btn" type="button" data-go="4" id="aiBtn" disabled>Continue</button>
+        </div>
+
+        <div class="scr" data-s="4">
+          <p class="scr-label">Your report</p>
+          <div class="rate" id="rate" role="radiogroup" aria-label="Tree health rating">
+            <button type="button" data-v="1" aria-label="1 star">★</button><button type="button" data-v="2" aria-label="2 stars">★</button><button type="button" data-v="3" aria-label="3 stars">★</button><button type="button" data-v="4" aria-label="4 stars">★</button><button type="button" data-v="5" aria-label="5 stars">★</button>
+          </div>
+          <div class="chips"><span class="chip on">Healthy</span><span class="chip on">New leaves</span><span class="chip">Needs mulch</span><span class="chip">Pests seen</span></div>
+          <div class="note-box">Strong new leaves and 7 fruits setting. Soil moist.</div>
+          <button class="app-btn" type="button" data-go="5">Submit check</button>
+        </div>
+
+        <div class="scr" data-s="5">
+          <div class="done-tick" aria-hidden="true">✓</div>
+          <p class="done-title">Check saved to LK-A3-117</p>
+          <ul class="tl-mini">
+            <li><b>You</b> · today 09:33 · <span id="doneStars">★★★★★</span></li>
+            <li><b>Verifier V-0193</b>, picked at random, will recheck within 7 days</li>
+            <li><b>Owner notified</b> with the new photo</li>
+          </ul>
+          <button class="app-btn ghost" type="button" data-go="0">Start again</button>
+        </div>
+      </div>
+    </div>
+    <div class="sim-ctrl">
+      <button class="btn btn-ghost" type="button" id="simBack">Back</button>
+      <span class="sim-count" id="simCount">Step 1 of 6</span>
+      <button class="btn btn-main" type="button" id="simNext">Next</button>
+    </div>
+  </div>
+  </div>
+</div></section>
+
+<section id="verify"><div class="wrap verify">
   <div>
     <div class="sec-head">
       <span class="eyebrow">Verification</span>
@@ -672,6 +866,7 @@ footer .wrap{display:grid;gap:18px}
 <footer><div class="wrap">
   <a class="logo" href="#top">tr<span>33</span>s</a>
   <p class="disclaim">tr33s is at the pre-launch stage and is seeking guidance from the Capital Markets Authority. Nothing on this site is an offer to sell trees, shares or any investment, and nothing here is financial advice. Prices are proposed. Tree records marked "example" and yields marked "estimate" are illustrations. Market figures come from the sources below.</p>
+  <p class="sources">Photos from Unsplash by <a href="https://unsplash.com/@john_cameron" target="_blank" rel="noopener">John Cameron</a>, <a href="https://unsplash.com/@thekabugo" target="_blank" rel="noopener">Jonathan Kabugo</a>, <a href="https://unsplash.com/@lucasrosin" target="_blank" rel="noopener">Lucas Rosin</a> and <a href="https://unsplash.com/@vanvid" target="_blank" rel="noopener">John Vid</a>. They are not photos of our farm.</p>
   <div class="sources">
     <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO: Avocado production factsheet (spacing, bearing age, yields)</a>
     <a href="https://www.freshfruitportal.com/news/2026/04/13/kenya-avocado" target="_blank" rel="noopener">FreshFruitPortal: Kenya's avocado boom, citing USDA FAS (Apr 2026)</a>
@@ -719,6 +914,59 @@ footer .wrap{display:grid;gap:18px}
   });
   document.getElementById('resetBtn').addEventListener('click',init);
   init();
+
+  // Verification simulator
+  (function(){
+    var scrs=[].slice.call(document.querySelectorAll('.scr')),items=[].slice.call(document.querySelectorAll('#simSteps li'));
+    var count=document.getElementById('simCount'),next=document.getElementById('simNext'),back=document.getElementById('simBack');
+    var timers=[],step=0,stars=5;
+    function clear(){timers.forEach(clearTimeout);timers.forEach(clearInterval);timers=[];}
+    function later(fn,ms){timers.push(setTimeout(fn,ms));}
+    function walk(){
+      var d=240,w=document.getElementById('walker'),n=document.getElementById('distNum'),g=document.getElementById('gate'),b=document.getElementById('camBtn');
+      b.disabled=true;g.classList.remove('ok');g.textContent='Get within 50 m to unlock the camera';
+      var x0=20,y0=190,x1=170,y1=138;
+      var iv=setInterval(function(){
+        d=Math.max(8,d-8);var t=1-(d-8)/232;
+        w.setAttribute('cx',(x0+(x1-x0)*t).toFixed(1));w.setAttribute('cy',(y0+(y1-y0)*t).toFixed(1));
+        n.textContent=d;
+        if(d<=50&&b.disabled){b.disabled=false;g.classList.add('ok');g.textContent='Within 50 m. Camera unlocked';}
+        if(d<=8){clearInterval(iv);}
+      },70);
+      timers.push(iv);
+    }
+    function read(){
+      var li=[].slice.call(document.querySelectorAll('#aiList li')),r=document.getElementById('aiResult'),b=document.getElementById('aiBtn');
+      li.forEach(function(x){x.classList.remove('ok');});r.classList.remove('on');b.disabled=true;
+      li.forEach(function(x,i){later(function(){x.classList.add('ok');},500+i*550);});
+      later(function(){r.classList.add('on');b.disabled=false;},500+li.length*550);
+    }
+    function paintStars(){
+      [].slice.call(document.querySelectorAll('#rate button')).forEach(function(b){b.classList.toggle('on',+b.dataset.v<=stars);b.setAttribute('aria-checked',+b.dataset.v===stars);});
+      document.getElementById('doneStars').textContent='★★★★★'.slice(0,stars)+'☆☆☆☆☆'.slice(0,5-stars);
+    }
+    function go(s){
+      clear();step=Math.max(0,Math.min(5,s));
+      scrs.forEach(function(x){x.classList.toggle('on',+x.dataset.s===step);});
+      items.forEach(function(x){var v=+x.dataset.s;x.classList.toggle('on',v===step);x.classList.toggle('done',v<step);});
+      count.textContent='Step '+(step+1)+' of 6';
+      back.disabled=step===0;next.textContent=step===5?'Start again':'Next';
+      if(step===1)walk();
+      if(step===2){var f=document.getElementById('flash');f.classList.remove('go');}
+      if(step===3)read();
+      if(step===4)paintStars();
+    }
+    document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){
+      if(b.classList.contains('shutter')){var f=document.getElementById('flash');f.classList.remove('go');void f.offsetWidth;f.classList.add('go');later(function(){go(3);},350);return;}
+      go(+b.dataset.go);
+    });});
+    items.forEach(function(x){x.addEventListener('click',function(){go(+x.dataset.s);});});
+    next.addEventListener('click',function(){go(step===5?0:step+1);});
+    back.addEventListener('click',function(){go(step-1);});
+    document.querySelectorAll('#rate button').forEach(function(b){b.addEventListener('click',function(){stars=+b.dataset.v;paintStars();});});
+    document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('on');});});
+    go(0);
+  })();
 
   // On your own domain: paste your Formspree endpoint here, e.g. 'https://formspree.io/f/abcdwxyz'.
   // Leave empty inside claude.ai, where sign-ups go to the artifact database instead.
