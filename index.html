@@ -970,7 +970,7 @@ footer .wrap{display:grid;gap:18px}
 
   // On your own domain: paste your Formspree endpoint here, e.g. 'https://formspree.io/f/abcdwxyz'.
   // Leave empty inside claude.ai, where sign-ups go to the artifact database instead.
-  var FORM_ENDPOINT=/(^|\.)tukosoko\.com$/.test(location.hostname)?'https://formspree.io/f/mwlllwwa':'';
+  var FORM_ENDPOINT=/(^|\.)(tukosoko\.com|tr33s\.co\.ke)$/.test(location.hostname)?'https://formspree.io/f/mwlllwwa':'';
   // Interest list, stored in the artifact database (subscribers/<viewer id>)
   var form=document.getElementById('joinForm'),thanks=document.getElementById('thanks'),btn=document.getElementById('joinBtn');
   var db=null,me=null,subs=[];
@@ -1003,7 +1003,7 @@ footer .wrap{display:grid;gap:18px}
       btn.disabled=false;return;
     }
     await ready;
-    if(!db||!me){btn.disabled=false;say('Sign-up isn’t available on this copy of the page. Please join at tr33s.tukosoko.com.');return;}
+    if(!db||!me){btn.disabled=false;say('Sign-up isn’t available on this copy of the page. Please join at tr33s.co.ke.');return;}
     try{
       await db.doc('subscribers/'+me).set({name:name,email:email,phone:val('fPhone'),who:val('fWho'),trees:val('fTrees'),option:val('fOption'),note:val('fNote'),consent:true,joinedAt:new Date().toISOString()});
       say('Thanks, '+name.split(' ')[0]+'. You’re on the list. We’ll be in touch before anything goes on sale.');

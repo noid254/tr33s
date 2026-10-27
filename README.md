@@ -1,3 +1,3 @@
 # tr33s
 
-Pre-launch website for tr33s (avocado tree ownership, Laikipia). Served at https://tr33s.tukosoko.com
+Pre-launch website for tr33s (avocado tree ownership, Laikipia). Served at https://tr33s.co.ke (and https://tr33s.tukosoko.com)
