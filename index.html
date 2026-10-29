@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>tr33s Avocado Orchards</title>
-<meta name="description" content="Own a tagged avocado tree in Laikipia. We plant it, care for it and verify it. You share the harvest.">
+<meta name="description" content="Own a tagged avocado tree in Narok. We plant it, care for it and verify it. You share the harvest.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -347,6 +347,26 @@ th{font:500 .74rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase
 .subs td{border-top:1px solid var(--line);font-size:.9rem}
 .subs th{color:var(--muted)}
 
+/* Narok phase 1 */
+.phase{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:32px}
+.phase div{background:var(--surface);padding:20px;display:grid;gap:4px}
+.phase b{font:800 clamp(1.8rem,3.5vw,2.4rem)/1 var(--display);color:var(--seed);font-variant-numeric:tabular-nums}
+.phase span{font-size:.9rem;color:var(--muted)}
+@media (max-width:700px){.phase{grid-template-columns:1fr 1fr}}
+.narok-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.why{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px;align-content:start;min-width:0}
+.why.manage{border-left:4px solid var(--warn)}
+.why-list{margin:0;padding-left:18px;display:grid;gap:12px;color:var(--muted)}
+.why-list b{color:var(--fg)}
+@media (max-width:860px){.narok-grid{grid-template-columns:1fr}}
+.expand{margin-top:32px;display:grid;gap:16px}
+.expand-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.expand-steps li{border-top:3px solid var(--flesh);padding-top:14px;display:grid;gap:6px;align-content:start}
+.expand-steps li:first-child{border-top-color:var(--seed)}
+.expand-steps .tagline{font:500 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--seed)}
+.expand-steps p{color:var(--muted);font-size:.95rem}
+@media (max-width:760px){.expand-steps{grid-template-columns:1fr}}
+
 footer{border-top:1px solid var(--line);padding-block:40px;font-size:.88rem;color:var(--muted)}
 footer .wrap{display:grid;gap:18px}
 .sources{display:grid;gap:6px;font-size:.8rem}
@@ -365,7 +385,8 @@ footer .wrap{display:grid;gap:18px}
   <ul>
     <li><a href="#why">Why avocado</a></li>
     <li><a href="#how">How it works</a></li>
-    <li><a href="#acre">The acre</a></li>
+    <li><a href="#narok">Why Narok</a></li>
+    <li><a href="#acre">The block</a></li>
     <li><a href="#check">Verification</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -376,7 +397,7 @@ footer .wrap{display:grid;gap:18px}
 
 <section class="hero"><div class="wrap">
   <div class="hero-copy">
-    <span class="eyebrow">Avocado orchards · Laikipia, Kenya · Pre-launch</span>
+    <span class="eyebrow">Avocado orchards · Narok, Kenya · Pre-launch</span>
     <h1>Own a tree. <em>We grow it.</em> You share the harvest.</h1>
     <p class="lead">tr33s is for people who want a real stake in Kenyan farming but don't have the time to farm. You'll get a specific, tagged Hass avocado tree. Our farm team plants it, cares for it and sells the fruit. You can check it online and visit it whenever you like.</p>
     <div class="cta-row">
@@ -394,7 +415,7 @@ footer .wrap{display:grid;gap:18px}
       <img src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&amp;fit=crop&amp;w=1000&amp;q=70" alt="Young Hass avocados hanging on an orchard tree" loading="eager" onerror="this.remove()">
     </div>
     <div class="tag" aria-hidden="true">
-      <div class="id"><span>LK-A3-117</span><span class="example">Example</span></div>
+      <div class="id"><span>NK-A3-117</span><span class="example">Example</span></div>
       <div class="row"><span>Variety</span><span>Hass, grafted</span></div>
       <div class="row"><span>Block</span><span>A3 · row 9</span></div>
       <div class="row"><span>Planted</span><span>14 Apr 2026</span></div>
@@ -457,6 +478,49 @@ footer .wrap{display:grid;gap:18px}
       <text x="155" y="192" fill="var(--skin-fg)" fill-opacity=".75" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">2024</text>
       <text x="305" y="192" fill="var(--skin-fg)" fill-opacity=".75" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">2025</text>
     </svg>
+  </div>
+</div></section>
+
+<section id="narok"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Phase 1 · Narok County</span>
+    <h2>30 acres, 3,000 trees, and room to grow</h2>
+    <p class="lead">We start with one block of land in Narok, prove the orchard works, and only then expand.</p>
+  </div>
+  <div class="phase">
+    <div><b>30</b><span>acres in phase 1</span></div>
+    <div><b>3,000</b><span>Hass trees planted</span></div>
+    <div><b>2,500</b><span>offered to owners</span></div>
+    <div><b>500</b><span>reserve trees</span></div>
+  </div>
+
+  <div class="narok-grid">
+    <div class="why">
+      <h3>Why Narok</h3>
+      <ul class="why-list">
+        <li><b>Land at scale.</b> Narok is Kenya's 11th-largest county, with about 8,500 km² of arable land, so large parcels can be leased for 30 years.</li>
+        <li><b>Farmers are already moving to avocado.</b> Wheat farmers in Narok are switching to avocado for the export market, and the county is one of Kenya's newer avocado-growing areas.</li>
+        <li><b>The right site, chosen carefully.</b> We'll pick land that meets KALRO's guide for avocado: 1,500–2,100 m altitude, deep well-drained soil, and no waterlogging.</li>
+        <li><b>A road to market.</b> Narok connects to Nairobi by tarmac via Mai Mahiu, for export packhouses and the airport.</li>
+      </ul>
+    </div>
+    <div class="why manage">
+      <h3>What we'll manage</h3>
+      <ul class="why-list">
+        <li><b>Water.</b> Hass needs at least 1,000 mm of rain a year, well spread. Many Narok wards average only 260–610 mm in the March–May long rains, so irrigation and water storage are part of the plan from day one.</li>
+        <li><b>Cold nights.</b> Narok's temperatures can fall to around 10°C from June to September. We'll avoid low-lying frost pockets.</li>
+        <li><b>Land titles.</b> Narok prosecutors have warned about fraud in group-ranch subdivisions. We'll run an official title search, use a lawyer, and register the lease before planting a single tree.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="expand">
+    <h3>How we expand</h3>
+    <ol class="expand-steps">
+      <li><span class="tagline">Phase 1</span><b>30 acres · 3,000 trees</b><p>Plant, tag and verify every tree, and get the water system working.</p></li>
+      <li><span class="tagline">Phase 2</span><b>Land next to phase 1</b><p>Lease more land nearby once phase 1 trees are established and checked, using the same water and farm team.</p></li>
+      <li><span class="tagline">Later</span><b>More Narok sites and crops</b><p>New blocks in other suitable parts of the county, and other long-lived trees on the same register.</p></li>
+    </ol>
   </div>
 </div></section>
 
@@ -528,16 +592,16 @@ footer .wrap{display:grid;gap:18px}
     <div class="sec-head" style="margin-bottom:0">
       <span class="eyebrow">The block</span>
       <h2>We plant 120 trees to look after 100</h2>
-      <p class="lead">Young trees sometimes die, so every block carries a reserve. If an allocated tree is lost, a reserve tree of the same age takes its place, and the register moves your name to it.</p>
+      <p class="lead">Young trees sometimes die, so every block carries a reserve. In phase 1 that means 3,000 trees planted: 2,500 for owners and 500 in reserve. If an allocated tree is lost, a reserve tree of the same age takes its place, and the register moves your name to it.</p>
     </div>
     <div class="split-list">
       <div><b>100</b><p>Trees allocated to owners. Only these are ever offered.</p></div>
       <div><b>20</b><p>Reserve trees that replace losses. Any not needed stay with the farm company.</p></div>
-      <div><b>120</b><p>Trees per hectare (about 2.5 acres), at the 9 × 9 m spacing KALRO recommends for Hass.</p></div>
+      <div><b>100</b><p>Trees per acre in phase 1, about 6.5 m apart. That is denser than KALRO's standard 9 × 9 m spacing, so our agronomist must approve the layout.</p></div>
     </div>
   </div>
   <div class="acre-board">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h3>One hectare, block A3</h3><span class="example">Example</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h3>One block of 120 trees, A3</h3><span class="example">Example</span></div>
     <div class="dots" id="dots" aria-label="Grid of 120 trees: 100 allocated, 20 reserve"></div>
     <div class="legend"><span><i style="background:#5f8f2a"></i>Allocated</span><span><i style="border:2px dashed var(--seed)"></i>Reserve</span><span><i style="background:var(--seed)"></i>Replacement</span><span><i style="background:var(--line)"></i>Lost</span></div>
     <div class="counts">
@@ -585,7 +649,7 @@ footer .wrap{display:grid;gap:18px}
       </tbody>
     </table>
     </div>
-    <p class="yield-note">Estimates for a well-managed grafted Hass tree, at about 200 g per fruit. Real harvests vary with rain, irrigation and care, and some years will be lower. For comparison, KALRO puts orchards older than five years at 80,000–100,000 fruits per hectare, which is roughly 670–830 fruits per tree at 120 trees per hectare.</p>
+    <p class="yield-note">Estimates for a well-managed grafted Hass tree, at about 200 g per fruit. Real harvests vary with rain, irrigation and care, and some years will be lower. For comparison, KALRO puts orchards older than five years at 80,000–100,000 fruits per hectare, which is roughly 670–830 fruits per tree at 120 trees per hectare. Trees planted closer together usually give less fruit each.</p>
   </div>
 </div></section>
 
@@ -641,7 +705,7 @@ footer .wrap{display:grid;gap:18px}
         <div class="scr" data-s="0">
           <p class="scr-label">New job · random check</p>
           <div class="job">
-            <div class="job-id">LK-A3-117</div>
+            <div class="job-id">NK-A3-117</div>
             <div class="job-row"><span>Block</span><span>A3 · row 9</span></div>
             <div class="job-row"><span>Variety</span><span>Hass</span></div>
             <div class="job-row"><span>Last check</span><span>14 days ago</span></div>
@@ -665,7 +729,7 @@ footer .wrap{display:grid;gap:18px}
             <circle cx="180" cy="130" r="9" fill="var(--seed)"/>
             <circle id="walker" cx="20" cy="190" r="7" fill="#2b6fd6" stroke="#fff" stroke-width="3"/>
           </svg>
-          <div class="dist"><b id="distNum">240</b> m to tree LK-A3-117</div>
+          <div class="dist"><b id="distNum">240</b> m to tree NK-A3-117</div>
           <div class="gate" id="gate">Get within 50 m to unlock the camera</div>
           <button class="app-btn" type="button" data-go="2" id="camBtn" disabled>Open camera</button>
         </div>
@@ -674,7 +738,7 @@ footer .wrap{display:grid;gap:18px}
           <div class="vf">
             <img src="https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="" onerror="this.remove()">
             <span class="br tl"></span><span class="br tr"></span><span class="br bl"></span><span class="br bot"></span>
-            <div class="stamp">0.0281° N 36.9104° E · ±4 m<br>26 Oct 2026 · 09:31</div>
+            <div class="stamp">1.0912° S 35.8603° E · ±4 m<br>26 Oct 2026 · 09:31</div>
             <div class="flash" id="flash"></div>
           </div>
           <button class="shutter" type="button" data-go="3" aria-label="Take photo"></button>
@@ -705,7 +769,7 @@ footer .wrap{display:grid;gap:18px}
 
         <div class="scr" data-s="5">
           <div class="done-tick" aria-hidden="true">✓</div>
-          <p class="done-title">Check saved to LK-A3-117</p>
+          <p class="done-title">Check saved to NK-A3-117</p>
           <ul class="tl-mini">
             <li><b>You</b> · today 09:33 · <span id="doneStars">★★★★★</span></li>
             <li><b>Verifier V-0193</b>, picked at random, will recheck within 7 days</li>
@@ -739,14 +803,14 @@ footer .wrap{display:grid;gap:18px}
     </div>
   </div>
   <div class="register">
-    <div class="head"><b>LK-A3-117</b><span class="example">Example record</span></div>
+    <div class="head"><b>NK-A3-117</b><span class="example">Example record</span></div>
     <div class="reg-body">
       <div class="row"><span>Owner</span><span>Example owner</span></div>
       <div class="row"><span>Variety</span><span>Hass on local rootstock</span></div>
       <div class="row"><span>Nursery</span><span>Certified nursery (example)</span></div>
       <div class="row"><span>Planted</span><span>14 Apr 2026</span></div>
       <div class="row"><span>Location</span><span>Block A3 · row 9 · tree 117</span></div>
-      <div class="row"><span>GPS pin</span><span>0.0281° N, 36.9104° E</span></div>
+      <div class="row"><span>GPS pin</span><span>1.0912° S, 35.8603° E</span></div>
       <div class="row"><span>Health</span><span>4.8 / 5 over 3 checks</span></div>
     </div>
     <div class="checks">
@@ -764,7 +828,7 @@ footer .wrap{display:grid;gap:18px}
     <p class="lead">tr33s is built for long-lived trees on private land. We start with one crop, do it properly, and then add more.</p>
   </div>
   <div class="road">
-    <div class="now"><span class="tagline">Now</span><h3>Hass avocado</h3><p>Our first orchard, in Laikipia. We are securing land on a 30-year lease, and planting starts once we have regulatory guidance.</p></div>
+    <div class="now"><span class="tagline">Now</span><h3>Hass avocado</h3><p>Phase 1: 30 acres in Narok County and 3,000 trees. We are securing land on a 30-year lease, and planting starts once we have regulatory guidance.</p></div>
     <div><span class="tagline">Next</span><h3>More fruit trees</h3><p>Other perennial fruit, such as mango and macadamia, matched to the right land and climate.</p></div>
     <div><span class="tagline">Later</span><h3>Timber trees</h3><p>Fast-growing timber species on private land, with every tree on the same register up to harvest.</p></div>
   </div>
@@ -781,6 +845,7 @@ footer .wrap{display:grid;gap:18px}
     <div class="risk"><h3>Harvests vary</h3><p>Weather and the age of the tree change how much fruit it gives. Some years will be thin.</p></div>
     <div class="risk"><h3>Prices move</h3><p>Avocado prices rise and fall with the season, exchange rates, shipping costs and export rules.</p></div>
     <div class="risk"><h3>Pre-seed trees wait for planting</h3><p>Land, weather or nursery supply can delay planting. If a pre-seed tree isn't planted within 90 days, you get your money back.</p></div>
+    <div class="risk"><h3>Water</h3><p>Much of Narok gets less rain than Hass needs, so the orchard depends on irrigation and water storage. A failed water supply in a dry year would hurt the trees.</p></div>
     <div class="risk"><h3>Nothing is guaranteed</h3><p>We don't promise a fixed amount of fruit or money, or that a tree will be worth more later. The yield table is an estimate.</p></div>
   </div>
 </div></section>
@@ -789,11 +854,12 @@ footer .wrap{display:grid;gap:18px}
   <div class="sec-head"><span class="eyebrow">Questions</span><h2>Frequently asked</h2></div>
   <div class="faq">
     <details><summary>Can I buy a tree today?</summary><p>Not yet. We're asking Kenya's Capital Markets Authority how the model should be set up before we take any money. Join the list and we'll tell you when we open, and on what terms.</p></details>
-    <details><summary>Where is the farm?</summary><p>We are securing land in Laikipia County on a 30-year lease. We'll publish the location once the lease is signed, so owners can visit.</p></details>
+    <details><summary>Where is the farm?</summary><p>Phase 1 is 30 acres in Narok County, on a 30-year lease we are securing now. We'll publish the exact location once the lease is signed and registered, so owners can visit.</p></details>
+    <details><summary>How many trees are in phase 1?</summary><p>3,000 trees on 30 acres. 2,500 are offered to owners, and 500 are kept in reserve to replace any that die. More phases follow only after phase 1 is planted and checked.</p></details>
     <details><summary>What's the difference between pre-seed and a planted tree?</summary><p>A planted tree costs KSh 4,000 and is already in the ground when you choose it. A pre-seed tree costs KSh 3,500 and is reserved before planting. We plant it within 90 days, or refund you in full. Your money is held in a separate account until it's planted.</p></details>
     <details><summary>When will my tree give fruit?</summary><p>Grafted Hass trees usually start fruiting in their third or fourth year. KALRO puts a worthwhile commercial crop at around year six, and full bearing follows. See the yield table above for estimates.</p></details>
     <details><summary>Do I pay anything after I get the tree?</summary><p>No. The farm company's 40% share of the fruit covers rent and care. If its costs run higher, the company carries the difference.</p></details>
-    <details><summary>What happens if my tree dies?</summary><p>A reserve tree of the same age on the same acre takes its place, and your name moves to it on the register. You'll see the change on your tree's record.</p></details>
+    <details><summary>What happens if my tree dies?</summary><p>A reserve tree of the same age in the same block takes its place, and your name moves to it on the register. You'll see the change on your tree's record.</p></details>
     <details><summary>Can I give or pass on my tree?</summary><p>Yes. We'll record a transfer to another person, and the new owner's name goes on the tag and register.</p></details>
     <details><summary>What about tax?</summary><p>If you sell your fruit or your tree, you are responsible for any tax due to KRA on that income. We'll give you a yearly statement of your harvest to help.</p></details>
   </div>
@@ -868,6 +934,11 @@ footer .wrap{display:grid;gap:18px}
   <p class="disclaim">tr33s is at the pre-launch stage and is seeking guidance from the Capital Markets Authority. Nothing on this site is an offer to sell trees, shares or any investment, and nothing here is financial advice. Prices are proposed. Tree records marked "example" and yields marked "estimate" are illustrations. Market figures come from the sources below.</p>
   <p class="sources">Photos from Unsplash by <a href="https://unsplash.com/@john_cameron" target="_blank" rel="noopener">John Cameron</a>, <a href="https://unsplash.com/@thekabugo" target="_blank" rel="noopener">Jonathan Kabugo</a>, <a href="https://unsplash.com/@lucasrosin" target="_blank" rel="noopener">Lucas Rosin</a> and <a href="https://unsplash.com/@vanvid" target="_blank" rel="noopener">John Vid</a>. They are not photos of our farm.</p>
   <div class="sources">
+    <a href="https://www.the-star.co.ke/news/star-farmer/2025-01-21-exit-wheat-enter-avocado-as-narok-farmers-chase-fortune" target="_blank" rel="noopener">The Star: Exit wheat, enter avocado as Narok farmers chase fortune (Jan 2025)</a>
+    <a href="https://narok.go.ke/wp-content/uploads/2022/06/NAROK-CIDP-2018-2022-ABRIDGED-VERSION.pdf" target="_blank" rel="noopener">Narok County Integrated Development Plan (area, arable land, temperatures)</a>
+    <a href="https://meteo.go.ke/sites/default/files/2025-02/Narok%20County%20MAM%202025%20Seasonal%20weather%20forecast.pdf" target="_blank" rel="noopener">Kenya Meteorological Department: Narok long-rains averages by ward</a>
+    <a href="https://navcdp.kalro.org/docs/avocado/WHERE%20TO%20GROW%20AVOCADO%20IN%20KENYA.pdf" target="_blank" rel="noopener">KALRO: Where to grow avocado in Kenya</a>
+    <a href="https://www.kenyanews.go.ke/concerns-raised-over-increasing-cases-of-land-fraud-in-narok/" target="_blank" rel="noopener">KNA: Concerns over land fraud in Narok (Dec 2025)</a>
     <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO: Avocado production factsheet (spacing, bearing age, yields)</a>
     <a href="https://www.freshfruitportal.com/news/2026/04/13/kenya-avocado" target="_blank" rel="noopener">FreshFruitPortal: Kenya's avocado boom, citing USDA FAS (Apr 2026)</a>
     <a href="https://www.foodbusinessmea.com/?p=2158630" target="_blank" rel="noopener">Food Business MEA: Kenya avocado exports to hit US$170M in 2026</a>
