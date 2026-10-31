@@ -722,7 +722,7 @@ footer button.rm { justify-self: start; }
       ["Year 8", "A full crop", tree(0.85, true)],
       ["Year 30", "An orchard", '<g transform="translate(6 22.8) scale(.7)">' + tree(0.9, true) + '</g><g transform="translate(36 22.8) scale(.7)">' + tree(0.9, true) + '</g><g transform="translate(3 3.8) scale(.95)">' + tree(0.8, true) + "</g>"]
     ];
-    $("#stages").innerHTML = items.map(function (it) { return '<figure><div class="sp"><svg viewBox="0 0 120 90" aria-hidden="true">' + ground + it[2] + '</svg><img src="' + STAGE_PHOTOS[it[0]] + '" alt="" loading="lazy" onerror="this.remove()"></div><figcaption><b>" + it[0] + "</b>" + it[1] + "</figcaption></figure>"; }).join("");
+    $("#stages").innerHTML = items.map(function (it) { return '<figure><div class="sp"><svg viewBox="0 0 120 90" aria-hidden="true">' + ground + it[2] + '</svg><img src="' + STAGE_PHOTOS[it[0]] + '" alt="" loading="lazy" onerror="this.remove()"></div><figcaption><b>' + it[0] + '</b>' + it[1] + '</figcaption></figure>'; }).join("");
   })();
 
   /* ---------- estimates (30-year term) ---------- */
