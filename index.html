@@ -350,7 +350,7 @@ footer button.rm { justify-self: start; }
 @media (max-width: 860px) { .stages { grid-template-columns: repeat(3, minmax(0, 1fr)); } .steps3 { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>
-<style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style></head><body>
+<style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style><style>.stages .sp{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--band)}.stages .sp svg{position:absolute;inset:0;height:100%}.stages .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style></head><body>
 <div class="strip"><b>FIRST PLOTS OPENING SOON</b>Register your trees now and be first to know.</div>
 <header class="top">
   <div class="wrap">
@@ -386,7 +386,7 @@ footer button.rm { justify-self: start; }
         <div class="pstats"><div><b>30 years</b><span>of farming included</span></div><div><b>60%</b><span>of every harvest is yours</span></div><div><b>From KSh 4,000</b><span>per tree, paid once</span></div></div>
       </div>
       <div class="herocard" aria-label="Example tree record">
-        <div class="grad"></div><img class="herophoto" src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&fit=crop&w=1000&q=70" alt="Young Hass avocados on an orchard tree" loading="eager" onerror="this.remove()">
+        <div class="grad"></div><img class="herophoto" src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&fit=crop&w=1000&q=75" alt="Young Hass avocados on an orchard tree" loading="eager" onerror="this.remove()">
         <div class="rec"><div class="r1"><b>NKR06/25:122</b><span>EXAMPLE</span></div>
           <div class="kv"><i>Planted for</i><em class="hl" id="recFor">You</em></div><div class="kv"><i>Variety</i><em>Hass, grafted</em></div><div class="kv"><i>Area</i><em>Nanyuki (NKR)</em></div><div class="kv"><i>Occasion</i><em id="recOcc">Just because</em></div><div class="kv"><i>Term</i><em>30 years</em></div>
           <span class="ok">ALIVE · VERIFIED</span></div>
@@ -712,6 +712,8 @@ footer button.rm { justify-self: start; }
     function tree(s, fruit) { var cx = 60, base = 76, th = 10 + 34 * s, r = 8 + 24 * s;
       var f = fruit ? '<circle cx="' + (cx - r * 0.5) + '" cy="' + (base - th - r * 0.2) + '" r="2.6" fill="var(--skin)"/><circle cx="' + (cx + r * 0.45) + '" cy="' + (base - th) + '" r="2.6" fill="var(--skin)"/><circle cx="' + cx + '" cy="' + (base - th - r * 0.7) + '" r="2.6" fill="var(--skin)"/>' : "";
       return '<rect x="' + (cx - 2) + '" y="' + (base - th) + '" width="4" height="' + th + '" rx="2" fill="#6b4a2f"/><circle cx="' + cx + '" cy="' + (base - th - r * 0.25) + '" r="' + r + '" fill="var(--moss)"/><circle cx="' + (cx - r * 0.55) + '" cy="' + (base - th + r * 0.05) + '" r="' + r * 0.62 + '" fill="var(--moss)" opacity="0.85"/><circle cx="' + (cx + r * 0.55) + '" cy="' + (base - th + r * 0.05) + '" r="' + r * 0.62 + '" fill="var(--moss)" opacity="0.85"/>' + f; }
+    // Stage photos: replace any URL with your own image (4:3 works best)
+    var STAGE_PHOTOS = {"Year 0": "https://images.unsplash.com/photo-1625179893310-8e419f979608?auto=format&fit=crop&w=500&h=380&q=70","Year 1": "https://images.unsplash.com/photo-1712342109846-a8fcb1c883ba?auto=format&fit=crop&w=500&h=380&q=70","Year 4": "https://images.unsplash.com/photo-1585242902894-e8a65ecbe1ef?auto=format&fit=crop&w=500&h=380&q=70","Year 8": "https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&fit=crop&w=500&h=380&q=70","Year 30": "https://images.unsplash.com/photo-1737947292441-b301ab724114?auto=format&fit=crop&w=500&h=380&q=70"};
     var ground = '<rect x="0" y="76" width="120" height="14" fill="var(--line)" opacity="0.7"/>';
     var items = [
       ["Year 0", "A seed in the ground", '<ellipse cx="60" cy="74" rx="7" ry="4.5" fill="#6b4a2f"/>'],
@@ -720,7 +722,7 @@ footer button.rm { justify-self: start; }
       ["Year 8", "A full crop", tree(0.85, true)],
       ["Year 30", "An orchard", '<g transform="translate(6 22.8) scale(.7)">' + tree(0.9, true) + '</g><g transform="translate(36 22.8) scale(.7)">' + tree(0.9, true) + '</g><g transform="translate(3 3.8) scale(.95)">' + tree(0.8, true) + "</g>"]
     ];
-    $("#stages").innerHTML = items.map(function (it) { return '<figure><svg viewBox="0 0 120 90" aria-hidden="true">' + ground + it[2] + "</svg><figcaption><b>" + it[0] + "</b>" + it[1] + "</figcaption></figure>"; }).join("");
+    $("#stages").innerHTML = items.map(function (it) { return '<figure><div class="sp"><svg viewBox="0 0 120 90" aria-hidden="true">' + ground + it[2] + '</svg><img src="' + STAGE_PHOTOS[it[0]] + '" alt="" loading="lazy" onerror="this.remove()"></div><figcaption><b>" + it[0] + "</b>" + it[1] + "</figcaption></figure>"; }).join("");
   })();
 
   /* ---------- estimates (30-year term) ---------- */
