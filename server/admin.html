@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>tr33s admin</title>
+<style>
+:root{--bg:#0b140d;--card:#122015;--line:#254029;--ink:#eef3e8;--soft:#a9b8a6;--acc:#c9e265;--bad:#ff8c7a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+header b{font-size:1.1rem}main{max-width:1100px;margin:0 auto;padding:16px}
+button,input,select,textarea{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+button{cursor:pointer;background:var(--acc);color:#10200f;border:0;font-weight:600}button.g{background:var(--card);color:var(--ink);border:1px solid var(--line)}button.d{background:transparent;color:var(--bad);border:1px solid var(--line)}
+.tabs{display:flex;gap:8px;margin-bottom:14px}.tabs button{background:var(--card);color:var(--ink);border:1px solid var(--line)}.tabs button.on{background:var(--acc);color:#10200f}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>*{flex:0 0 auto}.grow{flex:1 1 220px!important}
+.soft{color:var(--soft)}.err{color:var(--bad)}small{color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.slot img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:#0b140d;display:block;margin-bottom:8px}
+.su h3{margin:0 0 2px;font-size:1.05rem}.su .meta{display:flex;gap:6px 14px;flex-wrap:wrap;color:var(--soft);font-size:.9rem}
+.pill{display:inline-block;padding:1px 9px;border-radius:99px;border:1px solid var(--line);font-size:.8rem;color:var(--soft)}
+textarea{width:100%;min-height:54px}#login{max-width:340px;margin:18vh auto;padding:16px}
+[hidden]{display:none!important}
+</style></head><body>
+<div id="login" class="card" hidden><h2 style="margin-top:0">tr33s admin</h2>
+<p class="soft">Sign in to see waitlist sign-ups and manage site photos.</p>
+<form id="lf" class="row"><input id="pw" type="password" class="grow" placeholder="Admin password" autocomplete="current-password" required><button>Sign in</button></form>
+<p id="le" class="err" hidden></p></div>
+<div id="app" hidden>
+<header><b>tr33s admin</b><div class="row"><a class="soft" href="/" target="_blank" rel="noopener" style="color:inherit">View site</a><button class="g" id="out">Sign out</button></div></header>
+<main><div class="tabs"><button id="t1" class="on">Waitlist</button><button id="t2">Photos</button></div>
+<section id="p1"><div class="row card"><input id="q" class="grow" placeholder="Search name, email, phone, place"><select id="sf"><option value="">All statuses</option><option>new</option><option>contacted</option><option>interested</option><option>not-interested</option></select><a href="/api/admin/signups.csv"><button class="g" type="button">Download CSV</button></a></div>
+<p id="count" class="soft"></p><div id="list"></div></section>
+<section id="p2" hidden><p class="soft">Replace any photo on the site. Use JPG, PNG or WebP up to 6 MB. Changes show on the site within a minute. "Use default" goes back to the built-in photo.</p><div class="grid" id="slots"></div></section>
+</main></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+var NAMES={hero:"Home: top photo",banner:"Avocado page: banner",gallery1:"Home gallery 1",gallery2:"Home gallery 2",gallery3:"Home gallery 3",stagey1:"Growth: Year 1",stagey2:"Growth: Year 2",stagey3:"Growth: Year 3",stagey4:"Growth: Year 4 (first fruit)",stagey8:"Growth: Year 8 (full crop)",stagey30:"Growth: Year 30 (orchard)"};
+var DEF={};
+function api(u,o){return fetch(u,Object.assign({credentials:"same-origin"},o||{})).then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(!r.ok)throw Object.assign(new Error(j.error||"Error"),{status:r.status});return j})})}
+function show(ok){$("#login").hidden=ok;$("#app").hidden=!ok}
+$("#lf").onsubmit=function(e){e.preventDefault();$("#le").hidden=true;api("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:$("#pw").value})}).then(function(){$("#pw").value="";start()}).catch(function(x){$("#le").textContent=x.message;$("#le").hidden=false})};
+$("#out").onclick=function(){api("/api/logout",{method:"POST"}).then(function(){show(false)})};
+$("#t1").onclick=function(){tab(1)};$("#t2").onclick=function(){tab(2)};
+function tab(n){$("#p1").hidden=n!==1;$("#p2").hidden=n!==2;$("#t1").className=n===1?"on":"";$("#t2").className=n===2?"on":""}
+var ALL=[];
+function load(){return api("/api/admin/signups").then(function(j){ALL=j.signups;render()})}
+function render(){
+ var q=$("#q").value.toLowerCase(),sf=$("#sf").value;
+ var rows=ALL.filter(function(r){return(!sf||r.status===sf)&&(!q||[r.name,r.email,r.phone,r.location,r.ref].join(" ").toLowerCase().indexOf(q)>-1)});
+ var trees=ALL.reduce(function(a,r){return a+(r.qty||0)},0);
+ $("#count").textContent=ALL.length+" sign-ups, "+trees+" trees wanted"+(rows.length!==ALL.length?" ("+rows.length+" shown)":"");
+ $("#list").innerHTML=rows.map(function(r){return'<div class="card su" data-id="'+r.id+'"><div class="row"><h3 class="grow">'+esc(r.name)+'</h3><span class="pill">'+esc(r.qty)+' tree'+(r.qty==1?"":"s")+'</span><select data-f="status">'+["new","contacted","interested","not-interested"].map(function(s){return"<option"+(s===r.status?" selected":"")+">"+s+"</option>"}).join("")+'</select></div>'+
+ '<div class="meta"><span>'+esc(new Date(r.at).toLocaleString())+'</span>'+(r.phone?'<a style="color:inherit" href="tel:'+esc(r.phone)+'">'+esc(r.phone)+'</a>':"")+(r.email?'<a style="color:inherit" href="mailto:'+esc(r.email)+'">'+esc(r.email)+'</a>':"")+(r.location?'<span>'+esc(r.location)+'</span>':"")+(r.profile?'<span>'+esc(r.profile)+'</span>':"")+'<span>'+esc(r.ref)+'</span></div>'+
+ (r.details?'<details><summary class="soft">Details</summary><pre style="white-space:pre-wrap;margin:6px 0">'+esc(r.details)+'</pre></details>':"")+
+ '<textarea data-f="note" placeholder="Notes (calls, follow-ups)">'+esc(r.note)+'</textarea><div class="row" style="margin-top:8px"><button data-save>Save</button><button class="d" data-del>Delete</button></div></div>'}).join("")||'<p class="soft">No sign-ups yet.</p>'}
+$("#q").oninput=render;$("#sf").onchange=render;
+$("#list").onclick=function(e){var c=e.target.closest(".su");if(!c)return;var id=c.getAttribute("data-id");
+ if(e.target.hasAttribute("data-save")){api("/api/admin/signups/"+id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({status:c.querySelector("[data-f=status]").value,note:c.querySelector("[data-f=note]").value})}).then(function(j){e.target.textContent="Saved";var r=ALL.find(function(x){return x.id===id});Object.assign(r,j.signup);setTimeout(function(){e.target.textContent="Save"},1200)}).catch(function(x){alert(x.message)})}
+ if(e.target.hasAttribute("data-del")&&confirm("Delete this sign-up for good?")){api("/api/admin/signups/"+id,{method:"DELETE"}).then(load).catch(function(x){alert(x.message)})}};
+function slots(){return api("/api/admin/images").then(function(j){
+ $("#slots").innerHTML=j.slots.map(function(s){var u=j.images[s];return'<div class="card slot" data-s="'+s+'"><b>'+esc(NAMES[s]||s)+'</b><br><small>'+(u?"Your photo":"Default photo")+'</small>'+(u?'<img src="'+esc(u)+'" alt="">':'<div class="soft" style="padding:30px 0;text-align:center">built-in photo</div>')+'<div class="row"><label><input type="file" accept="image/jpeg,image/png,image/webp" hidden><button class="g" type="button" data-pick>Upload photo</button></label>'+(u?'<button class="d" data-reset>Use default</button>':"")+'</div><small class="err" data-e></small></div>'}).join("")})}
+$("#slots").onclick=function(e){var c=e.target.closest(".slot");if(!c)return;var s=c.getAttribute("data-s");
+ if(e.target.hasAttribute("data-pick")){var f=c.querySelector("input[type=file]");f.onchange=function(){var file=f.files[0];if(!file)return;if(file.size>6*1048576){c.querySelector("[data-e]").textContent="Larger than 6 MB";return}
+  e.target.textContent="Uploading...";fetch("/api/admin/images/"+s,{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/octet-stream"},body:file}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||"Upload failed")})}).then(slots).catch(function(x){e.target.textContent="Upload photo";c.querySelector("[data-e]").textContent=x.message})};f.click()}
+ if(e.target.hasAttribute("data-reset")){api("/api/admin/images/"+s,{method:"DELETE"}).then(slots).catch(function(x){alert(x.message)})}};
+function start(){api("/api/admin/me").then(function(){show(true);return Promise.all([load(),slots()])}).catch(function(){show(false)})}
+start();
+})();
+</script></body></html>
