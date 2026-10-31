@@ -350,7 +350,7 @@ footer button.rm { justify-self: start; }
 @media (max-width: 860px) { .stages { grid-template-columns: repeat(3, minmax(0, 1fr)); } .steps3 { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>
-<style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style><style>.stages .sp{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--band)}.stages .sp svg{position:absolute;inset:0;height:100%}.stages .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style></head><body>
+<style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style><style>.stages .sp{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--band)}.stages .sp svg{position:absolute;inset:0;height:100%}.stages .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style><style>.plan{display:grid;gap:14px}.pcost{display:grid;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--band)}.pcost small{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}.pcost strong{font-size:1.7rem}.pcost span{color:var(--ink-soft);font-size:.9rem}table.plant td small{display:block;color:var(--ink-soft)}table.plant th,table.plant td{vertical-align:top}</style></head><body>
 <div class="strip"><b>FIRST PLOTS OPENING SOON</b>Register your trees now and be first to know.</div>
 <header class="top">
   <div class="wrap">
@@ -441,10 +441,10 @@ footer button.rm { justify-self: start; }
       <div class="scen" data-scen></div>
       <p class="small-print" style="margin-top:12px" data-disc></p>
       <div class="panel" style="margin-top:26px">
-        <label>Trees in your orchard: <b id="fyOut" class="mono">100</b>
-          <input id="fyTrees" type="range" min="10" max="500" step="10" value="100" aria-label="Number of trees">
+        <label>Trees in your orchard: <b id="fyOut" class="mono">20</b>
+          <input id="fyTrees" type="range" min="1" max="500" step="1" value="20" aria-label="Number of trees">
         </label>
-        <p class="eyebrow" style="margin-top:16px">Per year, once the trees are fully grown (year 8 onward)</p>
+        <p class="eyebrow" style="margin-top:16px">Cost to plant, yearly share and 30-year share for your trees</p>
         <div class="scen" id="fyScen" style="margin-top:10px"></div>
         <p class="small-print" style="margin-top:10px">A picture of the full-bearing years only, before costs of sale and tax. Fruit does not start until about year 3 to 4, harvests vary, prices move, and nothing is guaranteed.</p>
       </div>
@@ -574,7 +574,7 @@ footer button.rm { justify-self: start; }
       <p class="lead">Estimates for a well-managed grafted Hass tree at about 200 g per fruit. Choose how many trees and try your own price per kg.</p></div>
       <div class="calc">
         <label>Number of trees: <b id="nTreesOut" class="mono">1</b>
-          <input id="nTrees" type="range" min="1" max="20" value="1" aria-label="Number of trees">
+          <input id="nTrees" type="range" min="1" max="100" value="1" aria-label="Number of trees">
         </label>
         <label>Your own price in KSh per kg <small>Optional. Adds a value column to the table.</small>
           <input id="priceIn" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 80">
@@ -585,7 +585,7 @@ footer button.rm { justify-self: start; }
         <tbody id="estBody"></tbody>
       </table></div>
       <div class="stack" style="margin-top:26px">
-        <h3>Over 30 years, for <span id="tn2">1</span> tree</h3>
+        <h3>Cost and return for <span id="tn2">1</span> tree(s)</h3>
         <div class="scen" id="scenCalc"></div>
         <p class="small-print" data-disc></p>
         <details><summary>How we estimate</summary>
@@ -737,12 +737,22 @@ footer button.rm { justify-self: start; }
   function scenHTML(list) {
     return list.map(function (s) { return '<div class="' + s.cls + '"><small>' + s.k + '</small><strong>' + kshShort(s.val) + '</strong><span>' + Math.round(s.kg).toLocaleString("en-KE") + " kg at " + ksh(s.price) + " per kg</span></div>"; }).join("");
   }
+  function planHTML(n) {
+    n = n || 1; var cost = PRICE * n, rows = [
+      ["Cautious", 100 * OWN * n * PRICES.low, kgLo * OWN * n * PRICES.low, "mid0"],
+      ["Middle", 130 * OWN * n * PRICES.mid, (kgLo + kgHi) / 2 * OWN * n * PRICES.mid, "mid"],
+      ["Strong", 160 * OWN * n * PRICES.high, kgHi * OWN * n * PRICES.high, "hi"]];
+    return '<div class="plan"><div class="pcost"><small>Cost to plant ' + n.toLocaleString("en-KE") + (n === 1 ? " tree" : " trees") + '</small><strong>' + ksh(cost) + '</strong><span>One payment of ' + ksh(PRICE) + ' per tree. No yearly fees.</span></div>' +
+      '<div class="tablewrap"><table class="plant"><thead><tr><th>If prices are</th><th>Your share each year, once grown (year 8 on)</th><th>Your share over all 30 years</th></tr></thead><tbody>' +
+      rows.map(function (r, i) { return '<tr><td>' + r[0] + ' <small>(KSh ' + [PRICES.low, PRICES.mid, PRICES.high][i] + ' per kg)</small></td><td>' + kshShort(r[1]) + ' <small>per year</small></td><td>' + kshShort(r[2]) + ' <small>' + (r[2] / cost).toFixed(1) + 'x your cost</small></td></tr>'; }).join("") +
+      '</tbody></table></div><p class="small-print">Fruit starts around year 3 to 4, so the first years return little. Before costs of sale and tax. Estimates only, not a promise.</p></div>';
+  }
   var DISC = "Estimated value of your 60% share of the fruit over 30 years, before costs of sale, from sourced yield ranges and 2026 price quotes that vary widely by season, grade and buyer. Estimates only, not a promise or guarantee.";
   document.querySelectorAll("[data-scen]").forEach(function (e) { e.innerHTML = scenHTML(scen(1)); });
   document.querySelectorAll("[data-disc]").forEach(function (e) { e.textContent = DISC; });
 
   var fy = $("#fyTrees");
-  function renderFY() { var n = +fy.value; $("#fyOut").textContent = n.toLocaleString("en-KE"); $("#fyScen").innerHTML = scenHTML(mkScen(100 * OWN * n, 160 * OWN * n, 130 * OWN * n)); }
+  function renderFY() { var n = +fy.value; $("#fyOut").textContent = n.toLocaleString("en-KE"); $("#fyScen").innerHTML = planHTML(n); }
   fy.addEventListener("input", renderFY); renderFY();
 
   var nT = $("#nTrees"), priceIn = $("#priceIn");
@@ -756,7 +766,7 @@ footer button.rm { justify-self: start; }
       var val = hasP ? "<td>" + (hi === 0 ? "None" : ksh(lo * price) + " to " + ksh(hi * price)) + "</td>" : "";
       return "<tr><td>" + r[0] + "</td><td>" + r[1] + " fruits</td><td>" + (hi === 0 ? "0 kg" : r[2] + " to " + r[3] + " kg") + "</td><td>" + (hi === 0 ? "No fruit yet" : fmtN(lo) + " to " + fmtN(hi) + " kg") + "</td>" + val + "</tr>";
     }).join("");
-    $("#scenCalc").innerHTML = scenHTML(scen(n));
+    $("#scenCalc").innerHTML = planHTML(n);
   }
   nT.addEventListener("input", renderEst); priceIn.addEventListener("input", renderEst); renderEst();
 
@@ -804,7 +814,7 @@ footer button.rm { justify-self: start; }
     var body = "";
     if (F.step === 1) {
       body = '<fieldset><legend>How many trees would you like to plant?</legend><div class="qty"><button type="button" class="qb" data-q="-1" aria-label="One fewer tree">−</button><input id="qty" type="number" min="1" max="500" inputmode="numeric" value="' + F.qty + '" aria-label="Number of trees"><button type="button" class="qb" data-q="1" aria-label="One more tree">+</button></div><div class="chips">' + [1, 2, 5, 10].map(function (n) { return '<button type="button" class="chip' + (F.qty === n ? " on" : "") + '" data-setq="' + n + '">' + n + (n === 1 ? " tree" : " trees") + "</button>"; }).join("") + '</div><p class="small-print">Each plot has up to 10 owners. Planting more than 10 trees? We can set aside a whole plot for you.</p></fieldset>' +
-        '<div class="panel"><p class="eyebrow">What ' + F.qty + (F.qty === 1 ? " tree" : " trees") + ' could give over 30 years</p><div class="scen" style="margin-top:10px">' + scenHTML(scen(F.qty)) + '</div><p class="small-print" style="margin-top:10px">' + esc(DISC) + "</p></div>";
+        '<div class="panel"><p class="eyebrow">What ' + F.qty + (F.qty === 1 ? " tree" : " trees") + ' would cost and could give</p><div style="margin-top:10px">' + planHTML(F.qty) + "</div></div>";
     } else if (F.step === 2) {
       body = '<fieldset><legend>Your details</legend><p class="soft" style="font-size:0.95rem">So we can tell you the moment your trees are ready. We will never charge you without your agreement.</p><div class="row2"><label for="oName">Full name<input id="oName" autocomplete="name" value="' + esc(F.name) + '"></label><label for="oPhone">Phone or WhatsApp<input id="oPhone" type="tel" autocomplete="tel" placeholder="+254 ..." value="' + esc(F.phone) + '"></label></div><div class="row2"><label for="oEmail">Email<input id="oEmail" type="email" autocomplete="email" value="' + esc(F.email) + '"></label><label for="oWhere">Where do you live?<input id="oWhere" placeholder="City, country" autocomplete="off" value="' + esc(F.where) + '"></label></div>' +
         '<label for="oProfile">I am<select id="oProfile">' + ["A Kenyan living abroad", "A professional in Kenya", "Buying for family", "Part of a chama or group", "A company", "Other"].map(function (o) { return "<option" + (o === F.profile ? " selected" : "") + ">" + o + "</option>"; }).join("") + "</select></label></fieldset>";
