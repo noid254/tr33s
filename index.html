@@ -699,7 +699,7 @@ footer button.rm { justify-self: start; }
   /* ---------- settings: fill these in when you have them ---------- */
   var CONTACT_EMAIL = "";      // e.g. hello@tr33s.co.ke
   var CONTACT_WHATSAPP = "";   // digits only with country code, e.g. 2547xxxxxxxx
-  var ORDER_ENDPOINT = "";     // a form service URL (Formspree, Netlify Forms...). When set, sign-ups are posted here.
+  var ORDER_ENDPOINT = /(^|\.)(tukosoko\.com|tr33s\.co\.ke)$/.test(location.hostname) ? "https://formspree.io/f/mwlllwwa" : "";     // a form service URL (Formspree, Netlify Forms...). When set, sign-ups are posted here.
   var PRICE = 4000, TERM = 30;
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -782,7 +782,7 @@ footer button.rm { justify-self: start; }
   /* ---------- delivery of sign-ups ---------- */
   async function deliver(rec) {
     if (ORDER_ENDPOINT) {
-      try { var r = await fetch(ORDER_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(rec) }); if (r.ok) return true; } catch (e) {}
+      try { var r = await fetch(ORDER_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(Object.assign({ _subject: "tr33s waitlist: " + rec.name + " (" + rec.qty + " trees)" }, rec)) }); if (r.ok) return true; } catch (e) {}
     }
     return false;
   }
@@ -805,7 +805,7 @@ footer button.rm { justify-self: start; }
   try { var d = JSON.parse(localStorage.getItem("tr33s_order_draft") || "null"); if (d) { ["qty", "name", "phone", "email", "where", "profile"].forEach(function (k) { if (d[k] != null) F[k] = d[k]; }); } } catch (e) {}
   function saveDraft() { try { localStorage.setItem("tr33s_order_draft", JSON.stringify({ qty: F.qty, name: F.name, phone: F.phone, email: F.email, where: F.where, profile: F.profile })); } catch (e) {} }
   function treeRec(i) { return F.trees[i] || (F.trees[i] = { occ: "", custom: "", tag: "", note: "" }); }
-  var STEPS = ["Trees", "Your details", "Make it personal", "Confirm"];
+  var STEPS = ["Trees", "Your details", "Make it personal", "Join waitlist"];
 
   function renderOrder() {
     var m = $("#orderMount");
@@ -834,7 +834,7 @@ footer button.rm { justify-self: start; }
         '<p class="soft">That is all. When your trees are ready we will contact you with the next steps and your agreement.</p>' +
         '<label class="check" for="oC1"><input id="oC1" type="checkbox"' + (F.c1 ? " checked" : "") + '><span>I understand that harvests and prices are not guaranteed.</span></label><label class="check" for="oC2"><input id="oC2" type="checkbox"' + (F.c2 ? " checked" : "") + '><span>I agree that tr33s may keep these details and contact me about my trees.</span></label>';
     }
-    var nav = '<div class="cta-row" style="margin-top:6px">' + (F.step > 1 ? '<button type="button" class="btn ghost" data-ostep="-1">Back</button>' : "") + '<button type="button" class="btn" data-ostep="1">' + (F.step === 4 ? "Tell me when it is ready" : "Continue") + "</button></div>";
+    var nav = '<div class="cta-row" style="margin-top:6px">' + (F.step > 1 ? '<button type="button" class="btn ghost" data-ostep="-1">Back</button>' : "") + '<button type="button" class="btn" data-ostep="1">' + (F.step === 4 ? "Join the waitlist" : "Continue") + "</button></div>";
     m.innerHTML = '<p class="eyebrow">Plant a tree</p><h1 style="font-size:clamp(2rem,5vw,3rem);margin:6px 0 8px">Plant your avocado tree</h1><p class="soft" style="margin-bottom:20px">About three minutes. No payment now.</p><ol class="prog">' + prog + '</ol><div class="checkout"><div style="display:grid;gap:20px">' + body + '<p class="err" id="oErr" role="alert" hidden></p>' + nav + '</div><aside class="panel summary"><p class="eyebrow">Your trees</p><div class="sumline"><span>' + F.qty + (F.qty === 1 ? " Hass avocado tree" : " Hass avocado trees") + '</span><b>' + ksh(F.qty * PRICE) + '</b></div><div class="sumline"><span>To pay today</span><b>Nothing</b></div><div class="sumline"><span>Your share of fruit</span><b>60%</b></div><div class="sumline"><span>Farming included</span><b>30 years</b></div><p class="small-print" style="margin-top:12px">The price shown is the planned price per tree, paid once, when trees open for planting.</p></aside></div>';
   }
   function oerr(msg) { var e = $("#oErr"); if (!e) return; e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: "center", behavior: "smooth" }); }
