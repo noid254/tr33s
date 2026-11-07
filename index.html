@@ -350,7 +350,17 @@ footer button.rm { justify-self: start; }
 @media (max-width: 860px) { .stages { grid-template-columns: repeat(3, minmax(0, 1fr)); } .steps3 { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>
-<style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style><style>.stages .sp{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:var(--band)}.stages .sp svg{position:absolute;inset:0;height:100%}.stages .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style><style>.plan{display:grid;gap:14px}.pcost{display:grid;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--band)}.pcost small{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}.pcost strong{font-size:1.7rem}.pcost span{color:var(--ink-soft);font-size:.9rem}table.plant td small{display:block;color:var(--ink-soft)}table.plant th,table.plant td{vertical-align:top}</style></head><body>
+<style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style><style>.stages .sp{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:var(--band)}.stages .sp svg{position:absolute;inset:0;height:100%}.stages .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style><style>.plan{display:grid;gap:14px}.pcost{display:grid;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--band)}.pcost small{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}.pcost strong{font-size:1.7rem}.pcost span{color:var(--ink-soft);font-size:.9rem}table.plant td small{display:block;color:var(--ink-soft)}table.plant th,table.plant td{vertical-align:top}</style><style>
+.livestats{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;text-align:center}.livestats div{display:grid}.livestats b{font-family:var(--font-display);font-size:1.7rem}.livestats span{color:var(--ink-soft);font-size:.9rem}
+.authgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start}@media(max-width:860px){.authgrid{grid-template-columns:1fr}}
+.authbox{display:grid;gap:14px}.authtabs{display:flex;gap:6px}.authtabs button{flex:1;font:inherit;font-weight:700;padding:10px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer}.authtabs button.on{background:var(--leaf);color:var(--on-leaf);border-color:var(--leaf)}
+.ptop{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}.pstat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}.pstat div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:2px}.pstat b{font-family:var(--font-display);font-size:1.9rem}.pstat span{color:var(--ink-soft);font-size:.88rem}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;align-content:start}.tcard .ph{aspect-ratio:4/3;background:var(--band);display:grid;place-items:center;overflow:hidden}.tcard .ph img{width:100%;height:100%;object-fit:cover;display:block}.tcard .bd{padding:14px 16px;display:grid;gap:8px}.tcard .code{font-family:var(--font-mono);font-weight:500;letter-spacing:.02em}.tcard .row{display:flex;gap:6px;flex-wrap:wrap}.tcard small{color:var(--ink-soft)}
+.health{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem;display:grid;gap:6px}.bar{height:8px;border-radius:99px;background:var(--band);overflow:hidden}.bar i{display:block;height:100%;background:var(--moss)}
+.tl{display:grid;gap:10px;margin:6px 0 0;padding:0;list-style:none}.tl li{display:grid;gap:4px;border-left:2px solid var(--line);padding-left:10px;font-size:.9rem}.tl img{max-width:100%;border-radius:10px}
+.pgrid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}@media(max-width:860px){.pgrid2{grid-template-columns:1fr}}
+.perr{color:var(--bad,#ff8c7a);font-weight:600}.pok{color:var(--moss);font-weight:600}
+</style></head><body>
 <div class="strip"><b>FIRST PLOTS OPENING SOON</b>Register your trees now and be first to know.</div>
 <header class="top">
   <div class="wrap">
@@ -359,6 +369,7 @@ footer button.rm { justify-self: start; }
       <button class="link" data-go="home" data-nav="home">Home</button>
       <button class="link" data-go="avocado" data-nav="avocado">Avocado</button>
       <button class="link" data-go="upcoming" data-nav="upcoming">Upcoming</button>
+      <button class="link" data-go="profile" data-nav="profile" id="navAccount">Log in</button>
       <button class="btn small" data-go="order">Join the waitlist</button>
     </nav>
   </div>
@@ -395,6 +406,7 @@ footer button.rm { justify-self: start; }
   </section>
 
   <section class="band lime"><div class="wrap"><h2>We plant it. We water it. We guard it. You harvest it.</h2></div></section>
+  <section class="band tight" id="liveStats" hidden><div class="wrap"><div class="livestats" id="liveStatsRow"></div></div></section>
 
   <section class="band">
     <div class="wrap">
@@ -655,6 +667,10 @@ footer button.rm { justify-self: start; }
 </main>
 
 <!-- UPCOMING -->
+<main data-page="profile">
+  <section class="band tight"><div class="wrap" id="profileMount"></div></section>
+</main>
+
 <main data-page="upcoming">
   <section class="band">
     <div class="wrap stack">
@@ -891,13 +907,14 @@ footer button.rm { justify-self: start; }
   }
 
   /* ---------- router ---------- */
-  var PAGES = ["home", "avocado", "order", "upcoming"], pendingScroll = null;
+  var PAGES = ["home", "avocado", "order", "profile", "upcoming"], pendingScroll = null;
   function show(name) {
     if (PAGES.indexOf(name) < 0) name = "home";
     document.querySelectorAll("[data-page]").forEach(function (e) { e.classList.toggle("on", e.getAttribute("data-page") === name); });
     document.querySelectorAll("[data-nav]").forEach(function (b) { if (b.getAttribute("data-nav") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
-    $("#stickyCta").hidden = name === "order";
+    $("#stickyCta").hidden = name === "order" || name === "profile";
     if (name === "order") renderOrder();
+    if (name === "profile") renderProfile();
     if (pendingScroll) { var t = document.getElementById(pendingScroll); pendingScroll = null; if (t) { setTimeout(function () { t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30); return; } }
     window.scrollTo(0, 0);
   }
@@ -927,6 +944,94 @@ footer button.rm { justify-self: start; }
     if (e.target.id === "oGift") { collect(); renderOrder(); }
     if (e.target.classList && e.target.classList.contains("t-occ")) { var w = e.target.closest(".row2").querySelector(".t-cw"); if (w) w.hidden = e.target.value.indexOf("Other") !== 0; }
   });
+
+  /* ---------- members: log in, sign up, profile ---------- */
+  var ME = null, authMode = "signup";
+  function jfetch(url, method, body) {
+    return fetch(url, { method: method || "GET", credentials: "same-origin", headers: body ? { "Content-Type": "application/json", Accept: "application/json" } : { Accept: "application/json" }, body: body ? JSON.stringify(body) : undefined })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) { var e = new Error(j.error || "Something went wrong"); e.status = r.status; throw e; } return j; }); });
+  }
+  function fmtDate(v) { var d = new Date(v); return isNaN(d) ? "" : d.toLocaleDateString("en-KE", { day: "numeric", month: "short", year: "numeric" }); }
+  var SLABEL = { "planned": "Reserved, not planted yet", "planted": "Planted", "alive": "Alive and checked", "needs-replacing": "Needs replacing", "replaced": "Replaced" };
+  function navLabel() { var b = $("#navAccount"); if (b) b.textContent = ME ? "My trees" : "Log in"; }
+  function applyMe(j) {
+    ME = j && j.user ? j : null; navLabel();
+    if (ME) { var u = ME.user; if (!F.name) F.name = u.name; if (!F.email) F.email = u.email; if (!F.phone) F.phone = u.phone ? "+" + u.phone : ""; }
+  }
+  function refreshMe() { return jfetch("/api/me").then(applyMe).catch(function () { applyMe(null); }); }
+  function treeSVG() { return '<svg viewBox="0 0 120 90" width="120" height="90" aria-hidden="true"><rect x="0" y="76" width="120" height="14" fill="var(--line)" opacity=".7"/><rect x="58" y="44" width="4" height="32" rx="2" fill="#6b4a2f"/><circle cx="60" cy="38" r="22" fill="var(--moss)"/></svg>'; }
+
+  function authHTML() {
+    var su = authMode === "signup";
+    return '<div class="authgrid"><div class="stack"><p class="eyebrow">Your trees</p><h1 style="max-width:14ch">A tree is life. Plant one and benefit from it.</h1>' +
+      '<p class="lead">Make an account to see every tree you plant or gift: its code, where it grows, photos from the farm and how healthy its batch is. Trees that bear fruit also show what your share could be worth.</p>' +
+      '<ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>Track each tree from planting through its first fruit.</li><li>See batch health reports in plain numbers.</li><li>Gift a tree and follow it together.</li></ul></div>' +
+      '<div class="panel authbox"><div class="authtabs"><button type="button" data-auth="signup" class="' + (su ? "on" : "") + '">Create account</button><button type="button" data-auth="login" class="' + (!su ? "on" : "") + '">Log in</button></div>' +
+      '<form id="authForm" novalidate style="display:grid;gap:14px">' +
+      (su ? '<label for="aName">Your name<input id="aName" autocomplete="name" required></label><label for="aEmail">Email<input id="aEmail" type="email" autocomplete="email" inputmode="email"></label><label for="aPhone">Phone <small class="soft">(email or phone is enough)</small><input id="aPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+254..."></label><label for="aPw">Password <small class="soft">(8 or more characters)</small><input id="aPw" type="password" autocomplete="new-password"></label><p class="small-print">We keep your details to run your account and contact you about your trees. We do not sell them.</p>'
+        : '<label for="aId">Email or phone<input id="aId" autocomplete="username" required></label><label for="aPw">Password<input id="aPw" type="password" autocomplete="current-password"></label><p class="small-print">Forgot your password? Contact the tr33s team and we will reset it for you.</p>') +
+      '<p class="perr" id="aErr" role="alert" hidden></p><button class="btn block" id="aGo">' + (su ? "Create my account" : "Log in") + '</button></form></div></div>';
+  }
+  function healthHTML(t) {
+    var b = t.batch, h = "";
+    if (b && b.pct != null) h += '<div class="health"><span><b>' + b.pct + '%</b> of batch ' + esc(b.name) + ' is alive <small>(' + b.alive + ' of ' + b.total + (b.checkedAt ? ", checked " + esc(fmtDate(b.checkedAt)) : "") + ')</small></span><div class="bar" aria-hidden="true"><i style="width:' + b.pct + '%"></i></div>' + (b.note ? '<small>' + esc(b.note) + '</small>' : "") + '</div>';
+    h += '<small>' + (t.verifiedAt ? "Your tree was checked on " + esc(fmtDate(t.verifiedAt)) + "." : (b ? "Your own tree has not had its individual check yet. The batch figure above is what we know so far." : "No health check recorded yet.")) + '</small>';
+    return h;
+  }
+  function treeCard(t) {
+    var ups = (t.updates || []).slice().reverse();
+    return '<article class="tcard"><div class="ph">' + (t.photo ? '<img src="' + esc(t.photo) + '" alt="Photo of tree ' + esc(t.code) + '" loading="lazy" onerror="this.remove()">' : treeSVG()) + '</div><div class="bd">' +
+      '<div class="code">' + esc(t.code) + '</div><div class="row"><span class="pill ' + (t.status === "needs-replacing" ? "warn" : "") + '">' + esc(SLABEL[t.status] || t.status) + '</span><span class="pill" style="background:var(--band);color:var(--ink-soft)">' + (t.kind === "restoration" ? "Restoration" : "Commercial avocado") + '</span></div>' +
+      '<small>' + esc(t.location || "Location to be confirmed") + (t.plantedAt ? " · planted " + esc(fmtDate(t.plantedAt)) : "") + (t.recipient ? " · planted for " + esc(t.recipient) : "") + (t.occasion ? " (" + esc(t.occasion) + ")" : "") + '</small>' +
+      healthHTML(t) +
+      (ups.length ? '<details><summary class="soft">Updates (' + ups.length + ')</summary><ul class="tl">' + ups.map(function (u) { return '<li><small>' + esc(fmtDate(u.at)) + '</small><span>' + esc(u.text) + '</span>' + (u.photo ? '<img src="' + esc(u.photo) + '" alt="" loading="lazy" onerror="this.remove()">' : "") + '</li>'; }).join("") + '</ul></details>' : '<small>No updates yet. We post photos and notes here.</small>') +
+      '</div></article>';
+  }
+  function dashHTML() {
+    var u = ME.user, trees = ME.trees || [], wl = ME.waitlist || [];
+    var com = trees.filter(function (t) { return t.kind !== "restoration"; }).length, wanted = wl.reduce(function (a, r) { return a + (r.qty || 0); }, 0);
+    var planted = trees.filter(function (t) { return t.status !== "planned"; }).length;
+    var h = '<div class="ptop"><div><p class="eyebrow">Your trees</p><h1 style="font-size:clamp(1.9rem,5vw,2.8rem)">Hello, ' + esc(String(u.name).split(" ")[0]) + '</h1></div><div class="cta-row"><button class="btn" data-go="order">Plant a tree</button><button class="btn ghost" data-hero-gift>Gift a tree</button><button class="btn ghost" id="pLogout">Log out</button></div></div>';
+    h += '<div class="pstat"><div><b>' + trees.length + '</b><span>trees assigned to you</span></div><div><b>' + planted + '</b><span>already in the ground</span></div><div><b>' + wanted + '</b><span>on your waitlist requests</span></div></div>';
+    if (trees.length) h += '<div class="tgrid">' + trees.map(treeCard).join("") + '</div>';
+    else h += '<div class="panel"><h3>No trees on your profile yet</h3><p class="soft">' + (wl.length ? "You are on the waitlist for " + wanted + (wanted === 1 ? " tree" : " trees") + ". When the first plots open, your trees appear here with their codes and photos." : "Join the waitlist and your first tree will appear here when planting begins.") + '</p><button class="btn" data-go="order">Join the waitlist</button></div>';
+    if (com) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">What your ' + com + (com === 1 ? " commercial tree" : " commercial trees") + ' could give you</p><p class="soft" style="margin-top:6px">Your 60% share per year once the trees are fully grown (year 8 on). Fruit starts around year 3 to 4. Estimates only, not a promise.</p><div class="scen" style="margin-top:10px">' + scenHTML(mkScen(100 * OWN * com, 160 * OWN * com, 130 * OWN * com)) + '</div></div>';
+    if (wl.length) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">Your waitlist requests</p><ul class="soft" style="display:grid;gap:6px;padding-left:18px;margin-top:8px">' + wl.map(function (r) { return '<li>' + esc(fmtDate(r.at)) + ': ' + r.qty + (r.qty === 1 ? " tree" : " trees") + (r.gift ? " as a gift" + (r.recipient ? " for " + esc(r.recipient) : "") : "") + ' <small>(ref ' + esc(r.ref) + ')</small></li>'; }).join("") + '</ul></div>';
+    h += '<div class="pgrid2"><form class="panel" id="pForm" style="display:grid;gap:12px" novalidate><b>Your details</b><label for="pName">Name<input id="pName" value="' + esc(u.name) + '"></label><label for="pPhone">Phone<input id="pPhone" type="tel" value="' + esc(u.phone ? "+" + u.phone : "") + '"></label><small class="soft">' + esc(u.email || "No email on this account") + '</small><p id="pMsg" role="status"></p><button class="btn small">Save details</button></form>' +
+      '<form class="panel" id="pwForm" style="display:grid;gap:12px" novalidate><b>Change password</b><label for="pwOld">Current password<input id="pwOld" type="password" autocomplete="current-password"></label><label for="pwNew">New password<input id="pwNew" type="password" autocomplete="new-password"></label><p id="pwMsg" role="status"></p><button class="btn small">Change password</button></form></div>';
+    return h;
+  }
+  function renderProfile() {
+    var m = $("#profileMount"); if (!m) return;
+    m.innerHTML = '<p class="soft">Loading...</p>';
+    refreshMe().then(function () { m.innerHTML = ME ? dashHTML() : authHTML(); });
+  }
+  function loadLiveStats() {
+    jfetch("/api/stats").then(function (j) {
+      if (!j || !j.planted) return;
+      $("#liveStatsRow").innerHTML = '<div><b>' + j.planted.toLocaleString("en-KE") + '</b><span>trees planted</span></div>' + (j.alivePct != null ? '<div><b>' + j.alivePct + '%</b><span>alive in our latest checks</span></div>' : "") + '<div><b>' + j.batches + '</b><span>planting ' + (j.batches === 1 ? "batch" : "batches") + '</span></div>';
+      $("#liveStats").hidden = false;
+    }).catch(function () {});
+  }
+  document.addEventListener("click", function (e) {
+    var el;
+    if ((el = e.target.closest("[data-auth]"))) { authMode = el.getAttribute("data-auth"); $("#profileMount").innerHTML = authHTML(); return; }
+    if (e.target.id === "pLogout") { jfetch("/api/member-logout", "POST", {}).catch(function () {}).then(function () { ME = null; navLabel(); renderProfile(); }); return; }
+    if (e.target.hasAttribute && e.target.hasAttribute("data-hero-gift")) { resetForm(); F.gift = true; go("order"); return; }
+  });
+  document.addEventListener("submit", function (e) {
+    var f = e.target;
+    if (f.id === "authForm") {
+      e.preventDefault(); var err = $("#aErr"), btn = $("#aGo"); err.hidden = true; btn.disabled = true;
+      var req = authMode === "signup" ? jfetch("/api/register", "POST", { name: $("#aName").value, email: $("#aEmail").value, phone: $("#aPhone").value, password: $("#aPw").value })
+        : jfetch("/api/member-login", "POST", { identifier: $("#aId").value, password: $("#aPw").value });
+      req.then(function () { return refreshMe(); }).then(function () { renderProfile(); }).catch(function (x) { err.textContent = x.message; err.hidden = false; btn.disabled = false; });
+    }
+    if (f.id === "pForm") { e.preventDefault(); var pm = $("#pMsg"); jfetch("/api/me", "PATCH", { name: $("#pName").value, phone: $("#pPhone").value }).then(function () { pm.className = "pok"; pm.textContent = "Saved."; return refreshMe(); }).catch(function (x) { pm.className = "perr"; pm.textContent = x.message; }); }
+    if (f.id === "pwForm") { e.preventDefault(); var wm = $("#pwMsg"); jfetch("/api/me/password", "POST", { current: $("#pwOld").value, next: $("#pwNew").value }).then(function () { wm.className = "pok"; wm.textContent = "Password changed."; $("#pwOld").value = ""; $("#pwNew").value = ""; }).catch(function (x) { wm.className = "perr"; wm.textContent = x.message; }); }
+  });
+  refreshMe(); loadLiveStats();
+
   route();
 })();
 </script>

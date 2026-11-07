@@ -25,10 +25,17 @@ textarea{width:100%;min-height:54px}#login{max-width:340px;margin:18vh auto;padd
 <p id="le" class="err" hidden></p></div>
 <div id="app" hidden>
 <header><b>tr33s admin</b><div class="row"><a class="soft" href="/" target="_blank" rel="noopener" style="color:inherit">View site</a><button class="g" id="out">Sign out</button></div></header>
-<main><div class="tabs"><button id="t1" class="on">Waitlist</button><button id="t2">Photos</button></div>
+<main><div class="tabs"><button id="t1" class="on">Waitlist</button><button id="t3">Members</button><button id="t5">Trees</button><button id="t4">Batches</button><button id="t2">Site photos</button></div>
 <section id="p1"><div class="row card"><input id="q" class="grow" placeholder="Search name, email, phone, place"><select id="sf"><option value="">All statuses</option><option>new</option><option>contacted</option><option>interested</option><option>not-interested</option></select><a href="/api/admin/signups.csv"><button class="g" type="button">Download CSV</button></a></div>
 <p id="count" class="soft"></p><div id="list"></div></section>
 <section id="p2" hidden><p class="soft">Replace any photo on the site. Use JPG, PNG or WebP up to 6 MB. Changes show on the site within a minute. "Use default" goes back to the built-in photo.</p><div class="grid" id="slots"></div></section>
+
+<section id="p3" hidden><p class="soft">People who made an account on the site. Share trees with them from the Trees tab.</p><div id="members"></div></section>
+<section id="p4" hidden><div class="card"><b>New batch</b><p class="soft">A batch is a group planted together. Update "alive" after each check and members see the survival rate.</p>
+<form id="bf" class="row"><input name="name" placeholder="Batch name e.g. NRK-11/26" required class="grow"><input name="location" placeholder="Location" class="grow"><select name="kind"><option value="commercial">Commercial (avocado)</option><option value="restoration">Restoration (forest)</option></select><label class="soft">Planted <input type="date" name="plantedAt"></label><input name="total" type="number" min="0" placeholder="Trees planted" style="width:130px"><input name="alive" type="number" min="0" placeholder="Alive" style="width:90px"><label class="soft">Checked <input type="date" name="checkedAt"></label><input name="note" placeholder="Note (optional)" class="grow"><button>Add batch</button></form></div><div id="batches"></div></section>
+<section id="p5" hidden><div class="card"><b>Add trees</b><p class="soft">Add one tree, or many at once with a code prefix. Example: prefix <code>NRK11/26:</code>, start 1, count 100 makes NRK11/26:001 to NRK11/26:100. Owner can be left empty and assigned later.</p>
+<form id="tf" class="row"><input name="prefix" placeholder="Code prefix" class="grow"><input name="start" type="number" min="1" value="1" style="width:80px" title="Start number"><input name="count" type="number" min="1" max="1000" value="1" style="width:90px" title="How many"><select name="kind"><option value="commercial">Commercial</option><option value="restoration">Restoration</option></select><select name="status"><option>planned</option><option>planted</option><option>alive</option></select><input name="location" placeholder="Location / block" class="grow"><label class="soft">Planted <input type="date" name="plantedAt"></label><select name="batchId" id="tfBatch"><option value="">No batch</option></select><input name="owner" placeholder="Owner email or phone (optional)" class="grow"><button>Add</button></form><p id="te" class="err"></p></div>
+<div class="row card"><input id="tq" class="grow" placeholder="Search code, owner, location"><select id="ts"><option value="">All statuses</option><option>planned</option><option>planted</option><option>alive</option><option>needs-replacing</option><option>replaced</option></select></div><p id="tcount" class="soft"></p><div id="trees"></div></section>
 </main></div>
 <script>
 (function(){
@@ -39,8 +46,8 @@ function api(u,o){return fetch(u,Object.assign({credentials:"same-origin"},o||{}
 function show(ok){$("#login").hidden=ok;$("#app").hidden=!ok}
 $("#lf").onsubmit=function(e){e.preventDefault();$("#le").hidden=true;api("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:$("#pw").value})}).then(function(){$("#pw").value="";start()}).catch(function(x){$("#le").textContent=x.message;$("#le").hidden=false})};
 $("#out").onclick=function(){api("/api/logout",{method:"POST"}).then(function(){show(false)})};
-$("#t1").onclick=function(){tab(1)};$("#t2").onclick=function(){tab(2)};
-function tab(n){$("#p1").hidden=n!==1;$("#p2").hidden=n!==2;$("#t1").className=n===1?"on":"";$("#t2").className=n===2?"on":""}
+[1,2,3,4,5].forEach(function(n){$("#t"+n).onclick=function(){tab(n)}});
+function tab(n){[1,2,3,4,5].forEach(function(i){$("#p"+i).hidden=i!==n;$("#t"+i).className=i===n?"on":""})}
 var ALL=[];
 function load(){return api("/api/admin/signups").then(function(j){ALL=j.signups;render()})}
 function render(){
@@ -62,7 +69,37 @@ $("#slots").onclick=function(e){var c=e.target.closest(".slot");if(!c)return;var
  if(e.target.hasAttribute("data-pick")){var f=c.querySelector("input[type=file]");f.onchange=function(){var file=f.files[0];if(!file)return;if(file.size>6*1048576){c.querySelector("[data-e]").textContent="Larger than 6 MB";return}
   e.target.textContent="Uploading...";fetch("/api/admin/images/"+s,{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/octet-stream"},body:file}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||"Upload failed")})}).then(slots).catch(function(x){e.target.textContent="Upload photo";c.querySelector("[data-e]").textContent=x.message})};f.click()}
  if(e.target.hasAttribute("data-reset")){api("/api/admin/images/"+s,{method:"DELETE"}).then(slots).catch(function(x){alert(x.message)})}};
-function start(){api("/api/admin/me").then(function(){show(true);return Promise.all([load(),slots()])}).catch(function(){show(false)})}
+
+var BT=[],MEM=[],TR=[];
+function fd(f){var o={};new FormData(f).forEach(function(v,k){o[k]=v});return o}
+function jpost(u,m,b){return api(u,{method:m,headers:{"Content-Type":"application/json"},body:JSON.stringify(b)})}
+function loadMembers(){return api("/api/admin/members").then(function(j){MEM=j.members;
+ $("#members").innerHTML=MEM.map(function(m){return'<div class="card" data-id="'+m.id+'"><div class="row"><b class="grow">'+esc(m.name)+'</b><span class="pill">'+m.trees+' tree'+(m.trees==1?"":"s")+'</span></div><div class="soft">'+esc(m.email)+' '+esc(m.phone)+' <small>joined '+esc(new Date(m.at).toLocaleDateString())+'</small></div><div class="row" style="margin-top:8px"><input type="text" data-pw placeholder="New password (8+ chars)" style="width:200px"><button class="g" data-setpw>Set password</button><button class="d" data-delm>Delete</button></div></div>'}).join("")||'<p class="soft">No members yet.</p>'})}
+$("#members").onclick=function(e){var c=e.target.closest("[data-id]");if(!c)return;var id=c.getAttribute("data-id");
+ if(e.target.hasAttribute("data-setpw")){var v=c.querySelector("[data-pw]").value;jpost("/api/admin/members/"+id+"/password","POST",{password:v}).then(function(){e.target.textContent="Saved";c.querySelector("[data-pw]").value="";setTimeout(function(){e.target.textContent="Set password"},1500)}).catch(function(x){alert(x.message)})}
+ if(e.target.hasAttribute("data-delm")&&confirm("Delete this member? Their trees become unassigned.")){api("/api/admin/members/"+id,{method:"DELETE"}).then(function(){return Promise.all([loadMembers(),loadTrees()])})}};
+function loadBatches(){return api("/api/admin/batches").then(function(j){BT=j.batches;
+ $("#tfBatch").innerHTML='<option value="">No batch</option>'+BT.map(function(b){return'<option value="'+b.id+'">'+esc(b.name)+'</option>'}).join("");
+ $("#batches").innerHTML=BT.map(function(b){return'<div class="card" data-id="'+b.id+'"><div class="row"><b class="grow">'+esc(b.name)+' <small>'+esc(b.location)+' · '+esc(b.kind)+'</small></b><span class="pill">'+(b.pct==null?"no data":b.pct+"% alive")+'</span></div><div class="row" style="margin-top:8px"><label class="soft">Planted <input type="number" data-f="total" value="'+b.total+'" style="width:100px"></label><label class="soft">Alive <input type="number" data-f="alive" value="'+b.alive+'" style="width:100px"></label><label class="soft">Checked <input type="date" data-f="checkedAt" value="'+esc(b.checkedAt)+'"></label><input data-f="note" class="grow" placeholder="Note members will see" value="'+esc(b.note)+'"><button data-sb>Save</button><button class="d" data-db>Delete</button></div></div>'}).join("")||'<p class="soft">No batches yet.</p>'})}
+$("#bf").onsubmit=function(e){e.preventDefault();jpost("/api/admin/batches","POST",fd(e.target)).then(function(){e.target.reset();return loadBatches()}).catch(function(x){alert(x.message)})};
+$("#batches").onclick=function(e){var c=e.target.closest("[data-id]");if(!c)return;var id=c.getAttribute("data-id");
+ if(e.target.hasAttribute("data-sb")){var o={};c.querySelectorAll("[data-f]").forEach(function(i){o[i.getAttribute("data-f")]=i.value});jpost("/api/admin/batches/"+id,"PATCH",o).then(function(){e.target.textContent="Saved";return loadBatches()}).catch(function(x){alert(x.message)})}
+ if(e.target.hasAttribute("data-db")&&confirm("Delete this batch? Trees stay, but lose the batch link.")){api("/api/admin/batches/"+id,{method:"DELETE"}).then(function(){return Promise.all([loadBatches(),loadTrees()])})}};
+function loadTrees(){return api("/api/admin/trees").then(function(j){TR=j.trees;renderTrees()})}
+function renderTrees(){var q=$("#tq").value.toLowerCase(),sf=$("#ts").value;
+ var rows=TR.filter(function(t){return(!sf||t.status===sf)&&(!q||[t.code,t.ownerName,t.ownerEmail,t.location,t.batchName].join(" ").toLowerCase().indexOf(q)>-1)});
+ $("#tcount").textContent=TR.length+" trees"+(rows.length!==TR.length?", "+rows.length+" match":"")+(rows.length>60?" (showing the first 60, use search)":"");
+ $("#trees").innerHTML=rows.slice(0,60).map(function(t){return'<div class="card" data-id="'+t.id+'"><div class="row"><b class="grow">'+esc(t.code)+' <small>'+esc(t.kind)+' · '+esc(t.location)+(t.batchName?' · '+esc(t.batchName):'')+'</small></b><select data-f="status">'+["planned","planted","alive","needs-replacing","replaced"].map(function(s){return"<option"+(s===t.status?" selected":"")+">"+s+"</option>"}).join("")+'</select></div>'+
+ '<div class="row" style="margin-top:8px"><input data-f="owner" class="grow" placeholder="Owner email or phone" value="'+esc(t.ownerEmail)+'"><label class="soft">Checked <input type="date" data-f="verifiedAt" value="'+esc(t.verifiedAt)+'"></label><button data-st>Save</button><button class="d" data-dt>Delete</button></div>'+
+ '<div class="row" style="margin-top:8px"><input data-up class="grow" placeholder="Post an update members will see"><button class="g" data-pu>Post</button><label><input type="file" accept="image/jpeg,image/png,image/webp" hidden data-file><button class="g" type="button" data-pp>Add photo</button></label></div>'+(t.updates&&t.updates.length?'<small class="soft">'+t.updates.length+' update(s), latest: '+esc(t.updates[t.updates.length-1].text)+'</small>':'')+'</div>'}).join("")||'<p class="soft">No trees yet.</p>'}
+$("#tq").oninput=renderTrees;$("#ts").onchange=renderTrees;
+$("#tf").onsubmit=function(e){e.preventDefault();var o=fd(e.target);if(+o.count===1&&o.prefix)o.code=o.prefix;$("#te").textContent="";jpost("/api/admin/trees","POST",o).then(function(r){$("#te").textContent="";e.target.reset();e.target.count.value=1;e.target.start.value=1;return Promise.all([loadTrees(),loadMembers()])}).catch(function(x){$("#te").textContent=x.message})};
+$("#trees").onclick=function(e){var c=e.target.closest("[data-id]");if(!c)return;var id=c.getAttribute("data-id");
+ if(e.target.hasAttribute("data-st")){var o={};c.querySelectorAll("[data-f]").forEach(function(i){o[i.getAttribute("data-f")]=i.value});jpost("/api/admin/trees/"+id,"PATCH",o).then(function(){e.target.textContent="Saved";return Promise.all([loadTrees(),loadMembers()])}).catch(function(x){alert(x.message)})}
+ if(e.target.hasAttribute("data-dt")&&confirm("Delete this tree record?")){api("/api/admin/trees/"+id,{method:"DELETE"}).then(function(){return Promise.all([loadTrees(),loadMembers()])})}
+ if(e.target.hasAttribute("data-pu")){var i=c.querySelector("[data-up]");if(!i.value.trim())return;jpost("/api/admin/trees/"+id+"/updates","POST",{text:i.value}).then(loadTrees).catch(function(x){alert(x.message)})}
+ if(e.target.hasAttribute("data-pp")){var f=c.querySelector("[data-file]");f.onchange=function(){var file=f.files[0];if(!file)return;if(file.size>6*1048576){alert("Larger than 6 MB");return}var t=c.querySelector("[data-up]").value;fetch("/api/admin/trees/"+id+"/photo?text="+encodeURIComponent(t),{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/octet-stream"},body:file}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||"Upload failed")})}).then(loadTrees).catch(function(x){alert(x.message)})};f.click()}};
+function start(){api("/api/admin/me").then(function(){show(true);return Promise.all([load(),slots(),loadMembers(),loadBatches(),loadTrees()])}).catch(function(){show(false)})}
 start();
 })();
 </script></body></html>
