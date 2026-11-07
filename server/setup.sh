@@ -18,8 +18,11 @@ if [ ! -f /etc/tr33s.env ]; then
     read -rsp "Type it again: " PW2; echo
     [ "$PW" = "$PW2" ] && break || echo "They did not match."
   done
+  # pick a free local port so other projects on this server are not disturbed
+  PORT="${TR33S_PORT:-3187}"
+  while ss -ltn 2>/dev/null | awk '{print $4}' | grep -q ":${PORT}$"; do PORT=$((PORT+1)); done
   umask 077
-  printf 'ADMIN_PASSWORD=%s\nPORT=3100\nHOST=127.0.0.1\nDATA_DIR=/var/lib/tr33s\n' "$PW" > /etc/tr33s.env
+  printf 'ADMIN_PASSWORD=%s\nPORT=%s\nHOST=127.0.0.1\nDATA_DIR=/var/lib/tr33s\n' "$PW" "$PORT" > /etc/tr33s.env
   unset PW PW2
 else
   echo "/etc/tr33s.env already exists, keeping your password."
@@ -48,4 +51,7 @@ systemctl restart tr33s-admin
 sleep 1
 systemctl --no-pager --lines=3 status tr33s-admin || true
 echo
-echo "Service installed. Now add the lines from server/nginx-snippet.conf to the nginx server block, then: nginx -t && systemctl reload nginx"
+PORT="$(grep '^PORT=' /etc/tr33s.env | cut -d= -f2)"
+sed "s/3100/${PORT}/g" "$SITE/server/nginx-snippet.conf" > /root/tr33s-nginx-snippet.conf
+echo "Service installed on 127.0.0.1:${PORT}."
+echo "Now add the lines from /root/tr33s-nginx-snippet.conf (already set to port ${PORT}) inside the server block of both tr33s nginx files, then: nginx -t && systemctl reload nginx"
