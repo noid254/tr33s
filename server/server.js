@@ -32,6 +32,7 @@ const TREES = path.join(DATA_DIR, "trees.json");
 const BATCHES = path.join(DATA_DIR, "batches.json");
 const STATUSES = ["planned", "planted", "alive", "needs-replacing", "replaced"];
 const KINDS = ["commercial", "restoration"];
+const CROPS = ["avocado", "melia"];
 const rid = () => crypto.randomBytes(5).toString("hex");
 const normEmail = v => String(v || "").trim().toLowerCase();
 function normPhone(v) { let d = String(v || "").replace(/\D/g, ""); if (d.length === 10 && d[0] === "0") d = "254" + d.slice(1); else if (d.length === 9) d = "254" + d; return d; }
@@ -41,7 +42,7 @@ const DUMMY_HASH = hashPw("not-a-real-password");
 const okDate = v => /^\d{4}-\d{2}-\d{2}$/.test(String(v || "")) ? String(v) : "";
 const pct = b => b && b.total > 0 ? Math.round(1000 * Math.min(b.alive, b.total) / b.total) / 10 : null;
 
-const SLOTS = ["hero", "banner", "gallery1", "gallery2", "gallery3", "stagey1", "stagey2", "stagey3", "stagey4", "stagey8", "stagey30"];
+const SLOTS = ["hero", "banner", "gallery1", "gallery2", "gallery3", "meliaHero", "meliaA", "meliaB", "meliaC", "stagey1", "stagey2", "stagey3", "stagey4", "stagey8", "stagey30"];
 
 /* ---------- helpers ---------- */
 function send(res, code, body, headers) {
@@ -119,7 +120,7 @@ async function handle(req, res) {
     if (!name || (!email && !phone)) return send(res, 400, { error: "Name and a contact are required" });
     const rec = {
       id: crypto.randomBytes(5).toString("hex"), at: new Date().toISOString(), status: "new", note: "",
-      ref: clean(j.ref, 40), name, email, phone, qty: Math.max(1, Math.min(500, parseInt(j.qty, 10) || 1)),
+      ref: clean(j.ref, 40), crop: CROPS.includes(j.crop) ? j.crop : "avocado", name, email, phone, qty: Math.max(1, Math.min(500, parseInt(j.qty, 10) || 1)),
       location: clean(j.location, 120), profile: clean(j.profile, 120), gift: !!j.gift, recipient: clean(j.recipient, 120),
       details: clean(typeof j.details === "string" ? j.details : JSON.stringify(j.trees || j.details || ""), 3000)
     };
@@ -172,7 +173,7 @@ async function handle(req, res) {
       const batches = readJSON(BATCHES, []);
       const trees = readJSON(TREES, []).filter(t => t.ownerId === me.id).map(t => treeView(t, batches));
       const waitlist = readJSON(SIGNUPS, []).filter(r => r.userId === me.id || (me.email && normEmail(r.email) === me.email) || (me.phone && normPhone(r.phone) === me.phone))
-        .map(r => ({ at: r.at, ref: r.ref, qty: r.qty, gift: r.gift, recipient: r.recipient, status: r.status }));
+        .map(r => ({ at: r.at, ref: r.ref, crop: r.crop || "avocado", qty: r.qty, gift: r.gift, recipient: r.recipient, status: r.status }));
       return send(res, 200, { user: publicUser(me), trees, waitlist });
     }
     if (p === "/api/me" && m === "PATCH") {
@@ -234,7 +235,7 @@ async function handle(req, res) {
 
     if (p === "/api/admin/images" && m === "GET") return send(res, 200, { slots: SLOTS, images: (readJSON(CONTENT, { images: {} }).images) || {} });
 
-    mm = /^\/api\/admin\/images\/([a-z0-9]+)$/.exec(p);
+    mm = /^\/api\/admin\/images\/([a-zA-Z0-9]+)$/.exec(p);
     if (mm && SLOTS.includes(mm[1])) {
       const slot = mm[1], c = readJSON(CONTENT, { images: {} }); c.images = c.images || {};
       if (m === "PUT") {
@@ -305,6 +306,7 @@ async function handle(req, res) {
       if (j.code !== undefined) t.code = clean(j.code, 40);
       for (const k of ["location", "occasion", "recipient"]) if (j[k] !== undefined) t[k] = clean(j[k], 120);
       if (j.kind !== undefined && KINDS.includes(j.kind)) t.kind = j.kind;
+      if (j.crop !== undefined && CROPS.includes(j.crop)) t.crop = j.crop;
       if (j.status !== undefined && STATUSES.includes(j.status)) t.status = j.status;
       if (j.plantedAt !== undefined) t.plantedAt = okDate(j.plantedAt);
       if (j.verifiedAt !== undefined) t.verifiedAt = okDate(j.verifiedAt);
@@ -324,7 +326,7 @@ async function handle(req, res) {
       if (count === 1 && !clean(j.code, 40) && !prefix) return send(res, 400, { error: "Give the tree a code" });
       const made = [];
       for (let i = 0; i < count; i++) {
-        const t = { id: rid(), code: "", ownerId: null, kind: "commercial", location: "", plantedAt: "", verifiedAt: "", batchId: "", status: "planned", occasion: "", recipient: "", photo: "", updates: [], at: new Date().toISOString() };
+        const t = { id: rid(), code: "", ownerId: null, crop: "avocado", kind: "commercial", location: "", plantedAt: "", verifiedAt: "", batchId: "", status: "planned", occasion: "", recipient: "", photo: "", updates: [], at: new Date().toISOString() };
         const jj = Object.assign({}, j); jj.code = count === 1 && jj.code ? jj.code : prefix + String(start + i).padStart(3, "0");
         const err = treeFields(t, jj, users); if (err) return send(res, 400, { error: err });
         if (all.some(x => x.code === t.code) || made.some(x => x.code === t.code)) return send(res, 409, { error: "Code " + t.code + " already exists" });

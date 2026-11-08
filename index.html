@@ -360,7 +360,7 @@ footer button.rm { justify-self: start; }
 .tl{display:grid;gap:10px;margin:6px 0 0;padding:0;list-style:none}.tl li{display:grid;gap:4px;border-left:2px solid var(--line);padding-left:10px;font-size:.9rem}.tl img{max-width:100%;border-radius:10px}
 .pgrid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}@media(max-width:860px){.pgrid2{grid-template-columns:1fr}}
 .perr{color:var(--bad,#ff8c7a);font-weight:600}.pok{color:var(--moss);font-weight:600}
-</style></head><body>
+</style><style>.terms2{display:flex;gap:18px;flex-wrap:wrap}.terms2 div{display:grid}.terms2 b{font-family:var(--font-display);font-size:1.25rem}.terms2 span{color:var(--ink-soft);font-size:.86rem}</style></head><body>
 <div class="strip"><b>FIRST PLOTS OPENING SOON</b>Register your trees now and be first to know.</div>
 <header class="top">
   <div class="wrap">
@@ -368,6 +368,7 @@ footer button.rm { justify-self: start; }
     <nav aria-label="Main">
       <button class="link" data-go="home" data-nav="home">Home</button>
       <button class="link" data-go="avocado" data-nav="avocado">Avocado</button>
+      <button class="link" data-go="melia" data-nav="melia">Timber</button>
       <button class="link" data-go="upcoming" data-nav="upcoming">Upcoming</button>
       <button class="link" data-go="profile" data-nav="profile" id="navAccount">Log in</button>
       <button class="btn small" data-go="order">Join the waitlist</button>
@@ -407,6 +408,20 @@ footer button.rm { justify-self: start; }
 
   <section class="band lime"><div class="wrap"><h2>We plant it. We water it. We guard it. You harvest it.</h2></div></section>
   <section class="band tight" id="liveStats" hidden><div class="wrap"><div class="livestats" id="liveStatsRow"></div></div></section>
+  <section class="band alt" id="choose">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Choose your tree</p><h2>One tree. It shades the land and it pays you back.</h2>
+      <p class="lead">Every tree holds soil, gives shade and cools the ground around it. Pick the one that fits how you want to benefit.</p></div>
+      <div class="cols2">
+        <div class="panel stack"><span class="pill solid">Fruit</span><h3>Hass avocado</h3><p class="soft">Harvest fruit for 30 years. First fruit around year three or four.</p>
+          <div class="terms2"><div><b>From KSh 4,000</b><span>per tree</span></div><div><b>60%</b><span>of the fruit is yours</span></div><div><b>30 years</b><span>of harvests</span></div></div>
+          <div class="cta-row"><button class="btn" data-go="avocado">See avocado</button></div></div>
+        <div class="panel stack"><span class="pill solid">Timber</span><h3>Melia (Mukau) hardwood</h3><p class="soft">A drought-tough Kenyan hardwood. Harvest in about 12 years for furniture, doors and floors.</p>
+          <div class="terms2"><div><b>KSh 1,000</b><span>per tree</span></div><div><b>70%</b><span>of the timber value is yours</span></div><div><b>12 years</b><span>to first harvest</span></div></div>
+          <div class="cta-row"><button class="btn" data-go="melia">See timber</button></div></div>
+      </div>
+    </div>
+  </section>
 
   <section class="band">
     <div class="wrap">
@@ -661,6 +676,139 @@ footer button.rm { justify-self: start; }
   </section>
 </main>
 
+<!-- MELIA -->
+<main data-page="melia">
+  <section class="band on-skin">
+    <div class="wrap stack">
+      <p class="eyebrow">Melia (Mukau) timber · Rumuruti, Laikipia</p>
+      <h1 style="color:var(--skin-ink);max-width:16ch">Plant a tree today. Harvest hardwood in 12 years.</h1>
+      <p style="color:var(--skin-soft);font-size:1.2rem;max-width:58ch">Melia volkensii, known in Kenya as Mukau, is a drought-tough hardwood used for furniture, doors and floors. For KSh 1,000 a tree you own 70% of its timber value at harvest. We plant it, guard it and care for it until it is ready.</p>
+      <div class="cta-row"><button class="btn" data-go="order" data-crop="melia">Plant a Melia tree</button><button class="btn ghost" data-scroll-only="meliaEst">See harvest estimates</button></div>
+      <div class="terms">
+        <div><strong>KSh 1,000</strong><span>per tree, paid once</span></div>
+        <div><strong>70 / 30</strong><span>timber split: 70% yours, 30% the farm company</span></div>
+        <div><strong>12 yrs</strong><span>to the first harvest window</span></div>
+        <div><strong>300-800 mm</strong><span>of yearly rain is enough for this tree</span></div>
+      </div>
+      <figure class="banner"><img class="photo" data-slot="meliaHero" src="https://images.unsplash.com/photo-1630022251361-40d5b1a971f2?auto=format&fit=crop&w=1400&q=70" alt="A tree growing in open dry grassland" loading="lazy" onerror="this.parentNode.remove()"></figure>
+      <div class="scen" id="meliaScen0"></div>
+      <p class="small-print">Your 70% of one tree's timber value at harvest, from three price cases. Estimates only, not a promise or a guarantee.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Why a tree is more than timber</p><h2>It heals the land while it grows your share</h2>
+      <p class="lead">A planted tree holds soil, gives shade and cools the ground, and Melia does it where little else will grow.</p></div>
+      <div class="cols3">
+        <div class="item rule-top"><h3>Built for dry land</h3><p class="soft">Melia grows on 300 to 800 mm of rain a year and is planted by farmers to stay productive through droughts.</p></div>
+        <div class="item rule-top"><h3>Soil and shade</h3><p class="soft">Its leaves rot into the soil and add nutrients, and its shade helps ground hold moisture. Farmers report degraded land recovering under it.</p></div>
+        <div class="item rule-top"><h3>Wood that lasts</h3><p class="soft">Timber turned into floors, doors and furniture keeps its carbon locked away for as long as it is used. Termites and decay avoid this hardwood.</p></div>
+        <div class="item rule-top"><h3>Wind and erosion</h3><p class="soft">Rows of trees break the wind and slow runoff, which protects the soil around them.</p></div>
+        <div class="item rule-top"><h3>Kenya needs more trees</h3><p class="soft">Kenya's national goal is 10% tree cover, and the country imports a large share of its wood needs. Every tree helps.</p></div>
+        <div class="item rule-top"><h3>Your tree, on the record</h3><p class="soft">Each tree has a code, photos and updates on your profile, so you can follow it for 12 years.</p></div>
+      </div>
+      <p class="small-print" style="margin-top:14px">Sources: KEFRI guide to on-farm Melia volkensii growing; Thomson Reuters Foundation, March 2019; ICRAF Agroforestry Database. Climate benefits depend on the site and on how well the trees survive.</p>
+      <div class="gallery3"><figure><img class="photo" data-slot="meliaA" src="https://images.unsplash.com/photo-1712342109846-a8fcb1c883ba?auto=format&fit=crop&w=800&q=70" alt="A young seedling in soil" loading="lazy" onerror="this.parentNode.remove()"><figcaption>It starts as a seedling</figcaption></figure><figure><img class="photo" data-slot="meliaB" src="https://images.unsplash.com/photo-1698828871218-4b450ac9e126?auto=format&fit=crop&w=800&q=70" alt="Tall trees in a woodland" loading="lazy" onerror="this.parentNode.remove()"><figcaption>It grows tall and straight</figcaption></figure><figure><img class="photo" data-slot="meliaC" src="https://images.unsplash.com/photo-1422246654994-34520d5a0340?auto=format&fit=crop&w=800&q=70" alt="Sawn hardwood planks" loading="lazy" onerror="this.parentNode.remove()"><figcaption>It becomes timber</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="band alt" id="meliaEst">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Harvest estimates</p><h2>What a tree may be worth at harvest</h2>
+      <p class="lead">Choose how many trees. We show the cost to plant and your 70% at harvest, from three price cases.</p></div>
+      <div class="calc">
+        <label>Number of trees: <b id="mOut" class="mono">10</b>
+          <input id="mTrees" type="range" min="1" max="200" value="10" aria-label="Number of trees">
+        </label>
+      </div>
+      <div id="meliaPlan" style="margin-top:14px"></div>
+      <div class="tablewrap" style="margin-top:20px"><table>
+        <thead><tr><th>Case</th><th>What it assumes</th><th>Value per tree, after sawing</th></tr></thead>
+        <tbody>
+          <tr><td>Cautious</td><td>The tree is sold standing, at today's farm-gate price</td><td>KSh 5,000</td></tr>
+          <tr><td>Middle</td><td>About 270 running feet of sawn boards at about KSh 44 per foot, less KSh 2,700 sawing</td><td>KSh 9,300</td></tr>
+          <tr><td>Strong</td><td>The same boards at KSh 100 per foot, a price quoted by hardware shops in 2019, less sawing</td><td>KSh 24,300</td></tr>
+        </tbody>
+      </table></div>
+      <details style="margin-top:14px"><summary>How we estimate</summary>
+        <p>KEFRI's guide to on-farm Melia growing expects about 270 running feet of sawn boards from a tree grown to 30 cm in diameter, valued at about KSh 12,000 with sawing costs of KSh 10 per foot. It lists a current farm-gate price of KSh 5,000 per standing tree. Press reports put sawn Mukau at KSh 60 to 80 per foot in 2016 and KSh 100 to 150 per foot in 2019, and a KEFRI estimate of up to KSh 30,000 for a mature tree.</p>
+        <p>These sources are old and timber prices move. A July 2025 report in The Standard says the cost of processed wood in Kenya is expected to rise sharply because home supply is short, but gives no figures for Mukau. Trees on poorer sites can take up to 18 years to reach 30 cm, and a tree that is smaller at harvest gives less timber. We show your share after sawing and before transport, permits and tax.</p>
+      </details>
+      <p class="small-print" style="margin-top:12px">Estimates only, not a promise or a guarantee. Trees can die, growth varies with the site and rain, and timber prices change.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">A tree's life</p><h2>Twelve years from a seedling to hardwood</h2></div>
+      <div class="tl">
+        <div class="step"><small>Year 0</small><h3>Planting</h3><p class="soft">Seedling planted, tagged, photographed and registered.</p></div>
+        <div class="step"><small>Years 1 to 2</small><h3>Establishing</h3><p class="soft">Weeding, fencing against browsing animals and replacing any losses with reserve trees.</p></div>
+        <div class="step"><small>Years 2 to 5</small><h3>Growing straight</h3><p class="soft">Lower branches are pruned so the trunk grows tall and clean for good timber.</p></div>
+        <div class="step"><small>Years 6 to 11</small><h3>Building wood</h3><p class="soft">The canopy closes and the trunk thickens. We post photos and checks to your profile.</p></div>
+        <div class="step"><small>Year 12</small><h3>Harvest window opens</h3><p class="soft">KEFRI advises harvest from about age 12, when the wood has settled. Slower sites can take longer.</p></div>
+        <div class="step end"><small>After harvest</small><h3>Sawn, sold, shared</h3><p class="soft">We saw and sell the timber and your 70% is paid to you, or delivered as boards if you prefer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:start">
+      <div class="stack">
+        <p class="eyebrow">Reading the code</p>
+        <h2>Every tree has an address</h2>
+        <p class="lead">A code like <b class="mono">RMT11/26:045</b> tells you where your tree is, when it was planted and which one it is.</p>
+      </div>
+      <div class="panel stack">
+        <p><b class="mono">RMT</b> <span class="soft">The planting area. RMT is Rumuruti.</span></p>
+        <p><b class="mono">11/26</b> <span class="soft">The month and year it was planted. Here, November 2026.</span></p>
+        <p><b class="mono">045</b> <span class="soft">The tree's number in that planting.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Questions</p><h2>Frequently asked</h2></div>
+      <details><summary>Can I plant a tree today?</summary><p>Our first plots are opening soon. Leave your details on the Plant a tree page and we will tell you the moment your trees are ready. Nothing is paid until then.</p></details>
+      <details><summary>What is Melia volkensii?</summary><p>A drought-tough East African hardwood, known in Kenya as Mukau. Its timber is hard, durable and resistant to termites and decay, and is used for furniture, doors, window frames, rafters and floors.</p></details>
+      <details><summary>What will it cost?</summary><p>KSh 1,000 per tree, paid once, with no yearly fees. The farm company's 30% share of the timber covers land rent, planting, fencing, labour, security and harvesting. If costs run higher, the farm company carries them.</p></details>
+      <details><summary>What do I actually own?</summary><p>You own a specific tree, with its code, tag and GPS pin registered in your name, and a right to 70% of its timber value at harvest under your agreement. The land stays leased by the farm company.</p></details>
+      <details><summary>How long until harvest?</summary><p>About 12 years. KEFRI advises harvest from around age 12, and a tree on a poorer site can take up to 18 years to reach a good size. We wide-space the trees so none is cut early, and we tell you when your batch is ready.</p></details>
+      <details><summary>Will it grow at Rumuruti?</summary><p>Rumuruti sits at about 1,830 m. KEFRI and ICRAF list Melia for roughly 350 to 1,700 m and 300 to 800 mm of rain a year, so Rumuruti is at the top of that range and growth may be slower or the tree may need more care. We plant the first plots as a monitored start and report survival and growth on your profile, and the 12 years is a target, not a guarantee.</p></details>
+      <details><summary>How do I receive my share?</summary><p>At harvest we saw and sell the timber and pay you 70% of the proceeds after sawing, or deliver your share as boards at cost. Your agreement sets out the details.</p></details>
+      <details><summary>What happens if my tree dies?</summary><p>A reserve tree of the same age in the same block takes its place and your name moves to it on the register. You will see the change on your tree's record.</p></details>
+      <details><summary>Are permits needed to harvest and sell?</summary><p>Yes. The Kenya Forest Service requires a permit to transport forest products, including from private land. We arrange it at harvest, and permit and transport costs come out of the proceeds before the 70 / 30 split.</p></details>
+      <details><summary>Can I give a tree as a gift?</summary><p>Yes. Choose the gift option, add the recipient's name and an occasion, and the name goes on the tag. A tree planted today is a gift for 12 years from now.</p></details>
+      <details><summary>Can I pass on or sell my tree?</summary><p>You can transfer your tree to another person, and the new owner's name goes on the tag and register. We cannot promise a buyer or a price.</p></details>
+      <details><summary>What about tax?</summary><p>If you receive money from your share of the timber, you are responsible for any tax due to KRA on that income. We give a harvest statement to help.</p></details>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Before you plant</p><h2>What can go wrong, in plain words</h2></div>
+      <div class="cols3">
+        <div class="item rule-top"><h3>Trees can die</h3><p class="soft">Drought, fire, pests or animals can kill a tree. Reserve trees replace losses, but a large loss could use them up.</p></div>
+        <div class="item rule-top"><h3>Growth varies</h3><p class="soft">Rain, soil and the site decide how fast a tree grows. Some trees will be smaller than others at year 12.</p></div>
+        <div class="item rule-top"><h3>Prices move</h3><p class="soft">Timber prices change with supply, grade and buyers, and the figures we use are from older sources.</p></div>
+        <div class="item rule-top"><h3>Twelve years is long</h3><p class="soft">Nothing is paid before the harvest. The money comes at the end, not along the way.</p></div>
+        <div class="item rule-top"><h3>Rules can change</h3><p class="soft">Harvest and transport permits and fees are set by the government and can change.</p></div>
+        <div class="item rule-top"><h3>Nothing is guaranteed</h3><p class="soft">We do not promise an amount of timber or money, or that a tree will be worth more later.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band on-skin">
+    <div class="wrap stack" style="justify-items:start">
+      <h2 style="color:var(--skin-ink);max-width:22ch">Plant a tree. In twelve years it is a door, a floor, a table.</h2>
+      <p style="color:var(--skin-soft);max-width:56ch">Leave your details and we will tell you the moment your trees are ready. It takes about three minutes, and nothing is paid today.</p>
+      <button class="btn" data-go="order" data-crop="melia">Plant a Melia tree</button>
+    </div>
+  </section>
+</main>
+
 <!-- ORDER -->
 <main data-page="order">
   <section class="band tight"><div class="wrap" id="orderMount"></div></section>
@@ -676,7 +824,7 @@ footer button.rm { justify-self: start; }
     <div class="wrap stack">
       <p class="eyebrow">Upcoming projects</p>
       <h1 style="max-width:18ch">More trees, more ways to farm</h1>
-      <p class="lead">Avocado is first. Each new crop will get its own page, planted on private land and recorded on the same tree register.</p>
+      <p class="lead">Avocado and Melia timber are first. Each new crop will get its own page, planted on private land and recorded on the same tree register.</p>
     </div>
   </section>
   <section class="band alt">
@@ -685,7 +833,7 @@ footer button.rm { justify-self: start; }
         <div class="up live"><span class="badge">Opening soon</span><h3>Avocado</h3><p class="soft">Hass avocado in Narok. Plant a tree and share its fruit for 30 years.</p><div><button class="btn small" data-go="order">Join the waitlist</button></div></div>
         <div class="up"><span class="badge">Planned</span><h3>Pixie orange</h3><p class="soft">A sweet, easy-peel citrus for local and regional markets. Details to follow.</p></div>
         <div class="up"><span class="badge">Planned</span><h3>Macadamia</h3><p class="soft">A long-lived nut tree with strong export demand. Details to follow.</p></div>
-        <div class="up"><span class="badge">Planned</span><h3>Timber</h3><p class="soft">Fast-growing timber species on private land, tracked on the register up to harvest.</p></div>
+        <div class="up live"><span class="badge">Opening soon</span><h3>Melia timber</h3><p class="soft">Melia (Mukau) hardwood in Rumuruti. KSh 1,000 a tree, 70% of the timber value to you at harvest.</p><div><button class="btn small" data-go="melia">See Melia</button></div></div>
       </div>
     </div>
   </section>
@@ -693,10 +841,12 @@ footer button.rm { justify-self: start; }
 
 <footer>
   <div class="wrap">
-    <p><b>tr33s</b> · Hass avocado orchards in Narok, Kenya</p>
+    <p><b>tr33s</b> · Hass avocado in Narok and Melia timber in Rumuruti, Kenya</p>
     <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin and John Vid. They are not photos of our farm.</p>
     <div class="src">
       <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO avocado factsheet</a>
+      <a href="https://www.kefri.org/cadep/assets/manuals/A%20guide%20to%20on-farm%20Melia%20volkensii%20growing%20in%20the%20dryalnd%20areas%20of%20Kenya.pdf" target="_blank" rel="noopener">KEFRI Melia guide</a>
+      <a href="https://apps.worldagroforestry.org/treedb/AFTPDFS/Melia_volkensii.PDF" target="_blank" rel="noopener">ICRAF Melia</a>
       <a href="https://www.freshfruitportal.com/news/2026/04/13/kenya-avocado" target="_blank" rel="noopener">FreshFruitPortal</a>
       <a href="https://www.foodbusinessmea.com/?p=2158630" target="_blank" rel="noopener">Food Business MEA</a>
       <a href="https://www.fas.usda.gov/data/kenya-avocado" target="_blank" rel="noopener">USDA FAS GAIN</a>
@@ -764,6 +914,16 @@ footer button.rm { justify-self: start; }
       rows.map(function (r, i) { return '<tr><td>' + r[0] + ' <small>(KSh ' + [PRICES.low, PRICES.mid, PRICES.high][i] + ' per kg)</small></td><td>' + kshShort(r[1]) + ' <small>per year</small></td><td>' + kshShort(r[2]) + ' <small>' + (r[2] / cost).toFixed(1) + 'x your cost</small></td></tr>'; }).join("") +
       '</tbody></table></div><p class="small-print">Fruit starts around year 3 to 4, so the first years return little. Before costs of sale and tax. Estimates only, not a promise.</p></div>';
   }
+  var MPRICE = 1000, MOWN = 0.7, MVAL = { low: 5000, mid: 9300, high: 24300 };
+  function meliaPlanHTML(n) {
+    n = n || 1; var cost = MPRICE * n, rows = [["Cautious", MVAL.low], ["Middle", MVAL.mid], ["Strong", MVAL.high]];
+    return '<div class="plan"><div class="pcost"><small>Cost to plant ' + n.toLocaleString("en-KE") + (n === 1 ? " tree" : " trees") + '</small><strong>' + ksh(cost) + '</strong><span>One payment of ' + ksh(MPRICE) + ' per tree. No yearly fees.</span></div>' +
+      '<div class="tablewrap"><table class="plant"><thead><tr><th>If timber is worth</th><th>Your 70% at harvest (about year 12)</th><th>Times your cost</th></tr></thead><tbody>' +
+      rows.map(function (r) { var mine = r[1] * MOWN * n; return '<tr><td>' + r[0] + ' <small>(KSh ' + r[1].toLocaleString("en-KE") + ' per tree)</small></td><td>' + kshShort(mine) + '</td><td>' + (mine / cost).toFixed(1) + 'x</td></tr>'; }).join("") +
+      '</tbody></table></div><p class="small-print">Nothing is paid before harvest, about 12 years from planting. Values are after sawing and before transport, permits and tax. Estimates only, not a promise.</p></div>';
+  }
+  function cropPlan(n) { return F.crop === "melia" ? meliaPlanHTML(n) : planHTML(n); }
+  var CROPS = { avocado: { short: "avocado", label: "Hass avocado", price: 4000, own: "60%", term: "30 years", own2: "Your share of fruit", term2: "Farming included" }, melia: { short: "Melia", label: "Melia (Mukau) timber", price: 1000, own: "70%", term: "12 years to harvest", own2: "Your share of timber", term2: "To first harvest" } };
   var DISC = "Estimated value of your 60% share of the fruit over 30 years, before costs of sale, from sourced yield ranges and 2026 price quotes that vary widely by season, grade and buyer. Estimates only, not a promise or guarantee.";
   document.querySelectorAll("[data-scen]").forEach(function (e) { e.innerHTML = scenHTML(scen(1)); });
   document.querySelectorAll("[data-disc]").forEach(function (e) { e.textContent = DISC; });
@@ -787,6 +947,13 @@ footer button.rm { justify-self: start; }
   }
   nT.addEventListener("input", renderEst); priceIn.addEventListener("input", renderEst); renderEst();
 
+
+  (function () {
+    var mt = $("#mTrees"); if (!mt) return;
+    function r() { var n = +mt.value; $("#mOut").textContent = n.toLocaleString("en-KE"); $("#meliaPlan").innerHTML = meliaPlanHTML(n); }
+    mt.addEventListener("input", r); r();
+    $("#meliaScen0").innerHTML = [["Cautious", MVAL.low], ["Middle", MVAL.mid], ["Strong", MVAL.high]].map(function (r, i) { return '<div class="' + (i === 1 ? "mid" : "") + '"><small>' + r[0] + '</small><strong>' + ksh(r[1] * MOWN) + '</strong><span>your 70% of one tree, from ' + ksh(r[1]) + ' of timber</span></div>'; }).join("");
+  })();
   /* ---------- hero: who is this tree for ---------- */
   var HOCC = { "Just because": "", "Birthday": "Birthday", "Wedding": "Wedding", "Anniversary": "Anniversary", "Graduation": "Graduation", "A new baby": "Birth of a child", "In loving memory": "In memory of someone" };
   function heroSync() {
@@ -826,7 +993,7 @@ footer button.rm { justify-self: start; }
 
   /* ---------- plant a tree form ---------- */
   var OCC = ["Birth of a child", "Graduation", "Wedding", "Anniversary", "In memory of someone", "New home", "Business launch", "Birthday", "Other (add your own)"];
-  var F = { step: 1, qty: 1, name: "", phone: "", email: "", where: "", profile: "A Kenyan living abroad", gift: false, recipient: "", giftMsg: "", trees: [], custom: [], c1: false, c2: false, done: null };
+  var F = { crop: "avocado", step: 1, qty: 1, name: "", phone: "", email: "", where: "", profile: "A Kenyan living abroad", gift: false, recipient: "", giftMsg: "", trees: [], custom: [], c1: false, c2: false, done: null };
   try { var d = JSON.parse(localStorage.getItem("tr33s_order_draft") || "null"); if (d) { ["qty", "name", "phone", "email", "where", "profile"].forEach(function (k) { if (d[k] != null) F[k] = d[k]; }); } } catch (e) {}
   function saveDraft() { try { localStorage.setItem("tr33s_order_draft", JSON.stringify({ qty: F.qty, name: F.name, phone: F.phone, email: F.email, where: F.where, profile: F.profile })); } catch (e) {} }
   function treeRec(i) { return F.trees[i] || (F.trees[i] = { occ: "", custom: "", tag: "", note: "" }); }
@@ -839,7 +1006,7 @@ footer button.rm { justify-self: start; }
     var body = "";
     if (F.step === 1) {
       body = '<fieldset><legend>How many trees would you like to plant?</legend><div class="qty"><button type="button" class="qb" data-q="-1" aria-label="One fewer tree">−</button><input id="qty" type="number" min="1" max="500" inputmode="numeric" value="' + F.qty + '" aria-label="Number of trees"><button type="button" class="qb" data-q="1" aria-label="One more tree">+</button></div><div class="chips">' + [1, 2, 5, 10].map(function (n) { return '<button type="button" class="chip' + (F.qty === n ? " on" : "") + '" data-setq="' + n + '">' + n + (n === 1 ? " tree" : " trees") + "</button>"; }).join("") + '</div><p class="small-print">Each plot has up to 10 owners. Planting more than 10 trees? We can set aside a whole plot for you.</p></fieldset>' +
-        '<div class="panel"><p class="eyebrow">What ' + F.qty + (F.qty === 1 ? " tree" : " trees") + ' would cost and could give</p><div style="margin-top:10px">' + planHTML(F.qty) + "</div></div>";
+        '<div class="panel"><p class="eyebrow">What ' + F.qty + (F.qty === 1 ? " tree" : " trees") + ' would cost and could give</p><div style="margin-top:10px">' + cropPlan(F.qty) + "</div></div>";
     } else if (F.step === 2) {
       body = '<fieldset><legend>Your details</legend><p class="soft" style="font-size:0.95rem">So we can tell you the moment your trees are ready. We will never charge you without your agreement.</p><div class="row2"><label for="oName">Full name<input id="oName" autocomplete="name" value="' + esc(F.name) + '"></label><label for="oPhone">Phone or WhatsApp<input id="oPhone" type="tel" autocomplete="tel" placeholder="+254 ..." value="' + esc(F.phone) + '"></label></div><div class="row2"><label for="oEmail">Email<input id="oEmail" type="email" autocomplete="email" value="' + esc(F.email) + '"></label><label for="oWhere">Where do you live?<input id="oWhere" placeholder="City, country" autocomplete="off" value="' + esc(F.where) + '"></label></div>' +
         '<label for="oProfile">I am<select id="oProfile">' + ["A Kenyan living abroad", "A professional in Kenya", "Buying for family", "Part of a chama or group", "A company", "Other"].map(function (o) { return "<option" + (o === F.profile ? " selected" : "") + ">" + o + "</option>"; }).join("") + "</select></label></fieldset>";
@@ -860,7 +1027,7 @@ footer button.rm { justify-self: start; }
         '<label class="check" for="oC1"><input id="oC1" type="checkbox"' + (F.c1 ? " checked" : "") + '><span>I understand that harvests and prices are not guaranteed.</span></label><label class="check" for="oC2"><input id="oC2" type="checkbox"' + (F.c2 ? " checked" : "") + '><span>I agree that tr33s may keep these details and contact me about my trees.</span></label>';
     }
     var nav = '<div class="cta-row" style="margin-top:6px">' + (F.step > 1 ? '<button type="button" class="btn ghost" data-ostep="-1">Back</button>' : "") + '<button type="button" class="btn" data-ostep="1">' + (F.step === 4 ? "Join the waitlist" : "Continue") + "</button></div>";
-    m.innerHTML = '<p class="eyebrow">Plant a tree</p><h1 style="font-size:clamp(2rem,5vw,3rem);margin:6px 0 8px">Plant your avocado tree</h1><p class="soft" style="margin-bottom:20px">About three minutes. No payment now.</p><ol class="prog">' + prog + '</ol><div class="checkout"><div style="display:grid;gap:20px">' + body + '<p class="err" id="oErr" role="alert" hidden></p>' + nav + '</div><aside class="panel summary"><p class="eyebrow">Your trees</p><div class="sumline"><span>' + F.qty + (F.qty === 1 ? " Hass avocado tree" : " Hass avocado trees") + '</span><b>' + ksh(F.qty * PRICE) + '</b></div><div class="sumline"><span>To pay today</span><b>Nothing</b></div><div class="sumline"><span>Your share of fruit</span><b>60%</b></div><div class="sumline"><span>Farming included</span><b>30 years</b></div><p class="small-print" style="margin-top:12px">The price shown is the planned price per tree, paid once, when trees open for planting.</p></aside></div>';
+    m.innerHTML = '<p class="eyebrow">Plant a tree</p><h1 style="font-size:clamp(2rem,5vw,3rem);margin:6px 0 8px">Plant your ' + CROPS[F.crop].short + ' tree</h1><p class="soft" style="margin-bottom:20px">About three minutes. No payment now.</p><ol class="prog">' + prog + '</ol><div class="checkout"><div style="display:grid;gap:20px">' + body + '<p class="err" id="oErr" role="alert" hidden></p>' + nav + '</div><aside class="panel summary"><p class="eyebrow">Your trees</p><div class="sumline"><span>' + F.qty + (F.qty === 1 ? " " + CROPS[F.crop].label + " tree" : " " + CROPS[F.crop].label + " trees") + '</span><b>' + ksh(F.qty * CROPS[F.crop].price) + '</b></div><div class="sumline"><span>To pay today</span><b>Nothing</b></div><div class="sumline"><span>' + CROPS[F.crop].own2 + '</span><b>' + CROPS[F.crop].own + '</b></div><div class="sumline"><span>' + CROPS[F.crop].term2 + '</span><b>' + CROPS[F.crop].term + '</b></div><p class="small-print" style="margin-top:12px">The price shown is the planned price per tree, paid once, when trees open for planting.</p></aside></div>';
   }
   function oerr(msg) { var e = $("#oErr"); if (!e) return; e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: "center", behavior: "smooth" }); }
   function oval(id) { var e = $("#" + id); return e ? e.value.trim() : ""; }
@@ -894,11 +1061,11 @@ footer button.rm { justify-self: start; }
     renderOrder(); window.scrollTo(0, 0);
   }
   async function submitList() {
-    var ref = refId(), L = ["tr33s waiting list " + ref, "Trees: " + F.qty, "Name: " + F.name, "Phone: " + F.phone, "Email: " + F.email, "Lives in: " + (F.where || "-"), "I am: " + F.profile];
+    var ref = refId(), L = ["tr33s waiting list " + ref, "Tree: " + CROPS[F.crop].label, "Trees: " + F.qty, "Name: " + F.name, "Phone: " + F.phone, "Email: " + F.email, "Lives in: " + (F.where || "-"), "I am: " + F.profile];
     if (F.gift) L.push("Gift for: " + (F.recipient || "-") + (F.giftMsg ? " | Message: " + F.giftMsg : ""));
     for (var i = 0; i < Math.min(F.qty, 10); i++) { var t = F.trees[i]; if (t && (t.occ || t.tag || t.note)) L.push("Tree " + (i + 1) + ": " + ((t.occ && t.occ.indexOf("Other") === 0 ? (t.custom || "Other") : t.occ) || "-") + (t.tag ? " | Tag name: " + t.tag : "") + (t.note ? " | Note: " + t.note : "")); }
     F.custom.forEach(function (c) { if (c.label || c.value) L.push((c.label || "Custom") + ": " + c.value); });
-    var text = L.join("\n"), rec = { type: "waiting-list", ref: ref, createdAt: new Date().toISOString(), qty: F.qty, name: F.name, phone: F.phone, email: F.email, location: F.where, profile: F.profile, gift: F.gift, recipient: F.recipient, giftMessage: F.giftMsg, trees: F.trees.slice(0, 10), custom: F.custom, summary: text };
+    var text = L.join("\n"), rec = { type: "waiting-list", ref: ref, createdAt: new Date().toISOString(), crop: F.crop, qty: F.qty, name: F.name, phone: F.phone, email: F.email, location: F.where, profile: F.profile, gift: F.gift, recipient: F.recipient, giftMessage: F.giftMsg, trees: F.trees.slice(0, 10), custom: F.custom, summary: text };
     var btn = document.querySelector('[data-ostep="1"]'); if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
     var sent = await deliver(rec);
     F.done = outcomeHTML(ref, sent, text);
@@ -907,12 +1074,13 @@ footer button.rm { justify-self: start; }
   }
 
   /* ---------- router ---------- */
-  var PAGES = ["home", "avocado", "order", "profile", "upcoming"], pendingScroll = null;
+  var PAGES = ["home", "avocado", "melia", "order", "profile", "upcoming"], pendingScroll = null;
   function show(name) {
     if (PAGES.indexOf(name) < 0) name = "home";
     document.querySelectorAll("[data-page]").forEach(function (e) { e.classList.toggle("on", e.getAttribute("data-page") === name); });
     document.querySelectorAll("[data-nav]").forEach(function (b) { if (b.getAttribute("data-nav") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     $("#stickyCta").hidden = name === "order" || name === "profile";
+    $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
     if (name === "order") renderOrder();
     if (name === "profile") renderProfile();
     if (pendingScroll) { var t = document.getElementById(pendingScroll); pendingScroll = null; if (t) { setTimeout(function () { t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30); return; } }
@@ -926,12 +1094,12 @@ footer button.rm { justify-self: start; }
   document.addEventListener("click", function (e) {
     var el;
     if ((el = e.target.closest("[data-hero]"))) {
-      resetForm(); var nm = $("#heroName").value.trim(), oc = HOCC[$("#heroOcc").value] || "", isGift = el.getAttribute("data-hero") === "gift";
+      resetForm(); F.crop = "avocado"; var nm = $("#heroName").value.trim(), oc = HOCC[$("#heroOcc").value] || "", isGift = el.getAttribute("data-hero") === "gift";
       if (nm) { treeRec(0).tag = nm; if (isGift) F.recipient = nm; }
       if (oc) treeRec(0).occ = oc;
       F.gift = isGift; go("order"); return;
     }
-    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
+    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#melia" ? "melia" : "avocado"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
     if ((el = e.target.closest("[data-scroll-only]"))) { var t = document.getElementById(el.getAttribute("data-scroll-only")); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     if ((el = e.target.closest("[data-ostep]"))) { orderStep(+el.getAttribute("data-ostep")); return; }
     if ((el = e.target.closest("[data-q]"))) { var q = parseInt(oval("qty"), 10) || F.qty; F.qty = Math.max(1, Math.min(500, q + +el.getAttribute("data-q"))); saveDraft(); renderOrder(); return; }
@@ -981,7 +1149,7 @@ footer button.rm { justify-self: start; }
   function treeCard(t) {
     var ups = (t.updates || []).slice().reverse();
     return '<article class="tcard"><div class="ph">' + (t.photo ? '<img src="' + esc(t.photo) + '" alt="Photo of tree ' + esc(t.code) + '" loading="lazy" onerror="this.remove()">' : treeSVG()) + '</div><div class="bd">' +
-      '<div class="code">' + esc(t.code) + '</div><div class="row"><span class="pill ' + (t.status === "needs-replacing" ? "warn" : "") + '">' + esc(SLABEL[t.status] || t.status) + '</span><span class="pill" style="background:var(--band);color:var(--ink-soft)">' + (t.kind === "restoration" ? "Restoration" : "Commercial avocado") + '</span></div>' +
+      '<div class="code">' + esc(t.code) + '</div><div class="row"><span class="pill ' + (t.status === "needs-replacing" ? "warn" : "") + '">' + esc(SLABEL[t.status] || t.status) + '</span><span class="pill" style="background:var(--band);color:var(--ink-soft)">' + (t.kind === "restoration" ? "Restoration" : (t.crop === "melia" ? "Melia timber" : "Hass avocado")) + '</span></div>' +
       '<small>' + esc(t.location || "Location to be confirmed") + (t.plantedAt ? " · planted " + esc(fmtDate(t.plantedAt)) : "") + (t.recipient ? " · planted for " + esc(t.recipient) : "") + (t.occasion ? " (" + esc(t.occasion) + ")" : "") + '</small>' +
       healthHTML(t) +
       (ups.length ? '<details><summary class="soft">Updates (' + ups.length + ')</summary><ul class="tl">' + ups.map(function (u) { return '<li><small>' + esc(fmtDate(u.at)) + '</small><span>' + esc(u.text) + '</span>' + (u.photo ? '<img src="' + esc(u.photo) + '" alt="" loading="lazy" onerror="this.remove()">' : "") + '</li>'; }).join("") + '</ul></details>' : '<small>No updates yet. We post photos and notes here.</small>') +
@@ -989,13 +1157,15 @@ footer button.rm { justify-self: start; }
   }
   function dashHTML() {
     var u = ME.user, trees = ME.trees || [], wl = ME.waitlist || [];
-    var com = trees.filter(function (t) { return t.kind !== "restoration"; }).length, wanted = wl.reduce(function (a, r) { return a + (r.qty || 0); }, 0);
+    var com = trees.filter(function (t) { return t.kind !== "restoration" && t.crop !== "melia"; }).length, mel = trees.filter(function (t) { return t.kind !== "restoration" && t.crop === "melia"; }).length;
+    var wanted = wl.reduce(function (a, r) { return a + (r.qty || 0); }, 0);
     var planted = trees.filter(function (t) { return t.status !== "planned"; }).length;
     var h = '<div class="ptop"><div><p class="eyebrow">Your trees</p><h1 style="font-size:clamp(1.9rem,5vw,2.8rem)">Hello, ' + esc(String(u.name).split(" ")[0]) + '</h1></div><div class="cta-row"><button class="btn" data-go="order">Plant a tree</button><button class="btn ghost" data-hero-gift>Gift a tree</button><button class="btn ghost" id="pLogout">Log out</button></div></div>';
     h += '<div class="pstat"><div><b>' + trees.length + '</b><span>trees assigned to you</span></div><div><b>' + planted + '</b><span>already in the ground</span></div><div><b>' + wanted + '</b><span>on your waitlist requests</span></div></div>';
     if (trees.length) h += '<div class="tgrid">' + trees.map(treeCard).join("") + '</div>';
     else h += '<div class="panel"><h3>No trees on your profile yet</h3><p class="soft">' + (wl.length ? "You are on the waitlist for " + wanted + (wanted === 1 ? " tree" : " trees") + ". When the first plots open, your trees appear here with their codes and photos." : "Join the waitlist and your first tree will appear here when planting begins.") + '</p><button class="btn" data-go="order">Join the waitlist</button></div>';
     if (com) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">What your ' + com + (com === 1 ? " commercial tree" : " commercial trees") + ' could give you</p><p class="soft" style="margin-top:6px">Your 60% share per year once the trees are fully grown (year 8 on). Fruit starts around year 3 to 4. Estimates only, not a promise.</p><div class="scen" style="margin-top:10px">' + scenHTML(mkScen(100 * OWN * com, 160 * OWN * com, 130 * OWN * com)) + '</div></div>';
+    if (mel) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">What your ' + mel + (mel === 1 ? " Melia tree" : " Melia trees") + ' could give you</p><p class="soft" style="margin-top:6px">Your 70% of the timber at harvest, about 12 years after planting. Nothing is paid before then. Estimates only, not a promise.</p><div style="margin-top:10px">' + meliaPlanHTML(mel) + '</div></div>';
     if (wl.length) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">Your waitlist requests</p><ul class="soft" style="display:grid;gap:6px;padding-left:18px;margin-top:8px">' + wl.map(function (r) { return '<li>' + esc(fmtDate(r.at)) + ': ' + r.qty + (r.qty === 1 ? " tree" : " trees") + (r.gift ? " as a gift" + (r.recipient ? " for " + esc(r.recipient) : "") : "") + ' <small>(ref ' + esc(r.ref) + ')</small></li>'; }).join("") + '</ul></div>';
     h += '<div class="pgrid2"><form class="panel" id="pForm" style="display:grid;gap:12px" novalidate><b>Your details</b><label for="pName">Name<input id="pName" value="' + esc(u.name) + '"></label><label for="pPhone">Phone<input id="pPhone" type="tel" value="' + esc(u.phone ? "+" + u.phone : "") + '"></label><small class="soft">' + esc(u.email || "No email on this account") + '</small><p id="pMsg" role="status"></p><button class="btn small">Save details</button></form>' +
       '<form class="panel" id="pwForm" style="display:grid;gap:12px" novalidate><b>Change password</b><label for="pwOld">Current password<input id="pwOld" type="password" autocomplete="current-password"></label><label for="pwNew">New password<input id="pwNew" type="password" autocomplete="new-password"></label><p id="pwMsg" role="status"></p><button class="btn small">Change password</button></form></div>';
@@ -1017,7 +1187,7 @@ footer button.rm { justify-self: start; }
     var el;
     if ((el = e.target.closest("[data-auth]"))) { authMode = el.getAttribute("data-auth"); $("#profileMount").innerHTML = authHTML(); return; }
     if (e.target.id === "pLogout") { jfetch("/api/member-logout", "POST", {}).catch(function () {}).then(function () { ME = null; navLabel(); renderProfile(); }); return; }
-    if (e.target.hasAttribute && e.target.hasAttribute("data-hero-gift")) { resetForm(); F.gift = true; go("order"); return; }
+    if (e.target.hasAttribute && e.target.hasAttribute("data-hero-gift")) { resetForm(); F.crop = "avocado"; F.gift = true; go("order"); return; }
   });
   document.addEventListener("submit", function (e) {
     var f = e.target;
