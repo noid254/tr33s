@@ -32,7 +32,7 @@ const TREES = path.join(DATA_DIR, "trees.json");
 const BATCHES = path.join(DATA_DIR, "batches.json");
 const STATUSES = ["planned", "planted", "alive", "needs-replacing", "replaced"];
 const KINDS = ["commercial", "restoration"];
-const CROPS = ["avocado", "melia"];
+const CROPS = ["avocado", "melia", "apple"];
 const rid = () => crypto.randomBytes(5).toString("hex");
 const normEmail = v => String(v || "").trim().toLowerCase();
 function normPhone(v) { let d = String(v || "").replace(/\D/g, ""); if (d.length === 10 && d[0] === "0") d = "254" + d.slice(1); else if (d.length === 9) d = "254" + d; return d; }

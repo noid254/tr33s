@@ -368,6 +368,7 @@ footer button.rm { justify-self: start; }
     <nav aria-label="Main">
       <button class="link" data-go="home" data-nav="home">Home</button>
       <button class="link" data-go="avocado" data-nav="avocado">Avocado</button>
+      <button class="link" data-go="apple" data-nav="apple">Apples</button>
       <button class="link" data-go="melia" data-nav="melia">Timber</button>
       <button class="link" data-go="upcoming" data-nav="upcoming">Upcoming</button>
       <button class="link" data-go="profile" data-nav="profile" id="navAccount">Log in</button>
@@ -412,13 +413,16 @@ footer button.rm { justify-self: start; }
     <div class="wrap">
       <div class="head"><p class="eyebrow">Choose your tree</p><h2>One tree. It shades the land and it pays you back.</h2>
       <p class="lead">Every tree holds soil, gives shade and cools the ground around it. Pick the one that fits how you want to benefit.</p></div>
-      <div class="cols2">
+      <div class="cols3">
         <div class="panel stack"><span class="pill solid">Fruit</span><h3>Hass avocado</h3><p class="soft">Harvest fruit for 30 years. First fruit around year three or four.</p>
           <div class="terms2"><div><b>From KSh 4,000</b><span>per tree</span></div><div><b>60%</b><span>of the fruit is yours</span></div><div><b>30 years</b><span>of harvests</span></div></div>
           <div class="cta-row"><button class="btn" data-go="avocado">See avocado</button></div></div>
         <div class="panel stack"><span class="pill solid">Timber</span><h3>Melia (Mukau) hardwood</h3><p class="soft">A drought-tough Kenyan hardwood. Harvest in about 12 years for furniture, doors and floors.</p>
           <div class="terms2"><div><b>KSh 1,000</b><span>per tree</span></div><div><b>70%</b><span>of the timber value is yours</span></div><div><b>12 years</b><span>to first harvest</span></div></div>
           <div class="cta-row"><button class="btn" data-go="melia">See timber</button></div></div>
+        <div class="panel stack"><span class="pill solid">Fruit</span><h3>Wambugu apple</h3><p class="soft">Adopt an apple tree in Laikipia East. First real harvest in year 2.</p>
+          <div class="terms2"><div><b>KSh 2,000</b><span>per tree</span></div><div><b>50%</b><span>of the apples are yours</span></div><div><b>10 years</b><span>of harvests</span></div></div>
+          <div class="cta-row"><button class="btn" data-go="apple">See apples</button></div></div>
       </div>
     </div>
   </section>
@@ -809,6 +813,148 @@ footer button.rm { justify-self: start; }
   </section>
 </main>
 
+<!-- APPLE -->
+<main data-page="apple">
+  <section class="band on-skin">
+    <div class="wrap stack">
+      <p class="eyebrow">Wambugu apple orchard · Laikipia East</p>
+      <h1 style="color:var(--skin-ink);max-width:17ch">Adopt an apple tree. Share its harvest for 10 years.</h1>
+      <p style="color:var(--skin-soft);font-size:1.2rem;max-width:58ch">For KSh 2,000, paid once, we plant a grafted Wambugu apple tree with your name on its tag. We water it, feed it and guard it. You follow it on your phone, and half of every harvest is yours for 10 years.</p>
+      <div class="cta-row"><button class="btn" data-go="order" data-crop="apple">Adopt an apple tree</button><button class="btn ghost" data-scroll-only="appleEst">See harvest estimates</button></div>
+      <div class="terms">
+        <div><strong>KSh 2,000</strong><span>per tree, paid once</span></div>
+        <div><strong>50 / 50</strong><span>fruit split: half yours, half the farm</span></div>
+        <div><strong>10 yrs</strong><span>of care and harvests</span></div>
+        <div><strong>Year 2</strong><span>first real harvest</span></div>
+      </div>
+      <div class="scen" id="appleScen0"></div>
+      <p class="small-print">Your 50% of one tree's apples over 10 years, from three yield cases. Paid in apples, not cash. Estimates only, not a promise.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Why adopt</p><h2>Most seedlings die from neglect. Adopted trees have someone watching.</h2>
+      <p class="lead">Kenya is planting trees on a huge scale, but planting is the easy part. What decides whether a tree lives is care in its first two years. Every tr33s tree has a farm team looking after it and an owner watching it.</p></div>
+      <div class="cols3">
+        <div class="item rule-top"><h3>Planting is counted, survival isn't</h3><p class="soft">The government's JazaMiti app records about 738 million trees, against more than a billion reported planted, and those counts track planting, not survival.</p></div>
+        <div class="item rule-top"><h3>Care is what works</h3><p class="soft">Trees in places with dedicated care, like schools and churches, survive at much higher rates than trees left alone. That care is what you adopt.</p></div>
+        <div class="item rule-top"><h3>Counted toward 15 billion</h3><p class="soft">Kenya aims to grow 15 billion trees by 2032. We log every tr33s tree toward the national goal.</p></div>
+        <div class="item rule-top"><h3>Bred in Kenya</h3><p class="soft">The Wambugu apple was developed by Peter Wambugu, a farmer in Nyeri. It doesn't need a cold winter, so it grows in Kenya's highlands.</p></div>
+        <div class="item rule-top"><h3>Fruit in year 2</h3><p class="soft">Grafted trees flower in their first year. We pick those flowers off so the tree grows strong, and the first real harvest comes in year 2.</p></div>
+        <div class="item rule-top"><h3>On your phone</h3><p class="soft">A photo of your tree every month, health checks, alerts if anything goes wrong, and a message when your harvest is ready.</p></div>
+      </div>
+      <p class="small-print" style="margin-top:14px">Sources: AllAfrica, February 2026; Citizen Digital. Survival depends on the site, the weather and care.</p>
+    </div>
+  </section>
+
+  <section class="band alt" id="appleEst">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Harvest estimates</p><h2>How many apples one tree may give</h2>
+      <p class="lead">Choose how many trees. We show the cost to adopt and your 50% of the apples. Our figures are cautious, well below what many seedling sellers advertise.</p></div>
+      <div class="calc">
+        <label>Number of trees: <b id="aOut" class="mono">5</b>
+          <input id="aTrees" type="range" min="1" max="200" value="5" aria-label="Number of trees">
+        </label>
+      </div>
+      <div id="applePlan" style="margin-top:14px"></div>
+      <div class="tablewrap" style="margin-top:20px"><table>
+        <thead><tr><th>Tree age</th><th>Apples per tree per year</th><th>Weight</th><th>Your 50%</th></tr></thead>
+        <tbody>
+          <tr><td>Year 1</td><td>0 (flowers removed)</td><td>0 kg</td><td>None yet</td></tr>
+          <tr><td>Year 2</td><td>50 to 100</td><td>5 to 10 kg</td><td>25 to 50 apples</td></tr>
+          <tr><td>Year 3</td><td>100 to 200</td><td>10 to 20 kg</td><td>50 to 100 apples</td></tr>
+          <tr><td>Year 4</td><td>200 to 350</td><td>20 to 35 kg</td><td>100 to 175 apples</td></tr>
+          <tr><td>Years 5 to 10</td><td>300 to 500</td><td>30 to 50 kg</td><td>150 to 250 apples</td></tr>
+        </tbody>
+      </table></div>
+      <details style="margin-top:14px"><summary>How we estimate</summary>
+        <p>We assume a well-managed grafted Wambugu apple tree and about 100 g per apple, or 9 to 10 apples to the kilo. Growers report two or more harvests a year. Seedling sellers advertise far more, 500 or more apples in year 2 and 2,000 or more by year 5, but those figures are promotional and vary widely, so we plan with lower numbers. Over 10 years our range comes to about 1,075 to 1,825 apples as your share, with about 1,450 in the middle.</p>
+      </details>
+      <p class="small-print" style="margin-top:12px">Estimates only, not a promise or a guarantee. Dry years, pests or a weak tree mean fewer apples.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">A tree's life</p><h2>From seedling to harvest day</h2></div>
+      <div class="tl">
+        <div class="step"><small>Year 0</small><h3>Planting</h3><p class="soft">Seedling planted, tagged, photographed and registered to you.</p></div>
+        <div class="step"><small>Year 1</small><h3>Building roots</h3><p class="soft">Early flowers are picked off so the tree grows strong.</p></div>
+        <div class="step"><small>Year 2</small><h3>First harvest</h3><p class="soft">The first real apples, and the first harvest day on the farm.</p></div>
+        <div class="step"><small>Years 3 to 4</small><h3>Growing crop</h3><p class="soft">Harvests climb as the canopy fills out.</p></div>
+        <div class="step end"><small>Years 5 to 10</small><h3>Full bearing</h3><p class="soft">The tree's best years, for the rest of your 10.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:start">
+      <div class="stack">
+        <p class="eyebrow">The harvest share</p>
+        <h2>Half for you, half for the farm</h2>
+        <p class="lead">Your tree's apples are split down the middle, every harvest, for 10 years. The farm's half pays for land, water, labour and care, so there is never a monthly bill.</p>
+        <ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>Your share is paid in apples, not cash.</li><li>In a poor season everyone gets less. You see the harvest count for your tree.</li><li>After 10 years you can renew at a lower price.</li></ul>
+      </div>
+      <div class="panel stack">
+        <p><b>Collect</b> <span class="soft">Pick up your apples on harvest day, or join in the picking.</span></p>
+        <p><b>Delivery</b> <span class="soft">Have them sent to you, at delivery cost.</span></p>
+        <p><b>Donate</b> <span class="soft">Give your share to a school feeding programme near the farm.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The farm · Laikipia East</p><h2>10 acres, planted in two phases</h2>
+      <p class="lead">We lease 10 acres and plant the first 5. Once phase 1 is planted and adopted, we plant the other 5.</p></div>
+      <div class="terms" style="margin-top:0;margin-bottom:22px">
+        <div><strong>10</strong><span>acres leased</span></div>
+        <div><strong>2,250</strong><span>trees in phase 1, on 5 acres</span></div>
+        <div><strong>2,025</strong><span>offered for adoption</span></div>
+        <div><strong>225</strong><span>reserve trees</span></div>
+      </div>
+      <div class="cols2">
+        <div class="panel stack"><h3>Why Laikipia East</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>The Mt Kenya side of Laikipia sits within the Wambugu apple's range of about 1,200 to 2,100 m.</li><li>The variety comes from Nyeri, next door, so seedlings and know-how are close.</li><li>Laikipia is encouraging farmers to grow fruit trees, and a fruit-processing hub is planned at Rumuruti.</li><li>Farmers nearby can grow with our seedlings and sell with us.</li></ul></div>
+        <div class="panel stack"><h3>What we manage</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li><b>Water.</b> Apples need about 800 to 1,200 mm of rain a year. Parts of Laikipia get less, so drip irrigation and storage come first.</li><li><b>Pests.</b> Fruit flies, aphids, thrips and powdery mildew are the main threats. The farm team checks and treats the trees all year.</li><li><b>The land.</b> A title search, a lawyer and a registered lease before a single tree goes in.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Questions</p><h2>Frequently asked</h2></div>
+      <details><summary>Can I adopt a tree today?</summary><p>Not yet. We are finishing the lease and the seedling order. Join the waitlist and we will tell you as soon as adoptions open. Nothing is paid until then.</p></details>
+      <details><summary>What do I get for KSh 2,000?</summary><p>A named, tagged Wambugu apple tree planted and cared for by us for 10 years, monthly photos and checks on your profile, invitations to harvest days, and 50% of the apples your tree produces.</p></details>
+      <details><summary>Do I pay anything after that?</summary><p>No. The farm's half of the harvest covers care. The only extra cost is delivery, if you choose to have your apples sent to you.</p></details>
+      <details><summary>When will my tree give apples?</summary><p>Grafted Wambugu apples flower in their first year, but we remove those early flowers so the tree grows strong. The first real harvest is expected in year 2.</p></details>
+      <details><summary>What if my tree dies?</summary><p>A reserve tree of the same age takes its place and your name moves to it. You will see the change on your tree's record.</p></details>
+      <details><summary>Can I visit my tree?</summary><p>Yes. You can book a farm visit, and every adopter is invited to harvest days.</p></details>
+      <details><summary>Can I give a tree as a gift?</summary><p>Yes. Choose the gift option, add their name and an occasion, and the name goes on the tag.</p></details>
+      <details><summary>What happens after 10 years?</summary><p>You can renew your adoption at a lower price, or let it end. If it ends, the tree stays with the farm.</p></details>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Before you adopt</p><h2>What can go wrong, in plain words</h2></div>
+      <div class="cols3">
+        <div class="item rule-top"><h3>Trees can die</h3><p class="soft">Drought, pests or disease can kill a tree. Reserve trees replace losses, but a large loss could use them up.</p></div>
+        <div class="item rule-top"><h3>Harvests vary</h3><p class="soft">Rain, pests and the age of the tree change how many apples it gives. Some seasons will be thin.</p></div>
+        <div class="item rule-top"><h3>Nothing is guaranteed</h3><p class="soft">We do not promise a number of apples. Adoption is a purchase of care and fruit, not an investment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band on-skin">
+    <div class="wrap stack" style="justify-items:start">
+      <h2 style="color:var(--skin-ink);max-width:22ch">We plant it. We care for it. You watch it grow. We harvest together.</h2>
+      <p style="color:var(--skin-soft);max-width:56ch">Leave your details and we will tell you the moment adoptions open. It takes about three minutes, and nothing is paid today.</p>
+      <button class="btn" data-go="order" data-crop="apple">Adopt an apple tree</button>
+    </div>
+  </section>
+</main>
+
 <!-- ORDER -->
 <main data-page="order">
   <section class="band tight"><div class="wrap" id="orderMount"></div></section>
@@ -824,13 +970,14 @@ footer button.rm { justify-self: start; }
     <div class="wrap stack">
       <p class="eyebrow">Upcoming projects</p>
       <h1 style="max-width:18ch">More trees, more ways to farm</h1>
-      <p class="lead">Avocado and Melia timber are first. Each new crop will get its own page, planted on private land and recorded on the same tree register.</p>
+      <p class="lead">Avocado, Wambugu apples and Melia timber are first. Each new crop will get its own page, planted on private land and recorded on the same tree register.</p>
     </div>
   </section>
   <section class="band alt">
     <div class="wrap">
       <div class="upcoming">
         <div class="up live"><span class="badge">Opening soon</span><h3>Avocado</h3><p class="soft">Hass avocado in Narok. Plant a tree and share its fruit for 30 years.</p><div><button class="btn small" data-go="order">Join the waitlist</button></div></div>
+        <div class="up live"><span class="badge">Opening soon</span><h3>Wambugu apple</h3><p class="soft">Apples in Laikipia East. KSh 2,000 a tree, half the harvest to you for 10 years.</p><div><button class="btn small" data-go="apple">See apples</button></div></div>
         <div class="up"><span class="badge">Planned</span><h3>Pixie orange</h3><p class="soft">A sweet, easy-peel citrus for local and regional markets. Details to follow.</p></div>
         <div class="up"><span class="badge">Planned</span><h3>Macadamia</h3><p class="soft">A long-lived nut tree with strong export demand. Details to follow.</p></div>
         <div class="up live"><span class="badge">Opening soon</span><h3>Melia timber</h3><p class="soft">Melia (Mukau) hardwood in Nuu / Mutomo, Kitui. KSh 1,000 a tree, 70% of the timber value to you at harvest.</p><div><button class="btn small" data-go="melia">See Melia</button></div></div>
@@ -841,10 +988,13 @@ footer button.rm { justify-self: start; }
 
 <footer>
   <div class="wrap">
-    <p><b>tr33s</b> · Hass avocado in Narok and Melia timber in Kitui, Kenya</p>
+    <p><b>tr33s</b> · Hass avocado in Narok, Wambugu apples in Laikipia and Melia timber in Kitui, Kenya</p>
     <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin and John Vid. They are not photos of our farm.</p>
     <div class="src">
       <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO avocado factsheet</a>
+      <a href="https://allafrica.com/stories/202602100090.html" target="_blank" rel="noopener">AllAfrica: tree survival gaps</a>
+      <a href="https://citizen.digital/news/the-wambugu-apple-how-kenyan-farmer-created-unique-apple-variety-turned-down-ksh30m-offer-n333149" target="_blank" rel="noopener">Citizen Digital: the Wambugu apple</a>
+      <a href="https://www.beyondforest.org/post/wambugu-apple-farming-in-kenya-step-by-step-guide-to-profitable-orchards-2025" target="_blank" rel="noopener">Wambugu apple growing guide</a>
       <a href="https://www.kefri.org/cadep/assets/manuals/A%20guide%20to%20on-farm%20Melia%20volkensii%20growing%20in%20the%20dryalnd%20areas%20of%20Kenya.pdf" target="_blank" rel="noopener">KEFRI Melia guide</a>
       <a href="https://apps.worldagroforestry.org/treedb/AFTPDFS/Melia_volkensii.PDF" target="_blank" rel="noopener">ICRAF Melia</a>
       <a href="https://www.freshfruitportal.com/news/2026/04/13/kenya-avocado" target="_blank" rel="noopener">FreshFruitPortal</a>
@@ -922,8 +1072,18 @@ footer button.rm { justify-self: start; }
       rows.map(function (r) { var mine = r[1] * MOWN * n; return '<tr><td>' + r[0] + ' <small>(KSh ' + r[1].toLocaleString("en-KE") + ' per tree)</small></td><td>' + kshShort(mine) + '</td><td>' + (mine / cost).toFixed(1) + 'x</td></tr>'; }).join("") +
       '</tbody></table></div><p class="small-print">Nothing is paid before harvest, about 12 years from planting. Values are after sawing and before transport, permits and tax. Estimates only, not a promise.</p></div>';
   }
-  function cropPlan(n) { return F.crop === "melia" ? meliaPlanHTML(n) : planHTML(n); }
-  var CROPS = { avocado: { short: "avocado", label: "Hass avocado", price: 4000, own: "60%", term: "30 years", own2: "Your share of fruit", term2: "Farming included" }, melia: { short: "Melia", label: "Melia (Mukau) timber", price: 1000, own: "70%", term: "12 years to harvest", own2: "Your share of timber", term2: "To first harvest" } };
+  var APRICE = 2000, AOWN = 0.5, AYR = [[1, 1, 0, 0], [2, 2, 50, 100], [3, 3, 100, 200], [4, 4, 200, 350], [5, 10, 300, 500]];
+  var aLo = 0, aHi = 0; AYR.forEach(function (r) { var k = r[1] - r[0] + 1; aLo += r[2] * k; aHi += r[3] * k; });
+  function nfmt(n) { return Math.round(n).toLocaleString("en-KE"); }
+  function applePlanHTML(n) {
+    n = n || 1; var cost = APRICE * n, rows = [["Cautious", 300, aLo], ["Middle", 400, (aLo + aHi) / 2], ["Strong", 500, aHi]];
+    return '<div class="plan"><div class="pcost"><small>Cost to adopt ' + n.toLocaleString("en-KE") + (n === 1 ? " tree" : " trees") + '</small><strong>' + ksh(cost) + '</strong><span>One payment of ' + ksh(APRICE) + ' per tree, for 10 years. No yearly fees.</span></div>' +
+      '<div class="tablewrap"><table class="plant"><thead><tr><th>If harvests are</th><th>Your apples each year, once grown (year 5 on)</th><th>Your apples over all 10 years</th></tr></thead><tbody>' +
+      rows.map(function (r) { return '<tr><td>' + r[0] + '</td><td>' + nfmt(r[1] * AOWN * n) + ' <small>apples, about ' + nfmt(r[1] * AOWN * n / 10) + ' kg</small></td><td>' + nfmt(r[2] * AOWN * n) + ' <small>apples</small></td></tr>'; }).join("") +
+      '</tbody></table></div><p class="small-print">The first real harvest comes in year 2. Your share is paid in apples, not cash. Estimates only, not a promise.</p></div>';
+  }
+  function cropPlan(n) { return F.crop === "melia" ? meliaPlanHTML(n) : F.crop === "apple" ? applePlanHTML(n) : planHTML(n); }
+  var CROPS = { avocado: { short: "avocado", label: "Hass avocado", price: 4000, own: "60%", term: "30 years", own2: "Your share of fruit", term2: "Farming included" }, melia: { short: "Melia", label: "Melia (Mukau) timber", price: 1000, own: "70%", term: "12 years to harvest", own2: "Your share of timber", term2: "To first harvest" }, apple: { short: "apple", label: "Wambugu apple", price: 2000, own: "50%", term: "10 years", own2: "Your share of apples", term2: "Care and harvests" } };
   var DISC = "Estimated value of your 60% share of the fruit over 30 years, before costs of sale, from sourced yield ranges and 2026 price quotes that vary widely by season, grade and buyer. Estimates only, not a promise or guarantee.";
   document.querySelectorAll("[data-scen]").forEach(function (e) { e.innerHTML = scenHTML(scen(1)); });
   document.querySelectorAll("[data-disc]").forEach(function (e) { e.textContent = DISC; });
@@ -953,6 +1113,12 @@ footer button.rm { justify-self: start; }
     function r() { var n = +mt.value; $("#mOut").textContent = n.toLocaleString("en-KE"); $("#meliaPlan").innerHTML = meliaPlanHTML(n); }
     mt.addEventListener("input", r); r();
     $("#meliaScen0").innerHTML = [["Cautious", MVAL.low], ["Middle", MVAL.mid], ["Strong", MVAL.high]].map(function (r, i) { return '<div class="' + (i === 1 ? "mid" : "") + '"><small>' + r[0] + '</small><strong>' + ksh(r[1] * MOWN) + '</strong><span>your 70% of one tree, from ' + ksh(r[1]) + ' of timber</span></div>'; }).join("");
+  })();
+  (function () {
+    var at = $("#aTrees"); if (!at) return;
+    function r() { var n = +at.value; $("#aOut").textContent = n.toLocaleString("en-KE"); $("#applePlan").innerHTML = applePlanHTML(n); }
+    at.addEventListener("input", r); r();
+    $("#appleScen0").innerHTML = [["Cautious", aLo], ["Middle", (aLo + aHi) / 2], ["Strong", aHi]].map(function (r, i) { return '<div class="' + (i === 1 ? "mid" : "") + '"><small>' + r[0] + '</small><strong>' + nfmt(r[1] * AOWN) + ' apples</strong><span>your 50% of one tree over 10 years, about ' + nfmt(r[1] * AOWN / 10) + ' kg</span></div>'; }).join("");
   })();
   /* ---------- hero: who is this tree for ---------- */
   var HOCC = { "Just because": "", "Birthday": "Birthday", "Wedding": "Wedding", "Anniversary": "Anniversary", "Graduation": "Graduation", "A new baby": "Birth of a child", "In loving memory": "In memory of someone" };
@@ -1074,13 +1240,13 @@ footer button.rm { justify-self: start; }
   }
 
   /* ---------- router ---------- */
-  var PAGES = ["home", "avocado", "melia", "order", "profile", "upcoming"], pendingScroll = null;
+  var PAGES = ["home", "avocado", "apple", "melia", "order", "profile", "upcoming"], pendingScroll = null;
   function show(name) {
     if (PAGES.indexOf(name) < 0) name = "home";
     document.querySelectorAll("[data-page]").forEach(function (e) { e.classList.toggle("on", e.getAttribute("data-page") === name); });
     document.querySelectorAll("[data-nav]").forEach(function (b) { if (b.getAttribute("data-nav") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     $("#stickyCta").hidden = name === "order" || name === "profile";
-    $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
+    $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : name === "apple" ? "<b>KSh 2,000</b> per apple tree · half the harvest for 10 years" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
     if (name === "order") renderOrder();
     if (name === "profile") renderProfile();
     if (pendingScroll) { var t = document.getElementById(pendingScroll); pendingScroll = null; if (t) { setTimeout(function () { t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30); return; } }
@@ -1099,7 +1265,7 @@ footer button.rm { justify-self: start; }
       if (oc) treeRec(0).occ = oc;
       F.gift = isGift; go("order"); return;
     }
-    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#melia" ? "melia" : "avocado"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
+    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#melia" ? "melia" : location.hash === "#apple" ? "apple" : "avocado"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
     if ((el = e.target.closest("[data-scroll-only]"))) { var t = document.getElementById(el.getAttribute("data-scroll-only")); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     if ((el = e.target.closest("[data-ostep]"))) { orderStep(+el.getAttribute("data-ostep")); return; }
     if ((el = e.target.closest("[data-q]"))) { var q = parseInt(oval("qty"), 10) || F.qty; F.qty = Math.max(1, Math.min(500, q + +el.getAttribute("data-q"))); saveDraft(); renderOrder(); return; }
@@ -1149,7 +1315,7 @@ footer button.rm { justify-self: start; }
   function treeCard(t) {
     var ups = (t.updates || []).slice().reverse();
     return '<article class="tcard"><div class="ph">' + (t.photo ? '<img src="' + esc(t.photo) + '" alt="Photo of tree ' + esc(t.code) + '" loading="lazy" onerror="this.remove()">' : treeSVG()) + '</div><div class="bd">' +
-      '<div class="code">' + esc(t.code) + '</div><div class="row"><span class="pill ' + (t.status === "needs-replacing" ? "warn" : "") + '">' + esc(SLABEL[t.status] || t.status) + '</span><span class="pill" style="background:var(--band);color:var(--ink-soft)">' + (t.kind === "restoration" ? "Restoration" : (t.crop === "melia" ? "Melia timber" : "Hass avocado")) + '</span></div>' +
+      '<div class="code">' + esc(t.code) + '</div><div class="row"><span class="pill ' + (t.status === "needs-replacing" ? "warn" : "") + '">' + esc(SLABEL[t.status] || t.status) + '</span><span class="pill" style="background:var(--band);color:var(--ink-soft)">' + (t.kind === "restoration" ? "Restoration" : (t.crop === "melia" ? "Melia timber" : t.crop === "apple" ? "Wambugu apple" : "Hass avocado")) + '</span></div>' +
       '<small>' + esc(t.location || "Location to be confirmed") + (t.plantedAt ? " · planted " + esc(fmtDate(t.plantedAt)) : "") + (t.recipient ? " · planted for " + esc(t.recipient) : "") + (t.occasion ? " (" + esc(t.occasion) + ")" : "") + '</small>' +
       healthHTML(t) +
       (ups.length ? '<details><summary class="soft">Updates (' + ups.length + ')</summary><ul class="tl">' + ups.map(function (u) { return '<li><small>' + esc(fmtDate(u.at)) + '</small><span>' + esc(u.text) + '</span>' + (u.photo ? '<img src="' + esc(u.photo) + '" alt="" loading="lazy" onerror="this.remove()">' : "") + '</li>'; }).join("") + '</ul></details>' : '<small>No updates yet. We post photos and notes here.</small>') +
@@ -1157,7 +1323,7 @@ footer button.rm { justify-self: start; }
   }
   function dashHTML() {
     var u = ME.user, trees = ME.trees || [], wl = ME.waitlist || [];
-    var com = trees.filter(function (t) { return t.kind !== "restoration" && t.crop !== "melia"; }).length, mel = trees.filter(function (t) { return t.kind !== "restoration" && t.crop === "melia"; }).length;
+    var com = trees.filter(function (t) { return t.kind !== "restoration" && t.crop !== "melia" && t.crop !== "apple"; }).length, mel = trees.filter(function (t) { return t.kind !== "restoration" && t.crop === "melia"; }).length, apl = trees.filter(function (t) { return t.kind !== "restoration" && t.crop === "apple"; }).length;
     var wanted = wl.reduce(function (a, r) { return a + (r.qty || 0); }, 0);
     var planted = trees.filter(function (t) { return t.status !== "planned"; }).length;
     var h = '<div class="ptop"><div><p class="eyebrow">Your trees</p><h1 style="font-size:clamp(1.9rem,5vw,2.8rem)">Hello, ' + esc(String(u.name).split(" ")[0]) + '</h1></div><div class="cta-row"><button class="btn" data-go="order">Plant a tree</button><button class="btn ghost" data-hero-gift>Gift a tree</button><button class="btn ghost" id="pLogout">Log out</button></div></div>';
@@ -1166,6 +1332,7 @@ footer button.rm { justify-self: start; }
     else h += '<div class="panel"><h3>No trees on your profile yet</h3><p class="soft">' + (wl.length ? "You are on the waitlist for " + wanted + (wanted === 1 ? " tree" : " trees") + ". When the first plots open, your trees appear here with their codes and photos." : "Join the waitlist and your first tree will appear here when planting begins.") + '</p><button class="btn" data-go="order">Join the waitlist</button></div>';
     if (com) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">What your ' + com + (com === 1 ? " commercial tree" : " commercial trees") + ' could give you</p><p class="soft" style="margin-top:6px">Your 60% share per year once the trees are fully grown (year 8 on). Fruit starts around year 3 to 4. Estimates only, not a promise.</p><div class="scen" style="margin-top:10px">' + scenHTML(mkScen(100 * OWN * com, 160 * OWN * com, 130 * OWN * com)) + '</div></div>';
     if (mel) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">What your ' + mel + (mel === 1 ? " Melia tree" : " Melia trees") + ' could give you</p><p class="soft" style="margin-top:6px">Your 70% of the timber at harvest, about 12 years after planting. Nothing is paid before then. Estimates only, not a promise.</p><div style="margin-top:10px">' + meliaPlanHTML(mel) + '</div></div>';
+    if (apl) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">What your ' + apl + (apl === 1 ? " apple tree" : " apple trees") + ' could give you</p><p class="soft" style="margin-top:6px">Your 50% of the apples over 10 years. The first real harvest comes in year 2. Estimates only, not a promise.</p><div style="margin-top:10px">' + applePlanHTML(apl) + '</div></div>';
     if (wl.length) h += '<div class="panel" style="margin-top:22px"><p class="eyebrow">Your waitlist requests</p><ul class="soft" style="display:grid;gap:6px;padding-left:18px;margin-top:8px">' + wl.map(function (r) { return '<li>' + esc(fmtDate(r.at)) + ': ' + r.qty + (r.qty === 1 ? " tree" : " trees") + (r.gift ? " as a gift" + (r.recipient ? " for " + esc(r.recipient) : "") : "") + ' <small>(ref ' + esc(r.ref) + ')</small></li>'; }).join("") + '</ul></div>';
     h += '<div class="pgrid2"><form class="panel" id="pForm" style="display:grid;gap:12px" novalidate><b>Your details</b><label for="pName">Name<input id="pName" value="' + esc(u.name) + '"></label><label for="pPhone">Phone<input id="pPhone" type="tel" value="' + esc(u.phone ? "+" + u.phone : "") + '"></label><small class="soft">' + esc(u.email || "No email on this account") + '</small><p id="pMsg" role="status"></p><button class="btn small">Save details</button></form>' +
       '<form class="panel" id="pwForm" style="display:grid;gap:12px" novalidate><b>Change password</b><label for="pwOld">Current password<input id="pwOld" type="password" autocomplete="current-password"></label><label for="pwNew">New password<input id="pwNew" type="password" autocomplete="new-password"></label><p id="pwMsg" role="status"></p><button class="btn small">Change password</button></form></div>';
