@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: upcoming tree projects in Kenya. Adopt a Hass avocado or Wambugu apple tree, or plant Melia timber. Join the waiting list."><title>tr33s</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: crowd farming for fruit trees in Kenya. Upcoming projects. Adopt a Hass avocado or Wambugu apple tree, or plant Melia timber. Join the waiting list."><title>tr33s</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
@@ -6,48 +6,18 @@
 /* Layout: sticky top bar, hash-routed pages (home, avocado, market, tree, checkout, profile, upcoming). Wide bands, a deep Hass-skin band for emphasis, an Instagram-style grid for the portfolio. */
 /* Dark-first, matching the live tr33s look: near-black green, cream text, clay highlights, lime bands, pill buttons, mono labels. */
 :root {
-  --bg: #0f1810;
-  --surface: #17241a;
-  --band: #132016;
-  --ink: #eef0dc;
-  --ink-soft: #a9b5a0;
-  --line: #2a3a2d;
-  --leaf: #1f3a24;
-  --leaf-deep: #2b4d31;
-  --moss: #5a9a3f;
-  --accent: #d4956b;
-  --flesh: #c5d96a;
-  --lime: #c5d96a;
-  --lime-ink: #17210f;
-  --skin: #0a120c;
-  --skin-ink: #eef0dc;
-  --skin-soft: #a9b5a0;
-  --on-leaf: #eef0dc;
-  --warn: #e9c46e;
-  --warn-bg: #2f2812;
-  --bad: #ff8a80;
+  --bg: #ffffff; --surface: #ffffff; --band: rgba(141,198,63,0.12); --ink: #0f2a1a; --ink-soft: #4b5f52; --line: #d9e7d0;
+  --leaf: #0a7a3d; --leaf-deep: #065c2d; --moss: #4f9d2f; --accent: #0a7a3d; --flesh: #0a7a3d; --hlc: #3f8f2a;
+  --lime: #8dc63f; --lime-ink: #0b2b16; --skin: #065c2d; --skin-ink: #ffffff; --skin-soft: #d7ecd0; --on-leaf: #ffffff;
+  --warn: #8a5a12; --warn-bg: #f7ecd4; --bad: #b3261e;
   --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
   --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  color-scheme: dark;
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #f4f6ec; --surface: #ffffff; --band: #e8eed8; --ink: #15261c; --ink-soft: #46584c; --line: #cfd9c4;
-    --leaf: #2d6a3b; --leaf-deep: #1d4a28; --moss: #3f8a3a; --accent: #a85d32; --flesh: #6b8a1e; --lime: #c5d96a; --lime-ink: #17210f;
-    --skin: #16241a; --skin-ink: #eef0dc; --skin-soft: #b5c2ad; --on-leaf: #ffffff; --warn: #8a5a12; --warn-bg: #f7ecd4; --bad: #b3261e;
-    color-scheme: light;
-  }
-}
-:root[data-theme="light"] {
-  --bg: #f4f6ec; --surface: #ffffff; --band: #e8eed8; --ink: #15261c; --ink-soft: #46584c; --line: #cfd9c4;
-  --leaf: #2d6a3b; --leaf-deep: #1d4a28; --moss: #3f8a3a; --accent: #a85d32; --flesh: #6b8a1e; --lime: #c5d96a; --lime-ink: #17210f;
-  --skin: #16241a; --skin-ink: #eef0dc; --skin-soft: #b5c2ad; --on-leaf: #ffffff; --warn: #8a5a12; --warn-bg: #f7ecd4; --bad: #b3261e;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
 body {
-  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%230a7a3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.08'%3E%3Cpath d='M40 78v-22'/%3E%3Ccircle cx='40' cy='40' r='17'/%3E%3Cpath d='M33 44l7 6 7-7'/%3E%3Cpath d='M150 34c-9-6-22 0-20 14 2 12 11 19 20 15 9 4 18-3 20-15 2-14-11-20-20-14z'/%3E%3Cpath d='M150 34c0-6 2-9 5-11'/%3E%3Cpath d='M152 27c5-4 11-3 13 0-4 3-9 3-13 0z'/%3E%3Cpath d='M100 98c-9 0-14 12-16 22-3 14 5 24 16 24s19-10 16-24c-2-10-7-22-16-22z'/%3E%3Ccircle cx='100' cy='128' r='7'/%3E%3Ccircle cx='34' cy='168' r='13'/%3E%3Cpath d='M27 162c3-3 7-4 10-3'/%3E%3Cpath d='M34 155v-5'/%3E%3Cpath d='M178 132c-14 2-22 14-20 28 14-2 22-14 20-28z'/%3E%3Cpath d='M160 158l14-20'/%3E%3Cpath d='M128 214v-16'/%3E%3Cpath d='M128 204c-8 0-12-5-12-11 7 0 12 4 12 11z'/%3E%3Cpath d='M128 200c0-8 5-12 12-12 0 7-5 12-12 12z'/%3E%3Ccircle cx='206' cy='210' r='10'/%3E%3Cpath d='M206 200l3-5'/%3E%3Cpath d='M78 222v-14'/%3E%3Cpath d='M68 210l10-22 10 22z'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 240px 240px repeat; color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 0; margin: 0;
 }
@@ -77,7 +47,9 @@ nav button.link:hover { color: var(--ink); }
 .btn.small { padding: 8px 16px; }
 .btn.block { width: 100%; }
 .btn[disabled] { opacity: 0.55; cursor: default; }
-.on-skin .btn.ghost { color: var(--skin-ink); border-color: #3b4f3e; }
+.on-skin .btn.ghost { color: var(--skin-ink); border-color: rgba(255,255,255,0.4); }
+.on-skin .btn:not(.ghost) { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
+.band.on-skin .eyebrow { color: var(--lime) !important; }
 .on-skin .btn.ghost:hover { background: rgba(255,255,255,0.08); }
 :focus-visible { outline: 3px solid var(--flesh); outline-offset: 2px; }
 
@@ -101,9 +73,9 @@ nav button.link:hover { color: var(--ink); }
 .featured { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; }
 .featured h2 { color: var(--skin-ink); max-width: 20ch; }
 .terms { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 26px; }
-.on-skin .terms { background: #2a3a2d; border-color: #2a3a2d; }
+.on-skin .terms { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.18); }
 .terms div { background: var(--surface); padding: 18px; display: grid; gap: 4px; align-content: start; }
-.on-skin .terms div { background: #17241a; }
+.on-skin .terms div { background: var(--skin); }
 .terms strong { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.1; }
 .terms span { font-size: 0.9rem; color: var(--ink-soft); }
 .on-skin .terms span { color: var(--skin-soft); }
@@ -152,9 +124,9 @@ tr:last-child td { border-bottom: 0; }
 .scen small { font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
 .scen strong { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.15; }
 .scen span { font-size: 0.86rem; color: var(--ink-soft); }
-.on-skin .scen > div { background: #17241a; border-color: #2a3a2d; }
-.on-skin .scen > div.mid { border-color: var(--accent); }
-.on-skin .scen small { color: var(--accent); }
+.on-skin .scen > div { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.2); }
+.on-skin .scen > div.mid { border-color: var(--lime); }
+.on-skin .scen small { color: var(--lime); }
 .on-skin .scen span { color: var(--skin-soft); }
 
 /* forms */
@@ -251,7 +223,9 @@ details p { margin-top: 10px; color: var(--ink-soft); max-width: 70ch; }
 .adopt { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 45; width: min(360px, calc(100vw - 32px)); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.55); padding: 18px 18px 16px; display: grid; gap: 10px; transform: translateY(20px); opacity: 0; transition: transform .35s ease, opacity .35s ease; }
 .adopt.on { transform: none; opacity: 1; }
 .adopt[hidden] { display: none; }
-.adopt .art { border-radius: 14px; background: linear-gradient(180deg, #cfe6f2 0%, #e9f3d6 62%, #8a5a37 62%, #6b4428 100%); height: 130px; overflow: hidden; }
+.adopt .art { position: relative; border-radius: 14px; background: #dcecd9; height: 170px; overflow: hidden; }
+.adopt .art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.adopt .art .cap { position: absolute; left: 8px; bottom: 8px; font: 500 0.66rem var(--font-mono); letter-spacing: 0.06em; background: rgba(0,0,0,0.55); color: #fff; padding: 4px 8px; border-radius: 999px; }
 .adopt .art svg { width: 100%; height: 100%; display: block; }
 .adopt h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 2px 0 0; }
 .adopt p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; }
@@ -261,6 +235,12 @@ details p { margin-top: 10px; color: var(--ink-soft); max-width: 70ch; }
 .adopt .row { display: flex; gap: 8px; flex-wrap: wrap; }
 .adopt small { color: var(--ink-soft); font-size: 0.8rem; }
 @media (prefers-reduced-motion: reduce) { .adopt { transition: none; } }
+body[data-view="apple"] {
+  --band: rgba(244,143,177,0.14); --line: #f3d5df; --ink: #2a1019; --ink-soft: #6b4a55;
+  --leaf: #c2185b; --leaf-deep: #9c1249; --moss: #d81b60; --accent: #c2185b; --flesh: #c2185b; --hlc: #d81b60;
+  --lime: #f8bbd0; --lime-ink: #4a0d24; --skin: #8e1b45; --skin-soft: #f8d7e3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23c2185b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.08'%3E%3Cpath d='M40 78v-22'/%3E%3Ccircle cx='40' cy='40' r='17'/%3E%3Cpath d='M33 44l7 6 7-7'/%3E%3Cpath d='M150 34c-9-6-22 0-20 14 2 12 11 19 20 15 9 4 18-3 20-15 2-14-11-20-20-14z'/%3E%3Cpath d='M150 34c0-6 2-9 5-11'/%3E%3Cpath d='M152 27c5-4 11-3 13 0-4 3-9 3-13 0z'/%3E%3Cpath d='M100 98c-9 0-14 12-16 22-3 14 5 24 16 24s19-10 16-24c-2-10-7-22-16-22z'/%3E%3Ccircle cx='100' cy='128' r='7'/%3E%3Ccircle cx='34' cy='168' r='13'/%3E%3Cpath d='M27 162c3-3 7-4 10-3'/%3E%3Cpath d='M34 155v-5'/%3E%3Cpath d='M178 132c-14 2-22 14-20 28 14-2 22-14 20-28z'/%3E%3Cpath d='M160 158l14-20'/%3E%3Cpath d='M128 214v-16'/%3E%3Cpath d='M128 204c-8 0-12-5-12-11 7 0 12 4 12 11z'/%3E%3Cpath d='M128 200c0-8 5-12 12-12 0 7-5 12-12 12z'/%3E%3Ccircle cx='206' cy='210' r='10'/%3E%3Cpath d='M206 200l3-5'/%3E%3Cpath d='M78 222v-14'/%3E%3Cpath d='M68 210l10-22 10 22z'/%3E%3C/g%3E%3C/svg%3E");
+}
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-weight: 600; z-index: 40; max-width: calc(100vw - 32px); }
 
 footer { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 40px max(16px, env(safe-area-inset-left, 0px)) 56px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--ink-soft); }
@@ -274,24 +254,24 @@ footer button.rm { justify-self: start; }
 .strip b { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.12em; margin-right: 10px; }
 .band.lime { background: var(--lime); color: var(--lime-ink); text-align: center; padding-block: clamp(34px, 5vw, 56px); }
 .band.lime h2 { color: var(--lime-ink); font-size: clamp(1.7rem, 4.6vw, 3rem); font-weight: 800; }
-.hl { color: var(--accent); }
+.hl { color: var(--hlc); }
 .herocard { position: relative; min-height: 420px; }
 .herocard .grad { position: absolute; inset: 0 0 60px 0; border-radius: 28px; background: linear-gradient(160deg, #0f2a14 0%, #2f6a22 55%, #6fa83a 100%); }
-.herocard .rec { position: absolute; left: 14%; right: 0; bottom: 0; background: #0a120c; border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink); }
+.herocard .rec { position: absolute; left: 14%; right: 0; bottom: 0; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 20px 40px -24px rgba(6,60,30,0.45); border-radius: 18px; padding: 16px 18px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink); }
 .rec .r1 { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
 .rec .r1 b { font-weight: 500; font-size: 0.95rem; }
 .rec .r1 span { color: var(--ink-soft); font-size: 0.7rem; letter-spacing: 0.1em; }
 .rec .kv { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; }
 .rec .kv i { font-style: normal; color: var(--ink-soft); }
 .rec .kv em { font-style: normal; }
-.rec .ok { display: inline-block; margin-top: 8px; background: #1b3320; color: var(--lime); border-radius: 999px; padding: 3px 12px; font-size: 0.7rem; letter-spacing: 0.1em; }
+.rec .ok { display: inline-block; margin-top: 8px; background: #e6f4d7; color: var(--leaf); border-radius: 999px; padding: 3px 12px; font-size: 0.7rem; letter-spacing: 0.1em; }
 .moments { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
 .moments div { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: grid; gap: 4px; }
 .moments b { font-family: var(--font-display); }
-.cert { border: 1px dashed #3b4f3e; border-radius: 22px; padding: 22px; text-align: center; background: linear-gradient(160deg, #101c13, #1a2d1d); display: grid; gap: 10px; }
+.cert { border: 1.5px dashed var(--lime); border-radius: 22px; padding: 22px; text-align: center; background: linear-gradient(160deg, #f3faea, #ffffff); display: grid; gap: 10px; }
 .cert .big { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.05; }
 .cert .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; }
-.cert .grid2 div { background: #0a120c; border-radius: 12px; padding: 10px 12px; font-family: var(--font-mono); font-size: 0.8rem; }
+.cert .grid2 div { background: var(--band); border-radius: 12px; padding: 10px 12px; font-family: var(--font-mono); font-size: 0.8rem; }
 .cert .grid2 span { display: block; color: var(--ink-soft); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; }
 
 [data-page] { display: none; }
@@ -324,7 +304,7 @@ footer button.rm { justify-self: start; }
 .steps4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 22px; counter-reset: s; }
 .steps4 .item::before { counter-increment: s; content: "0" counter(s); font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent); }
 .traction { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 30px; }
-.traction div { background: #17241a; border: 1px solid #2a3a2d; border-radius: 16px; padding: 16px 18px; display: grid; }
+.traction div { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: grid; }
 .traction strong { font-family: var(--font-display); font-size: 2rem; color: var(--lime); }
 .prog { list-style: none; display: flex; gap: 8px; padding: 0; margin: 0 0 24px; flex-wrap: wrap; }
 .prog li { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--ink-soft); padding: 6px 14px 6px 6px; border: 1px solid var(--line); border-radius: 999px; }
@@ -395,12 +375,12 @@ footer button.rm { justify-self: start; }
   <section class="band">
     <div class="wrap hero">
       <div class="stack">
-        <p class="eyebrow">Upcoming project · Hass avocado orchards</p>
-        <h1>Plant a tree today. <span class="hl">Harvest for 30 years.</span></h1>
-        <p class="lead">Plant a Hass avocado tree. We plant it, water it and look after it. You enjoy 60% of its fruit, season after season, for 30 years. Plant one for yourself, or for someone you love.</p>
+        <p class="eyebrow">Crowd farming · Trees as a crop</p>
+        <h1>There is a time to plant. <span class="hl">And a time to harvest.</span></h1>
+        <p class="lead">tr33s is crowd farming for fruit trees. You adopt a tree and give it a name. We plant it, care for it and keep watch with simple tech. When it fruits, you share the harvest. A smart way to enjoy the fruits of nature while the land, and the economy, grow greener.</p>
         <div class="cta-row">
-          <button class="btn" data-hero="plant">Plant my tree</button>
-          <button class="btn ghost" data-hero="gift">Give a tree as a gift</button>
+          <button class="btn" data-hero="plant">Adopt a tree</button>
+          <button class="btn ghost" data-scroll-only="choose">See our trees</button>
         </div>
         <div class="whofor">
           <p class="eyebrow">Who is this tree for?</p>
@@ -409,7 +389,7 @@ footer button.rm { justify-self: start; }
             <select id="heroOcc" aria-label="Occasion"><option>Just because</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Graduation</option><option>A new baby</option><option>In loving memory</option></select>
           </div>
         </div>
-        <div class="pstats"><div><b>30 years</b><span>of farming included</span></div><div><b>60%</b><span>of every harvest is yours</span></div><div><b>From KSh 4,000</b><span>per tree, paid once</span></div></div>
+        <div class="pstats"><div><b>From KSh 2,000</b><span>per tree, paid once</span></div><div><b>Up to 60%</b><span>of the fruit is yours</span></div><div><b>Every month</b><span>a photo on your phone</span></div></div>
       </div>
       <div class="herocard" aria-label="Example tree record">
         <div class="grad"></div><img class="herophoto" data-slot="hero" src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&fit=crop&w=1000&q=70" alt="Young Hass avocados on an orchard tree" loading="eager" onerror="this.remove()">
@@ -420,8 +400,57 @@ footer button.rm { justify-self: start; }
     </div>
   </section>
 
-  <section class="band lime"><div class="wrap"><h2>We plant it. We water it. We guard it. You harvest it.</h2></div></section>
+  <section class="band lime"><div class="wrap"><h2>You harvest what you plant. So plant something that gives back.</h2></div></section>
   <section class="band tight" id="liveStats" hidden><div class="wrap"><div class="livestats" id="liveStatsRow"></div></div></section>
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The tr33s idea</p><h2>Many people. Many trees. One shared harvest.</h2>
+      <p class="lead">Crowd farming brings people together to grow what none of us would grow alone. Our crop is trees: planted once, they give for years.</p></div>
+      <div class="cols3">
+        <div class="panel stack"><h3>Trees as a crop</h3><p class="soft">A field crop is replanted every season. A fruit tree is planted once and harvested year after year.</p></div>
+        <div class="panel stack"><h3>Crowd farming</h3><p class="soft">Hundreds of people each adopt a few trees, so a whole orchard is planted and cared for together.</p></div>
+        <div class="panel stack"><h3>Tech that keeps watch</h3><p class="soft">Every tree has a code, a GPS pin and a monthly photo, so you can check on it from anywhere.</p></div>
+        <div class="panel stack"><h3>Better for the land</h3><p class="soft">Roots hold the soil, canopies shade it, and growing trees draw carbon from the air.</p></div>
+        <div class="panel stack"><h3>Better for the economy</h3><p class="soft">Orchards create local work for planters, carers, guards and pickers, season after season.</p></div>
+        <div class="panel stack"><h3>Fruit on your table</h3><p class="soft">Your share of the harvest, collected on harvest day or delivered to you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:start">
+      <div class="stack">
+        <p class="eyebrow">Why care matters</p>
+        <h2>Planting is the easy part. Trees need care after planting.</h2>
+        <p class="lead">A seedling's first two years decide whether it lives. Without water, weeding and protection, many young trees die quietly. Kenya's tree app records about 738 million trees against more than a billion reported planted, and those counts track planting, not survival.</p>
+        <p class="small-print">Source: AllAfrica, February 2026.</p>
+      </div>
+      <div class="panel stack">
+        <h3>That's where we come in</h3>
+        <p><b>Water</b> <span class="soft">through dry spells, with drip lines and storage where rain falls short.</span></p>
+        <p><b>Weeding and mulch</b> <span class="soft">so young roots get the food and moisture.</span></p>
+        <p><b>Fencing and guards</b> <span class="soft">against goats, browsers and theft.</span></p>
+        <p><b>Pest and health checks</b> <span class="soft">so problems are caught early.</span></p>
+        <p><b>A reserve tree</b> <span class="soft">takes your tree's place if it dies, and your name moves to it.</span></p>
+        <p><b>A photo every month</b> <span class="soft">so you see your tree grow, wherever you are.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="quiet">
+        <h2>A time to plant. A time to harvest.</h2>
+        <p>Everything has its season. You harvest what you plant, so plant something that gives back.</p>
+      </div>
+      <div class="stages" id="stages" role="img" aria-label="A seed becomes a seedling, a young tree, a fruiting tree and finally an orchard"></div>
+      <div class="cols3" style="margin-top:34px">
+        <div class="item rule-top"><h3>Plant in season</h3><p class="soft">We plant at the start of the rains, when young roots have the best chance.</p></div>
+        <div class="item rule-top"><h3>Care while it grows</h3><p class="soft">Patience is not waiting. It is watering, weeding and guarding while the roots do their work.</p></div>
+        <div class="item rule-top"><h3>Harvest what you planted</h3><p class="soft">Apples from about year two, avocados from year three or four, and fruit for many seasons after.</p></div>
+      </div>
+    </div>
+  </section>
   <section class="band alt" id="choose">
     <div class="wrap">
       <div class="head"><p class="eyebrow">Choose your tree</p><h2>One tree. It shades the land and it pays you back.</h2>
@@ -439,63 +468,17 @@ footer button.rm { justify-self: start; }
       </div>
     </div>
   </section>
-
   <section class="band">
-    <div class="wrap">
-      <div class="quiet">
-        <h2>Nothing grows in a hurry.</h2>
-        <p>Every harvest begins as a decision someone made years earlier.</p>
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">Plant for an occasion</p>
+        <h2>Mark your moments with a tree</h2>
+        <p class="lead">Flowers fade. Cake is gone by morning. A tree keeps giving. Plant one for a birthday, a wedding, a new baby, a graduation or a loved one remembered, and enjoy its fruit every season after. Every tr33s tree carries a name on its tag and a record from the day it was planted.</p>
+        <div class="moments"><div><b>Birthdays</b><span class="soft">A tree that grows up with them.</span></div><div><b>Anniversaries</b><span class="soft">One for every year together.</span></div><div><b>A new baby</b><span class="soft">Their first tree, their first harvest.</span></div><div><b>Weddings</b><span class="soft">Start a marriage with something that grows.</span></div><div><b>Graduations</b><span class="soft">A gift that outlasts the party.</span></div><div><b>In loving memory</b><span class="soft">A living memorial with a name on it.</span></div></div>
       </div>
-      <div class="stages" id="stages" role="img" aria-label="A seed becomes a seedling, a young tree, a fruiting tree and finally an orchard"></div>
-      <div class="cols3" style="margin-top:34px">
-        <div class="item"><h3>Before the harvest, the planting.</h3><p class="soft">Nobody who plants a tree is in a hurry. They are simply early.</p></div>
-        <div class="item"><h3>Patience is not waiting.</h3><p class="soft">It is watering, and trusting that the roots are doing what roots do.</p></div>
-        <div class="item"><h3>Someone planted the shade you sit in.</h3><p class="soft">The best time to plant was years ago. The next best is today.</p></div>
-      </div>
+      <div class="cert"><span class="eyebrow">tr33s · example certificate</span><p class="soft">This Hass avocado tree was planted for</p><div class="big" id="certFor">Someone special</div><span class="eyebrow" id="certOcc">Just because</span><div class="grid2"><div><span>Tree</span>AV1-06/27:122</div><div><span>Orchard</span>Kenya</div><div><span>Harvests</span>30 years</div><div><span>Their share</span>60% of the fruit</div></div><p class="small-print">Type a name at the top of the page to see it here.</p><div><button class="btn small" data-hero="gift">Give this tree</button></div></div>
     </div>
   </section>
-
-  <section class="band alt">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">What one tree sets in motion</p><h2>An orchard is a living system, and an economy</h2></div>
-      <div class="cols2">
-        <div class="panel stack">
-          <h3>Under the canopy</h3>
-          <p class="soft"><b>Roots that hold the soil</b> and leaves that shade it, so the ground keeps its moisture.</p>
-          <p class="soft"><b>Blossom for pollinators</b> and branches for birds to land in.</p>
-          <p class="soft"><b>Nothing wasted.</b> Skins, seeds and prunings go back to the orchard as compost and mulch.</p>
-          <p class="soft"><b>Land that stays alive</b> for decades, instead of being replanted every season.</p>
-        </div>
-        <div class="panel stack">
-          <h3>Around the orchard</h3>
-          <p class="soft"><b>Work that stays local.</b> Planters, carers, guards and pickers, season after season.</p>
-          <p class="soft"><b>Markets at every grade.</b> Fresh fruit for export and home, and oil or pulp for fruit that misses export grade.</p>
-          <p class="soft"><b>A record crop, still growing.</b> Kenya's exports are expected to reach 140,000 t this fiscal year, up from 112,000 t in 2025.</p>
-          <p class="soft"><b>Home, within reach.</b> Kenyans abroad and in the city hold a real stake in Kenyan land.</p>
-        </div>
-      </div>
-      <p class="small-print" style="margin-top:14px">Export figures: Agriculture and Food Authority via Food Business MEA, Apr 2026.</p>
-    </div>
-  </section>
-
-  <section class="band" id="numbers">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">The numbers</p><h2>A few trees are a gift. A good many become a plan.</h2>
-      <p class="lead">Here is what one tree's 60% share could be worth over 30 years, at three prices. Then slide to see what a good number of trees may look like once they are fully grown.</p></div>
-      <div class="scen" data-scen></div>
-      <p class="small-print" style="margin-top:12px" data-disc></p>
-      <div class="panel" style="margin-top:26px">
-        <label>Trees in your orchard: <b id="fyOut" class="mono">20</b>
-          <input id="fyTrees" type="range" min="1" max="500" step="1" value="20" aria-label="Number of trees">
-        </label>
-        <p class="eyebrow" style="margin-top:16px">Cost to plant, yearly share and 30-year share for your trees</p>
-        <div class="scen" id="fyScen" style="margin-top:10px"></div>
-        <p class="small-print" style="margin-top:10px">A picture of the full-bearing years only, before costs of sale and tax. Fruit does not start until about year 3 to 4, harvests vary, prices move, and nothing is guaranteed.</p>
-      </div>
-      <div class="cta-row" style="margin-top:20px"><button class="btn" data-go="order">Plant a tree</button><button class="btn ghost" data-go="avocado" data-scroll="estimates">Try your own numbers</button></div>
-    </div>
-  </section>
-
   <section class="band alt">
     <div class="wrap">
       <div class="head"><p class="eyebrow">How easy it is</p><h2>Planting a tree takes about three minutes</h2></div>
@@ -507,83 +490,6 @@ footer button.rm { justify-self: start; }
       <div class="cta-row" style="margin-top:24px"><button class="btn" data-go="order">Start now</button></div>
     </div>
   </section>
-
-  <section class="band">
-    <div class="wrap cols2" style="align-items:center">
-      <div class="stack">
-        <p class="eyebrow">Give a tree</p>
-        <h2>A gift that grows for 30 years</h2>
-        <p class="lead">Flowers fade. Cake is gone by morning. A tree keeps giving, season after season. Every tr33s tree carries a name on its tag, a pin on the map and a record from the day it was planted.</p>
-        <div class="moments"><div><b>Birthdays</b><span class="soft">A tree that grows up with them.</span></div><div><b>Anniversaries</b><span class="soft">One for every year together.</span></div><div><b>A new baby</b><span class="soft">Their first tree, their first harvest.</span></div><div><b>Weddings</b><span class="soft">Start a marriage with something that grows.</span></div><div><b>Graduations</b><span class="soft">A gift that outlasts the party.</span></div><div><b>In loving memory</b><span class="soft">A living memorial with a name on it.</span></div></div>
-      </div>
-      <div class="cert"><span class="eyebrow">tr33s · example certificate</span><p class="soft">This Hass avocado tree was planted for</p><div class="big" id="certFor">Someone special</div><span class="eyebrow" id="certOcc">Just because</span><div class="grid2"><div><span>Tree</span>AV1-06/27:122</div><div><span>Orchard</span>Kenya</div><div><span>Harvests</span>30 years</div><div><span>Their share</span>60% of the fruit</div></div><p class="small-print">Type a name at the top of the page to see it here.</p><div><button class="btn small" data-hero="gift">Give this tree</button></div></div>
-    </div>
-    <div class="wrap"><div class="gallery3"><figure><img class="photo" data-slot="gallery1" src="https://images.unsplash.com/photo-1585242902894-e8a65ecbe1ef?auto=format&fit=crop&w=800&q=70" alt="Green avocado fruit setting on a tree" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Fruit setting on the branch</figcaption></figure><figure><img class="photo" data-slot="gallery2" src="https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&fit=crop&w=800&q=70" alt="An avocado hanging among the leaves" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Growing toward harvest</figcaption></figure><figure><img class="photo" data-slot="gallery3" src="https://images.unsplash.com/photo-1704960961383-67dd63756199?auto=format&fit=crop&w=800&q=70" alt="A ripe avocado cut in half" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Ripe and ready</figcaption></figure></div></div>
-  </section>
-
-  <section class="band alt">
-    <div class="wrap cols2" style="align-items:start">
-      <div class="stack">
-        <p class="eyebrow">Proof you can check</p>
-        <h2>Look at your tree whenever you like</h2>
-        <p class="lead">Every tree sits on a register with its own history. Every check is a photo taken on the farm, with a GPS point and a time stamp.</p>
-        <div class="cta-row"><button class="btn" data-go="order">Plant a tree</button></div>
-      </div>
-      <div class="panel stack">
-        <p class="soft"><b>Photo, place and time.</b> A check taken more than 50 m from the tree's pin is rejected.</p>
-        <p class="soft"><b>Two verifiers, one random.</b> If the two disagree, we visit.</p>
-        <p class="soft"><b>Reserve trees.</b> Every block carries 20 reserve trees for each 100 allocated. If your tree is lost, a reserve of the same age takes its place and your name moves to it.</p>
-        <p class="soft"><b>Small plots.</b> Each plot has up to 10 owners, so every owner is easy to track.</p>
-        <p class="soft"><b>Visit any time.</b> Book a farm visit and walk to your own tree.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">Why avocado, why now</p><h2>A record crop, and the world keeps buying</h2>
-      <p class="lead">Hass is Kenya's main export avocado and the variety we plant.</p></div>
-      <div class="stats">
-        <div class="stat"><strong>694,000 t</strong><span>Kenya's forecast avocado production for 2025/26, a national record</span><small>USDA FAS via FreshFruitPortal, Apr 2026</small></div>
-        <div class="stat"><strong>74%+</strong><span>of the 2025 crop was Hass, the variety export markets prefer</span><small>USDA FAS via FreshFruitPortal, Apr 2026</small></div>
-        <div class="stat"><strong>3x</strong><span>growth in Kenyan avocado oil output between 2024 and 2025, from 3,326 t to 10,188 t</span><small>Food Business MEA, 2026</small></div>
-        <div class="stat"><strong>~47%</strong><span>of Kenya's avocados are eaten at home, so local demand matters too</span><small>USDA FAS GAIN report KE2025-0001</small></div>
-        <div class="stat"><strong>NL · UAE · CN</strong><span>main destinations: the Netherlands, the UAE and China, open since 2022</span><small>FreshFruitPortal; Food Business MEA, 2026</small></div>
-        <div class="stat"><strong>4 million t</strong><span>global avocado imports projected by 2035</span><small>OECD-FAO outlook via Fruitnet</small></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band on-skin">
-    <div class="wrap cols2" style="align-items:start">
-      <div class="stack">
-        <p class="eyebrow">The orchard we are growing</p>
-        <h2 style="color:var(--skin-ink)">One tree at a time, toward a million</h2>
-        <p style="color:var(--skin-soft);font-size:1.1rem;max-width:56ch">A million trees would cover about 8,300 hectares at the 9 x 9 m spacing KALRO recommends for Hass. We grow in stages and show each one before the next: trees planted, trees alive, and a register anyone can check.</p>
-      </div>
-      <div class="stack">
-        <div class="panel"><span class="pill">Now</span><h3 style="margin-top:8px">First Hass avocado and Wambugu apple plots</h3><p class="soft">Upcoming. Small plots, limited places, every tree on the register.</p></div>
-        <div class="panel"><span class="pill">Next</span><h3 style="margin-top:8px">More orchards and more crops</h3><p class="soft">Pixie orange and macadamia, on the same register.</p></div>
-        <div class="panel"><span class="pill">Later</span><h3 style="margin-top:8px">Timber on private land</h3><p class="soft">Fast-growing species, tracked from planting to harvest.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">Before you plant</p><h2>What can go wrong, in plain words</h2>
-      <p class="lead">Trees are living things. We would rather you know the risks now than find them later.</p></div>
-      <div class="cols3">
-        <div class="item rule-top"><h3>Trees can die</h3><p class="soft">Drought, pests or disease can kill a tree. Reserve trees replace losses, but a large loss could use them up.</p></div>
-        <div class="item rule-top"><h3>Harvests vary</h3><p class="soft">Weather and the age of the tree change how much fruit it gives. Some years will be thin.</p></div>
-        <div class="item rule-top"><h3>Prices move</h3><p class="soft">Avocado prices change with season, exchange rates, shipping costs and export rules.</p></div>
-        <div class="item rule-top"><h3>Fruit takes years</h3><p class="soft">First fruit comes in year three or four, and the first harvests are small.</p></div>
-        <div class="item rule-top"><h3>Nothing is guaranteed</h3><p class="soft">We do not promise a fixed amount of fruit or money, or that a tree will be worth more later.</p></div>
-        <div class="item rule-top"><h3>Estimates are estimates</h3><p class="soft">Our figures come from sourced yield ranges and 2026 price quotes. Real results will differ.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section class="band alt">
     <div class="wrap cols2" style="align-items:center">
       <div class="stack">
@@ -600,12 +506,25 @@ footer button.rm { justify-self: start; }
       </div>
     </div>
   </section>
-
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Before you plant</p><h2>What can go wrong, in plain words</h2>
+      <p class="lead">Trees are living things. We would rather you know the risks now than find them later.</p></div>
+      <div class="cols3">
+        <div class="item rule-top"><h3>Trees can die</h3><p class="soft">Drought, pests or disease can kill a tree. Reserve trees replace losses, but a large loss could use them up.</p></div>
+        <div class="item rule-top"><h3>Harvests vary</h3><p class="soft">Weather and the age of the tree change how much fruit it gives. Some years will be thin.</p></div>
+        <div class="item rule-top"><h3>Prices move</h3><p class="soft">Fruit prices change with the season, the market and the weather.</p></div>
+        <div class="item rule-top"><h3>Fruit takes years</h3><p class="soft">Apples fruit from year two and avocados from year three or four. First harvests are small.</p></div>
+        <div class="item rule-top"><h3>Nothing is guaranteed</h3><p class="soft">We do not promise a fixed amount of fruit or money, or that a tree will be worth more later.</p></div>
+        <div class="item rule-top"><h3>Estimates are estimates</h3><p class="soft">Our figures come from sourced yield ranges and 2026 price quotes. Real results will differ.</p></div>
+      </div>
+    </div>
+  </section>
   <section class="band on-skin">
     <div class="wrap stack" style="justify-items:start">
-      <h2 style="color:var(--skin-ink);max-width:20ch">Plant a tree. Someone will sit in its shade.</h2>
-      <p style="color:var(--skin-soft);max-width:56ch">Leave your details and we will tell you the moment your trees are ready. It takes about three minutes, and nothing is paid today.</p>
-      <button class="btn" data-go="order">Plant a tree</button>
+      <h2 style="color:var(--skin-ink);max-width:22ch">Plant today. Harvest for years to come.</h2>
+      <p style="color:var(--skin-soft);max-width:56ch">Join the waiting list for our upcoming orchards, for yourself, your family or your organisation. It takes about three minutes, and nothing is paid today.</p>
+      <button class="btn" data-go="order">Join the waiting list</button>
     </div>
   </section>
 </main>
@@ -1070,7 +989,7 @@ footer button.rm { justify-self: start; }
 <footer>
   <div class="wrap">
     <p><b>tr33s</b> · Upcoming tree projects in Kenya: Hass avocado, Wambugu apples and Melia timber</p>
-    <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin and John Vid. They are not photos of our farm.</p>
+    <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin, John Vid, Pranav Gavali and Ksenia Pixelesse. They are not photos of our farm or our seedlings.</p>
     <div class="src">
       <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO avocado factsheet</a>
       <a href="https://allafrica.com/stories/202602100090.html" target="_blank" rel="noopener">AllAfrica: tree survival gaps</a>
@@ -1180,7 +1099,7 @@ footer button.rm { justify-self: start; }
 
   var fy = $("#fyTrees");
   function renderFY() { var n = +fy.value; $("#fyOut").textContent = n.toLocaleString("en-KE"); $("#fyScen").innerHTML = planHTML(n); }
-  fy.addEventListener("input", renderFY); renderFY();
+  if (fy) { fy.addEventListener("input", renderFY); renderFY(); }
 
   var nT = $("#nTrees"), priceIn = $("#priceIn");
   function fmtN(n) { return Number(n.toFixed(1)).toLocaleString("en-KE"); }
@@ -1221,8 +1140,9 @@ footer button.rm { justify-self: start; }
 
   /* ---------- delivery of sign-ups ---------- */
   /* ---------- admin-managed photos (optional) ---------- */
+  var CONTENT_IMAGES = null;
   fetch("/api/content", { headers: { Accept: "application/json" } }).then(function (r) { return r.ok ? r.json() : null; }).then(function (c) {
-    if (!c || !c.images) return;
+    if (!c || !c.images) return; CONTENT_IMAGES = c.images;
     document.querySelectorAll("img[data-slot]").forEach(function (i) { var u = c.images[i.getAttribute("data-slot")]; if (u) i.src = u; });
   }).catch(function () {});
 
@@ -1331,8 +1251,8 @@ footer button.rm { justify-self: start; }
 
   /* ---------- "adopt me" seedling pop-up, one per crop page ---------- */
   var POP = {
-    avocado: { who: "a little Hass avocado seedling", share: "60% of my avocados", years: "30 years", leaf: "#3f7d2c", fruit: "" },
-    apple: { who: "a little Wambugu apple seedling", share: "50% of my apples", years: "10 years", leaf: "#5a9a3f", fruit: "#c0392b" }
+    avocado: { who: "a little Hass avocado seedling", share: "60% of my avocados", years: "30 years", leaf: "#3f7d2c", fruit: "", slot: "popAvocado", photo: "https://images.unsplash.com/photo-1767457108672-79c6dd48a165?auto=format&fit=crop&w=700&q=70" },
+    apple: { who: "a little Wambugu apple seedling", share: "50% of my apples", years: "10 years", leaf: "#5a9a3f", fruit: "#c0392b", slot: "popApple", photo: "https://images.unsplash.com/photo-1723740683543-d394ba1d4366?auto=format&fit=crop&w=700&q=70" }
   };
   var popTimer = null, popCrop = null;
   function seedlingSVG(c) {
@@ -1351,7 +1271,8 @@ footer button.rm { justify-self: start; }
   function hidePop() { var el = $("#adoptPop"); el.classList.remove("on"); setTimeout(function () { el.hidden = true; }, 300); if (popCrop) popMark(popCrop); }
   function showPop(c) {
     var d = POP[c], el = $("#adoptPop"); popCrop = c;
-    $("#adoptArt").innerHTML = seedlingSVG(d);
+    var src = (CONTENT_IMAGES && CONTENT_IMAGES[d.slot]) || d.photo;
+    $("#adoptArt").innerHTML = seedlingSVG(d) + '<img src="' + esc(src) + '" alt="A young seedling in the ground, waiting to be adopted" onerror="this.remove()"><span class="cap">Waiting for a name</span>';
     $("#adoptMsg").innerHTML = "I'm " + d.who + ", waiting for my spot in the ground. If you give me a name, I'll wear it on my tag and share <b>" + d.share + " with you for " + d.years + "</b>. I promise to grow my best.";
     $("#adoptName").value = ""; el.hidden = false; requestAnimationFrame(function () { el.classList.add("on"); });
   }
@@ -1378,6 +1299,7 @@ footer button.rm { justify-self: start; }
     document.querySelectorAll("[data-nav]").forEach(function (b) { if (b.getAttribute("data-nav") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     $("#stickyCta").hidden = name === "order" || name === "profile";
     $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : name === "apple" ? "<b>KSh 2,000</b> per apple tree · half the harvest for 10 years" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
+    document.body.setAttribute("data-view", name);
     schedulePop(name);
     if (name === "order") renderOrder();
     if (name === "profile") renderProfile();
