@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: adopt a Wambugu apple or Hass avocado tree from KSh 2,000. We care for it and share the harvest. Adopt a Hass avocado or Wambugu apple tree, or plant Melia timber. Join the waiting list."><title>tr33s</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: adopt an apple or avocado tree from KSh 2,000 and harvest for over a decade. We farm it, you share the harvest. Adopt a Hass avocado or Wambugu apple tree, or plant Melia timber. Join the waiting list."><title>tr33s</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
@@ -272,6 +272,42 @@ body[data-view="avocado"] .band.on-skin .eyebrow { color: #d4956b !important; }
 .flow small { font: 500 0.74rem var(--font-mono); letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; }
 @media (max-width: 860px) { .projects, .impact, .flow { grid-template-columns: 1fr; } .flow > div { border-right: 0; border-bottom: 1px solid var(--line); } .flow > div:last-child { border-bottom: 0; } }
 @media (max-width: 420px) { .proj .kv3 { grid-template-columns: 1fr 1fr; } }
+.hero3 { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(24px, 5vw, 56px); align-items: center; }
+.hero3 h1 { font-size: clamp(2.3rem, 5.6vw, 4.1rem); }
+.orchard { width: 100%; height: auto; display: block; border-radius: 28px; background: linear-gradient(180deg, #eaf6ff 0%, #f4fbe9 70%); }
+.trust { display: flex; flex-wrap: wrap; gap: 8px; }
+.trust span { font-size: 0.86rem; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+.trust span::before { content: "✓ "; color: var(--leaf); font-weight: 700; }
+.bignums { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+.bignums div { background: var(--surface); padding: 22px; display: grid; gap: 4px; }
+.bignums b { font-family: var(--font-display); font-size: clamp(1.6rem, 3.2vw, 2.3rem); color: var(--leaf); line-height: 1.05; }
+.bignums span { color: var(--ink-soft); font-size: 0.92rem; }
+.steps4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; }
+.steps4 > div { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.steps4 .n { width: 40px; height: 40px; border-radius: 50%; background: var(--lime); color: var(--lime-ink); display: grid; place-items: center; font: 800 1.1rem var(--font-display); }
+.opt2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.opt2 > div { border-radius: 22px; padding: 26px; display: grid; gap: 10px; align-content: start; border: 1px solid var(--line); background: var(--surface); }
+.opt2 > div.sell { background: var(--leaf); color: #fff; border-color: var(--leaf); }
+.opt2 > div.sell p { color: rgba(255,255,255,0.88); }
+.opt2 h3 { font-size: 1.45rem; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: var(--surface); }
+.compare > div { padding: 22px 24px; display: grid; gap: 10px; align-content: start; }
+.compare > div + div { background: rgba(141,198,63,0.14); border-left: 1px solid var(--line); }
+.compare h3 { font-size: 1.2rem; }
+.compare p { display: flex; gap: 10px; }
+.compare p::before { content: "–"; color: var(--ink-soft); }
+.compare > div + div p::before { content: "✓"; color: var(--leaf); font-weight: 700; }
+.joinwrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(24px, 5vw, 56px); align-items: start; }
+.joinform { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; display: grid; gap: 16px; box-shadow: 0 24px 50px -32px rgba(6,60,30,0.35); }
+.joinform fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+.joinform legend { font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; }
+.joinform .chip { padding: 10px 18px; }
+.joinform .tagnote { background: var(--band); border-radius: 12px; padding: 10px 12px; font-size: 0.92rem; }
+.narrow { max-width: 620px; }
+.faq2 details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 4px 18px; margin-bottom: 10px; }
+@media (max-width: 900px) { .hero3, .joinwrap, .opt2 { grid-template-columns: 1fr; } .steps4, .bignums { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .compare { grid-template-columns: 1fr; } .compare > div + div { border-left: 0; border-top: 1px solid var(--line); } }
+@media (max-width: 420px) { .steps4 { grid-template-columns: 1fr; } }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-weight: 600; z-index: 40; max-width: calc(100vw - 32px); }
 
 footer { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 40px max(16px, env(safe-area-inset-left, 0px)) 56px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--ink-soft); }
@@ -404,114 +440,133 @@ footer button.rm { justify-self: start; }
 <!-- HOME -->
 <main data-page="home">
   <section class="band">
-    <div class="wrap hero">
-      <div class="stack">
-        <p class="eyebrow">Adopt a tree · We care for it · You share the harvest</p>
-        <h1>Everyone can be a fruit farmer. <span class="hl">From KSh 2,000.</span></h1>
-        <p class="lead">Adopt a Wambugu apple or a Hass avocado tree and give it a name. We plant it, water it, guard it and send you its photo every month. When it fruits, you share the harvest, every year.</p>
-        <div class="cta-row">
-          <button class="btn" data-scroll-only="projects">Adopt a tree</button>
-          <button class="btn ghost" data-go="order">Join the waiting list</button>
-        </div>
-        <div class="whofor">
-          <p class="eyebrow">Who is this tree for?</p>
-          <div class="row2">
-            <input id="heroName" placeholder="Your name, or theirs" aria-label="Name for the tree" autocomplete="off">
-            <select id="heroOcc" aria-label="Occasion"><option>Just because</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Graduation</option><option>A new baby</option><option>In loving memory</option></select>
-          </div>
-        </div>
+    <div class="wrap hero3">
+      <div class="stack" style="gap:22px">
+        <p class="eyebrow">Tree as a crop · Upcoming orchards</p>
+        <h1>Adopt a fruit tree from KSh 2,000. <span class="hl">Harvest for over a decade.</span></h1>
+        <p class="lead">Own an apple or avocado tree on a real farm. We plant it and look after it. Every harvest, you get your share: collect your fruit, or let us sell it for you.</p>
+        <div class="cta-row"><button class="btn" data-scroll-only="join">Join the waiting list</button><button class="btn ghost" data-scroll-only="how">See how it works</button></div>
+        <div class="trust"><span>Your name on your tree</span><span>Photo updates on your phone</span><span>Transfer it any time</span><span>Nothing to pay today</span></div>
       </div>
-      <div class="herocard" aria-label="Example tree record">
-        <div class="grad"></div><img class="herophoto" data-slot="hero" src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&fit=crop&w=1000&q=70" alt="Young Hass avocados on an orchard tree" loading="eager" onerror="this.remove()">
-        <div class="rec"><div class="r1"><b>AV1-06/27:122</b><span>EXAMPLE</span></div>
-          <div class="kv"><i>Planted for</i><em class="hl" id="recFor">You</em></div><div class="kv"><i>Variety</i><em>Hass, grafted</em></div><div class="kv"><i>Orchard</i><em>AV1, to be announced</em></div><div class="kv"><i>Occasion</i><em id="recOcc">Just because</em></div><div class="kv"><i>Term</i><em>30 years</em></div>
-          <span class="ok">ALIVE · VERIFIED</span></div>
-      </div>
+      <svg class="orchard" viewBox="0 0 560 470" role="img" aria-label="A Hass avocado tree heavy with fruit next to a Wambugu apple tree full of red apples"><circle cx="470" cy="70" r="38" fill="#ffe28a"/><circle cx="470" cy="70" r="56" fill="#ffe28a" opacity=".25"/><path d="M0 395 C120 360 240 372 330 384 C420 396 500 380 560 368 V470 H0Z" fill="#cfe8b5"/><path d="M0 420 C140 398 300 410 560 400 V470 H0Z" fill="#a9d47c"/><path d="M140 400 C146 350 140 320 148 290 L162 290 C168 322 162 352 170 400Z" fill="#6b4a2b"/><path d="M152 300 C130 280 110 270 92 262 M158 296 C182 278 204 270 222 262" stroke="#6b4a2b" stroke-width="8" fill="none" stroke-linecap="round"/><g fill="#1f5a2c"><ellipse cx="155" cy="180" rx="118" ry="112"/><ellipse cx="80" cy="215" rx="58" ry="62"/><ellipse cx="235" cy="210" rx="58" ry="66"/></g><g fill="#2d6a3b"><ellipse cx="130" cy="150" rx="60" ry="55"/><ellipse cx="200" cy="175" rx="55" ry="50"/><ellipse cx="110" cy="230" rx="50" ry="40"/></g><g fill="#3f8a3a" opacity=".6"><ellipse cx="120" cy="120" rx="34" ry="24"/><ellipse cx="200" cy="140" rx="30" ry="20"/></g><g transform="translate(110 150) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(150 175) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(190 140) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(95 205) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(135 225) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(175 210) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(220 190) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(120 265) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(165 255) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(205 245) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(80 170) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(240 225) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(145 120) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(60 215) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><path d="M418 404 C422 360 418 335 424 310 L436 310 C442 336 438 362 442 404Z" fill="#7a5032"/><path d="M428 320 C410 304 394 298 378 292 M432 318 C452 302 470 296 486 290" stroke="#7a5032" stroke-width="7" fill="none" stroke-linecap="round"/><g fill="#3f8f2a"><circle cx="430" cy="225" r="98"/><circle cx="360" cy="250" r="52"/><circle cx="500" cy="250" r="52"/><circle cx="400" cy="160" r="52"/><circle cx="465" cy="165" r="52"/></g><g fill="#5fae36"><circle cx="410" cy="190" r="46"/><circle cx="470" cy="225" r="44"/><circle cx="380" cy="255" r="34"/></g><g><circle cx="360" cy="215" r="9" fill="#d62f3a"/><circle cx="356.85" cy="211.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M360 206 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="395" cy="190" r="9" fill="#d62f3a"/><circle cx="391.85" cy="186.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M395 181 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="430" cy="200" r="9" fill="#d62f3a"/><circle cx="426.85" cy="196.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M430 191 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="465" cy="215" r="9" fill="#d62f3a"/><circle cx="461.85" cy="211.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M465 206 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="380" cy="250" r="9" fill="#d62f3a"/><circle cx="376.85" cy="246.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M380 241 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="415" cy="240" r="9" fill="#d62f3a"/><circle cx="411.85" cy="236.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M415 231 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="450" cy="250" r="9" fill="#d62f3a"/><circle cx="446.85" cy="246.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M450 241 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="490" cy="240" r="9" fill="#d62f3a"/><circle cx="486.85" cy="236.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M490 231 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="400" cy="280" r="9" fill="#d62f3a"/><circle cx="396.85" cy="276.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M400 271 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="440" cy="285" r="9" fill="#d62f3a"/><circle cx="436.85" cy="281.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M440 276 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="475" cy="275" r="9" fill="#d62f3a"/><circle cx="471.85" cy="271.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M475 266 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="370" cy="180" r="9" fill="#d62f3a"/><circle cx="366.85" cy="176.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M370 171 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="505" cy="205" r="9" fill="#d62f3a"/><circle cx="501.85" cy="201.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M505 196 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="425" cy="165" r="9" fill="#d62f3a"/><circle cx="421.85" cy="161.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M425 156 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="460" cy="170" r="9" fill="#d62f3a"/><circle cx="456.85" cy="166.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M460 161 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="390" cy="310" r="9" fill="#d62f3a"/><circle cx="386.85" cy="306.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M390 301 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="455" cy="315" r="9" fill="#d62f3a"/><circle cx="451.85" cy="311.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M455 306 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g font-family="DM Mono, monospace" font-size="12"><rect x="92" y="330" width="120" height="26" rx="13" fill="#fff" stroke="#2d6a3b"/><text x="152" y="347" text-anchor="middle" fill="#1f5a2c">Hass avocado</text><rect x="370" y="334" width="128" height="26" rx="13" fill="#fff" stroke="#c2185b"/><text x="434" y="351" text-anchor="middle" fill="#9c1249">Wambugu apple</text></g><path d="M250 428 h70 l-8 30 h-54z" fill="#b07a45"/><path d="M250 428 h70" stroke="#8a5a30" stroke-width="3"/><g><circle cx="268" cy="422" r="8" fill="#d62f3a"/><circle cx="265.2" cy="419.2" r="2.24" fill="#ff8a8f" opacity=".8"/><path d="M268 414 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="286" cy="418" r="8" fill="#d62f3a"/><circle cx="283.2" cy="415.2" r="2.24" fill="#ff8a8f" opacity=".8"/><path d="M286 410 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="304" cy="423" r="8" fill="#d62f3a"/><circle cx="301.2" cy="420.2" r="2.24" fill="#ff8a8f" opacity=".8"/><path d="M304 415 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g transform="translate(292 404) scale(0.7)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g></svg>
     </div>
   </section>
 
-  <section class="band lime"><div class="wrap"><h2>There is a time to plant and a time to harvest. You reap what you plant.</h2></div></section>
+  <section class="band tight">
+    <div class="wrap">
+      <div class="bignums">
+        <div><b>KSh 2,000</b><span>is all it takes to adopt an apple tree</span></div>
+        <div><b>10 to 30 yrs</b><span>of harvests, depending on the tree</span></div>
+        <div><b>Up to 60%</b><span>of your tree's fruit is yours</span></div>
+        <div><b>15 billion</b><span>trees: Kenya's goal by 2032. Yours counts.</span></div>
+      </div>
+    </div>
+  </section>
   <section class="band tight" id="liveStats" hidden><div class="wrap"><div class="livestats" id="liveStatsRow"></div></div></section>
   <section class="band" id="projects">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">Two upcoming projects</p><h2>Choose your tree. Harvest every year.</h2>
-      <p class="lead">Two fruit trees, one simple idea: you adopt, we farm, and the harvest is shared.</p></div>
+      <div class="head"><p class="eyebrow">Two upcoming orchards</p><h2>Pick your tree</h2>
+      <p class="lead">Choose one, or adopt both. Each tree is yours for the whole term.</p></div>
       <div class="projects">
         <article class="proj apple"><svg class="fruit" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 28c-12-9-34-2-31 22 3 22 18 36 31 30 13 6 28-8 31-30 3-24-19-31-31-22z"/><path fill="#fff" d="M52 26c0-9 4-15 10-18l2 3c-5 3-8 8-8 15z"/><path fill="#fff" d="M56 18c8-8 20-7 24-2-7 6-17 7-24 2z"/></svg>
           <span class="tag">Upcoming project</span>
           <h3>Wambugu apple</h3>
           <p>An apple bred in Kenya, for Kenya. Fast to fruit, with a first real harvest in year two.</p>
           <div class="kv3"><div><b>KSh 2,000</b><span>per tree, once</span></div><div><b>50%</b><span>of the apples</span></div><div><b>10 years</b><span>of harvests</span></div></div>
-          <div class="cta-row"><button class="btn" data-hero="plant" data-crop="apple">Adopt an apple tree</button><button class="btn ghost" data-go="apple">Learn more</button></div>
+          <div class="cta-row"><button class="btn" data-adopt="apple">Adopt an apple tree</button><button class="btn ghost" data-go="apple">Learn more</button></div>
         </article>
         <article class="proj avo"><svg class="fruit" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 8c-14 0-22 22-25 38-4 24 8 44 25 44s29-20 25-44C72 30 64 8 50 8z"/><circle cx="50" cy="62" r="13" fill="#000" opacity=".25"/></svg>
           <span class="tag">Upcoming project</span>
           <h3>Hass avocado</h3>
           <p>Kenya's favourite export fruit. A long-lived tree that fruits from year three or four.</p>
           <div class="kv3"><div><b>KSh 4,000</b><span>per tree, once</span></div><div><b>60%</b><span>of the avocados</span></div><div><b>30 years</b><span>of harvests</span></div></div>
-          <div class="cta-row"><button class="btn" data-hero="plant" data-crop="avocado">Adopt an avocado tree</button><button class="btn ghost" data-go="avocado">Learn more</button></div>
+          <div class="cta-row"><button class="btn" data-adopt="avocado">Adopt an avocado tree</button><button class="btn ghost" data-go="avocado">Learn more</button></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="band alt">
+  <section class="band alt" id="how">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">How it works</p><h2>You adopt. We farm. We share the fruit.</h2></div>
-      <div class="flow">
-        <div><small>1 · You</small><h3>Adopt and name your tree</h3><p class="soft">One payment, no monthly fees. Put your name on the tag, or someone you love.</p></div>
-        <div><small>2 · Us</small><h3>We plant it and care for it</h3><p class="soft">Water, weeding, fencing, pest checks and a reserve tree if yours fails. A photo every month on your phone.</p></div>
-        <div><small>3 · Together</small><h3>Share the harvest, every year</h3><p class="soft">Collect your fruit on harvest day, have it delivered, share it or sell it.</p></div>
+      <div class="head"><p class="eyebrow">How it works</p><h2>You own the tree. We do the farming.</h2></div>
+      <div class="steps4">
+        <div><span class="n">1</span><h3>Adopt</h3><p class="soft">Choose apple or avocado, how many trees, and the name on the tag. One payment, no monthly fees.</p></div>
+        <div><span class="n">2</span><h3>We plant and care</h3><p class="soft">Our team plants your tree in the rainy season, then waters, weeds, feeds and guards it.</p></div>
+        <div><span class="n">3</span><h3>Watch it grow</h3><p class="soft">See photos and health checks of your tree on your phone. Visit the farm whenever you like.</p></div>
+        <div><span class="n">4</span><h3>Share the harvest</h3><p class="soft">Every season, take your share as fruit or let us sell it for you.</p></div>
       </div>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">Why it matters</p><h2>One tree grows more than fruit</h2>
-      <p class="lead">Every adopted tree is good for the land, creates work, and gives back to the person who planted it. Together we grow toward Kenya's goal of 15 billion trees by 2032.</p></div>
-      <div class="impact">
-        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M11 22v-6H7l5-7H9l3-7 3 7h-3l5 7h-4v6z"/></svg></span><h3>For the environment</h3>
-          <ul><li>Roots hold soil against erosion.</li><li>Shade keeps the ground cool and moist.</li><li>Growing trees draw carbon from the air.</li><li>Blossom feeds bees and pollinators.</li></ul></div>
-        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 20c0-4 3-7 6-7s6 3 6 7zM12 20c0-3 2-6 4-7 3 0 6 3 6 7z"/></svg></span><h3>For jobs</h3>
-          <ul><li>Nursery workers and planters.</li><li>Carers, guards and irrigation hands.</li><li>Pickers, sorters and transporters.</li><li>Neighbouring farmers who grow with our seedlings.</li></ul></div>
-        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M12 21C6 17 3 13 3 9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 8-9 12z"/></svg></span><h3>For you</h3>
-          <ul><li>Fresh fruit from your own tree, every season.</li><li>Fruit to share, gift or sell.</li><li>A living gift that carries a name.</li><li>A real link to Kenyan farming, wherever you live.</li></ul></div>
+      <div class="head"><p class="eyebrow">Your harvest, your choice</p><h2>Take the fruit, or take the sale</h2></div>
+      <div class="opt2">
+        <div><h3>Collect your fruit</h3><p class="soft">Pick up your share at our collection point on harvest day. Eat it, gift it or sell it yourself.</p></div>
+        <div class="sell"><h3>We sell it for you</h3><p>We sell your share together with the whole harvest and send you the proceeds, after selling costs.</p></div>
       </div>
-      <p class="small-print" style="margin-top:14px">Harvests vary with weather and care, and nothing is guaranteed. Adoption is a purchase of care and fruit, not an investment.</p>
+      <div class="panel" style="margin-top:18px"><h3>Why selling together pays better</h3><p class="soft" style="margin-top:6px">One farmer with a few trees sells at the farm gate. Thousands of trees together make big, steady volumes, and that opens doors to supermarkets, exporters and processors who pay better and buy every season.</p></div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Tree as a crop</p><h2>Plant once. Harvest year after year.</h2>
+      <p class="lead">Most crops are planted, harvested and planted again. A fruit tree is planted once and keeps giving for years.</p></div>
+      <div class="compare">
+        <div><h3>Seasonal crop</h3><p>Planted again every season</p><p>One harvest, then start over</p><p>Bare soil between seasons</p><p>Seed and labour costs every time</p></div>
+        <div><h3>Fruit tree</h3><p>Planted once</p><p>A harvest every year, for a decade or more</p><p>Roots and shade protect the soil all year</p><p>Gets more productive as it grows</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The bigger picture</p><h2>Good for the land, for jobs and for you</h2></div>
+      <div class="impact">
+        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M11 22v-6H7l5-7H9l3-7 3 7h-3l5 7h-4v6z"/></svg></span><h3>The environment</h3>
+          <ul><li>Roots hold the soil when it rains.</li><li>Shade keeps the ground cool and moist.</li><li>Growing trees take carbon out of the air.</li><li>Every tree counts toward Kenya's 15 billion.</li></ul></div>
+        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 20c0-4 3-7 6-7s6 3 6 7zM12 20c0-3 2-6 4-7 3 0 6 3 6 7z"/></svg></span><h3>Jobs</h3>
+          <ul><li>Nursery workers and planters.</li><li>Carers, guards and irrigation crews.</li><li>Pickers, packers and drivers at harvest.</li><li>Nearby farmers who grow with our seedlings.</li></ul></div>
+        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M3 17l6-6 4 4 8-8v6h2V3h-10v2h6l-6 6-4-4-8 8z"/></svg></span><h3>The local economy</h3>
+          <ul><li>Money spent on farms stays in rural areas.</li><li>Big shared harvests reach better markets.</li><li>Fruit for processing, like juice and oil.</li><li>Every adopter becomes part of a farm.</li></ul></div>
+      </div>
     </div>
   </section>
 
   <section class="band alt">
     <div class="wrap cols2" style="align-items:start">
       <div class="stack">
+        <p class="eyebrow">It's really yours</p>
+        <h2>A tree with your name on it</h2>
+        <p class="lead">Your tree has its own code, tag and GPS pin, registered in your name for the whole term.</p>
+      </div>
+      <div class="panel stack">
+        <p><b>Transfer it.</b> <span class="soft">Give or sell your tree to someone else. We update the register and the tag.</span></p>
+        <p><b>Gift it.</b> <span class="soft">Plant one for a birthday, a wedding, a new baby or in memory of someone.</span></p>
+        <p><b>Replaced if it dies.</b> <span class="soft">A reserve tree of the same age takes its place and your name moves to it.</span></p>
+        <p><b>Visit it.</b> <span class="soft">Come to the farm and stand under your own tree.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap cols2" style="align-items:start">
+      <div class="stack">
         <p class="eyebrow">Why care matters</p>
-        <h2>Planting is the easy part. Trees need care after planting.</h2>
-        <p class="lead">A seedling's first two years decide whether it lives. Without water, weeding and protection, many young trees die quietly. Kenya's tree app records about 738 million trees against more than a billion reported planted, and those counts track planting, not survival.</p>
+        <h2>Planting is easy. Keeping a tree alive is the real work.</h2>
+        <p class="lead">Kenya records hundreds of millions of trees planted, but many young trees die in their first two years without water, weeding and protection. Your tree gets all three.</p>
         <p class="small-print">Source: AllAfrica, February 2026.</p>
       </div>
       <div class="panel stack">
-        <h3>That's where we come in</h3>
-        <p><b>Water</b> <span class="soft">through dry spells, with drip lines and storage where rain falls short.</span></p>
-        <p><b>Weeding and mulch</b> <span class="soft">so young roots get the food and moisture.</span></p>
-        <p><b>Fencing and guards</b> <span class="soft">against goats, browsers and theft.</span></p>
-        <p><b>Pest and health checks</b> <span class="soft">so problems are caught early.</span></p>
-        <p><b>A reserve tree</b> <span class="soft">takes your tree's place if it dies, and your name moves to it.</span></p>
-        <p><b>A photo every month</b> <span class="soft">so you see your tree grow, wherever you are.</span></p>
+        <p><b>Water</b> <span class="soft">in dry spells, with drip lines where rain falls short.</span></p>
+        <p><b>Weeding and manure</b> <span class="soft">so young roots get food and moisture.</span></p>
+        <p><b>Fencing and guards</b> <span class="soft">against animals and theft.</span></p>
+        <p><b>Pest checks</b> <span class="soft">so problems are caught early.</span></p>
       </div>
     </div>
   </section>
-  <section class="band">
-    <div class="wrap cols2" style="align-items:center">
-      <div class="stack">
-        <p class="eyebrow">Plant for an occasion</p>
-        <h2>Mark your moments with a tree</h2>
-        <p class="lead">Flowers fade. Cake is gone by morning. A tree keeps giving. Plant one for a birthday, a wedding, a new baby, a graduation or a loved one remembered, and enjoy its fruit every season after. Every tr33s tree carries a name on its tag and a record from the day it was planted.</p>
-        <div class="moments"><div><b>Birthdays</b><span class="soft">A tree that grows up with them.</span></div><div><b>Anniversaries</b><span class="soft">One for every year together.</span></div><div><b>A new baby</b><span class="soft">Their first tree, their first harvest.</span></div><div><b>Weddings</b><span class="soft">Start a marriage with something that grows.</span></div><div><b>Graduations</b><span class="soft">A gift that outlasts the party.</span></div><div><b>In loving memory</b><span class="soft">A living memorial with a name on it.</span></div></div>
-      </div>
-      <div class="cert"><span class="eyebrow">tr33s · example certificate</span><p class="soft">This tree was planted for</p><div class="big" id="certFor">Someone special</div><span class="eyebrow" id="certOcc">Just because</span><div class="grid2"><div><span>Tree</span>AV1-06/27:122</div><div><span>Orchard</span>Kenya</div><div><span>Harvests</span>30 years</div><div><span>Their share</span>60% of the fruit</div></div><p class="small-print">Type a name at the top of the page to see it here.</p><div><button class="btn small" data-hero="gift">Give this tree</button></div></div>
-    </div>
-  </section>
+
   <section class="band alt">
     <div class="wrap cols2" style="align-items:center">
       <div class="stack">
@@ -528,11 +583,22 @@ footer button.rm { justify-self: start; }
       </div>
     </div>
   </section>
-  <section class="band on-skin">
-    <div class="wrap stack" style="justify-items:start">
-      <h2 style="color:var(--skin-ink);max-width:22ch">Plant today. Harvest every year.</h2>
-      <p style="color:var(--skin-soft);max-width:56ch">Join the waiting list for our first apple and avocado orchards, for yourself, your family or your organisation. It takes about three minutes, and nothing is paid today.</p>
-      <div class="cta-row"><button class="btn" data-go="order">Join the waiting list</button><button class="btn ghost" data-scroll-only="projects">See the projects</button></div>
+
+  <section class="band" id="join">
+    <div class="wrap joinwrap">
+      <div class="stack">
+        <p class="eyebrow">Join the waiting list</p>
+        <h2>Reserve your trees for the first planting</h2>
+        <p class="lead">Places in each orchard are limited. Leave your name and phone and we'll call you when planting opens. Nothing is paid today.</p>
+        <div class="faq2">
+          <details><summary>How much does a tree cost?</summary><p class="soft">KSh 2,000 for a Wambugu apple tree (10 years) and KSh 4,000 for a Hass avocado tree (30 years). One payment, no monthly fees.</p></details>
+          <details><summary>When is the first harvest?</summary><p class="soft">Apples from about year two. Avocados from about year three or four. Harvests grow as the tree grows.</p></details>
+          <details><summary>Where is the farm?</summary><p class="soft">We announce each orchard once its land lease is signed and registered. You can visit after that.</p></details>
+          <details><summary>Can I sell or transfer my tree?</summary><p class="soft">Yes. Tell us who it goes to and we move the tree to their name on the register.</p></details>
+          <details><summary>Is anything guaranteed?</summary><p class="soft">No. Weather, pests and prices change harvests. A reserve tree replaces yours if it dies.</p></details>
+        </div>
+      </div>
+      <div data-joinmount></div>
     </div>
   </section>
 </main>
@@ -965,7 +1031,7 @@ footer button.rm { justify-self: start; }
 
 <!-- ORDER -->
 <main data-page="order">
-  <section class="band tight"><div class="wrap" id="orderMount"></div></section>
+  <section class="band tight"><div class="wrap narrow" id="orderMount"><p class="eyebrow">Join the waiting list</p><h1 style="font-size:clamp(2rem,5vw,3rem);margin:6px 0 8px">Reserve your trees</h1><p class="soft" style="margin-bottom:18px">Four quick questions. Nothing is paid today.</p><div data-joinmount></div></div></section>
 </main>
 
 <!-- UPCOMING -->
@@ -1139,12 +1205,7 @@ footer button.rm { justify-self: start; }
   })();
   /* ---------- hero: who is this tree for ---------- */
   var HOCC = { "Just because": "", "Birthday": "Birthday", "Wedding": "Wedding", "Anniversary": "Anniversary", "Graduation": "Graduation", "A new baby": "Birth of a child", "In loving memory": "In memory of someone" };
-  function heroSync() {
-    var n = $("#heroName").value.trim(), o = $("#heroOcc").value;
-    $("#recFor").textContent = n || "You"; $("#recOcc").textContent = o;
-    $("#certFor").textContent = n || "Someone special"; $("#certOcc").textContent = o;
-  }
-  $("#heroName").addEventListener("input", heroSync); $("#heroOcc").addEventListener("change", heroSync);
+  if ($("#heroName")) { $("#heroName").addEventListener("input", function () { var n = $("#heroName").value.trim(); if ($("#recFor")) $("#recFor").textContent = n || "You"; }); }
 
   /* ---------- delivery of sign-ups ---------- */
   /* ---------- admin-managed photos (optional) ---------- */
@@ -1177,85 +1238,50 @@ footer button.rm { justify-self: start; }
 
   /* ---------- plant a tree form ---------- */
   var OCC = ["Birth of a child", "Graduation", "Wedding", "Anniversary", "In memory of someone", "New home", "Business launch", "Birthday", "Other (add your own)"];
-  var F = { crop: "avocado", step: 1, qty: 1, name: "", phone: "", email: "", where: "", profile: "A Kenyan living abroad", gift: false, recipient: "", giftMsg: "", trees: [], custom: [], c1: false, c2: false, done: null };
+  var F = { crop: "apple", step: 1, qty: 1, name: "", phone: "", email: "", where: "", profile: "A Kenyan living abroad", gift: false, recipient: "", giftMsg: "", trees: [], custom: [], c1: false, c2: false, done: null };
   try { var d = JSON.parse(localStorage.getItem("tr33s_order_draft") || "null"); if (d) { ["qty", "name", "phone", "email", "where", "profile"].forEach(function (k) { if (d[k] != null) F[k] = d[k]; }); } } catch (e) {}
   function saveDraft() { try { localStorage.setItem("tr33s_order_draft", JSON.stringify({ qty: F.qty, name: F.name, phone: F.phone, email: F.email, where: F.where, profile: F.profile })); } catch (e) {} }
   function treeRec(i) { return F.trees[i] || (F.trees[i] = { occ: "", custom: "", tag: "", note: "" }); }
-  var STEPS = ["Trees", "Your details", "Make it personal", "Join waitlist"];
-
-  function renderOrder() {
-    var m = $("#orderMount");
-    if (F.done) { m.innerHTML = F.done; wireCopy(); return; }
-    var prog = STEPS.map(function (n, i) { var k = i + 1; return '<li class="' + (k === F.step ? "cur" : k < F.step ? "ok" : "") + '"><span>' + k + "</span>" + n + "</li>"; }).join("");
-    var body = "";
-    if (F.step === 1) {
-      body = '<fieldset><legend>How many trees would you like to plant?</legend><div class="qty"><button type="button" class="qb" data-q="-1" aria-label="One fewer tree">−</button><input id="qty" type="number" min="1" max="500" inputmode="numeric" value="' + F.qty + '" aria-label="Number of trees"><button type="button" class="qb" data-q="1" aria-label="One more tree">+</button></div><div class="chips">' + [1, 2, 5, 10].map(function (n) { return '<button type="button" class="chip' + (F.qty === n ? " on" : "") + '" data-setq="' + n + '">' + n + (n === 1 ? " tree" : " trees") + "</button>"; }).join("") + '</div><p class="small-print">Each plot has up to 10 owners. Planting more than 10 trees? We can set aside a whole plot for you.</p></fieldset>' +
-        '<div class="panel"><p class="eyebrow">What ' + F.qty + (F.qty === 1 ? " tree" : " trees") + ' would cost and could give</p><div style="margin-top:10px">' + cropPlan(F.qty) + "</div></div>";
-    } else if (F.step === 2) {
-      body = '<fieldset><legend>Your details</legend><p class="soft" style="font-size:0.95rem">So we can tell you the moment your trees are ready. We will never charge you without your agreement.</p><div class="row2"><label for="oName">Full name<input id="oName" autocomplete="name" value="' + esc(F.name) + '"></label><label for="oPhone">Phone or WhatsApp<input id="oPhone" type="tel" autocomplete="tel" placeholder="+254 ..." value="' + esc(F.phone) + '"></label></div><div class="row2"><label for="oEmail">Email<input id="oEmail" type="email" autocomplete="email" value="' + esc(F.email) + '"></label><label for="oWhere">Where do you live?<input id="oWhere" placeholder="City, country" autocomplete="off" value="' + esc(F.where) + '"></label></div>' +
-        '<label for="oProfile">I am<select id="oProfile">' + ["A Kenyan living abroad", "A professional in Kenya", "Buying for family", "Part of a chama or group", "A company or organisation", "A school, church or NGO", "Other"].map(function (o) { return "<option" + (o === F.profile ? " selected" : "") + ">" + o + "</option>"; }).join("") + "</select></label></fieldset>";
-    } else if (F.step === 3) {
-      var rows = "";
-      for (var i = 0; i < Math.min(F.qty, 10); i++) {
-        var t = treeRec(i);
-        rows += '<details class="treeRow"' + (i === 0 ? " open" : "") + '><summary>Tree ' + (i + 1) + (t.tag ? " · " + esc(t.tag) : "") + '</summary><div class="row2" style="margin-top:12px"><label>Occasion<select class="t-occ" data-i="' + i + '"><option value="">None</option>' + OCC.map(function (o) { return "<option" + (o === t.occ ? " selected" : "") + ">" + o + "</option>"; }).join("") + '</select></label><label class="t-cw" ' + (t.occ.indexOf("Other") === 0 ? "" : "hidden") + '>Your occasion<input class="t-custom" data-i="' + i + '" value="' + esc(t.custom) + '" placeholder="Name your occasion"></label></div><div class="row2" style="margin-top:12px"><label>Name on the tag<input class="t-tag" data-i="' + i + '" value="' + esc(t.tag) + '" placeholder="e.g. Amani Wanjiru"></label><label>Date or note<input class="t-note" data-i="' + i + '" value="' + esc(t.note) + '" placeholder="e.g. born 12 May 2026"></label></div></details>';
-      }
-      var cf = F.custom.map(function (c, i) { return '<div class="occ"><div class="top2"><b>Custom field ' + (i + 1) + '</b><button type="button" class="rm" data-rmcf="' + i + '">Remove</button></div><div class="row2"><label>Field label<input class="c-label" data-i="' + i + '" value="' + esc(c.label) + '" placeholder="e.g. Delivery of fruit"></label><label>Your answer<input class="c-value" data-i="' + i + '" value="' + esc(c.value) + '"></label></div></div>'; }).join("");
-      body = '<fieldset><legend>Is this a gift?</legend><label class="check" for="oGift"><input id="oGift" type="checkbox"' + (F.gift ? " checked" : "") + '><span>Yes, I am planting for someone else</span></label>' + (F.gift ? '<div class="row2"><label for="oRecipient">Their name<input id="oRecipient" value="' + esc(F.recipient) + '"></label><label for="oGiftMsg">A message for them <small>optional</small><input id="oGiftMsg" value="' + esc(F.giftMsg) + '"></label></div>' : "") + "</fieldset>" +
-        '<fieldset><legend>Mark an occasion <small class="soft" style="font-weight:400">(optional)</small></legend><p class="soft" style="font-size:0.95rem">Add an occasion and a name for each tree\'s tag. ' + (F.qty > 10 ? "We show the first 10. Tell us about the rest in a custom field." : "") + "</p><div style=\"display:grid;gap:10px\">" + rows + "</div></fieldset>" +
-        '<fieldset><legend>Add your own details <small class="soft" style="font-weight:400">(optional)</small></legend><p class="soft" style="font-size:0.95rem">Need to tell us something we did not ask? Add a field with your own label.</p><div style="display:grid;gap:14px">' + cf + '</div><div><button type="button" class="btn ghost small" data-addcf>+ Add a custom field</button></div></fieldset>';
-    } else {
-      var lines = '<div class="sumline"><span>Trees</span><b>' + F.qty + "</b></div><div class=\"sumline\"><span>Name</span><b>" + esc(F.name) + '</b></div><div class="sumline"><span>Contact</span><b>' + esc(F.phone) + "</b></div><div class=\"sumline\"><span>Email</span><b>" + esc(F.email) + "</b></div>" + (F.gift ? '<div class="sumline"><span>Gift for</span><b>' + esc(F.recipient || "Someone special") + "</b></div>" : "");
-      body = '<fieldset><legend>Check your details</legend>' + lines + '<div class="sumline"><span>To pay today</span><b>Nothing</b></div></fieldset>' +
-        '<p class="soft">That is all. When your trees are ready we will contact you with the next steps and your agreement.</p>' +
-        '<label class="check" for="oC1"><input id="oC1" type="checkbox"' + (F.c1 ? " checked" : "") + '><span>I understand that harvests and prices are not guaranteed.</span></label><label class="check" for="oC2"><input id="oC2" type="checkbox"' + (F.c2 ? " checked" : "") + '><span>I agree that tr33s may keep these details and contact me about my trees.</span></label>';
-    }
-    var nav = '<div class="cta-row" style="margin-top:6px">' + (F.step > 1 ? '<button type="button" class="btn ghost" data-ostep="-1">Back</button>' : "") + '<button type="button" class="btn" data-ostep="1">' + (F.step === 4 ? "Join the waitlist" : "Continue") + "</button></div>";
-    m.innerHTML = '<p class="eyebrow">Plant a tree</p><h1 style="font-size:clamp(2rem,5vw,3rem);margin:6px 0 8px">Plant your ' + CROPS[F.crop].short + ' tree</h1><p class="soft" style="margin-bottom:20px">About three minutes. No payment now.</p><ol class="prog">' + prog + '</ol><div class="checkout"><div style="display:grid;gap:20px">' + body + '<p class="err" id="oErr" role="alert" hidden></p>' + nav + '</div><aside class="panel summary"><p class="eyebrow">Your trees</p><div class="sumline"><span>' + F.qty + (F.qty === 1 ? " " + CROPS[F.crop].label + " tree" : " " + CROPS[F.crop].label + " trees") + '</span><b>' + ksh(F.qty * CROPS[F.crop].price) + '</b></div><div class="sumline"><span>To pay today</span><b>Nothing</b></div><div class="sumline"><span>' + CROPS[F.crop].own2 + '</span><b>' + CROPS[F.crop].own + '</b></div><div class="sumline"><span>' + CROPS[F.crop].term2 + '</span><b>' + CROPS[F.crop].term + '</b></div><p class="small-print" style="margin-top:12px">The price shown is the planned price per tree, paid once, when trees open for planting.</p></aside></div>';
+  function nTrees() { return Math.max(1, Math.min(500, parseInt(F.qty, 10) || 1)); }
+  function joinHTML() {
+    var crops = [["apple", "Apple"], ["avocado", "Avocado"], ["both", "Both"]];
+    if (F.crop === "melia") crops.push(["melia", "Melia timber"]);
+    if (["apple", "avocado", "both", "melia"].indexOf(F.crop) < 0) F.crop = "apple";
+    var tag = F.trees[0] && F.trees[0].tag;
+    return '<form class="joinform" data-join novalidate>' +
+      '<label>Your name, or your organisation<input name="jn" autocomplete="name" value="' + esc(F.name) + '"></label>' +
+      '<label>Phone or WhatsApp<input name="jp" type="tel" inputmode="tel" autocomplete="tel" placeholder="07xx xxx xxx" value="' + esc(F.phone) + '"></label>' +
+      '<fieldset><legend>Which trees?</legend><div class="chips">' + crops.map(function (c) { return '<button type="button" class="chip' + (F.crop === c[0] ? " on" : "") + '" data-jcrop="' + c[0] + '" aria-pressed="' + (F.crop === c[0]) + '">' + c[1] + "</button>"; }).join("") + "</div></fieldset>" +
+      '<fieldset><legend>How many trees?</legend><div class="qty"><button type="button" class="qb" data-jq="-1" aria-label="One fewer tree">−</button><input name="jq" type="number" min="1" max="500" inputmode="numeric" value="' + nTrees() + '" aria-label="Number of trees"><button type="button" class="qb" data-jq="1" aria-label="One more tree">+</button></div><div class="chips">' + [1, 5, 10, 50].map(function (n) { return '<button type="button" class="chip' + (nTrees() === n ? " on" : "") + '" data-jset="' + n + '">' + n + "</button>"; }).join("") + "</div></fieldset>" +
+      (tag ? '<p class="tagnote">Name on the tag: <b>' + esc(tag) + "</b></p>" : "") +
+      '<p class="err" data-jerr role="alert" hidden></p>' +
+      '<button class="btn block" type="submit">Join the waiting list</button>' +
+      '<p class="small-print">We only use your number to tell you about your trees. Nothing is paid today.</p></form>';
   }
-  function oerr(msg) { var e = $("#oErr"); if (!e) return; e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: "center", behavior: "smooth" }); }
-  function oval(id) { var e = $("#" + id); return e ? e.value.trim() : ""; }
-  function collect() {
-    if (F.step === 1) { var q = parseInt(oval("qty"), 10); if (q >= 1) F.qty = Math.min(q, 500); }
-    if (F.step === 2) { F.name = oval("oName"); F.phone = oval("oPhone"); F.email = oval("oEmail"); F.where = oval("oWhere"); F.profile = $("#oProfile").value; }
-    if (F.step === 3) {
-      F.gift = $("#oGift").checked; if (F.gift) { F.recipient = oval("oRecipient"); F.giftMsg = oval("oGiftMsg"); }
-      document.querySelectorAll(".t-occ").forEach(function (e) { treeRec(+e.getAttribute("data-i")).occ = e.value; });
-      document.querySelectorAll(".t-custom").forEach(function (e) { treeRec(+e.getAttribute("data-i")).custom = e.value.trim(); });
-      document.querySelectorAll(".t-tag").forEach(function (e) { treeRec(+e.getAttribute("data-i")).tag = e.value.trim(); });
-      document.querySelectorAll(".t-note").forEach(function (e) { treeRec(+e.getAttribute("data-i")).note = e.value.trim(); });
-      document.querySelectorAll(".c-label").forEach(function (e) { F.custom[+e.getAttribute("data-i")].label = e.value.trim(); });
-      document.querySelectorAll(".c-value").forEach(function (e) { F.custom[+e.getAttribute("data-i")].value = e.value.trim(); });
-    }
-    if (F.step === 4) { F.c1 = $("#oC1").checked; F.c2 = $("#oC2").checked; }
-    saveDraft();
-  }
-  async function orderStep(dir) {
-    collect();
-    if (dir > 0) {
-      if (F.step === 1 && !(F.qty >= 1)) return oerr("Please choose at least one tree.");
-      if (F.step === 2) {
-        if (!F.name) return oerr("Please enter your full name.");
-        if (F.phone.replace(/\D/g, "").length < 7) return oerr("Please enter a phone or WhatsApp number we can reach.");
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(F.email)) return oerr("Please enter a valid email address.");
-      }
-      if (F.step === 4) { if (!F.c1 || !F.c2) return oerr("Please tick both boxes so we can contact you."); return submitList(); }
-      F.step++;
-    } else { F.step = Math.max(1, F.step - 1); }
-    renderOrder(); window.scrollTo(0, 0);
-  }
-  async function submitList() {
-    var ref = refId(), L = ["tr33s waiting list " + ref, "Tree: " + CROPS[F.crop].label, "Trees: " + F.qty, "Name: " + F.name, "Phone: " + F.phone, "Email: " + F.email, "Lives in: " + (F.where || "-"), "I am: " + F.profile];
-    if (F.gift) L.push("Gift for: " + (F.recipient || "-") + (F.giftMsg ? " | Message: " + F.giftMsg : ""));
-    for (var i = 0; i < Math.min(F.qty, 10); i++) { var t = F.trees[i]; if (t && (t.occ || t.tag || t.note)) L.push("Tree " + (i + 1) + ": " + ((t.occ && t.occ.indexOf("Other") === 0 ? (t.custom || "Other") : t.occ) || "-") + (t.tag ? " | Tag name: " + t.tag : "") + (t.note ? " | Note: " + t.note : "")); }
-    F.custom.forEach(function (c) { if (c.label || c.value) L.push((c.label || "Custom") + ": " + c.value); });
-    var text = L.join("\n"), rec = { type: "waiting-list", ref: ref, createdAt: new Date().toISOString(), crop: F.crop, qty: F.qty, name: F.name, phone: F.phone, email: F.email, location: F.where, profile: F.profile, gift: F.gift, recipient: F.recipient, giftMessage: F.giftMsg, trees: F.trees.slice(0, 10), custom: F.custom, summary: text };
-    var btn = document.querySelector('[data-ostep="1"]'); if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
-    var sent = await deliver(rec);
+  function keepJoin(f) { if (!f) return; F.name = f.jn.value.trim(); F.phone = f.jp.value.trim(); F.qty = parseInt(f.jq.value, 10) || 1; saveDraft(); }
+  function renderOrder() { document.querySelectorAll("[data-joinmount]").forEach(function (m) { m.innerHTML = F.done || joinHTML(); }); if (F.done) wireCopy(); }
+  async function submitJoin(f) {
+    keepJoin(f); var err = f.querySelector("[data-jerr]");
+    function bad(m) { err.textContent = m; err.hidden = false; }
+    if (!F.name) return bad("Please add your name.");
+    if (F.phone.replace(/\D/g, "").length < 9) return bad("Please add a phone number we can call or WhatsApp.");
+    var ref = refId(), n = nTrees(), tag = F.trees[0] && F.trees[0].tag;
+    var cropLabel = { apple: "Wambugu apple", avocado: "Hass avocado", both: "Apple and avocado", melia: "Melia timber" }[F.crop] || F.crop;
+    var text = ["tr33s waiting list " + ref, "Trees: " + cropLabel, "How many: " + n, "Name: " + F.name, "Phone: " + F.phone].concat(tag ? ["Name on tag: " + tag] : []).concat(F.profile ? ["Profile: " + F.profile] : []).join("\n");
+    var btn = f.querySelector('[type="submit"]'); btn.disabled = true; btn.textContent = "Sending...";
+    var sent = await deliver({ type: "waiting-list", ref: ref, createdAt: new Date().toISOString(), crop: F.crop, qty: n, name: F.name, phone: F.phone, profile: F.profile || "", trees: tag ? [{ tag: tag }] : [], summary: text });
     F.done = outcomeHTML(ref, sent, text);
     try { localStorage.removeItem("tr33s_order_draft"); } catch (e) {}
-    renderOrder(); window.scrollTo(0, 0);
+    renderOrder();
   }
+  document.addEventListener("submit", function (e) { if (e.target.matches && e.target.matches("[data-join]")) { e.preventDefault(); submitJoin(e.target); } });
+  document.addEventListener("click", function (e) {
+    var el, f;
+    if ((el = e.target.closest("[data-jcrop]"))) { keepJoin(el.closest("form")); F.crop = el.getAttribute("data-jcrop"); renderOrder(); return; }
+    if ((el = e.target.closest("[data-jq]"))) { f = el.closest("form"); keepJoin(f); F.qty = Math.max(1, Math.min(500, nTrees() + +el.getAttribute("data-jq"))); renderOrder(); return; }
+    if ((el = e.target.closest("[data-jset]"))) { keepJoin(el.closest("form")); F.qty = +el.getAttribute("data-jset"); renderOrder(); return; }
+    if ((el = e.target.closest("[data-adopt]"))) { resetForm(); F.crop = el.getAttribute("data-adopt"); renderOrder(); var j = document.getElementById("join"); if (j) j.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  });
 
   /* ---------- "adopt me" seedling pop-up, one per crop page ---------- */
   var POP = {
@@ -1321,23 +1347,15 @@ footer button.rm { justify-self: start; }
 
   document.addEventListener("click", function (e) {
     var el;
-    if ((el = e.target.closest("[data-hero]"))) {
-      resetForm(); F.crop = el.getAttribute("data-crop") || "avocado"; var nm = $("#heroName").value.trim(), oc = HOCC[$("#heroOcc").value] || "", isGift = el.getAttribute("data-hero") === "gift";
-      if (nm) { treeRec(0).tag = nm; if (isGift) F.recipient = nm; }
-      if (oc) treeRec(0).occ = oc;
-      F.gift = isGift; go("order"); return;
-    }
+    if ((el = e.target.closest("[data-hero]"))) { resetForm(); F.crop = el.getAttribute("data-crop") || "apple"; go("order"); return; }
     if ((el = e.target.closest("[data-org]"))) { resetForm(); F.crop = el.getAttribute("data-org") || "avocado"; F.profile = "A company or organisation"; F.qty = 10; go("order"); return; }
-    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#melia" ? "melia" : location.hash === "#apple" ? "apple" : "avocado"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
+    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#avocado" ? "avocado" : location.hash === "#melia" ? "melia" : "apple"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
     if ((el = e.target.closest("[data-scroll-only]"))) { var t = document.getElementById(el.getAttribute("data-scroll-only")); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     if ((el = e.target.closest("[data-ostep]"))) { orderStep(+el.getAttribute("data-ostep")); return; }
-    if ((el = e.target.closest("[data-q]"))) { var q = parseInt(oval("qty"), 10) || F.qty; F.qty = Math.max(1, Math.min(500, q + +el.getAttribute("data-q"))); saveDraft(); renderOrder(); return; }
-    if ((el = e.target.closest("[data-setq]"))) { F.qty = +el.getAttribute("data-setq"); saveDraft(); renderOrder(); return; }
     if ((el = e.target.closest("[data-addcf]"))) { collect(); F.custom.push({ label: "", value: "" }); renderOrder(); return; }
     if ((el = e.target.closest("[data-rmcf]"))) { collect(); F.custom.splice(+el.getAttribute("data-rmcf"), 1); renderOrder(); return; }
   });
   document.addEventListener("change", function (e) {
-    if (e.target.id === "qty") { var q = parseInt(e.target.value, 10); F.qty = q >= 1 ? Math.min(q, 500) : 1; saveDraft(); renderOrder(); }
     if (e.target.id === "oGift") { collect(); renderOrder(); }
     if (e.target.classList && e.target.classList.contains("t-occ")) { var w = e.target.closest(".row2").querySelector(".t-cw"); if (w) w.hidden = e.target.value.indexOf("Other") !== 0; }
   });
@@ -1432,6 +1450,7 @@ footer button.rm { justify-self: start; }
   });
   refreshMe(); loadLiveStats();
 
+  renderOrder();
   route();
 })();
 </script>

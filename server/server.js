@@ -120,7 +120,7 @@ async function handle(req, res) {
     if (!name || (!email && !phone)) return send(res, 400, { error: "Name and a contact are required" });
     const rec = {
       id: crypto.randomBytes(5).toString("hex"), at: new Date().toISOString(), status: "new", note: "",
-      ref: clean(j.ref, 40), crop: CROPS.includes(j.crop) ? j.crop : "avocado", name, email, phone, qty: Math.max(1, Math.min(500, parseInt(j.qty, 10) || 1)),
+      ref: clean(j.ref, 40), crop: (CROPS.includes(j.crop) || j.crop === "both") ? j.crop : "avocado", name, email, phone, qty: Math.max(1, Math.min(500, parseInt(j.qty, 10) || 1)),
       location: clean(j.location, 120), profile: clean(j.profile, 120), gift: !!j.gift, recipient: clean(j.recipient, 120),
       details: clean(typeof j.details === "string" ? j.details : JSON.stringify(j.trees || j.details || ""), 3000)
     };
