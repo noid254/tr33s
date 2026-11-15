@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: plant a Hass avocado tree in Narok, Kenya and harvest for 30 years."><title>tr33s</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: upcoming tree projects in Kenya. Adopt a Hass avocado or Wambugu apple tree, or plant Melia timber. Join the waiting list."><title>tr33s</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
@@ -248,6 +248,19 @@ details p { margin-top: 10px; color: var(--ink-soft); max-width: 70ch; }
 .itile:hover { filter: brightness(0.96); }
 .feed { display: grid; gap: 0; max-width: 640px; margin: 14px auto 0; }
 .feed div { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.adopt { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 45; width: min(360px, calc(100vw - 32px)); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.55); padding: 18px 18px 16px; display: grid; gap: 10px; transform: translateY(20px); opacity: 0; transition: transform .35s ease, opacity .35s ease; }
+.adopt.on { transform: none; opacity: 1; }
+.adopt[hidden] { display: none; }
+.adopt .art { border-radius: 14px; background: linear-gradient(180deg, #cfe6f2 0%, #e9f3d6 62%, #8a5a37 62%, #6b4428 100%); height: 130px; overflow: hidden; }
+.adopt .art svg { width: 100%; height: 100%; display: block; }
+.adopt h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 2px 0 0; }
+.adopt p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; }
+.adopt p b { color: var(--ink); }
+.adopt input { width: 100%; }
+.adopt .x { position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(0,0,0,.35); color: #fff; font-size: 1.2rem; line-height: 1; cursor: pointer; }
+.adopt .row { display: flex; gap: 8px; flex-wrap: wrap; }
+.adopt small { color: var(--ink-soft); font-size: 0.8rem; }
+@media (prefers-reduced-motion: reduce) { .adopt { transition: none; } }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-weight: 600; z-index: 40; max-width: calc(100vw - 32px); }
 
 footer { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 40px max(16px, env(safe-area-inset-left, 0px)) 56px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--ink-soft); }
@@ -361,7 +374,7 @@ footer button.rm { justify-self: start; }
 .pgrid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}@media(max-width:860px){.pgrid2{grid-template-columns:1fr}}
 .perr{color:var(--bad,#ff8c7a);font-weight:600}.pok{color:var(--moss);font-weight:600}
 </style><style>.terms2{display:flex;gap:18px;flex-wrap:wrap}.terms2 div{display:grid}.terms2 b{font-family:var(--font-display);font-size:1.25rem}.terms2 span{color:var(--ink-soft);font-size:.86rem}</style></head><body>
-<div class="strip"><b>FIRST PLOTS OPENING SOON</b>Register your trees now and be first to know.</div>
+<div class="strip"><b>UPCOMING PROJECTS</b>Join the waiting list, as a person or an organisation, and be first to adopt a tree.</div>
 <header class="top">
   <div class="wrap">
     <button class="brand" data-go="home" aria-label="tr33s home">tr<b>33</b>s</button>
@@ -382,9 +395,9 @@ footer button.rm { justify-self: start; }
   <section class="band">
     <div class="wrap hero">
       <div class="stack">
-        <p class="eyebrow">Hass avocado orchards · Narok, Kenya</p>
+        <p class="eyebrow">Upcoming project · Hass avocado orchards</p>
         <h1>Plant a tree today. <span class="hl">Harvest for 30 years.</span></h1>
-        <p class="lead">Plant a Hass avocado tree in Narok. We plant it, water it and look after it. You enjoy 60% of its fruit, season after season, for 30 years. Plant one for yourself, or for someone you love.</p>
+        <p class="lead">Plant a Hass avocado tree. We plant it, water it and look after it. You enjoy 60% of its fruit, season after season, for 30 years. Plant one for yourself, or for someone you love.</p>
         <div class="cta-row">
           <button class="btn" data-hero="plant">Plant my tree</button>
           <button class="btn ghost" data-hero="gift">Give a tree as a gift</button>
@@ -400,8 +413,8 @@ footer button.rm { justify-self: start; }
       </div>
       <div class="herocard" aria-label="Example tree record">
         <div class="grad"></div><img class="herophoto" data-slot="hero" src="https://images.unsplash.com/photo-1726177551991-270f9e79b65e?auto=format&fit=crop&w=1000&q=70" alt="Young Hass avocados on an orchard tree" loading="eager" onerror="this.remove()">
-        <div class="rec"><div class="r1"><b>NKR06/25:122</b><span>EXAMPLE</span></div>
-          <div class="kv"><i>Planted for</i><em class="hl" id="recFor">You</em></div><div class="kv"><i>Variety</i><em>Hass, grafted</em></div><div class="kv"><i>Area</i><em>Nanyuki (NKR)</em></div><div class="kv"><i>Occasion</i><em id="recOcc">Just because</em></div><div class="kv"><i>Term</i><em>30 years</em></div>
+        <div class="rec"><div class="r1"><b>AV1-06/27:122</b><span>EXAMPLE</span></div>
+          <div class="kv"><i>Planted for</i><em class="hl" id="recFor">You</em></div><div class="kv"><i>Variety</i><em>Hass, grafted</em></div><div class="kv"><i>Orchard</i><em>AV1, to be announced</em></div><div class="kv"><i>Occasion</i><em id="recOcc">Just because</em></div><div class="kv"><i>Term</i><em>30 years</em></div>
           <span class="ok">ALIVE · VERIFIED</span></div>
       </div>
     </div>
@@ -420,7 +433,7 @@ footer button.rm { justify-self: start; }
         <div class="panel stack"><span class="pill solid">Timber</span><h3>Melia (Mukau) hardwood</h3><p class="soft">A drought-tough Kenyan hardwood. Harvest in about 12 years for furniture, doors and floors.</p>
           <div class="terms2"><div><b>KSh 1,000</b><span>per tree</span></div><div><b>70%</b><span>of the timber value is yours</span></div><div><b>12 years</b><span>to first harvest</span></div></div>
           <div class="cta-row"><button class="btn" data-go="melia">See timber</button></div></div>
-        <div class="panel stack"><span class="pill solid">Fruit</span><h3>Wambugu apple</h3><p class="soft">Adopt an apple tree in Laikipia East. First real harvest in year 2.</p>
+        <div class="panel stack"><span class="pill solid">Fruit</span><h3>Wambugu apple</h3><p class="soft">Adopt an apple tree. First real harvest in year 2.</p>
           <div class="terms2"><div><b>KSh 2,000</b><span>per tree</span></div><div><b>50%</b><span>of the apples are yours</span></div><div><b>10 years</b><span>of harvests</span></div></div>
           <div class="cta-row"><button class="btn" data-go="apple">See apples</button></div></div>
       </div>
@@ -503,7 +516,7 @@ footer button.rm { justify-self: start; }
         <p class="lead">Flowers fade. Cake is gone by morning. A tree keeps giving, season after season. Every tr33s tree carries a name on its tag, a pin on the map and a record from the day it was planted.</p>
         <div class="moments"><div><b>Birthdays</b><span class="soft">A tree that grows up with them.</span></div><div><b>Anniversaries</b><span class="soft">One for every year together.</span></div><div><b>A new baby</b><span class="soft">Their first tree, their first harvest.</span></div><div><b>Weddings</b><span class="soft">Start a marriage with something that grows.</span></div><div><b>Graduations</b><span class="soft">A gift that outlasts the party.</span></div><div><b>In loving memory</b><span class="soft">A living memorial with a name on it.</span></div></div>
       </div>
-      <div class="cert"><span class="eyebrow">tr33s · example certificate</span><p class="soft">This Hass avocado tree was planted for</p><div class="big" id="certFor">Someone special</div><span class="eyebrow" id="certOcc">Just because</span><div class="grid2"><div><span>Tree</span>NKR06/25:122</div><div><span>Orchard</span>Narok, Kenya</div><div><span>Harvests</span>30 years</div><div><span>Their share</span>60% of the fruit</div></div><p class="small-print">Type a name at the top of the page to see it here.</p><div><button class="btn small" data-hero="gift">Give this tree</button></div></div>
+      <div class="cert"><span class="eyebrow">tr33s · example certificate</span><p class="soft">This Hass avocado tree was planted for</p><div class="big" id="certFor">Someone special</div><span class="eyebrow" id="certOcc">Just because</span><div class="grid2"><div><span>Tree</span>AV1-06/27:122</div><div><span>Orchard</span>Kenya</div><div><span>Harvests</span>30 years</div><div><span>Their share</span>60% of the fruit</div></div><p class="small-print">Type a name at the top of the page to see it here.</p><div><button class="btn small" data-hero="gift">Give this tree</button></div></div>
     </div>
     <div class="wrap"><div class="gallery3"><figure><img class="photo" data-slot="gallery1" src="https://images.unsplash.com/photo-1585242902894-e8a65ecbe1ef?auto=format&fit=crop&w=800&q=70" alt="Green avocado fruit setting on a tree" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Fruit setting on the branch</figcaption></figure><figure><img class="photo" data-slot="gallery2" src="https://images.unsplash.com/photo-1632606325750-5749c9ff78e2?auto=format&fit=crop&w=800&q=70" alt="An avocado hanging among the leaves" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Growing toward harvest</figcaption></figure><figure><img class="photo" data-slot="gallery3" src="https://images.unsplash.com/photo-1704960961383-67dd63756199?auto=format&fit=crop&w=800&q=70" alt="A ripe avocado cut in half" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Ripe and ready</figcaption></figure></div></div>
   </section>
@@ -549,7 +562,7 @@ footer button.rm { justify-self: start; }
         <p style="color:var(--skin-soft);font-size:1.1rem;max-width:56ch">A million trees would cover about 8,300 hectares at the 9 x 9 m spacing KALRO recommends for Hass. We grow in stages and show each one before the next: trees planted, trees alive, and a register anyone can check.</p>
       </div>
       <div class="stack">
-        <div class="panel"><span class="pill">Now</span><h3 style="margin-top:8px">First Hass avocado plots in Narok</h3><p class="soft">Small plots, limited places, every tree on the register.</p></div>
+        <div class="panel"><span class="pill">Now</span><h3 style="margin-top:8px">First Hass avocado and Wambugu apple plots</h3><p class="soft">Upcoming. Small plots, limited places, every tree on the register.</p></div>
         <div class="panel"><span class="pill">Next</span><h3 style="margin-top:8px">More orchards and more crops</h3><p class="soft">Pixie orange and macadamia, on the same register.</p></div>
         <div class="panel"><span class="pill">Later</span><h3 style="margin-top:8px">Timber on private land</h3><p class="soft">Fast-growing species, tracked from planting to harvest.</p></div>
       </div>
@@ -571,6 +584,23 @@ footer button.rm { justify-self: start; }
     </div>
   </section>
 
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">For organisations</p>
+        <h2>Adopt trees together</h2>
+        <p class="lead">Companies, schools, churches, chamas and NGOs can adopt a row or a whole block, for staff, clients, members or a community you care about. Every tree gets a name on its tag, and you get one shared report with photos.</p>
+        <div class="cta-row"><button class="btn" data-org="avocado">Join the waitlist as an organisation</button></div>
+      </div>
+      <div class="panel stack">
+        <p><b>Staff and clients</b> <span class="soft">A named tree for every team member, or a thank-you gift that keeps growing.</span></p>
+        <p><b>Schools and churches</b> <span class="soft">A tree for every class or family, and harvest days to share.</span></p>
+        <p><b>Chamas and groups</b> <span class="soft">Adopt together and follow your trees in one place.</span></p>
+        <p><b>Events and campaigns</b> <span class="soft">A tree for every guest, sale or milestone.</span></p>
+      </div>
+    </div>
+  </section>
+
   <section class="band on-skin">
     <div class="wrap stack" style="justify-items:start">
       <h2 style="color:var(--skin-ink);max-width:20ch">Plant a tree. Someone will sit in its shade.</h2>
@@ -584,7 +614,7 @@ footer button.rm { justify-self: start; }
 <main data-page="avocado">
   <section class="band on-skin">
     <div class="wrap stack">
-      <p class="eyebrow">Avocado · Narok, Kenya</p>
+      <p class="eyebrow">Upcoming project · Hass avocado</p>
       <h1 style="color:var(--skin-ink);max-width:16ch">Plant a tree today. Harvest for 30 years.</h1>
       <p style="color:var(--skin-soft);font-size:1.2rem;max-width:58ch">Enjoy 60% of its fruit, with the tree farmed for you for 30 years. First fruit around year three or four. One payment per tree, with no monthly fees.</p>
       <div class="cta-row"><button class="btn" data-go="order">Plant a tree</button><button class="btn ghost" data-scroll-only="estimates">See harvest estimates</button></div>
@@ -645,11 +675,11 @@ footer button.rm { justify-self: start; }
       <div class="stack">
         <p class="eyebrow">Reading the code</p>
         <h2>Every tree has an address</h2>
-        <p class="lead">A code like <b class="mono">NKR06/25:122</b> tells you where your tree is, when it was planted and which one it is.</p>
+        <p class="lead">A code like <b class="mono">AV1-06/27:122</b> tells you where your tree is, when it was planted and which one it is.</p>
       </div>
       <div class="panel stack">
-        <p><b class="mono">NKR</b> <span class="soft">The planting area. NKR is Nanyuki.</span></p>
-        <p><b class="mono">06/25</b> <span class="soft">The month and year it was planted. Here, June 2025.</span></p>
+        <p><b class="mono">AV1</b> <span class="soft">The crop and orchard. AV is avocado, and 1 is our first orchard.</span></p>
+        <p><b class="mono">06/27</b> <span class="soft">The month and year it was planted. Here, June 2027.</span></p>
         <p><b class="mono">122</b> <span class="soft">The tree's number in that planting.</span></p>
       </div>
     </div>
@@ -666,9 +696,26 @@ footer button.rm { justify-self: start; }
       <details><summary>What happens if my tree dies?</summary><p>A reserve tree of the same age in the same block takes its place and your name moves to it on the register. You will see the change on your tree's record.</p></details>
       <details><summary>Can I give a tree as a gift?</summary><p>Yes. Choose the gift option, add the recipient's name and an occasion, and the name goes on the tag.</p></details>
       <details><summary>Can I pass on or sell my tree?</summary><p>You can transfer your tree to another person, and the new owner's name goes on the tag and register. We cannot promise a buyer or a price.</p></details>
-      <details><summary>Where is the farm, and can I visit?</summary><p>Our orchards are in Narok County, on land held on a long lease. Owners can book farm visits and walk to their own tree.</p></details>
+      <details><summary>Where is the farm, and can I visit?</summary><p>We announce each orchard once its land lease is signed and registered. After that, owners can book farm visits and walk to their own tree.</p></details>
       <details><summary>What happens at the end of 30 years?</summary><p>Your agreement sets out the terms for the end of the 30-year term, including whether it can be renewed. Trees often keep producing well beyond that.</p></details>
       <details><summary>What about tax?</summary><p>If you sell your fruit or your tree, you are responsible for any tax due to KRA on that income. We give a yearly harvest statement to help.</p></details>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">For organisations</p>
+        <h2>Adopt trees together</h2>
+        <p class="lead">Companies, schools, churches, chamas and NGOs can adopt a row or a whole block, for staff, clients, members or a community you care about. Every tree gets a name on its tag, and you get one shared report with photos.</p>
+        <div class="cta-row"><button class="btn" data-org="avocado">Join the waitlist as an organisation</button></div>
+      </div>
+      <div class="panel stack">
+        <p><b>Staff and clients</b> <span class="soft">A named tree for every team member, or a thank-you gift that keeps growing.</span></p>
+        <p><b>Schools and churches</b> <span class="soft">A tree for every class or family, and harvest days to share.</span></p>
+        <p><b>Chamas and groups</b> <span class="soft">Adopt together and follow your trees in one place.</span></p>
+        <p><b>Events and campaigns</b> <span class="soft">A tree for every guest, sale or milestone.</span></p>
+      </div>
     </div>
   </section>
 
@@ -684,7 +731,7 @@ footer button.rm { justify-self: start; }
 <main data-page="melia">
   <section class="band on-skin">
     <div class="wrap stack">
-      <p class="eyebrow">Melia (Mukau) timber · Nuu / Mutomo, Kitui</p>
+      <p class="eyebrow">Upcoming project · Melia (Mukau) timber</p>
       <h1 style="color:var(--skin-ink);max-width:16ch">Plant a tree today. Harvest hardwood in 12 years.</h1>
       <p style="color:var(--skin-soft);font-size:1.2rem;max-width:58ch">Melia volkensii, known in Kenya as Mukau, is a drought-tough hardwood used for furniture, doors and floors. For KSh 1,000 a tree you own 70% of its timber value at harvest. We plant it, guard it and care for it until it is ready.</p>
       <div class="cta-row"><button class="btn" data-go="order" data-crop="melia">Plant a Melia tree</button><button class="btn ghost" data-scroll-only="meliaEst">See harvest estimates</button></div>
@@ -762,11 +809,11 @@ footer button.rm { justify-self: start; }
       <div class="stack">
         <p class="eyebrow">Reading the code</p>
         <h2>Every tree has an address</h2>
-        <p class="lead">A code like <b class="mono">NUU11/26:045</b> tells you where your tree is, when it was planted and which one it is.</p>
+        <p class="lead">A code like <b class="mono">ML1-11/27:045</b> tells you where your tree is, when it was planted and which one it is.</p>
       </div>
       <div class="panel stack">
-        <p><b class="mono">NUU</b> <span class="soft">The planting area. NUU is Nuu, Kitui.</span></p>
-        <p><b class="mono">11/26</b> <span class="soft">The month and year it was planted. Here, November 2026.</span></p>
+        <p><b class="mono">ML1</b> <span class="soft">The crop and plot. ML is Melia, and 1 is our first plot.</span></p>
+        <p><b class="mono">11/27</b> <span class="soft">The month and year it was planted. Here, November 2027.</span></p>
         <p><b class="mono">045</b> <span class="soft">The tree's number in that planting.</span></p>
       </div>
     </div>
@@ -780,7 +827,7 @@ footer button.rm { justify-self: start; }
       <details><summary>What will it cost?</summary><p>KSh 1,000 per tree, paid once, with no yearly fees. The farm company's 30% share of the timber covers land rent, planting, fencing, labour, security and harvesting. If costs run higher, the farm company carries them.</p></details>
       <details><summary>What do I actually own?</summary><p>You own a specific tree, with its code, tag and GPS pin registered in your name, and a right to 70% of its timber value at harvest under your agreement. The land stays leased by the farm company.</p></details>
       <details><summary>How long until harvest?</summary><p>About 12 years. KEFRI advises harvest from around age 12, and a tree on a poorer site can take up to 18 years to reach a good size. We wide-space the trees so none is cut early, and we tell you when your batch is ready.</p></details>
-      <details><summary>Will it grow at Nuu / Mutomo, and will you water it?</summary><p>Melia grows naturally in Kitui, and Mutomo gets about 300 to 700 mm of rain a year, inside the 300 to 800 mm range KEFRI recommends. We plant at the start of the October to December rains, in pits at least 45 cm wide and deep that hold rainwater, so we do not plan routine watering. The trees still need weeding two or three times a season for the first three years and protection from goats and wild browsers for the first one to two years. If a tree fails we replace it. We report survival and growth on your profile, and the 12 years is a target, not a guarantee.</p></details>
+      <details><summary>Where will it grow, and will you water it?</summary><p>We will plant Melia in dry areas where it grows naturally, inside the 300 to 800 mm of yearly rain KEFRI recommends, and announce the site once the land is secured. We plant at the start of the October to December rains, in pits at least 45 cm wide and deep that hold rainwater, so we do not plan routine watering. The trees still need weeding two or three times a season for the first three years and protection from goats and wild browsers for the first one to two years. If a tree fails we replace it. We report survival and growth on your profile, and the 12 years is a target, not a guarantee.</p></details>
       <details><summary>How do I receive my share?</summary><p>At harvest we saw and sell the timber and pay you 70% of the proceeds after sawing, or deliver your share as boards at cost. Your agreement sets out the details.</p></details>
       <details><summary>What happens if my tree dies?</summary><p>A reserve tree of the same age in the same block takes its place and your name moves to it on the register. You will see the change on your tree's record.</p></details>
       <details><summary>Are permits needed to harvest and sell?</summary><p>Yes. The Kenya Forest Service requires a permit to transport forest products, including from private land. We arrange it at harvest, and permit and transport costs come out of the proceeds before the 70 / 30 split.</p></details>
@@ -804,6 +851,23 @@ footer button.rm { justify-self: start; }
     </div>
   </section>
 
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">For organisations</p>
+        <h2>Adopt trees together</h2>
+        <p class="lead">Companies, schools, churches, chamas and NGOs can adopt a row or a whole block, for staff, clients, members or a community you care about. Every tree gets a name on its tag, and you get one shared report with photos.</p>
+        <div class="cta-row"><button class="btn" data-org="melia">Join the waitlist as an organisation</button></div>
+      </div>
+      <div class="panel stack">
+        <p><b>Staff and clients</b> <span class="soft">A named tree for every team member, or a thank-you gift that keeps growing.</span></p>
+        <p><b>Schools and churches</b> <span class="soft">A tree for every class or family, and harvest days to share.</span></p>
+        <p><b>Chamas and groups</b> <span class="soft">Adopt together and follow your trees in one place.</span></p>
+        <p><b>Events and campaigns</b> <span class="soft">A tree for every guest, sale or milestone.</span></p>
+      </div>
+    </div>
+  </section>
+
   <section class="band on-skin">
     <div class="wrap stack" style="justify-items:start">
       <h2 style="color:var(--skin-ink);max-width:22ch">Plant a tree. In twelve years it is a door, a floor, a table.</h2>
@@ -817,7 +881,7 @@ footer button.rm { justify-self: start; }
 <main data-page="apple">
   <section class="band on-skin">
     <div class="wrap stack">
-      <p class="eyebrow">Wambugu apple orchard · Laikipia East</p>
+      <p class="eyebrow">Upcoming project · Wambugu apple orchard</p>
       <h1 style="color:var(--skin-ink);max-width:17ch">Adopt an apple tree. Share its harvest for 10 years.</h1>
       <p style="color:var(--skin-soft);font-size:1.2rem;max-width:58ch">For KSh 2,000, paid once, we plant a grafted Wambugu apple tree with your name on its tag. We water it, feed it and guard it. You follow it on your phone, and half of every harvest is yours for 10 years.</p>
       <div class="cta-row"><button class="btn" data-go="order" data-crop="apple">Adopt an apple tree</button><button class="btn ghost" data-scroll-only="appleEst">See harvest estimates</button></div>
@@ -906,7 +970,7 @@ footer button.rm { justify-self: start; }
 
   <section class="band">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">The farm · Laikipia East</p><h2>10 acres, planted in two phases</h2>
+      <div class="head"><p class="eyebrow">The plan</p><h2>10 acres, planted in two phases</h2>
       <p class="lead">We lease 10 acres and plant the first 5. Once phase 1 is planted and adopted, we plant the other 5.</p></div>
       <div class="terms" style="margin-top:0;margin-bottom:22px">
         <div><strong>10</strong><span>acres leased</span></div>
@@ -915,8 +979,8 @@ footer button.rm { justify-self: start; }
         <div><strong>225</strong><span>reserve trees</span></div>
       </div>
       <div class="cols2">
-        <div class="panel stack"><h3>Why Laikipia East</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>The Mt Kenya side of Laikipia sits within the Wambugu apple's range of about 1,200 to 2,100 m.</li><li>The variety comes from Nyeri, next door, so seedlings and know-how are close.</li><li>Laikipia is encouraging farmers to grow fruit trees, and a fruit-processing hub is planned at Rumuruti.</li><li>Farmers nearby can grow with our seedlings and sell with us.</li></ul></div>
-        <div class="panel stack"><h3>What we manage</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li><b>Water.</b> Apples need about 800 to 1,200 mm of rain a year. Parts of Laikipia get less, so drip irrigation and storage come first.</li><li><b>Pests.</b> Fruit flies, aphids, thrips and powdery mildew are the main threats. The farm team checks and treats the trees all year.</li><li><b>The land.</b> A title search, a lawyer and a registered lease before a single tree goes in.</li></ul></div>
+        <div class="panel stack"><h3>How we choose the land</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>Highland land within the Wambugu apple's range of about 1,200 to 2,100 m.</li><li>Water we can rely on, from a river, borehole or storage.</li><li>Farmers nearby who can grow with our seedlings and sell with us.</li><li>We announce the site once the lease is signed and registered.</li></ul></div>
+        <div class="panel stack"><h3>What we manage</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li><b>Water.</b> Apples need about 800 to 1,200 mm of rain a year. Where rain falls short, drip irrigation and storage come first.</li><li><b>Pests.</b> Fruit flies, aphids, thrips and powdery mildew are the main threats. The farm team checks and treats the trees all year.</li><li><b>The land.</b> A title search, a lawyer and a registered lease before a single tree goes in.</li></ul></div>
       </div>
     </div>
   </section>
@@ -946,6 +1010,23 @@ footer button.rm { justify-self: start; }
     </div>
   </section>
 
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">For organisations</p>
+        <h2>Adopt trees together</h2>
+        <p class="lead">Companies, schools, churches, chamas and NGOs can adopt a row or a whole block, for staff, clients, members or a community you care about. Every tree gets a name on its tag, and you get one shared report with photos.</p>
+        <div class="cta-row"><button class="btn" data-org="apple">Join the waitlist as an organisation</button></div>
+      </div>
+      <div class="panel stack">
+        <p><b>Staff and clients</b> <span class="soft">A named tree for every team member, or a thank-you gift that keeps growing.</span></p>
+        <p><b>Schools and churches</b> <span class="soft">A tree for every class or family, and harvest days to share.</span></p>
+        <p><b>Chamas and groups</b> <span class="soft">Adopt together and follow your trees in one place.</span></p>
+        <p><b>Events and campaigns</b> <span class="soft">A tree for every guest, sale or milestone.</span></p>
+      </div>
+    </div>
+  </section>
+
   <section class="band on-skin">
     <div class="wrap stack" style="justify-items:start">
       <h2 style="color:var(--skin-ink);max-width:22ch">We plant it. We care for it. You watch it grow. We harvest together.</h2>
@@ -970,17 +1051,17 @@ footer button.rm { justify-self: start; }
     <div class="wrap stack">
       <p class="eyebrow">Upcoming projects</p>
       <h1 style="max-width:18ch">More trees, more ways to farm</h1>
-      <p class="lead">Avocado, Wambugu apples and Melia timber are first. Each new crop will get its own page, planted on private land and recorded on the same tree register.</p>
+      <p class="lead">These are our upcoming projects: Hass avocado, Wambugu apples and Melia timber. Each new crop will get its own page, planted on private land and recorded on the same tree register.</p>
     </div>
   </section>
   <section class="band alt">
     <div class="wrap">
       <div class="upcoming">
-        <div class="up live"><span class="badge">Opening soon</span><h3>Avocado</h3><p class="soft">Hass avocado in Narok. Plant a tree and share its fruit for 30 years.</p><div><button class="btn small" data-go="order">Join the waitlist</button></div></div>
-        <div class="up live"><span class="badge">Opening soon</span><h3>Wambugu apple</h3><p class="soft">Apples in Laikipia East. KSh 2,000 a tree, half the harvest to you for 10 years.</p><div><button class="btn small" data-go="apple">See apples</button></div></div>
+        <div class="up live"><span class="badge">Opening soon</span><h3>Avocado</h3><p class="soft">Hass avocado. Plant a tree and share its fruit for 30 years.</p><div><button class="btn small" data-go="avocado">See avocado</button></div></div>
+        <div class="up live"><span class="badge">Opening soon</span><h3>Wambugu apple</h3><p class="soft">Wambugu apples. KSh 2,000 a tree, half the harvest to you for 10 years.</p><div><button class="btn small" data-go="apple">See apples</button></div></div>
         <div class="up"><span class="badge">Planned</span><h3>Pixie orange</h3><p class="soft">A sweet, easy-peel citrus for local and regional markets. Details to follow.</p></div>
         <div class="up"><span class="badge">Planned</span><h3>Macadamia</h3><p class="soft">A long-lived nut tree with strong export demand. Details to follow.</p></div>
-        <div class="up live"><span class="badge">Opening soon</span><h3>Melia timber</h3><p class="soft">Melia (Mukau) hardwood in Nuu / Mutomo, Kitui. KSh 1,000 a tree, 70% of the timber value to you at harvest.</p><div><button class="btn small" data-go="melia">See Melia</button></div></div>
+        <div class="up live"><span class="badge">Opening soon</span><h3>Melia timber</h3><p class="soft">Melia (Mukau) hardwood. KSh 1,000 a tree, 70% of the timber value to you at harvest.</p><div><button class="btn small" data-go="melia">See Melia</button></div></div>
       </div>
     </div>
   </section>
@@ -988,7 +1069,7 @@ footer button.rm { justify-self: start; }
 
 <footer>
   <div class="wrap">
-    <p><b>tr33s</b> · Hass avocado in Narok, Wambugu apples in Laikipia and Melia timber in Kitui, Kenya</p>
+    <p><b>tr33s</b> · Upcoming tree projects in Kenya: Hass avocado, Wambugu apples and Melia timber</p>
     <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin and John Vid. They are not photos of our farm.</p>
     <div class="src">
       <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO avocado factsheet</a>
@@ -1009,6 +1090,15 @@ footer button.rm { justify-self: start; }
 </footer>
 <div class="stickycta" id="stickyCta"><span><b>From KSh 4,000</b> per tree · 60% of the fruit</span><button class="btn small" data-go="order">Join the waitlist</button></div>
 <div class="toast" id="toast" role="status" hidden></div>
+<div class="adopt" id="adoptPop" role="dialog" aria-modal="false" aria-labelledby="adoptT" hidden>
+  <div class="art" id="adoptArt" aria-hidden="true"></div>
+  <button class="x" type="button" id="adoptX" aria-label="Close">×</button>
+  <h3 id="adoptT">Hello! Would you adopt me?</h3>
+  <p id="adoptMsg"></p>
+  <label for="adoptName" class="soft" style="font-size:0.9rem">What will you call me?<input id="adoptName" maxlength="40" placeholder="e.g. Amani" autocomplete="off"></label>
+  <div class="row"><button class="btn" type="button" id="adoptGo">Adopt me</button><button class="btn ghost" type="button" id="adoptLater">Maybe later</button></div>
+  <small>Joining the waiting list is free and nothing is paid today. Organisations are welcome too.</small>
+</div>
 
 <script>
 (function () {
@@ -1175,7 +1265,7 @@ footer button.rm { justify-self: start; }
         '<div class="panel"><p class="eyebrow">What ' + F.qty + (F.qty === 1 ? " tree" : " trees") + ' would cost and could give</p><div style="margin-top:10px">' + cropPlan(F.qty) + "</div></div>";
     } else if (F.step === 2) {
       body = '<fieldset><legend>Your details</legend><p class="soft" style="font-size:0.95rem">So we can tell you the moment your trees are ready. We will never charge you without your agreement.</p><div class="row2"><label for="oName">Full name<input id="oName" autocomplete="name" value="' + esc(F.name) + '"></label><label for="oPhone">Phone or WhatsApp<input id="oPhone" type="tel" autocomplete="tel" placeholder="+254 ..." value="' + esc(F.phone) + '"></label></div><div class="row2"><label for="oEmail">Email<input id="oEmail" type="email" autocomplete="email" value="' + esc(F.email) + '"></label><label for="oWhere">Where do you live?<input id="oWhere" placeholder="City, country" autocomplete="off" value="' + esc(F.where) + '"></label></div>' +
-        '<label for="oProfile">I am<select id="oProfile">' + ["A Kenyan living abroad", "A professional in Kenya", "Buying for family", "Part of a chama or group", "A company", "Other"].map(function (o) { return "<option" + (o === F.profile ? " selected" : "") + ">" + o + "</option>"; }).join("") + "</select></label></fieldset>";
+        '<label for="oProfile">I am<select id="oProfile">' + ["A Kenyan living abroad", "A professional in Kenya", "Buying for family", "Part of a chama or group", "A company or organisation", "A school, church or NGO", "Other"].map(function (o) { return "<option" + (o === F.profile ? " selected" : "") + ">" + o + "</option>"; }).join("") + "</select></label></fieldset>";
     } else if (F.step === 3) {
       var rows = "";
       for (var i = 0; i < Math.min(F.qty, 10); i++) {
@@ -1239,6 +1329,47 @@ footer button.rm { justify-self: start; }
     renderOrder(); window.scrollTo(0, 0);
   }
 
+  /* ---------- "adopt me" seedling pop-up, one per crop page ---------- */
+  var POP = {
+    avocado: { who: "a little Hass avocado seedling", share: "60% of my avocados", years: "30 years", leaf: "#3f7d2c", fruit: "" },
+    apple: { who: "a little Wambugu apple seedling", share: "50% of my apples", years: "10 years", leaf: "#5a9a3f", fruit: "#c0392b" }
+  };
+  var popTimer = null, popCrop = null;
+  function seedlingSVG(c) {
+    var blossom = c.fruit ? '<circle cx="128" cy="44" r="5" fill="#f6d6dc"/><circle cx="128" cy="44" r="2" fill="#e9b949"/>' : "";
+    return '<svg viewBox="38 16 164 72" preserveAspectRatio="xMidYMid slice"><rect x="0" y="0" width="240" height="130" fill="#dcecd9"/><rect x="0" y="80" width="240" height="50" fill="#7a4e2f"/><circle cx="184" cy="30" r="9" fill="#f5d36b"/>' +
+      '<ellipse cx="120" cy="82" rx="46" ry="8" fill="#5b3a22"/>' +
+      '<path d="M120 82 C120 66 119 54 121 40" stroke="#4b7a2c" stroke-width="4" fill="none" stroke-linecap="round"/>' +
+      '<path d="M120 60 C104 56 96 46 94 36 C108 36 118 44 120 60Z" fill="' + c.leaf + '"/>' +
+      '<path d="M121 50 C136 46 146 36 148 26 C134 26 123 34 121 50Z" fill="' + c.leaf + '"/>' + blossom +
+      '<line x1="160" y1="88" x2="160" y2="52" stroke="#c9a77a" stroke-width="3"/><rect x="146" y="40" width="40" height="18" rx="4" fill="#fff8e6" stroke="#c9a77a"/>' +
+      '<text x="166" y="52.5" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#5b3a22">name me</text>' +
+      '<circle cx="113" cy="70" r="1.6" fill="#2b1a0e"/><circle cx="127" cy="70" r="1.6" fill="#2b1a0e"/><path d="M115 75 Q120 79 125 75" stroke="#2b1a0e" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>';
+  }
+  function popSeen(c) { try { return sessionStorage.getItem("tr33s_pop_" + c) === "1"; } catch (e) { return false; } }
+  function popMark(c) { try { sessionStorage.setItem("tr33s_pop_" + c, "1"); } catch (e) {} }
+  function hidePop() { var el = $("#adoptPop"); el.classList.remove("on"); setTimeout(function () { el.hidden = true; }, 300); if (popCrop) popMark(popCrop); }
+  function showPop(c) {
+    var d = POP[c], el = $("#adoptPop"); popCrop = c;
+    $("#adoptArt").innerHTML = seedlingSVG(d);
+    $("#adoptMsg").innerHTML = "I'm " + d.who + ", waiting for my spot in the ground. If you give me a name, I'll wear it on my tag and share <b>" + d.share + " with you for " + d.years + "</b>. I promise to grow my best.";
+    $("#adoptName").value = ""; el.hidden = false; requestAnimationFrame(function () { el.classList.add("on"); });
+  }
+  function schedulePop(page) {
+    clearTimeout(popTimer); var el = $("#adoptPop");
+    if (!el.hidden && popCrop !== page) hidePop();
+    if (!POP[page] || popSeen(page)) return;
+    popTimer = setTimeout(function () { if ((location.hash || "").replace("#", "") === page) showPop(page); }, 5000 + Math.random() * 9000);
+  }
+  $("#adoptX").addEventListener("click", hidePop);
+  $("#adoptLater").addEventListener("click", hidePop);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("#adoptPop").hidden) hidePop(); });
+  $("#adoptGo").addEventListener("click", function () {
+    var nm = $("#adoptName").value.trim(), c = popCrop; hidePop();
+    resetForm(); F.crop = c; if (nm) treeRec(0).tag = nm; go("order");
+  });
+  $("#adoptName").addEventListener("keydown", function (e) { if (e.key === "Enter") $("#adoptGo").click(); });
+
   /* ---------- router ---------- */
   var PAGES = ["home", "avocado", "apple", "melia", "order", "profile", "upcoming"], pendingScroll = null;
   function show(name) {
@@ -1247,6 +1378,7 @@ footer button.rm { justify-self: start; }
     document.querySelectorAll("[data-nav]").forEach(function (b) { if (b.getAttribute("data-nav") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     $("#stickyCta").hidden = name === "order" || name === "profile";
     $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : name === "apple" ? "<b>KSh 2,000</b> per apple tree · half the harvest for 10 years" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
+    schedulePop(name);
     if (name === "order") renderOrder();
     if (name === "profile") renderProfile();
     if (pendingScroll) { var t = document.getElementById(pendingScroll); pendingScroll = null; if (t) { setTimeout(function () { t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30); return; } }
@@ -1265,6 +1397,7 @@ footer button.rm { justify-self: start; }
       if (oc) treeRec(0).occ = oc;
       F.gift = isGift; go("order"); return;
     }
+    if ((el = e.target.closest("[data-org]"))) { resetForm(); F.crop = el.getAttribute("data-org") || "avocado"; F.profile = "A company or organisation"; F.qty = 10; go("order"); return; }
     if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#melia" ? "melia" : location.hash === "#apple" ? "apple" : "avocado"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
     if ((el = e.target.closest("[data-scroll-only]"))) { var t = document.getElementById(el.getAttribute("data-scroll-only")); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     if ((el = e.target.closest("[data-ostep]"))) { orderStep(+el.getAttribute("data-ostep")); return; }
