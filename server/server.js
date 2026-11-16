@@ -42,7 +42,7 @@ const DUMMY_HASH = hashPw("not-a-real-password");
 const okDate = v => /^\d{4}-\d{2}-\d{2}$/.test(String(v || "")) ? String(v) : "";
 const pct = b => b && b.total > 0 ? Math.round(1000 * Math.min(b.alive, b.total) / b.total) / 10 : null;
 
-const SLOTS = ["hero", "banner", "gallery1", "gallery2", "gallery3", "meliaHero", "meliaA", "meliaB", "meliaC", "stagey1", "stagey2", "stagey3", "stagey4", "stagey8", "stagey30", "popAvocado", "popApple"];
+const SLOTS = ["hero", "banner", "gallery1", "gallery2", "gallery3", "meliaHero", "meliaA", "meliaB", "meliaC", "stagey1", "stagey2", "stagey3", "stagey4", "stagey8", "stagey30", "popAvocado", "popApple", "appleHero", "appleBasket", "appleOrchard", "appleHarvest", "appleShelf", "appleMarket", "appleBanner"];
 
 /* ---------- helpers ---------- */
 function send(res, code, body, headers) {
