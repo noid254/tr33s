@@ -347,6 +347,49 @@ body[data-view="avocado"] .band.on-skin .eyebrow { color: #d4956b !important; }
 @media (max-width: 900px) { .hero3, .joinwrap, .opt2 { grid-template-columns: 1fr; } .steps4, .bignums { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .compare { grid-template-columns: 1fr; } .compare > div + div { border-left: 0; border-top: 1px solid var(--line); } }
 @media (max-width: 420px) { .steps4 { grid-template-columns: 1fr; } }
+.demobar { background: #fff6d6; border: 1px solid #f0d98a; color: #4a3a00; border-radius: 14px; padding: 10px 14px; font-size: 0.92rem; margin-bottom: 16px; }
+.demobar b { margin-right: 6px; }
+.jtabs { display: inline-flex; gap: 6px; background: var(--band); padding: 5px; border-radius: 999px; margin-bottom: 22px; }
+.jtabs button { border: 0; background: transparent; padding: 9px 18px; border-radius: 999px; font: 600 0.95rem var(--font-body); color: var(--ink-soft); cursor: pointer; }
+.jtabs button.on { background: var(--surface); color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.jhead { display: flex; gap: 18px; align-items: center; margin-bottom: 22px; }
+.avatar { width: 76px; height: 76px; flex: none; border-radius: 50%; display: grid; place-items: center; font: 800 1.6rem var(--font-display); color: #fff; background: linear-gradient(135deg, var(--leaf), var(--moss)); }
+.avatar.co { border-radius: 20px; background: linear-gradient(135deg, #7a4726, #c08a4e); }
+.jtop { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px; }
+.scorecard { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: center; position: relative; }
+.scorecard .ring { width: 150px; height: 150px; grid-row: 1; grid-column: 1; }
+.scoretxt { grid-row: 1; grid-column: 1; display: grid; place-items: center; text-align: center; align-self: center; }
+.scoretxt b { font: 800 2.4rem/1 var(--font-display); color: var(--leaf); }
+.scoretxt span { font-size: 0.8rem; color: var(--ink-soft); }
+.sbar .row2x { display: flex; justify-content: space-between; gap: 10px; font-size: 0.9rem; }
+.sbar .row2x span { color: var(--ink-soft); }
+.meter { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; margin-top: 4px; }
+.meter i { display: block; height: 100%; background: var(--leaf); border-radius: 99px; }
+.jstats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.jstats div { background: var(--surface); padding: 16px; display: grid; gap: 2px; }
+.jstats b { font: 800 1.6rem/1.1 var(--font-display); color: var(--leaf); }
+.jstats span { font-size: 0.88rem; color: var(--ink-soft); }
+.jh2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 34px 0 14px; }
+.tgrid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+.tcard { background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--leaf); border-radius: 16px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.tcard.apple { border-top-color: #c0262d; } .tcard.avo { border-top-color: #2d6a3b; } .tcard.wood { border-top-color: #8a5a2b; }
+.tchead { display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: 0.8rem; }
+.tcard h3 { font-size: 1.2rem; }
+.tcard p { font-size: 0.92rem; margin: 0; }
+.jpanel .pill { justify-self: start; }
+.tcard ul { margin: 4px 0 0; padding-left: 18px; display: grid; gap: 4px; font-size: 0.9rem; color: var(--ink-soft); }
+.journey { list-style: none; margin: 0; padding: 0; border-left: 3px solid var(--lime); display: grid; gap: 14px; }
+.journey li { position: relative; padding-left: 22px; display: grid; gap: 2px; }
+.journey li::before { content: ""; position: absolute; left: -9px; top: 4px; width: 15px; height: 15px; border-radius: 50%; background: var(--surface); border: 3px solid var(--leaf); }
+.journey time { font: 500 0.8rem var(--font-mono); color: var(--accent); letter-spacing: 0.06em; }
+.journey span { color: var(--ink-soft); font-size: 0.95rem; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.badges span { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 0.9rem; }
+.sharecard { margin-top: 28px; display: grid; grid-template-columns: 180px 1fr; gap: 22px; align-items: center; background: var(--surface); border: 1px dashed var(--lime); border-radius: 22px; padding: 22px; }
+.qrbox { background: #fff; border-radius: 16px; padding: 10px; box-shadow: 0 10px 24px -14px rgba(0,0,0,0.35); }
+.qrbox svg.qr { width: 100%; height: auto; display: block; }
+@media (max-width: 960px) { .tgrid { grid-template-columns: 1fr 1fr; } .jtop { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .tgrid { grid-template-columns: 1fr; } .scorecard { grid-template-columns: 1fr; justify-items: center; } .scorecard > .stack { width: 100%; } .sharecard { grid-template-columns: 1fr; justify-items: center; text-align: center; } .qrbox { width: 180px; } .jhead { align-items: flex-start; } .avatar { width: 60px; height: 60px; font-size: 1.3rem; } }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-weight: 600; z-index: 40; max-width: calc(100vw - 32px); }
 
 footer { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 40px max(16px, env(safe-area-inset-left, 0px)) 56px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--ink-soft); }
@@ -603,6 +646,18 @@ footer button.rm { justify-self: start; }
         <p><b>Fencing and guards</b> <span class="soft">against animals and theft.</span></p>
         <p><b>Pest checks</b> <span class="soft">so problems are caught early.</span></p>
       </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">Your green impact</p>
+        <h2>Every tree you plant, tracked in one place</h2>
+        <p class="lead">Your fruit trees, timber trees, and the trees you plant with schools and forests, all on one profile. Photos, survival, harvests and a green score you can share with a scan.</p>
+        <div class="cta-row"><button class="btn" data-go="journey">See a demo profile</button></div>
+      </div>
+      <div class="panel scorecard"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--leaf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="71.9" transform="rotate(-90 60 60)"/></svg><div class="scoretxt"><b>780</b><span>Green score</span></div><div class="stack" style="gap:10px"><p class="eyebrow">Demo member</p><div class="sbar"><div class="row2x"><span>Trees alive</span><b>12 of 12</b></div><div class="meter"><i style="width:100%"></i></div></div><div class="sbar"><div class="row2x"><span>Survival</span><b>96%</b></div><div class="meter"><i style="width:96%"></i></div></div><div class="sbar"><div class="row2x"><span>Community trees</span><b>25</b></div><div class="meter"><i style="width:62%"></i></div></div></div></div>
     </div>
   </section>
 
@@ -1070,8 +1125,7 @@ footer button.rm { justify-self: start; }
       <details><summary>What if my tree dies?</summary><p>A reserve tree of the same age takes its place and your name moves to it. You will see the change on your tree's record.</p></details>
       <details><summary>Can I visit my tree?</summary><p>Yes. You can book a farm visit, and every adopter is invited to harvest days.</p></details>
       <details><summary>Can I give a tree as a gift?</summary><p>Yes. Choose the gift option, add their name and an occasion, and the name goes on the tag.</p></details>
-      <details><summary>Where do the seedlings come from?</summary><p>We buy grafted seedlings of the Wambugu variety only from KEPHIS-registered nurseries, and we will name our nursery when the order is placed. Wambugu apple is the name of the variety. tr33s is independent and is not affiliated with Peter Wambugu or Wambugu Apples’ Farm.</p>
-    <p>We count visits anonymously to improve the site: no cookies for this, no ad trackers, and we never store your IP address.</p></details>
+      <details><summary>Where do the seedlings come from?</summary><p>We buy grafted seedlings of the Wambugu variety only from KEPHIS-registered nurseries, and we will name our nursery when the order is placed. Wambugu apple is the name of the variety. tr33s is independent and is not affiliated with Peter Wambugu or Wambugu Apples’ Farm.</p></details>
       <details><summary>What happens after 10 years?</summary><p>You can renew your adoption at a lower price, or let it end. If it ends, the tree stays with the farm.</p></details>
     </div>
   </section>
@@ -1113,6 +1167,97 @@ footer button.rm { justify-self: start; }
   </section>
 </main>
 
+<!-- JOURNEY (demo) -->
+<main data-page="journey">
+  <section class="band tight">
+    <div class="wrap">
+      <div class="demobar"><b>Demo profile</b> Sample people and numbers, to show how a tr33s profile will look. Scores and CO₂ figures are illustrations.</div>
+      <div class="jtabs" role="tablist"><button class="on" data-jtab="person" role="tab" aria-selected="true">A member</button><button data-jtab="company" role="tab" aria-selected="false">A company</button></div>
+
+    <div class="jpanel" data-jp="person">
+      <div class="jhead">
+        <div class="avatar" aria-hidden="true">AW</div>
+        <div class="stack" style="gap:4px"><h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">Amina Wanjiru</h1><p class="soft">Member since January 2027 · 12 trees owned · 25 community trees</p></div>
+      </div>
+      <div class="jtop">
+        <div class="panel scorecard"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--leaf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="71.9" transform="rotate(-90 60 60)"/></svg><div class="scoretxt"><b>780</b><span>Green score</span></div>
+          <div class="stack" style="gap:10px"><p class="eyebrow">Level: Grove</p><div class="sbar"><div class="row2x"><span>Trees alive and cared for</span><b>12 of 12</b></div><div class="meter"><i style="width:100%"></i></div></div><div class="sbar"><div class="row2x"><span>Years of care</span><b>2.4 years a tree</b></div><div class="meter"><i style="width:60%"></i></div></div><div class="sbar"><div class="row2x"><span>Survival of trees planted</span><b>96%</b></div><div class="meter"><i style="width:96%"></i></div></div><div class="sbar"><div class="row2x"><span>Community trees</span><b>25 trees</b></div><div class="meter"><i style="width:62%"></i></div></div><p class="small-print">220 points to the next level, Forest.</p></div></div>
+        <div class="jstats">
+          <div><b>12</b><span>trees owned</span></div><div><b>25</b><span>community trees planted</span></div>
+          <div><b>96%</b><span>of all her trees alive</span></div><div><b>560</b><span>apples collected so far</span></div>
+          <div><b>~0.6 t</b><span>CO₂ taken in, rough estimate</span></div><div><b>3</b><span>harvest days attended</span></div>
+        </div>
+      </div>
+
+      <h2 class="jh2">Her trees</h2>
+      <div class="tgrid">
+        <div class="tcard apple"><div class="tchead"><span class="mono">AP1-04/27:042</span><span class="pill">Alive</span></div><h3>“Baba’s tree”</h3><p class="soft">Apple, Wambugu variety · 2 years 8 months</p><ul><li>Last photo 3 days ago</li><li>This season: 38 apples, her share</li><li>Next harvest day in March</li></ul></div>
+        <div class="tcard apple"><div class="tchead"><span class="mono">AP1-04/27:043</span><span class="pill">Alive</span></div><h3>“Shiru”</h3><p class="soft">Apple, Wambugu variety · 2 years 8 months</p><ul><li>Last photo 3 days ago</li><li>This season: 41 apples, her share</li><li>Pruned in October</li></ul></div>
+        <div class="tcard avo"><div class="tchead"><span class="mono">AV1-06/27:122</span><span class="pill">Flowering</span></div><h3>“Zawadi”</h3><p class="soft">Hass avocado · 2 years 6 months</p><ul><li>First flowers this season</li><li>First fruit expected next year</li><li>Watered weekly in the dry spell</li></ul></div>
+        <div class="tcard wood"><div class="tchead"><span class="mono">ML1-11/27:045</span><span class="pill">Alive</span></div><h3>“For Juma”</h3><p class="soft">Melia timber · 2 years 1 month</p><ul><li>3.1 m tall, growing straight</li><li>Gift to her brother, moved to his name</li><li>Timber harvest from about year 12</li></ul></div>
+      </div>
+      <p class="small-print" style="margin-top:8px">Plus 3 more apple trees, 2 avocado trees and 3 Melia trees.</p>
+
+      <h2 class="jh2">Community trees</h2>
+      <div class="cols2">
+        <div class="panel stack"><span class="pill solid">School</span><h3>Her daughter’s class grove</h3><p class="soft">15 indigenous trees planted with Grade 5 at a partner primary school. 14 alive. The class waters them and sends photos each term.</p><div class="meter"><i style="width:93%"></i></div><small class="soft">93% alive</small></div>
+        <div class="panel stack"><span class="pill solid">Forest</span><h3>Forest restoration day</h3><p class="soft">10 indigenous seedlings planted with a community forest group, tagged and checked twice a year.</p><div class="meter"><i style="width:100%"></i></div><small class="soft">100% alive</small></div>
+      </div>
+
+      <h2 class="jh2">Her tr33s journey</h2>
+      <ol class="journey">
+        <li><time>Jan 2027</time><b>Joined the waiting list</b><span>Reserved 5 apple trees.</span></li>
+        <li><time>Apr 2027</time><b>Apple trees planted</b><span>Named the first one “Baba’s tree” after her father.</span></li>
+        <li><time>Jun 2027</time><b>Avocado trees planted</b><span>Added 3 Hass avocado trees.</span></li>
+        <li><time>Nov 2027</time><b>Gave a tree</b><span>Planted a Melia tree for her brother’s graduation and moved it to his name.</span></li>
+        <li><time>Mar 2028</time><b>School planting day</b><span>15 trees with her daughter’s class.</span></li>
+        <li><time>Feb 2029</time><b>First harvest day</b><span>Picked her own apples on the farm and took home 6 kg.</span></li>
+      </ol>
+
+      <div class="badges"><span>🌱 First tree</span><span>🎁 Gift giver</span><span>🍎 Harvest day</span><span>🏫 School planter</span><span>💧 Two-year survivor</span></div>
+
+      <div class="sharecard">
+        <div class="qrbox"><svg class="qr" viewBox="0 0 29 29" role="img" aria-label="Scan code that opens this green impact profile" shape-rendering="crispEdges"><rect width="29" height="29" fill="#fff"/><path d="M2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM2 3h1v1h-1zM8 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM20 3h1v1h-1zM26 3h1v1h-1zM2 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM20 4h1v1h-1zM22 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM2 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM23 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM2 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM20 7h1v1h-1zM26 7h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM2 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM17 10h1v1h-1zM18 10h1v1h-1zM19 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM2 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM25 11h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM8 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM22 12h1v1h-1zM6 13h1v1h-1zM7 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM11 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM16 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM26 15h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM18 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM10 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM26 17h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM12 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM10 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM18 19h1v1h-1zM22 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM11 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM26 20h1v1h-1zM2 21h1v1h-1zM8 21h1v1h-1zM12 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM22 21h1v1h-1zM25 21h1v1h-1zM2 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM2 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM7 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1z" fill="#0f2a1a"/></svg></div>
+        <div class="stack" style="gap:8px"><p class="eyebrow">Share her impact</p><h3>Scan to see Amina’s green impact</h3><p class="soft">Every member gets a page like this, with a code to share on WhatsApp, print on a card or add to an email signature.</p>
+        <p class="small-print">Trees can be gifted or moved to someone else’s name. tr33s does not buy or sell trees between members.</p></div>
+      </div>
+    </div>
+    <div class="jpanel" data-jp="company" hidden>
+      <div class="jhead">
+        <div class="avatar co" aria-hidden="true">SR</div>
+        <div class="stack" style="gap:4px"><h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">Savanna Roasters Ltd</h1><p class="soft">Company member since March 2027 · 1,200 staff trees · 3 partner schools</p></div>
+      </div>
+      <div class="jtop">
+        <div class="panel scorecard"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--leaf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="45.7" transform="rotate(-90 60 60)"/></svg><div class="scoretxt"><b>860</b><span>Green score</span></div>
+          <div class="stack" style="gap:10px"><p class="eyebrow">Level: Forest</p><div class="sbar"><div class="row2x"><span>Trees alive and cared for</span><b>1,128 of 1,200</b></div><div class="meter"><i style="width:94%"></i></div></div><div class="sbar"><div class="row2x"><span>Years of care</span><b>2.1 years a tree</b></div><div class="meter"><i style="width:52%"></i></div></div><div class="sbar"><div class="row2x"><span>Survival of trees planted</span><b>94%</b></div><div class="meter"><i style="width:94%"></i></div></div><div class="sbar"><div class="row2x"><span>Community trees</span><b>5,000 trees</b></div><div class="meter"><i style="width:100%"></i></div></div><p class="small-print">Scores update every month from tree checks.</p></div></div>
+        <div class="jstats">
+          <div><b>1,200</b><span>fruit trees, one for each staff member</span></div><div><b>5,000</b><span>restoration trees in a community forest</span></div>
+          <div><b>3</b><span>partner schools, 450 trees</span></div><div><b>94%</b><span>of all trees alive</span></div>
+          <div><b>~55 t</b><span>CO₂ taken in, rough estimate</span></div><div><b>38</b><span>local jobs supported</span></div>
+        </div>
+      </div>
+      <h2 class="jh2">Where the trees are</h2>
+      <div class="cols3">
+        <div class="panel stack"><span class="pill solid">Staff orchard</span><h3>800 apple and 400 avocado trees</h3><p class="soft">Each tagged with a staff member’s name. Staff collect fruit on harvest days.</p></div>
+        <div class="panel stack"><span class="pill solid">Schools</span><h3>450 trees at 3 schools</h3><p class="soft">Fruit trees for school meals and shade trees for playgrounds, checked each term.</p></div>
+        <div class="panel stack"><span class="pill solid">Forest</span><h3>5,000 indigenous trees</h3><p class="soft">Planted with a community forest group, with survival checks twice a year.</p></div>
+      </div>
+      <div class="sharecard">
+        <div class="qrbox"><svg class="qr" viewBox="0 0 29 29" role="img" aria-label="Scan code that opens this green impact profile" shape-rendering="crispEdges"><rect width="29" height="29" fill="#fff"/><path d="M2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM2 3h1v1h-1zM8 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM20 3h1v1h-1zM26 3h1v1h-1zM2 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM20 4h1v1h-1zM22 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM2 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM23 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM2 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM20 7h1v1h-1zM26 7h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM2 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM17 10h1v1h-1zM18 10h1v1h-1zM19 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM2 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM25 11h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM8 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM22 12h1v1h-1zM6 13h1v1h-1zM7 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM11 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM16 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM26 15h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM18 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM10 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM26 17h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM12 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM10 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM18 19h1v1h-1zM22 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM11 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM26 20h1v1h-1zM2 21h1v1h-1zM8 21h1v1h-1zM12 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM22 21h1v1h-1zM25 21h1v1h-1zM2 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM2 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM7 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1z" fill="#0f2a1a"/></svg></div>
+        <div class="stack" style="gap:8px"><p class="eyebrow">On every bag of coffee</p><h3>Scan to see our green impact</h3><p class="soft">The company prints this code on its packaging, receipts and annual report. Customers scan it and see live tree counts, survival and photos, not just a promise.</p></div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="band on-skin">
+    <div class="wrap stack" style="justify-items:start">
+      <h2 style="color:var(--skin-ink);max-width:24ch">Start your own tr33s journey</h2>
+      <p style="color:var(--skin-soft);max-width:56ch">Adopt your first tree and your profile starts growing with it. Companies, schools and groups are welcome.</p>
+      <div class="cta-row"><button class="btn" data-go="order">Join the waiting list</button><button class="btn ghost" data-org="apple">Join as an organisation</button></div>
+    </div>
+  </section>
+</main>
+
 <!-- ORDER -->
 <main data-page="order">
   <section class="band tight"><div class="wrap narrow" id="orderMount"><p class="eyebrow">Join the waiting list</p><h1 style="font-size:clamp(2rem,5vw,3rem);margin:6px 0 8px">Reserve your trees</h1><p class="soft" style="margin-bottom:18px">Four quick questions. Nothing is paid today.</p><div data-joinmount></div></div></section>
@@ -1148,6 +1293,7 @@ footer button.rm { justify-self: start; }
   <div class="wrap">
     <p><b>tr33s</b> · Upcoming tree projects in Kenya: Hass avocado, apples (Wambugu variety) and Melia timber</p>
     <p>Wambugu apple is the name of the variety. tr33s is independent and is not affiliated with Peter Wambugu or Wambugu Apples’ Farm.</p>
+    <p>We count visits anonymously to improve the site: no cookies for this, no ad trackers, and we never store your IP address.</p>
     <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin, John Vid, Pranav Gavali and Ksenia Pixelesse, Thammy Kolb, Vera De, Karin Kim, Emma Swoboda, Nathan Jeon, Sokmean Nou and Shelley Pauls. They are not photos of our farm or our seedlings.</p>
     <div class="src">
       <a href="https://agrificsapp.kalro.org/file_uploads/Avocado-production%20factsheets.pdf" target="_blank" rel="noopener">KALRO avocado factsheet</a>
@@ -1393,6 +1539,12 @@ footer button.rm { justify-self: start; }
     if ((el = e.target.closest("[data-adopt]"))) { TRK.ev("adopt_click", { crop: el.getAttribute("data-adopt") }); resetForm(); F.crop = el.getAttribute("data-adopt"); renderOrder(); var j = document.getElementById("join"); if (j) j.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
   });
 
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-jtab]"); if (!b) return;
+    var k = b.getAttribute("data-jtab");
+    document.querySelectorAll("[data-jtab]").forEach(function (x) { var on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-selected", on); });
+    document.querySelectorAll("[data-jp]").forEach(function (pnl) { pnl.hidden = pnl.getAttribute("data-jp") !== k; });
+  });
   /* ---------- "adopt me" seedling pop-up, one per crop page ---------- */
   var POP = {
     avocado: { who: "a little Hass avocado seedling", share: "60% of my avocados", years: "30 years", leaf: "#3f7d2c", fruit: "", slot: "popAvocado", photo: "https://images.unsplash.com/photo-1767457108672-79c6dd48a165?auto=format&fit=crop&w=700&q=70" },
@@ -1436,7 +1588,7 @@ footer button.rm { justify-self: start; }
   $("#adoptName").addEventListener("keydown", function (e) { if (e.key === "Enter") $("#adoptGo").click(); });
 
   /* ---------- router ---------- */
-  var PAGES = ["home", "avocado", "apple", "melia", "order", "profile", "upcoming"], pendingScroll = null;
+  var PAGES = ["home", "avocado", "apple", "melia", "order", "profile", "upcoming", "journey"], pendingScroll = null;
   function show(name) {
     if (PAGES.indexOf(name) < 0) name = "home";
     document.querySelectorAll("[data-page]").forEach(function (e) { e.classList.toggle("on", e.getAttribute("data-page") === name); });
