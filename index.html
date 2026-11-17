@@ -390,6 +390,57 @@ body[data-view="avocado"] .band.on-skin .eyebrow { color: #d4956b !important; }
 .qrbox svg.qr { width: 100%; height: auto; display: block; }
 @media (max-width: 960px) { .tgrid { grid-template-columns: 1fr 1fr; } .jtop { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .tgrid { grid-template-columns: 1fr; } .scorecard { grid-template-columns: 1fr; justify-items: center; } .scorecard > .stack { width: 100%; } .sharecard { grid-template-columns: 1fr; justify-items: center; text-align: center; } .qrbox { width: 180px; } .jhead { align-items: flex-start; } .avatar { width: 60px; height: 60px; font-size: 1.3rem; } }
+.pgrid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+.pcard { all: unset; box-sizing: border-box; cursor: pointer; display: grid; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: transform .15s, box-shadow .15s; }
+.pcard:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -18px rgba(0,0,0,0.35); }
+.pcard:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
+.pimg { position: relative; display: block; aspect-ratio: 4 / 3; background: linear-gradient(135deg, #cfe8b5, #6fae4a); }
+.pcard.apple .pimg { background: linear-gradient(135deg, #f3b1a8, #b31b25); } .pcard.melia .pimg { background: linear-gradient(135deg, #d9c3a0, #7a5032); }
+.pimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hb { display: inline-block; font: 600 0.75rem var(--font-body); padding: 3px 9px; border-radius: 999px; background: #e3f4d6; color: #1d5a22; }
+.hb.watch { background: #fff0c2; color: #6a4a00; } .hb.bad { background: #fde0dc; color: #8a1c12; }
+.pimg .hb { position: absolute; left: 10px; top: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+.pbody { display: grid; gap: 2px; padding: 12px 14px 14px; }
+.pbody b { font-family: var(--font-display); font-size: 1.1rem; }
+.pbody .mono { font-size: 0.75rem; color: var(--ink-soft); }
+.pbody .soft { font-size: 0.88rem; }
+.pnum { font-weight: 600; font-size: 0.9rem; color: var(--leaf); margin-top: 4px; }
+.tdlg { position: fixed; inset: 0; z-index: 60; background: rgba(10,20,12,0.55); display: grid; place-items: center; padding: 16px; }
+.tdlg[hidden] { display: none; }
+.tdbox { position: relative; width: min(760px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); border-radius: 24px; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6); }
+.tdx { position: absolute; top: 12px; right: 12px; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(0,0,0,0.55); color: #fff; font-size: 1.4rem; cursor: pointer; }
+.tdhero { position: relative; aspect-ratio: 16 / 7; background: linear-gradient(135deg, #cfe8b5, #3f8f2a); }
+.tdhero.apple { background: linear-gradient(135deg, #f3b1a8, #8c141c); } .tdhero.melia { background: linear-gradient(135deg, #d9c3a0, #6b4a2b); }
+.tdhero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tdhero .cap { position: absolute; left: 12px; bottom: 10px; font-size: 0.72rem; background: rgba(0,0,0,0.5); color: #fff; padding: 3px 9px; border-radius: 999px; }
+.tdpad { padding: 20px 22px 24px; }
+.tdtop { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+.tdtop h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+.tdpad p.soft, .outlook p.soft { font-size: 0.95rem; }
+.hscore { flex: none; text-align: center; border-radius: 16px; padding: 10px 14px; background: #e3f4d6; color: #1d5a22; display: grid; }
+.hscore.watch { background: #fff0c2; color: #6a4a00; } .hscore.bad { background: #fde0dc; color: #8a1c12; }
+.hscore b { font: 800 1.8rem/1 var(--font-display); } .hscore span { font-size: 0.75rem; }
+.watchnote { margin-top: 12px; background: #fff7dc; border: 1px solid #f0d98a; border-radius: 12px; padding: 10px 12px; font-size: 0.92rem; }
+.stagebar { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.stagebar li { font-size: 0.82rem; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
+.stagebar li.done { background: var(--band); color: var(--ink); }
+.stagebar li.now { background: var(--leaf); border-color: var(--leaf); color: #fff; font-weight: 600; }
+.outlook { margin-top: 18px; background: var(--band); border-radius: 16px; padding: 16px; display: grid; gap: 6px; }
+.outlook h3 { font-size: 1.3rem; }
+.ocols { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin: 6px 0; }
+.ocols div { background: var(--surface); border-radius: 12px; padding: 10px; display: grid; gap: 2px; }
+.ocols b { font: 800 1.35rem var(--font-display); color: var(--leaf); } .ocols span { font-size: 0.8rem; color: var(--ink-soft); }
+.alive { margin-top: 14px; border-left: 4px solid var(--lime); padding: 8px 12px; font-size: 0.92rem; color: var(--ink-soft); }
+.alive b { color: var(--ink); }
+.checks { list-style: none; margin: 8px 0 0; padding: 0; display: grid; }
+.checks li { display: grid; grid-template-columns: 96px 1fr auto; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.9rem; }
+.checks time { font: 500 0.78rem var(--font-mono); color: var(--accent); }
+.phonefarm { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 4vw, 48px); align-items: center; }
+.stagestrip { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+.stagestrip div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; display: grid; gap: 4px; }
+.stagestrip small { font: 500 0.72rem var(--font-mono); color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+@media (max-width: 960px) { .pgrid { grid-template-columns: repeat(3, minmax(0,1fr)); } .phonefarm { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .pgrid { grid-template-columns: 1fr 1fr; } .ocols { grid-template-columns: 1fr; } .checks li { grid-template-columns: 1fr auto; } .checks time { grid-column: 1 / -1; } .tdlg { padding: 0; place-items: end center; } .tdbox { border-radius: 22px 22px 0 0; max-height: 92vh; } .stagestrip { grid-template-columns: 1fr 1fr; } }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-weight: 600; z-index: 40; max-width: calc(100vw - 32px); }
 
 footer { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 40px max(16px, env(safe-area-inset-left, 0px)) 56px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--ink-soft); }
@@ -652,9 +703,9 @@ footer button.rm { justify-self: start; }
   <section class="band alt">
     <div class="wrap cols2" style="align-items:center">
       <div class="stack">
-        <p class="eyebrow">Your green impact</p>
-        <h2>Every tree you plant, tracked in one place</h2>
-        <p class="lead">Your fruit trees, timber trees, and the trees you plant with schools and forests, all on one profile. Photos, survival, harvests and a green score you can share with a scan.</p>
+        <p class="eyebrow">Farm from your phone</p>
+        <h2>Watch your tree grow, every two weeks</h2>
+        <p class="lead">Every two weeks we check, photograph and update your tree: its health, its stage from flowers to ripe fruit, and the fruit counted. We count across the whole batch too, so you always know the likely range of your next harvest. A tree is a living crop, and you get to watch it happen.</p>
         <div class="cta-row"><button class="btn" data-go="journey">See a demo profile</button></div>
       </div>
       <div class="panel scorecard"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--leaf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="71.9" transform="rotate(-90 60 60)"/></svg><div class="scoretxt"><b>780</b><span>Green score</span></div><div class="stack" style="gap:10px"><p class="eyebrow">Demo member</p><div class="sbar"><div class="row2x"><span>Trees alive</span><b>12 of 12</b></div><div class="meter"><i style="width:100%"></i></div></div><div class="sbar"><div class="row2x"><span>Survival</span><b>96%</b></div><div class="meter"><i style="width:96%"></i></div></div><div class="sbar"><div class="row2x"><span>Community trees</span><b>25</b></div><div class="meter"><i style="width:62%"></i></div></div></div></div>
@@ -1001,6 +1052,23 @@ footer button.rm { justify-self: start; }
     </div>
   </section>
 
+  <section class="band alt">
+    <div class="wrap phonefarm">
+      <div class="stack">
+        <p class="eyebrow">Farm from your phone</p>
+        <h2>See every stage, from flower to fruit</h2>
+        <p class="lead">Every two weeks your tree is checked, photographed and updated on your phone. You see its health, its stage and how many apples it is carrying, plus the likely range for your next harvest, based on the whole batch.</p>
+        <div class="cta-row"><button class="btn" data-go="journey">See a demo tree</button></div>
+      </div>
+      <div class="stagestrip">
+        <div><small>Stage 1</small><b>Flowering</b><span class="soft">Blossom opens</span></div>
+        <div><small>Stage 2</small><b>Fruit set</b><span class="soft">Small apples form</span></div>
+        <div><small>Stage 3</small><b>Fruit growing</b><span class="soft">Counted and thinned</span></div>
+        <div><small>Stage 4</small><b>Ripening, then harvest</b><span class="soft">Picked and packed for you</span></div>
+      </div>
+    </div>
+  </section>
+
   <section class="band">
     <div class="wrap">
       <div class="head"><p class="eyebrow">Why adopt</p><h2>Most seedlings die from neglect. Adopted trees have someone watching.</h2>
@@ -1189,14 +1257,10 @@ footer button.rm { justify-self: start; }
         </div>
       </div>
 
-      <h2 class="jh2">Her trees</h2>
-      <div class="tgrid">
-        <div class="tcard apple"><div class="tchead"><span class="mono">AP1-04/27:042</span><span class="pill">Alive</span></div><h3>“Baba’s tree”</h3><p class="soft">Apple, Wambugu variety · 2 years 8 months</p><ul><li>Last photo 3 days ago</li><li>This season: 38 apples, her share</li><li>Next harvest day in March</li></ul></div>
-        <div class="tcard apple"><div class="tchead"><span class="mono">AP1-04/27:043</span><span class="pill">Alive</span></div><h3>“Shiru”</h3><p class="soft">Apple, Wambugu variety · 2 years 8 months</p><ul><li>Last photo 3 days ago</li><li>This season: 41 apples, her share</li><li>Pruned in October</li></ul></div>
-        <div class="tcard avo"><div class="tchead"><span class="mono">AV1-06/27:122</span><span class="pill">Flowering</span></div><h3>“Zawadi”</h3><p class="soft">Hass avocado · 2 years 6 months</p><ul><li>First flowers this season</li><li>First fruit expected next year</li><li>Watered weekly in the dry spell</li></ul></div>
-        <div class="tcard wood"><div class="tchead"><span class="mono">ML1-11/27:045</span><span class="pill">Alive</span></div><h3>“For Juma”</h3><p class="soft">Melia timber · 2 years 1 month</p><ul><li>3.1 m tall, growing straight</li><li>Gift to her brother, moved to his name</li><li>Timber harvest from about year 12</li></ul></div>
-      </div>
-      <p class="small-print" style="margin-top:8px">Plus 3 more apple trees, 2 avocado trees and 3 Melia trees.</p>
+      <div class="row2x" style="align-items:baseline;flex-wrap:wrap;margin:34px 0 6px"><h2 class="jh2" style="margin:0">Her 12 trees</h2><span class="pill">Checked every two weeks · last check 3 Mar 2029</span></div>
+      <p class="soft" style="margin-bottom:14px">Tap a tree to see its health, its growing stage and what to expect at harvest.</p>
+      <div class="pgrid" id="demoTrees"></div>
+      <p class="small-print" style="margin-top:8px">The demo uses stock photos. Real profiles show your own tree, photographed on the farm every two weeks.</p>
 
       <h2 class="jh2">Community trees</h2>
       <div class="cols2">
@@ -1314,6 +1378,7 @@ footer button.rm { justify-self: start; }
 </footer>
 <div class="stickycta" id="stickyCta"><span><b>From KSh 4,000</b> per tree · 60% of the fruit</span><button class="btn small" data-go="order">Join the waitlist</button></div>
 <div class="toast" id="toast" role="status" hidden></div>
+<div class="tdlg" id="treeDlg" hidden><div class="tdbox" role="dialog" aria-modal="true" aria-labelledby="tdName"><button class="tdx" type="button" id="tdClose" aria-label="Close">×</button><div id="tdBody"></div></div></div>
 <div class="adopt" id="adoptPop" role="dialog" aria-modal="false" aria-labelledby="adoptT" hidden>
   <div class="art" id="adoptArt" aria-hidden="true"></div>
   <button class="x" type="button" id="adoptX" aria-label="Close">×</button>
@@ -1545,6 +1610,99 @@ footer button.rm { justify-self: start; }
     document.querySelectorAll("[data-jtab]").forEach(function (x) { var on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-selected", on); });
     document.querySelectorAll("[data-jp]").forEach(function (pnl) { pnl.hidden = pnl.getAttribute("data-jp") !== k; });
   });
+  /* ---------- demo profile: trees, two-weekly checks and harvest outlook ---------- */
+  var IMG = function (id) { return "https://images.unsplash.com/photo-" + id + "?auto=format&fit=crop&w=700&q=70"; };
+  var STAGES = {
+    apple: ["Seedling", "Growing", "Flowering", "Fruit set", "Fruit growing", "Ripening", "Harvest"],
+    avocado: ["Seedling", "Growing", "Flowering", "Fruit set", "Fruit growing", "Mature", "Harvest"],
+    melia: ["Seedling", "Sapling", "Young tree", "Pole tree", "Timber tree"]
+  };
+  var CHECKS = ["3 Mar 2029", "17 Feb 2029", "3 Feb 2029", "20 Jan 2029", "6 Jan 2029", "23 Dec 2028"];
+  var BATCH = {
+    AP1: { crop: "apple", label: "Batch AP1, apples planted April 2027", sampled: 120, avg: 38, lo: 28, hi: 48, pick: "early April 2029", share: 0.5 },
+    AV1: { crop: "avocado", label: "Batch AV1, avocados planted June 2027", flowering: 42 },
+    ML1: { crop: "melia", label: "Batch ML1, Melia planted November 2027", avgH: 2.6, loH: 2.1, hiH: 3.2 }
+  };
+  var DT = [
+    { code: "AP1-04/27:042", name: "Baba’s tree", b: "AP1", img: "1745062921156-f164f8dbbbe7", h: 94, st: 4, n: 41 },
+    { code: "AP1-04/27:043", name: "Shiru", b: "AP1", img: "1624812678091-a209d71a9c0e", h: 91, st: 4, n: 37 },
+    { code: "AP1-04/27:044", name: "Kesho", b: "AP1", img: "1600752085601-1ec2646cd736", h: 78, st: 4, n: 29, watch: "Aphids found on 17 Feb and treated the same day. Recovering well." },
+    { code: "AP1-04/27:045", name: "Mama Njeri", b: "AP1", img: "1537811465496-6c38a51d2d81", h: 90, st: 4, n: 44 },
+    { code: "AP1-04/27:046", name: "Lucky", b: "AP1", img: "1727120279660-5c28b8461609", h: 88, st: 4, n: 35 },
+    { code: "AV1-06/27:122", name: "Zawadi", b: "AV1", img: "1542820242-a3699d4f2bfe", h: 92, st: 2 },
+    { code: "AV1-06/27:123", name: "Neema", b: "AV1", img: "1632606325750-5749c9ff78e2", h: 89, st: 1 },
+    { code: "AV1-06/27:124", name: "Imani", b: "AV1", img: "1767457108672-79c6dd48a165", h: 84, st: 1, watch: "Leaves curled in the dry spell. Extra watering since 3 Feb." },
+    { code: "ML1-11/27:046", name: "Mwangaza", b: "ML1", img: "1630022251361-40d5b1a971f2", h: 93, st: 1, m: 3.1 },
+    { code: "ML1-11/27:047", name: "Shamba", b: "ML1", img: "1698828871218-4b450ac9e126", h: 90, st: 1, m: 2.7 },
+    { code: "ML1-11/27:048", name: "Pole Pole", b: "ML1", img: "1712342109846-a8fcb1c883ba", h: 89, st: 1, m: 2.2 },
+    { code: "ML1-11/27:049", name: "Simba", b: "ML1", img: "1422246654994-34520d5a0340", h: 91, st: 1, m: 2.9 }
+  ];
+  var CROPN = { apple: "Apple, Wambugu variety", avocado: "Hass avocado", melia: "Melia timber" };
+  function hLabel(h) { return h >= 88 ? ["Healthy", "ok"] : h >= 75 ? ["Watch", "watch"] : ["Needs care", "bad"]; }
+  function demoHistory(t) {
+    var c = BATCH[t.b].crop, out = [];
+    var notes = {
+      apple: [["Growing", "Pruned and fed with manure."], ["Flowering", "Flowers opening across the tree."], ["Fruit set", "Flowers have set into small fruit."], ["Fruit growing", "Fruit thinned to keep the strongest."], ["Fruit growing", "Watered twice this week in the heat."], ["Fruit growing", "Fruit sizing up and starting to colour."]],
+      avocado: [["Growing", "Weeded and mulched."], ["Growing", "New leaves flushing."], ["Growing", "Fed with manure."], ["Growing", "Watered in the dry spell."], [t.st >= 2 ? "Flowering" : "Growing", t.st >= 2 ? "First flower buds showing." : "Steady new growth."], [t.st >= 2 ? "Flowering" : "Growing", t.st >= 2 ? "Flowering. On young trees most early flowers drop, which is normal." : "Healthy canopy, no pests found."]],
+      melia: [["Sapling", "Side shoots pruned so the stem grows straight."], ["Sapling", "Weeded around the base."], ["Sapling", "Growing well."], ["Sapling", "Checked for termites. None found."], ["Sapling", "Measured and photographed."], ["Sapling", "Straight stem, strong growth."]]
+    }[c];
+    for (var i = 0; i < 6; i++) {
+      var k = 5 - i, hh = Math.max(60, Math.min(99, t.h - (k % 3) + (k === 4 ? 1 : 0)));
+      var note = notes[i][1], extra = "";
+      if (c === "apple" && i >= 2) { var counts = [0, 0, Math.round(t.n * 1.3), Math.round(t.n * 1.12), Math.round(t.n * 1.04), t.n]; extra = counts[i] + " fruit counted"; }
+      if (c === "melia") extra = (t.m - (5 - i) * 0.12).toFixed(1) + " m tall";
+      if (t.watch && i === 4 && c === "apple") { note = "Aphids found and treated the same day."; hh = 72; }
+      if (t.watch && i === 4 && c === "avocado") { note = "Leaves curled in the heat. Extra watering started."; hh = 78; }
+      out.push({ date: CHECKS[5 - i], stage: notes[i][0], h: hh, note: note, extra: extra });
+    }
+    return out.reverse();
+  }
+  function demoOutlook(t) {
+    var B = BATCH[t.b], c = B.crop;
+    if (c === "apple") {
+      var lo = Math.round(t.n * 0.82), hi = Math.round(t.n * 1.05);
+      return '<div class="outlook"><p class="eyebrow">Harvest outlook</p><h3>About ' + Math.round(lo * B.share) + ' to ' + Math.round(hi * B.share) + ' apples for you</h3>' +
+        '<p class="soft">Picking expected in ' + B.pick + '.</p>' +
+        '<div class="ocols"><div><b>' + t.n + '</b><span>fruit counted on this tree at the last check</span></div><div><b>' + lo + '–' + hi + '</b><span>likely to be picked from it, after normal fruit drop</span></div><div><b>' + B.avg + '</b><span>average per tree across ' + B.label.split(",")[0] + ' (most trees ' + B.lo + '–' + B.hi + ')</span></div></div>' +
+        '<p class="small-print">How we estimate: every two weeks we count fruit on your tree and on ' + B.sampled + ' sample trees in the batch. We take the batch average, adjust it for your own tree, and give you a range. Your share is half of what your tree gives.</p></div>';
+    }
+    if (c === "avocado") return '<div class="outlook"><p class="eyebrow">Harvest outlook</p><h3>First avocados expected from 2030</h3><p class="soft">Hass avocado trees usually start fruiting in year 3 or 4. ' + B.flowering + '% of trees in ' + B.label.split(",")[0] + ' flowered this season. On young trees most early flowers drop, which is normal and helps the tree grow strong.</p></div>';
+    return '<div class="outlook"><p class="eyebrow">Growth outlook</p><h3>' + t.m.toFixed(1) + ' m tall, timber from about year 12</h3><p class="soft">Average height across ' + B.label.split(",")[0] + ' is ' + B.avgH + ' m (most trees ' + B.loH + '–' + B.hiH + ' m). We measure height and stem every two weeks so you can watch the timber grow.</p></div>';
+  }
+  function demoCard(t, i) {
+    var c = BATCH[t.b].crop, hl = hLabel(t.h), st = STAGES[c][t.st];
+    return '<button class="pcard ' + c + '" data-tree="' + i + '" type="button"><span class="pimg"><img src="' + IMG(t.img) + '" alt="" loading="lazy" onerror="this.parentNode.classList.add(\'noimg\');this.remove()"><span class="hb ' + hl[1] + '">' + hl[0] + '</span></span>' +
+      '<span class="pbody"><b>“' + esc(t.name) + '”</b><span class="mono">' + t.code + '</span><span class="soft">' + CROPN[c] + ' · ' + st + '</span>' +
+      (c === "apple" ? '<span class="pnum">' + t.n + ' fruit counted</span>' : c === "melia" ? '<span class="pnum">' + t.m.toFixed(1) + ' m tall</span>' : '<span class="pnum">' + (t.st >= 2 ? "First flowers" : "Growing well") + '</span>') + '</span></button>';
+  }
+  function demoDetail(t) {
+    var B = BATCH[t.b], c = B.crop, hl = hLabel(t.h), stages = STAGES[c];
+    return '<div class="tdhero ' + c + '"><img src="' + IMG(t.img).replace("w=700", "w=1200") + '" alt="" onerror="this.remove()"><span class="cap">Stock photo in this demo</span></div>' +
+      '<div class="tdpad"><div class="tdtop"><div><h2 id="tdName">“' + esc(t.name) + '”</h2><p class="soft">' + CROPN[c] + ' · <span class="mono">' + t.code + '</span> · ' + B.label + '</p></div>' +
+      '<div class="hscore ' + hl[1] + '"><b>' + t.h + '</b><span>Health · ' + hl[0] + '</span></div></div>' +
+      (t.watch ? '<p class="watchnote">' + esc(t.watch) + '</p>' : '') +
+      '<p class="eyebrow" style="margin-top:16px">Growing stage</p><ol class="stagebar">' + stages.map(function (s, i) { return '<li class="' + (i < t.st ? "done" : i === t.st ? "now" : "") + '">' + s + '</li>'; }).join("") + '</ol>' +
+      demoOutlook(t) +
+      '<div class="alive"><b>A tree is a living crop.</b> Rain, heat, pests and natural fruit drop can change things within days. That is why we check, photograph and update every tree every two weeks, and why we show a range, not one number.</div>' +
+      '<p class="eyebrow" style="margin-top:18px">Every two weeks</p><ul class="checks">' + demoHistory(t).map(function (u) { var l = hLabel(u.h); return '<li><time>' + u.date + '</time><span><b>' + u.stage + '</b> · ' + esc(u.note) + (u.extra ? ' <span class="soft">' + u.extra + '</span>' : '') + '</span><span class="hb ' + l[1] + '">' + u.h + '</span></li>'; }).join("") + '</ul>' +
+      '<p class="small-print">Next check: 17 March 2029.</p>' +
+      '<div class="cta-row" style="margin-top:12px"><button class="btn ghost" type="button" disabled>Gift or move this tree</button><button class="btn ghost" type="button" disabled>Book a farm visit</button></div></div>';
+  }
+  (function () {
+    var g = $("#demoTrees"); if (!g) return;
+    g.innerHTML = DT.map(demoCard).join("");
+    var dlg = $("#treeDlg"), last = null;
+    function close() { dlg.hidden = true; document.body.style.overflow = ""; if (last) last.focus(); }
+    g.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-tree]"); if (!b) return; last = b;
+      $("#tdBody").innerHTML = demoDetail(DT[+b.getAttribute("data-tree")]);
+      dlg.hidden = false; document.body.style.overflow = "hidden"; $("#tdClose").focus();
+      if (typeof TRK !== "undefined") TRK.ev("demo_tree_open", { crop: BATCH[DT[+b.getAttribute("data-tree")].b].crop });
+    });
+    $("#tdClose").addEventListener("click", close);
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !dlg.hidden) close(); });
+  })();
   /* ---------- "adopt me" seedling pop-up, one per crop page ---------- */
   var POP = {
     avocado: { who: "a little Hass avocado seedling", share: "60% of my avocados", years: "30 years", leaf: "#3f7d2c", fruit: "", slot: "popAvocado", photo: "https://images.unsplash.com/photo-1767457108672-79c6dd48a165?auto=format&fit=crop&w=700&q=70" },

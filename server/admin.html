@@ -76,7 +76,7 @@ $("#out").onclick=function(){api("/api/logout",{method:"POST"}).then(function(){
 function tab(n){[1,2,3,4,5,6].forEach(function(i){$("#p"+i).hidden=i!==n;$("#t"+i).className=i===n?"on":""});if(n===6)loadStats()}
 var DAYS=7,STT=null;
 var PAGE={home:"Home",avocado:"Avocado page",apple:"Apple page",melia:"Timber page",order:"Waitlist form",upcoming:"Upcoming",login:"Log in",dashboard:"Member profile"};
-var ACT={view:"opened",adopt_click:"clicked Adopt / Join",popup_shown:"saw the seedling pop-up",popup_adopt:"named a seedling in the pop-up",popup_close:"closed the pop-up",org_click:"clicked Organisations",waitlist_submit:"joined the waiting list",estimate_use:"used the harvest calculator"};
+var ACT={view:"opened",adopt_click:"clicked Adopt / Join",popup_shown:"saw the seedling pop-up",popup_adopt:"named a seedling in the pop-up",popup_close:"closed the pop-up",org_click:"clicked Organisations",waitlist_submit:"joined the waiting list",estimate_use:"used the harvest calculator",demo_tree_open:"opened a demo tree"};
 function nf(n){return(n==null?"–":Number(n).toLocaleString())}
 function tbl(rows,label){if(!rows.length)return'<p class="soft">Nothing yet.</p>';var mx=rows[0][1]||1;return'<table class="mini">'+rows.map(function(r){return'<tr><td>'+esc(label?label(r[0]):r[0])+'<div class="meter"><i style="width:'+Math.round(100*r[1]/mx)+'%"></i></div></td><td>'+nf(r[1])+'</td></tr>'}).join("")+'</table>'}
 function chart(series){var W=900,H=220,P=28,n=series.length,mx=Math.max(1,Math.max.apply(null,series.map(function(d){return Math.max(d.views,d.visitors)}))),bw=(W-P)/n;
@@ -94,7 +94,7 @@ function loadStats(){clearTimeout(STT);return api("/api/admin/analytics?days="+D
  $("#chart").innerHTML=chart(a.series);
  $("#pages").innerHTML=tbl(a.pages,function(k){return PAGE[k]||k});
  $("#refs").innerHTML=tbl(a.referrers);
- var ac=a.actions;$("#acts").innerHTML=tbl([["Clicked Adopt or Join",ac.adoptClicks],["Saw the seedling pop-up",ac.popupShown],["Named a seedling in the pop-up",ac.popupAdopt],["Closed the pop-up",ac.popupClose],["Used a harvest calculator",ac.estimates],["Clicked Organisations",ac.orgClicks],["Joined the waiting list",ac.waitlistSubmits]].filter(function(r){return true}))+(a.crops.length?'<small class="soft">Crops chosen: '+a.crops.map(function(c){return esc(c[0])+" "+c[1]}).join(" · ")+'</small>':"");
+ var ac=a.actions;$("#acts").innerHTML=tbl([["Clicked Adopt or Join",ac.adoptClicks],["Saw the seedling pop-up",ac.popupShown],["Named a seedling in the pop-up",ac.popupAdopt],["Closed the pop-up",ac.popupClose],["Used a harvest calculator",ac.estimates],["Clicked Organisations",ac.orgClicks],["Opened a demo tree",ac.demoTrees],["Joined the waiting list",ac.waitlistSubmits]].filter(function(r){return true}))+(a.crops.length?'<small class="soft">Crops chosen: '+a.crops.map(function(c){return esc(c[0])+" "+c[1]}).join(" · ")+'</small>':"");
  $("#devs").innerHTML=tbl(a.devices);$("#oss").innerHTML=tbl(a.os.concat([]));
  $("#tzs").innerHTML=tbl(a.timezones,function(k){return k.replace(/_/g," ")});
  $("#camps").innerHTML=tbl(a.campaigns);

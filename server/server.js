@@ -104,7 +104,7 @@ const MIME = { jpg: "image/jpeg", png: "image/png", webp: "image/webp" };
 
 /* ---------- visitor analytics ---------- */
 const BOT_RE = /bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit|whatsapp|telegram|curl|wget|python|go-http|monitor|uptime/i;
-const EV_TYPES = ["view", "adopt_click", "popup_shown", "popup_adopt", "popup_close", "org_click", "waitlist_submit", "estimate_use"];
+const EV_TYPES = ["view", "adopt_click", "popup_shown", "popup_adopt", "popup_close", "org_click", "waitlist_submit", "estimate_use", "demo_tree_open"];
 const dayKey = ms => new Date(ms + 3 * 3600e3).toISOString().slice(0, 10); // Nairobi days
 function devOf(ua) { return /iPad|Tablet/i.test(ua) ? "Tablet" : /Mobi|iPhone|Android/i.test(ua) ? "Mobile" : "Desktop"; }
 function osOf(ua) { return /Android/i.test(ua) ? "Android" : /iPhone|iPad|iPod/i.test(ua) ? "iOS" : /Windows/i.test(ua) ? "Windows" : /Mac OS X|Macintosh/i.test(ua) ? "macOS" : /Linux|CrOS/i.test(ua) ? "Linux" : "Other"; }
@@ -145,7 +145,7 @@ function analytics(days) {
     series, pages: uniqTop(views, "page", 12), referrers: topOf(firsts.map(e => ({ r: e.ref || "Direct / WhatsApp / typed" })), "r", 12),
     campaigns: topOf(firsts.filter(e => e.src).map(e => ({ c: e.src + (e.med ? " / " + e.med : "") + (e.camp ? " / " + e.camp : "") })), "c", 10),
     devices: uniqTop(views, "dev"), os: uniqTop(views, "os"), browsers: uniqTop(views, "br"), timezones: uniqTop(views, "tz", 10), languages: uniqTop(views, "lang", 8),
-    actions: { adoptClicks: count("adopt_click"), popupShown: count("popup_shown"), popupAdopt: count("popup_adopt"), popupClose: count("popup_close"), orgClicks: count("org_click"), estimates: count("estimate_use"), waitlistSubmits: count("waitlist_submit") },
+    actions: { adoptClicks: count("adopt_click"), popupShown: count("popup_shown"), popupAdopt: count("popup_adopt"), popupClose: count("popup_close"), orgClicks: count("org_click"), estimates: count("estimate_use"), waitlistSubmits: count("waitlist_submit"), demoTrees: count("demo_tree_open") },
     crops: topOf(ev.filter(e => e.t === "adopt_click" || e.t === "waitlist_submit"), "crop", 6),
     recent: ev.slice().sort((x, y) => (x.at < y.at ? 1 : -1)).slice(0, 60).map(e => ({ at: e.at, t: e.t, page: e.page, crop: e.crop, qty: e.qty, ref: e.ref, src: e.src, dev: e.dev, os: e.os, tz: e.tz, new: e.new, v: (e.v || "").slice(0, 6) }))
   };
