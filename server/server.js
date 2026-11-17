@@ -20,6 +20,8 @@ if (ADMIN_PASSWORD.length < 10) {
 
 /* ---------- storage ---------- */
 const SIGNUPS = path.join(DATA_DIR, "signups.json");
+const EVDIR = path.join(DATA_DIR, "events");
+fs.mkdirSync(EVDIR, { recursive: true, mode: 0o750 });
 const CONTENT = path.join(DATA_DIR, "content.json");
 const SECRET_FILE = path.join(DATA_DIR, ".secret");
 function readJSON(f, d) { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch (e) { return d; } }
@@ -100,6 +102,57 @@ function sniff(b) {
 }
 const MIME = { jpg: "image/jpeg", png: "image/png", webp: "image/webp" };
 
+/* ---------- visitor analytics ---------- */
+const BOT_RE = /bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit|whatsapp|telegram|curl|wget|python|go-http|monitor|uptime/i;
+const EV_TYPES = ["view", "adopt_click", "popup_shown", "popup_adopt", "popup_close", "org_click", "waitlist_submit", "estimate_use"];
+const dayKey = ms => new Date(ms + 3 * 3600e3).toISOString().slice(0, 10); // Nairobi days
+function devOf(ua) { return /iPad|Tablet/i.test(ua) ? "Tablet" : /Mobi|iPhone|Android/i.test(ua) ? "Mobile" : "Desktop"; }
+function osOf(ua) { return /Android/i.test(ua) ? "Android" : /iPhone|iPad|iPod/i.test(ua) ? "iOS" : /Windows/i.test(ua) ? "Windows" : /Mac OS X|Macintosh/i.test(ua) ? "macOS" : /Linux|CrOS/i.test(ua) ? "Linux" : "Other"; }
+function brOf(ua) { return /SamsungBrowser/i.test(ua) ? "Samsung" : /Edg\//i.test(ua) ? "Edge" : /OPR\/|Opera/i.test(ua) ? "Opera" : /Firefox|FxiOS/i.test(ua) ? "Firefox" : /Chrome|CriOS/i.test(ua) ? "Chrome" : /Safari/i.test(ua) ? "Safari" : "Other"; }
+function readEvents(days) {
+  const out = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const f = path.join(EVDIR, dayKey(Date.now() - i * 864e5) + ".jsonl");
+    let txt; try { txt = fs.readFileSync(f, "utf8"); } catch (e) { continue; }
+    for (const line of txt.split("\n")) { if (!line) continue; try { out.push(JSON.parse(line)); } catch (e) {} }
+  }
+  return out;
+}
+function topOf(list, key, n) { const c = {}; list.forEach(e => { const k = e[key]; if (k) c[k] = (c[k] || 0) + 1; }); return Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, n || 10); }
+function uniqTop(list, key, n) { const c = {}; list.forEach(e => { const k = e[key]; if (!k) return; (c[k] = c[k] || new Set()).add(e.v); }); return Object.entries(c).map(([k, s]) => [k, s.size]).sort((a, b) => b[1] - a[1]).slice(0, n || 10); }
+function analytics(days) {
+  const ev = readEvents(days), views = ev.filter(e => e.t === "view");
+  const visitors = new Set(views.map(e => e.v)), sessions = new Set(views.map(e => e.s));
+  const newV = new Set(views.filter(e => e.new).map(e => e.v));
+  const first = {}; views.forEach(e => { if (!first[e.s]) first[e.s] = e; });
+  const firsts = Object.values(first);
+  const perSession = {}; views.forEach(e => { perSession[e.s] = (perSession[e.s] || 0) + 1; });
+  const bounce = Object.values(perSession).filter(n => n === 1).length;
+  const series = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const d = dayKey(Date.now() - i * 864e5), dv = views.filter(e => dayKey(Date.parse(e.at)) === d);
+    series.push({ day: d, visitors: new Set(dv.map(e => e.v)).size, views: dv.length, signups: ev.filter(e => e.t === "waitlist_submit" && dayKey(Date.parse(e.at)) === d).length });
+  }
+  const since = Date.now() - days * 864e5;
+  const signups = readJSON(SIGNUPS, []).filter(r => Date.parse(r.at) >= since);
+  const live = new Set(views.filter(e => Date.now() - Date.parse(e.at) < 5 * 60e3).map(e => e.v)).size;
+  const count = t => ev.filter(e => e.t === t).length;
+  return {
+    days, live, visitors: visitors.size, newVisitors: newV.size, returning: Math.max(0, visitors.size - newV.size), sessions: sessions.size, views: views.length,
+    bouncePct: sessions.size ? Math.round(100 * bounce / sessions.size) : null,
+    signups: signups.length, treesWanted: signups.reduce((a, r) => a + (r.qty || 0), 0),
+    conversionPct: visitors.size ? Math.round(1000 * signups.length / visitors.size) / 10 : null,
+    series, pages: uniqTop(views, "page", 12), referrers: topOf(firsts.map(e => ({ r: e.ref || "Direct / WhatsApp / typed" })), "r", 12),
+    campaigns: topOf(firsts.filter(e => e.src).map(e => ({ c: e.src + (e.med ? " / " + e.med : "") + (e.camp ? " / " + e.camp : "") })), "c", 10),
+    devices: uniqTop(views, "dev"), os: uniqTop(views, "os"), browsers: uniqTop(views, "br"), timezones: uniqTop(views, "tz", 10), languages: uniqTop(views, "lang", 8),
+    actions: { adoptClicks: count("adopt_click"), popupShown: count("popup_shown"), popupAdopt: count("popup_adopt"), popupClose: count("popup_close"), orgClicks: count("org_click"), estimates: count("estimate_use"), waitlistSubmits: count("waitlist_submit") },
+    crops: topOf(ev.filter(e => e.t === "adopt_click" || e.t === "waitlist_submit"), "crop", 6),
+    recent: ev.slice().sort((x, y) => (x.at < y.at ? 1 : -1)).slice(0, 60).map(e => ({ at: e.at, t: e.t, page: e.page, crop: e.crop, qty: e.qty, ref: e.ref, src: e.src, dev: e.dev, os: e.os, tz: e.tz, new: e.new, v: (e.v || "").slice(0, 6) }))
+  };
+}
+// keep 13 months of visit data
+setInterval(() => { try { const cut = dayKey(Date.now() - 400 * 864e5); fs.readdirSync(EVDIR).forEach(f => { if (/^\d{4}-\d{2}-\d{2}\.jsonl$/.test(f) && f.slice(0, 10) < cut) fs.unlinkSync(path.join(EVDIR, f)); }); } catch (e) {} }, 864e5).unref();
+
 /* ---------- routes ---------- */
 const clean = (v, n) => String(v == null ? "" : v).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, "").trim().slice(0, n);
 
@@ -127,6 +180,25 @@ async function handle(req, res) {
     const su = userFrom(req); if (su) rec.userId = su.id;
     const all = readJSON(SIGNUPS, []); all.push(rec); writeJSON(SIGNUPS, all);
     return send(res, 200, { ok: true });
+  }
+
+  // public: anonymous visit counting (no cookies, no IP addresses stored)
+  if (p === "/api/track" && m === "POST") {
+    if (limited("t:" + ip(req), 400, 3600e3)) return send(res, 204, null);
+    const ua = String(req.headers["user-agent"] || "");
+    if (!ua || BOT_RE.test(ua)) return send(res, 204, null);
+    let j; try { j = JSON.parse((await body(req, 4000)).toString("utf8")); } catch (e) { return send(res, 204, null); }
+    const t = String(j.t || "");
+    if (!EV_TYPES.includes(t)) return send(res, 204, null);
+    const idok = v => /^[a-z0-9]{8,32}$/.test(String(v || "")) ? String(v) : "";
+    const ev = { at: new Date().toISOString(), t, v: idok(j.v), s: idok(j.s), page: clean(j.page, 30), new: j.new ? 1 : 0,
+      crop: clean(j.crop, 20), qty: Math.max(0, Math.min(500, parseInt(j.qty, 10) || 0)), ref: clean(j.ref, 80).toLowerCase(),
+      src: clean(j.src, 60).toLowerCase(), med: clean(j.med, 40).toLowerCase(), camp: clean(j.camp, 60).toLowerCase(),
+      tz: clean(j.tz, 50), lang: clean(j.lang, 16), dev: devOf(ua), os: osOf(ua), br: brOf(ua) };
+    if (!ev.v || !ev.s) return send(res, 204, null);
+    Object.keys(ev).forEach(k => { if (ev[k] === "" || ev[k] === 0 && k !== "new") delete ev[k]; });
+    try { fs.appendFileSync(path.join(EVDIR, dayKey(Date.now()) + ".jsonl"), JSON.stringify(ev) + "\n", { mode: 0o640 }); } catch (e) {}
+    return send(res, 204, null);
   }
 
   // public: live counters (real data only)
@@ -209,6 +281,11 @@ async function handle(req, res) {
     if (m !== "GET" && !sameOrigin(req)) return send(res, 403, { error: "Forbidden" });
 
     if (p === "/api/admin/me") return send(res, 200, { ok: true });
+
+    if (p === "/api/admin/analytics" && m === "GET") {
+      const d = Math.max(1, Math.min(90, parseInt(u.searchParams.get("days"), 10) || 7));
+      return send(res, 200, analytics(d));
+    }
 
     if (p === "/api/admin/signups" && m === "GET") return send(res, 200, { signups: readJSON(SIGNUPS, []).reverse() });
 

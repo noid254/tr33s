@@ -1070,7 +1070,8 @@ footer button.rm { justify-self: start; }
       <details><summary>What if my tree dies?</summary><p>A reserve tree of the same age takes its place and your name moves to it. You will see the change on your tree's record.</p></details>
       <details><summary>Can I visit my tree?</summary><p>Yes. You can book a farm visit, and every adopter is invited to harvest days.</p></details>
       <details><summary>Can I give a tree as a gift?</summary><p>Yes. Choose the gift option, add their name and an occasion, and the name goes on the tag.</p></details>
-      <details><summary>Where do the seedlings come from?</summary><p>We buy grafted seedlings of the Wambugu variety only from KEPHIS-registered nurseries, and we will name our nursery when the order is placed. Wambugu apple is the name of the variety. tr33s is independent and is not affiliated with Peter Wambugu or Wambugu Apples’ Farm.</p></details>
+      <details><summary>Where do the seedlings come from?</summary><p>We buy grafted seedlings of the Wambugu variety only from KEPHIS-registered nurseries, and we will name our nursery when the order is placed. Wambugu apple is the name of the variety. tr33s is independent and is not affiliated with Peter Wambugu or Wambugu Apples’ Farm.</p>
+    <p>We count visits anonymously to improve the site: no cookies for this, no ad trackers, and we never store your IP address.</p></details>
       <details><summary>What happens after 10 years?</summary><p>You can renew your adoption at a lower price, or let it end. If it ends, the tree stays with the farm.</p></details>
     </div>
   </section>
@@ -1179,6 +1180,32 @@ footer button.rm { justify-self: start; }
 
 <script>
 (function () {
+  /* ---------- anonymous visit counting: no cookies, no ad trackers ---------- */
+  var TRK = (function () {
+    var on = location.protocol.indexOf("http") === 0 && navigator.doNotTrack !== "1";
+    function rnd() { return Math.random().toString(36).slice(2, 12) + Date.now().toString(36); }
+    var v = "", s = "", isNew = 0;
+    try { v = localStorage.getItem("t33v") || ""; if (!v) { v = rnd(); localStorage.setItem("t33v", v); isNew = 1; } } catch (e) { v = rnd(); isNew = 1; }
+    try { s = sessionStorage.getItem("t33s") || ""; if (!s) { s = rnd(); sessionStorage.setItem("t33s", s); } } catch (e) { s = rnd(); }
+    var q = new URLSearchParams(location.search), ref = "";
+    try { if (document.referrer) { var h = new URL(document.referrer).hostname; if (h !== location.hostname) ref = h.replace(/^www\./, ""); } } catch (e) {}
+    var base = { v: v, s: s, ref: ref, src: q.get("utm_source") || "", med: q.get("utm_medium") || "", camp: q.get("utm_campaign") || "",
+      tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || ""), lang: navigator.language || "" };
+    var sent = {}, lastView = "";
+    function send(t, extra) {
+      if (!on) return;
+      var b = Object.assign({ t: t, new: isNew }, base, extra || {});
+      var data = JSON.stringify(b);
+      try { if (navigator.sendBeacon && navigator.sendBeacon("/api/track", new Blob([data], { type: "application/json" }))) return; } catch (e) {}
+      try { fetch("/api/track", { method: "POST", headers: { "Content-Type": "application/json" }, body: data, keepalive: true }).catch(function () {}); } catch (e) {}
+    }
+    return {
+      view: function (page) { if (page === lastView) return; lastView = page; send("view", { page: page }); },
+      ev: function (t, extra) { send(t, Object.assign({ page: lastView }, extra || {})); },
+      once: function (t, extra) { if (sent[t]) return; sent[t] = 1; this.ev(t, extra); }
+    };
+  })();
+  ["nTrees", "mTrees", "aTrees"].forEach(function (id) { var r = document.getElementById(id); if (r) r.addEventListener("change", function () { TRK.once("estimate_use", { crop: id === "aTrees" ? "apple" : id === "mTrees" ? "melia" : "avocado" }); }); });
   /* ---------- settings: fill these in when you have them ---------- */
   var CONTACT_EMAIL = "";      // e.g. hello@tr33s.co.ke
   var CONTACT_WHATSAPP = "";   // digits only with country code, e.g. 2547xxxxxxxx
@@ -1352,6 +1379,7 @@ footer button.rm { justify-self: start; }
     var text = ["tr33s waiting list " + ref, "Trees: " + cropLabel, "How many: " + n, "Name: " + F.name, "Phone: " + F.phone].concat(tag ? ["Name on tag: " + tag] : []).concat(F.profile ? ["Profile: " + F.profile] : []).join("\n");
     var btn = f.querySelector('[type="submit"]'); btn.disabled = true; btn.textContent = "Sending...";
     var sent = await deliver({ type: "waiting-list", ref: ref, createdAt: new Date().toISOString(), crop: F.crop, qty: n, name: F.name, phone: F.phone, profile: F.profile || "", trees: tag ? [{ tag: tag }] : [], summary: text });
+    TRK.ev("waitlist_submit", { crop: F.crop, qty: n });
     F.done = outcomeHTML(ref, sent, text);
     try { localStorage.removeItem("tr33s_order_draft"); } catch (e) {}
     renderOrder();
@@ -1362,7 +1390,7 @@ footer button.rm { justify-self: start; }
     if ((el = e.target.closest("[data-jcrop]"))) { keepJoin(el.closest("form")); F.crop = el.getAttribute("data-jcrop"); renderOrder(); return; }
     if ((el = e.target.closest("[data-jq]"))) { f = el.closest("form"); keepJoin(f); F.qty = Math.max(1, Math.min(500, nTrees() + +el.getAttribute("data-jq"))); renderOrder(); return; }
     if ((el = e.target.closest("[data-jset]"))) { keepJoin(el.closest("form")); F.qty = +el.getAttribute("data-jset"); renderOrder(); return; }
-    if ((el = e.target.closest("[data-adopt]"))) { resetForm(); F.crop = el.getAttribute("data-adopt"); renderOrder(); var j = document.getElementById("join"); if (j) j.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    if ((el = e.target.closest("[data-adopt]"))) { TRK.ev("adopt_click", { crop: el.getAttribute("data-adopt") }); resetForm(); F.crop = el.getAttribute("data-adopt"); renderOrder(); var j = document.getElementById("join"); if (j) j.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
   });
 
   /* ---------- "adopt me" seedling pop-up, one per crop page ---------- */
@@ -1386,7 +1414,7 @@ footer button.rm { justify-self: start; }
   function popMark(c) { try { sessionStorage.setItem("tr33s_pop_" + c, "1"); } catch (e) {} }
   function hidePop() { var el = $("#adoptPop"); el.classList.remove("on"); setTimeout(function () { el.hidden = true; }, 300); if (popCrop) popMark(popCrop); }
   function showPop(c) {
-    var d = POP[c], el = $("#adoptPop"); popCrop = c;
+    var d = POP[c], el = $("#adoptPop"); popCrop = c; TRK.ev("popup_shown", { crop: c });
     var src = (CONTENT_IMAGES && CONTENT_IMAGES[d.slot]) || d.photo;
     $("#adoptArt").innerHTML = seedlingSVG(d) + '<img src="' + esc(src) + '" alt="A young seedling in the ground, waiting to be adopted" onerror="this.remove()"><span class="cap">Waiting for a name</span>';
     $("#adoptMsg").innerHTML = "I'm " + d.who + ", waiting for my spot in the ground. If you give me a name, I'll wear it on my tag and share <b>" + d.share + " with you for " + d.years + "</b>. I promise to grow my best.";
@@ -1398,11 +1426,11 @@ footer button.rm { justify-self: start; }
     if (!POP[page] || popSeen(page)) return;
     popTimer = setTimeout(function () { if ((location.hash || "").replace("#", "") === page) showPop(page); }, 5000 + Math.random() * 9000);
   }
-  $("#adoptX").addEventListener("click", hidePop);
-  $("#adoptLater").addEventListener("click", hidePop);
+  $("#adoptX").addEventListener("click", function () { TRK.ev("popup_close", { crop: popCrop }); hidePop(); });
+  $("#adoptLater").addEventListener("click", function () { TRK.ev("popup_close", { crop: popCrop }); hidePop(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("#adoptPop").hidden) hidePop(); });
   $("#adoptGo").addEventListener("click", function () {
-    var nm = $("#adoptName").value.trim(), c = popCrop; hidePop();
+    var nm = $("#adoptName").value.trim(), c = popCrop; TRK.ev("popup_adopt", { crop: c }); hidePop();
     resetForm(); F.crop = c; if (nm) treeRec(0).tag = nm; go("order");
   });
   $("#adoptName").addEventListener("keydown", function (e) { if (e.key === "Enter") $("#adoptGo").click(); });
@@ -1416,6 +1444,7 @@ footer button.rm { justify-self: start; }
     $("#stickyCta").hidden = name === "order" || name === "profile";
     $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : name === "apple" ? "<b>KSh 2,500</b> per apple tree · half the harvest for 10 years" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
     document.body.setAttribute("data-view", name);
+    TRK.view(name);
     schedulePop(name);
     if (name === "order") renderOrder();
     if (name === "profile") renderProfile();
@@ -1429,9 +1458,9 @@ footer button.rm { justify-self: start; }
 
   document.addEventListener("click", function (e) {
     var el;
-    if ((el = e.target.closest("[data-hero]"))) { resetForm(); F.crop = el.getAttribute("data-crop") || "apple"; go("order"); return; }
-    if ((el = e.target.closest("[data-org]"))) { resetForm(); F.crop = el.getAttribute("data-org") || "avocado"; F.profile = "A company or organisation"; F.qty = 10; go("order"); return; }
-    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { var cc = el.getAttribute("data-crop") || (location.hash === "#avocado" ? "avocado" : location.hash === "#melia" ? "melia" : "apple"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
+    if ((el = e.target.closest("[data-hero]"))) { TRK.ev("adopt_click", { crop: el.getAttribute("data-crop") || "apple" }); resetForm(); F.crop = el.getAttribute("data-crop") || "apple"; go("order"); return; }
+    if ((el = e.target.closest("[data-org]"))) { TRK.ev("org_click", { crop: el.getAttribute("data-org") || "" }); resetForm(); F.crop = el.getAttribute("data-org") || "avocado"; F.profile = "A company or organisation"; F.qty = 10; go("order"); return; }
+    if ((el = e.target.closest("[data-go]"))) { if (el.getAttribute("data-go") === "order") { TRK.ev("adopt_click", { crop: el.getAttribute("data-crop") || "" }); var cc = el.getAttribute("data-crop") || (location.hash === "#avocado" ? "avocado" : location.hash === "#melia" ? "melia" : "apple"); if (cc !== F.crop) { F.crop = cc; } } if (el.getAttribute("data-go") === "order" && F.done) resetForm(); pendingScroll = el.getAttribute("data-scroll"); go(el.getAttribute("data-go")); return; }
     if ((el = e.target.closest("[data-scroll-only]"))) { var t = document.getElementById(el.getAttribute("data-scroll-only")); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     if ((el = e.target.closest("[data-ostep]"))) { orderStep(+el.getAttribute("data-ostep")); return; }
     if ((el = e.target.closest("[data-addcf]"))) { collect(); F.custom.push({ label: "", value: "" }); renderOrder(); return; }

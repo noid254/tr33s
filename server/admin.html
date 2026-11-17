@@ -18,6 +18,18 @@ button{cursor:pointer;background:var(--acc);color:#10200f;border:0;font-weight:6
 .pill{display:inline-block;padding:1px 9px;border-radius:99px;border:1px solid var(--line);font-size:.8rem;color:var(--soft)}
 textarea{width:100%;min-height:54px}#login{max-width:340px;margin:18vh auto;padding:16px}
 [hidden]{display:none!important}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}.kpi b{display:block;font-size:1.7rem;line-height:1.1}.kpi span{color:var(--soft);font-size:.85rem}
+.kpi.live b{color:var(--acc)}.kpi.live b::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.two{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.bars{width:100%;height:auto;display:block}
+table.mini{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.92rem}table.mini td{padding:5px 4px;border-top:1px solid var(--line)}table.mini td:last-child{width:64px;text-align:right;font-variant-numeric:tabular-nums}
+.meter{max-width:100%;height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:3px}.meter i{display:block;height:100%;background:var(--acc)}
+.feed div{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:.9rem;flex-wrap:wrap}.feed time{color:var(--soft);min-width:86px}
+.range button{padding:6px 12px}
+code{overflow-wrap:anywhere}.two{grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}.two>.card{min-width:0}
+.feed{max-height:520px;overflow:auto}
 </style></head><body>
 <div id="login" class="card" hidden><h2 style="margin-top:0">tr33s admin</h2>
 <p class="soft">Sign in to see waitlist sign-ups and manage site photos.</p>
@@ -25,8 +37,22 @@ textarea{width:100%;min-height:54px}#login{max-width:340px;margin:18vh auto;padd
 <p id="le" class="err" hidden></p></div>
 <div id="app" hidden>
 <header><b>tr33s admin</b><div class="row"><a class="soft" href="/" target="_blank" rel="noopener" style="color:inherit">View site</a><button class="g" id="out">Sign out</button></div></header>
-<main><div class="tabs"><button id="t1" class="on">Waitlist</button><button id="t3">Members</button><button id="t5">Trees</button><button id="t4">Batches</button><button id="t2">Site photos</button></div>
-<section id="p1"><div class="row card"><input id="q" class="grow" placeholder="Search name, email, phone, place"><select id="sf"><option value="">All statuses</option><option>new</option><option>contacted</option><option>interested</option><option>not-interested</option></select><a href="/api/admin/signups.csv"><button class="g" type="button">Download CSV</button></a></div>
+<main><div class="tabs" style="flex-wrap:wrap"><button id="t6" class="on">Visitors</button><button id="t1">Waitlist</button><button id="t3">Members</button><button id="t5">Trees</button><button id="t4">Batches</button><button id="t2">Site photos</button></div>
+<section id="p6"><div class="row card range"><b class="grow">Site visitors</b><button class="g" data-days="1">Today</button><button data-days="7">7 days</button><button class="g" data-days="30">30 days</button><button class="g" data-days="90">90 days</button></div>
+<div class="kpis" id="kpis"></div>
+<div class="card"><div class="row"><b class="grow">Visitors per day</b><small style="flex:1 1 220px"><span style="color:var(--acc)">■</span> visitors <span style="color:#6f8f5a">■</span> page views · numbers above bars are waitlist sign-ups</small></div><div id="chart"></div></div>
+<div class="two">
+<div class="card"><b>Pages</b><small class="soft"> (visitors)</small><div id="pages"></div></div>
+<div class="card"><b>Where visitors came from</b><small class="soft"> (visits)</small><div id="refs"></div></div>
+<div class="card"><b>What people did</b><div id="acts"></div></div>
+<div class="card"><b>Devices</b><div id="devs"></div><b style="display:block;margin-top:10px">Phones and computers</b><div id="oss"></div></div>
+<div class="card"><b>Regions</b><small class="soft"> (time zone of the device)</small><div id="tzs"></div></div>
+<div class="card"><b>Campaign links</b><small class="soft"> (utm_source)</small><div id="camps"></div><p class="soft" style="font-size:.85rem;margin:8px 0 0">Tip: share links like <code>tr33s.co.ke/?utm_source=whatsapp&amp;utm_campaign=friends</code> to see which channel brings people.</p></div>
+</div>
+<div class="card"><div class="row"><b class="grow">Live activity</b><small class="soft">Updates every minute while this page is open</small></div><div class="feed" id="feed"></div></div>
+<p class="soft" style="font-size:.85rem">Counted anonymously: no cookies, no IP addresses stored. Bots and link previews are skipped. People with "do not track" switched on are not counted.</p>
+</section>
+<section id="p1" hidden><div class="row card"><input id="q" class="grow" placeholder="Search name, email, phone, place"><select id="sf"><option value="">All statuses</option><option>new</option><option>contacted</option><option>interested</option><option>not-interested</option></select><a href="/api/admin/signups.csv"><button class="g" type="button">Download CSV</button></a></div>
 <p id="count" class="soft"></p><div id="list"></div></section>
 <section id="p2" hidden><p class="soft">Replace any photo on the site. Use JPG, PNG or WebP up to 6 MB. Changes show on the site within a minute. "Use default" goes back to the built-in photo.</p><div class="grid" id="slots"></div></section>
 
@@ -46,8 +72,35 @@ function api(u,o){return fetch(u,Object.assign({credentials:"same-origin"},o||{}
 function show(ok){$("#login").hidden=ok;$("#app").hidden=!ok}
 $("#lf").onsubmit=function(e){e.preventDefault();$("#le").hidden=true;api("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:$("#pw").value})}).then(function(){$("#pw").value="";start()}).catch(function(x){$("#le").textContent=x.message;$("#le").hidden=false})};
 $("#out").onclick=function(){api("/api/logout",{method:"POST"}).then(function(){show(false)})};
-[1,2,3,4,5].forEach(function(n){$("#t"+n).onclick=function(){tab(n)}});
-function tab(n){[1,2,3,4,5].forEach(function(i){$("#p"+i).hidden=i!==n;$("#t"+i).className=i===n?"on":""})}
+[1,2,3,4,5,6].forEach(function(n){$("#t"+n).onclick=function(){tab(n)}});
+function tab(n){[1,2,3,4,5,6].forEach(function(i){$("#p"+i).hidden=i!==n;$("#t"+i).className=i===n?"on":""});if(n===6)loadStats()}
+var DAYS=7,STT=null;
+var PAGE={home:"Home",avocado:"Avocado page",apple:"Apple page",melia:"Timber page",order:"Waitlist form",upcoming:"Upcoming",login:"Log in",dashboard:"Member profile"};
+var ACT={view:"opened",adopt_click:"clicked Adopt / Join",popup_shown:"saw the seedling pop-up",popup_adopt:"named a seedling in the pop-up",popup_close:"closed the pop-up",org_click:"clicked Organisations",waitlist_submit:"joined the waiting list",estimate_use:"used the harvest calculator"};
+function nf(n){return(n==null?"–":Number(n).toLocaleString())}
+function tbl(rows,label){if(!rows.length)return'<p class="soft">Nothing yet.</p>';var mx=rows[0][1]||1;return'<table class="mini">'+rows.map(function(r){return'<tr><td>'+esc(label?label(r[0]):r[0])+'<div class="meter"><i style="width:'+Math.round(100*r[1]/mx)+'%"></i></div></td><td>'+nf(r[1])+'</td></tr>'}).join("")+'</table>'}
+function chart(series){var W=900,H=220,P=28,n=series.length,mx=Math.max(1,Math.max.apply(null,series.map(function(d){return Math.max(d.views,d.visitors)}))),bw=(W-P)/n;
+ var g='<svg class="bars" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Visitors per day">';
+ [0,.5,1].forEach(function(f){var y=H-24-(H-50)*f;g+='<line x1="'+P+'" x2="'+W+'" y1="'+y+'" y2="'+y+'" stroke="#254029"/><text x="'+(P-4)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="#a9b8a6">'+Math.round(mx*f)+'</text>'});
+ series.forEach(function(d,i){var x=P+i*bw,h1=(H-50)*d.views/mx,h2=(H-50)*d.visitors/mx,w=Math.max(2,bw*0.7);
+  g+='<rect x="'+(x+bw*0.15)+'" y="'+(H-24-h1)+'" width="'+w+'" height="'+h1+'" fill="#6f8f5a" rx="2"><title>'+d.day+': '+d.views+' page views</title></rect>';
+  g+='<rect x="'+(x+bw*0.15)+'" y="'+(H-24-h2)+'" width="'+w+'" height="'+h2+'" fill="#c9e265" rx="2"><title>'+d.day+': '+d.visitors+' visitors, '+d.signups+' sign-ups</title></rect>';
+  if(d.signups)g+='<text x="'+(x+bw/2)+'" y="'+(H-28-Math.max(h1,h2))+'" text-anchor="middle" font-size="11" fill="#eef3e8">'+d.signups+'</text>';
+  if(n<=31&&(n<=10||i%Math.ceil(n/10)===0))g+='<text x="'+(x+bw/2)+'" y="'+(H-8)+'" text-anchor="middle" font-size="11" fill="#a9b8a6">'+d.day.slice(5)+'</text>'});
+ return g+'</svg>'}
+function ago(t){var s=(Date.now()-Date.parse(t))/1000;return s<60?"just now":s<3600?Math.floor(s/60)+" min ago":s<86400?Math.floor(s/3600)+" h ago":new Date(t).toLocaleDateString()}
+function loadStats(){clearTimeout(STT);return api("/api/admin/analytics?days="+DAYS).then(function(a){
+ $("#kpis").innerHTML=[["live","On the site now",a.live],["","Visitors",a.visitors],["","New visitors",a.newVisitors],["","Returning",a.returning],["","Visits",a.sessions],["","Page views",a.views],["","Left after one page",a.bouncePct==null?"–":a.bouncePct+"%"],["","Waitlist sign-ups",a.signups],["","Trees wanted",a.treesWanted],["","Visitors who signed up",a.conversionPct==null?"–":a.conversionPct+"%"]].map(function(k){return'<div class="kpi '+k[0]+'"><b>'+(typeof k[2]==="number"?nf(k[2]):k[2])+'</b><span>'+k[1]+'</span></div>'}).join("");
+ $("#chart").innerHTML=chart(a.series);
+ $("#pages").innerHTML=tbl(a.pages,function(k){return PAGE[k]||k});
+ $("#refs").innerHTML=tbl(a.referrers);
+ var ac=a.actions;$("#acts").innerHTML=tbl([["Clicked Adopt or Join",ac.adoptClicks],["Saw the seedling pop-up",ac.popupShown],["Named a seedling in the pop-up",ac.popupAdopt],["Closed the pop-up",ac.popupClose],["Used a harvest calculator",ac.estimates],["Clicked Organisations",ac.orgClicks],["Joined the waiting list",ac.waitlistSubmits]].filter(function(r){return true}))+(a.crops.length?'<small class="soft">Crops chosen: '+a.crops.map(function(c){return esc(c[0])+" "+c[1]}).join(" · ")+'</small>':"");
+ $("#devs").innerHTML=tbl(a.devices);$("#oss").innerHTML=tbl(a.os.concat([]));
+ $("#tzs").innerHTML=tbl(a.timezones,function(k){return k.replace(/_/g," ")});
+ $("#camps").innerHTML=tbl(a.campaigns);
+ $("#feed").innerHTML=a.recent.length?a.recent.map(function(e){return'<div><time title="'+esc(new Date(e.at).toLocaleString())+'">'+ago(e.at)+'</time><span>Visitor '+esc(e.v)+(e.new?' <span class="pill">new</span>':'')+' '+esc(ACT[e.t]||e.t)+' <b>'+esc(e.t==="view"?(PAGE[e.page]||e.page):(e.crop?e.crop+(e.qty?" × "+e.qty:""):""))+'</b></span><small class="soft">'+esc([e.dev,e.os,e.ref||e.src,(e.tz||"").split("/").pop().replace(/_/g," ")].filter(Boolean).join(" · "))+'</small></div>'}).join(""):'<p class="soft">No visits recorded yet. Visits show here once the update is live.</p>';
+ if(!$("#p6").hidden)STT=setTimeout(loadStats,60000)}).catch(function(x){$("#kpis").innerHTML='<p class="err">'+esc(x.message)+'</p>'})}
+document.querySelectorAll(".range [data-days]").forEach(function(b){b.onclick=function(){DAYS=+b.getAttribute("data-days");document.querySelectorAll(".range [data-days]").forEach(function(x){x.className=x===b?"":"g"});loadStats()}});
 var ALL=[];
 function load(){return api("/api/admin/signups").then(function(j){ALL=j.signups;render()})}
 function render(){
@@ -99,7 +152,7 @@ $("#trees").onclick=function(e){var c=e.target.closest("[data-id]");if(!c)return
  if(e.target.hasAttribute("data-dt")&&confirm("Delete this tree record?")){api("/api/admin/trees/"+id,{method:"DELETE"}).then(function(){return Promise.all([loadTrees(),loadMembers()])})}
  if(e.target.hasAttribute("data-pu")){var i=c.querySelector("[data-up]");if(!i.value.trim())return;jpost("/api/admin/trees/"+id+"/updates","POST",{text:i.value}).then(loadTrees).catch(function(x){alert(x.message)})}
  if(e.target.hasAttribute("data-pp")){var f=c.querySelector("[data-file]");f.onchange=function(){var file=f.files[0];if(!file)return;if(file.size>6*1048576){alert("Larger than 6 MB");return}var t=c.querySelector("[data-up]").value;fetch("/api/admin/trees/"+id+"/photo?text="+encodeURIComponent(t),{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/octet-stream"},body:file}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||"Upload failed")})}).then(loadTrees).catch(function(x){alert(x.message)})};f.click()}};
-function start(){api("/api/admin/me").then(function(){show(true);return Promise.all([load(),slots(),loadMembers(),loadBatches(),loadTrees()])}).catch(function(){show(false)})}
+function start(){api("/api/admin/me").then(function(){show(true);return Promise.all([load(),slots(),loadMembers(),loadBatches(),loadTrees(),loadStats()])}).catch(function(){show(false)})}
 start();
 })();
 </script></body></html>
