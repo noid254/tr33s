@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="tr33s: adopt an apple or avocado tree from KSh 2,500 and harvest for over a decade. We farm it, you share the harvest. Adopt a Hass avocado or Wambugu apple tree, or plant Melia timber. Join the waiting list."><title>tr33s</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Plant a memory and harvest it for 10 years. Adopt a Wambugu apple tree in Mweiga, Nyeri for KSh 2,500, name it, follow it on your phone and share its apples."><title>tr33s</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
@@ -542,6 +542,35 @@ footer button.rm { justify-self: start; }
 .steps3 .item::before { counter-increment: s; content: counter(s); width: 38px; height: 38px; border-radius: 50%; background: var(--lime); color: var(--lime-ink); display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; }
 @media (max-width: 860px) { .stages { grid-template-columns: repeat(3, minmax(0, 1fr)); } .steps3 { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* home: apple-first */
+body[data-view="home"] .homehero .hl { color: #c0262d; }
+.projects.featured { grid-template-columns: 1.55fr 1fr; }
+.proj.apple { background: linear-gradient(160deg, #7d1219, #b8222b 62%, #d9473f); }
+.proj.later { min-height: 0; }
+.proj.later .tag { background: rgba(255,255,255,0.22); }
+.memgrid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 22px; align-items: start; }
+.moments { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.moments > div { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px; display: grid; gap: 6px; align-content: start; }
+.moments h3 { font-size: 1.12rem; }
+.mi, .wi { font-size: 1.6rem; line-height: 1; }
+.storycard { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; box-shadow: 0 18px 40px -24px rgba(10,60,30,0.35); position: sticky; top: 90px; }
+.sc-photo { height: 170px; background: url("https://images.unsplash.com/photo-1745062921156-f164f8dbbbe7?auto=format&fit=crop&w=800&q=60") center/cover, linear-gradient(160deg,#3f8f2a,#b8222b); position: relative; }
+.sc-chip { position: absolute; left: 14px; top: 14px; font: 500 0.72rem var(--font-mono); background: #fff; color: #0b2b16; padding: 5px 11px; border-radius: 999px; }
+.sc-body { padding: 20px; display: grid; gap: 8px; }
+.sc-body h3 { font-size: 1.7rem; }
+.sc-stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+.sc-stats span { background: var(--skin-soft); border-radius: 12px; padding: 9px; font-size: 0.74rem; color: var(--ink-soft); display: grid; gap: 2px; }
+.sc-stats b { font-family: var(--font-display); font-size: 0.98rem; color: var(--leaf-deep); }
+.privacy2 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin-top: 22px; }
+.privacy2 > div { border-top: 3px solid var(--leaf); padding-top: 12px; display: grid; gap: 6px; align-content: start; }
+.way3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.way3 > div { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+.way3 > div.sell { background: linear-gradient(160deg, #7d1219, #b8222b); border-color: #b8222b; color: #fff; }
+.way3 > div.sell h3 { color: #fff; }
+.way3 > div.sell p { color: rgba(255,255,255,0.9); }
+@media (max-width: 900px) { .projects.featured, .memgrid, .way3, .privacy2 { grid-template-columns: 1fr; } .storycard { position: static; } }
+@media (max-width: 520px) { .moments { grid-template-columns: 1fr; } }
 </style>
 <style>.photo{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}.gallery3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.gallery3 figure{margin:0;display:grid;gap:8px}.gallery3 .photo{aspect-ratio:4/3}.gallery3 figcaption{font-size:.86rem;color:var(--ink-soft)}@media(max-width:560px){.gallery3{grid-template-columns:1fr}}</style><style>.herocard .herophoto{position:absolute;inset:0 0 60px 0;width:100%;height:calc(100% - 60px);object-fit:cover;border-radius:28px}.banner{margin:0 0 6px}.banner .photo{aspect-ratio:21/9;border-radius:22px}@media(max-width:560px){.banner .photo{aspect-ratio:4/3}}</style><style>.stages .sp{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:var(--band)}.stages .sp svg{position:absolute;inset:0;height:100%}.stages .sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</style><style>.plan{display:grid;gap:14px}.pcost{display:grid;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--band)}.pcost small{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}.pcost strong{font-size:1.7rem}.pcost span{color:var(--ink-soft);font-size:.9rem}table.plant td small{display:block;color:var(--ink-soft)}table.plant th,table.plant td{vertical-align:top}</style><style>
 .livestats{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;text-align:center}.livestats div{display:grid}.livestats b{font-family:var(--font-display);font-size:1.7rem}.livestats span{color:var(--ink-soft);font-size:.9rem}
@@ -560,8 +589,8 @@ footer button.rm { justify-self: start; }
     <button class="brand" data-go="home" aria-label="tr33s home">tr<b>33</b>s</button>
     <nav aria-label="Main">
       <button class="link" data-go="home" data-nav="home">Home</button>
-      <button class="link" data-go="avocado" data-nav="avocado">Avocado</button>
       <button class="link" data-go="apple" data-nav="apple">Apples</button>
+      <button class="link" data-go="avocado" data-nav="avocado">Avocado</button>
       <button class="link" data-go="melia" data-nav="melia">Timber</button>
       <button class="link" data-go="upcoming" data-nav="upcoming">Upcoming</button>
       <button class="link" data-go="profile" data-nav="profile" id="navAccount">Log in</button>
@@ -572,113 +601,160 @@ footer button.rm { justify-self: start; }
 
 <!-- HOME -->
 <main data-page="home">
-  <section class="band">
+  <section class="band homehero">
     <div class="wrap hero3">
       <div class="stack" style="gap:22px">
-        <p class="eyebrow">Tree as a crop · Upcoming orchards</p>
-        <h1>Adopt a fruit tree from KSh 2,500. <span class="hl">Harvest for over a decade.</span></h1>
-        <p class="lead">Own an apple or avocado tree on a real farm. We plant it and look after it. Every harvest, you get your share in fruit, picked and packed for you at our pickup point or on the farm.</p>
-        <div class="cta-row"><button class="btn" data-scroll-only="join">Join the waiting list</button><button class="btn ghost" data-scroll-only="how">See how it works</button></div>
-        <div class="trust"><span>Your name on your tree</span><span>Photo updates on your phone</span><span>Transfer it any time</span><span>Nothing to pay today</span></div>
+        <p class="eyebrow">Our first orchard · Wambugu apples · Mweiga, Nyeri</p>
+        <h1>Plant a memory. <span class="hl">Harvest it for 10 years.</span></h1>
+        <p class="lead">Adopt a Wambugu apple tree for KSh 2,500. Give it a name and a story, watch it grow on your phone, and enjoy its apples every season for 10 years.</p>
+        <div class="cta-row"><button class="btn" data-adopt="apple">Reserve my apple tree</button><button class="btn ghost" data-scroll-only="memories">Make it a memory</button></div>
+        <div class="trust"><span>Named for someone you love</span><span>Photos every two weeks</span><span>Apples delivered, collected or sold</span><span>Nothing to pay today</span></div>
       </div>
-      <svg class="orchard" viewBox="0 0 560 470" role="img" aria-label="A Hass avocado tree heavy with fruit next to an apple tree full of red apples"><circle cx="470" cy="70" r="38" fill="#ffe28a"/><circle cx="470" cy="70" r="56" fill="#ffe28a" opacity=".25"/><path d="M0 395 C120 360 240 372 330 384 C420 396 500 380 560 368 V470 H0Z" fill="#cfe8b5"/><path d="M0 420 C140 398 300 410 560 400 V470 H0Z" fill="#a9d47c"/><path d="M140 400 C146 350 140 320 148 290 L162 290 C168 322 162 352 170 400Z" fill="#6b4a2b"/><path d="M152 300 C130 280 110 270 92 262 M158 296 C182 278 204 270 222 262" stroke="#6b4a2b" stroke-width="8" fill="none" stroke-linecap="round"/><g fill="#1f5a2c"><ellipse cx="155" cy="180" rx="118" ry="112"/><ellipse cx="80" cy="215" rx="58" ry="62"/><ellipse cx="235" cy="210" rx="58" ry="66"/></g><g fill="#2d6a3b"><ellipse cx="130" cy="150" rx="60" ry="55"/><ellipse cx="200" cy="175" rx="55" ry="50"/><ellipse cx="110" cy="230" rx="50" ry="40"/></g><g fill="#3f8a3a" opacity=".6"><ellipse cx="120" cy="120" rx="34" ry="24"/><ellipse cx="200" cy="140" rx="30" ry="20"/></g><g transform="translate(110 150) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(150 175) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(190 140) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(95 205) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(135 225) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(175 210) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(220 190) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(120 265) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(165 255) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(205 245) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(80 170) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(240 225) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(145 120) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><g transform="translate(60 215) scale(1.2)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g><path d="M418 404 C422 360 418 335 424 310 L436 310 C442 336 438 362 442 404Z" fill="#7a5032"/><path d="M428 320 C410 304 394 298 378 292 M432 318 C452 302 470 296 486 290" stroke="#7a5032" stroke-width="7" fill="none" stroke-linecap="round"/><g fill="#3f8f2a"><circle cx="430" cy="225" r="98"/><circle cx="360" cy="250" r="52"/><circle cx="500" cy="250" r="52"/><circle cx="400" cy="160" r="52"/><circle cx="465" cy="165" r="52"/></g><g fill="#5fae36"><circle cx="410" cy="190" r="46"/><circle cx="470" cy="225" r="44"/><circle cx="380" cy="255" r="34"/></g><g><circle cx="360" cy="215" r="9" fill="#d62f3a"/><circle cx="356.85" cy="211.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M360 206 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="395" cy="190" r="9" fill="#d62f3a"/><circle cx="391.85" cy="186.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M395 181 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="430" cy="200" r="9" fill="#d62f3a"/><circle cx="426.85" cy="196.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M430 191 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="465" cy="215" r="9" fill="#d62f3a"/><circle cx="461.85" cy="211.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M465 206 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="380" cy="250" r="9" fill="#d62f3a"/><circle cx="376.85" cy="246.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M380 241 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="415" cy="240" r="9" fill="#d62f3a"/><circle cx="411.85" cy="236.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M415 231 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="450" cy="250" r="9" fill="#d62f3a"/><circle cx="446.85" cy="246.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M450 241 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="490" cy="240" r="9" fill="#d62f3a"/><circle cx="486.85" cy="236.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M490 231 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="400" cy="280" r="9" fill="#d62f3a"/><circle cx="396.85" cy="276.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M400 271 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="440" cy="285" r="9" fill="#d62f3a"/><circle cx="436.85" cy="281.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M440 276 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="475" cy="275" r="9" fill="#d62f3a"/><circle cx="471.85" cy="271.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M475 266 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="370" cy="180" r="9" fill="#d62f3a"/><circle cx="366.85" cy="176.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M370 171 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="505" cy="205" r="9" fill="#d62f3a"/><circle cx="501.85" cy="201.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M505 196 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="425" cy="165" r="9" fill="#d62f3a"/><circle cx="421.85" cy="161.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M425 156 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="460" cy="170" r="9" fill="#d62f3a"/><circle cx="456.85" cy="166.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M460 161 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="390" cy="310" r="9" fill="#d62f3a"/><circle cx="386.85" cy="306.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M390 301 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="455" cy="315" r="9" fill="#d62f3a"/><circle cx="451.85" cy="311.85" r="2.5200000000000005" fill="#ff8a8f" opacity=".8"/><path d="M455 306 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g font-family="DM Mono, monospace" font-size="12"><rect x="92" y="330" width="120" height="26" rx="13" fill="#fff" stroke="#2d6a3b"/><text x="152" y="347" text-anchor="middle" fill="#1f5a2c">Hass avocado</text><rect x="370" y="334" width="128" height="26" rx="13" fill="#fff" stroke="#c2185b"/><text x="434" y="351" text-anchor="middle" fill="#9c1249">Apple</text></g><path d="M250 428 h70 l-8 30 h-54z" fill="#b07a45"/><path d="M250 428 h70" stroke="#8a5a30" stroke-width="3"/><g><circle cx="268" cy="422" r="8" fill="#d62f3a"/><circle cx="265.2" cy="419.2" r="2.24" fill="#ff8a8f" opacity=".8"/><path d="M268 414 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="286" cy="418" r="8" fill="#d62f3a"/><circle cx="283.2" cy="415.2" r="2.24" fill="#ff8a8f" opacity=".8"/><path d="M286 410 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g><circle cx="304" cy="423" r="8" fill="#d62f3a"/><circle cx="301.2" cy="420.2" r="2.24" fill="#ff8a8f" opacity=".8"/><path d="M304 415 l1.5 -4" stroke="#5b3a22" stroke-width="1.5"/></g><g transform="translate(292 404) scale(0.7)"><path d="M0 -2 C-5 -2 -8 6 -9 12 C-10 20 -5 25 0 25 C5 25 10 20 9 12 C8 6 5 -2 0 -2Z" fill="#2f4a1f"/><path d="M-4 6 C-5 10 -5 14 -4 17" stroke="#6b8a3a" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M0 -2 L0 -8" stroke="#4b3a22" stroke-width="1.5"/></g></svg>
+      <svg class="orchard" viewBox="0 0 560 470" role="img" aria-label="A Wambugu apple tree full of red apples, with a name tag reading Grace's Joy and a basket of apples below"><defs><linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4ec"/><stop offset=".7" stop-color="#f3fae9"/></linearGradient></defs><rect width="560" height="470" fill="url(#hsky)"/><circle cx="470" cy="72" r="36" fill="#ffd36b"/><circle cx="470" cy="72" r="58" fill="#ffd36b" opacity=".22"/><rect x="32" y="352" width="5" height="22" fill="#7a5032"/><circle cx="34" cy="346" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="28" cy="344" r="3" fill="#d0262f" opacity=".8"/><circle cx="40" cy="350" r="3" fill="#d0262f" opacity=".8"/><rect x="94" y="356" width="5" height="22" fill="#7a5032"/><circle cx="96" cy="350" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="90" cy="348" r="3" fill="#d0262f" opacity=".8"/><circle cx="102" cy="354" r="3" fill="#d0262f" opacity=".8"/><rect x="156" y="352" width="5" height="22" fill="#7a5032"/><circle cx="158" cy="346" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="152" cy="344" r="3" fill="#d0262f" opacity=".8"/><circle cx="164" cy="350" r="3" fill="#d0262f" opacity=".8"/><rect x="218" y="356" width="5" height="22" fill="#7a5032"/><circle cx="220" cy="350" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="214" cy="348" r="3" fill="#d0262f" opacity=".8"/><circle cx="226" cy="354" r="3" fill="#d0262f" opacity=".8"/><rect x="280" y="352" width="5" height="22" fill="#7a5032"/><circle cx="282" cy="346" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="276" cy="344" r="3" fill="#d0262f" opacity=".8"/><circle cx="288" cy="350" r="3" fill="#d0262f" opacity=".8"/><rect x="342" y="356" width="5" height="22" fill="#7a5032"/><circle cx="344" cy="350" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="338" cy="348" r="3" fill="#d0262f" opacity=".8"/><circle cx="350" cy="354" r="3" fill="#d0262f" opacity=".8"/><rect x="404" y="352" width="5" height="22" fill="#7a5032"/><circle cx="406" cy="346" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="400" cy="344" r="3" fill="#d0262f" opacity=".8"/><circle cx="412" cy="350" r="3" fill="#d0262f" opacity=".8"/><rect x="466" y="356" width="5" height="22" fill="#7a5032"/><circle cx="468" cy="350" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="462" cy="348" r="3" fill="#d0262f" opacity=".8"/><circle cx="474" cy="354" r="3" fill="#d0262f" opacity=".8"/><rect x="528" y="352" width="5" height="22" fill="#7a5032"/><circle cx="530" cy="346" r="20" fill="#7fbf5a" opacity=".75"/><circle cx="524" cy="344" r="3" fill="#d0262f" opacity=".8"/><circle cx="536" cy="350" r="3" fill="#d0262f" opacity=".8"/><path d="M0 378 C120 352 260 364 340 374 C430 386 500 372 560 362 V470 H0Z" fill="#cfe8b5"/><path d="M0 412 C150 390 310 404 560 394 V470 H0Z" fill="#9fcf72"/><path d="M262 410 C268 360 262 320 270 280 L290 280 C298 322 290 362 300 410Z" fill="#7a5032"/><path d="M276 292 C246 268 220 258 196 250 M284 288 C314 266 340 256 364 248 M280 300 C280 270 282 250 280 230" stroke="#7a5032" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="280" cy="180" r="128" fill="#3f8f2a"/><circle cx="180" cy="215" r="70" fill="#3f8f2a"/><circle cx="380" cy="215" r="70" fill="#3f8f2a"/><circle cx="230" cy="120" r="66" fill="#3f8f2a"/><circle cx="330" cy="118" r="66" fill="#3f8f2a"/><circle cx="250" cy="165" r="58" fill="#5fae36"/><circle cx="330" cy="200" r="56" fill="#5fae36"/><circle cx="200" cy="225" r="40" fill="#5fae36"/><circle cx="300" cy="110" r="40" fill="#6dbb3f"/><g><circle cx="200" cy="170" r="10" fill="#d0262f"/><circle cx="203.5" cy="172.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="196.5" cy="166.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M200 160 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M201.5 157 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="240" cy="140" r="9" fill="#d0262f"/><circle cx="243.2" cy="141.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="236.8" cy="136.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M240 131 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M241.5 128 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="285" cy="150" r="10" fill="#d0262f"/><circle cx="288.5" cy="152.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="281.5" cy="146.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M285 140 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M286.5 137 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="330" cy="160" r="11" fill="#d0262f"/><circle cx="333.9" cy="162.2" r="8.2" fill="#b81d26" opacity=".55"/><circle cx="326.1" cy="156.2" r="3.1" fill="#ff9a9e" opacity=".85"/><path d="M330 149 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M331.5 146 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="370" cy="185" r="9" fill="#d0262f"/><circle cx="373.1" cy="186.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="366.9" cy="181.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M370 176 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M371.5 173 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="215" cy="215" r="9" fill="#d0262f"/><circle cx="218.2" cy="216.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="211.8" cy="211.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M215 206 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M216.5 203 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="255" cy="205" r="11" fill="#d0262f"/><circle cx="258.9" cy="207.2" r="8.2" fill="#b81d26" opacity=".55"/><circle cx="251.2" cy="201.2" r="3.1" fill="#ff9a9e" opacity=".85"/><path d="M255 194 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M256.5 191 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="300" cy="210" r="9" fill="#d0262f"/><circle cx="303.1" cy="211.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="296.9" cy="206.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M300 201 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M301.5 198 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="345" cy="230" r="10" fill="#d0262f"/><circle cx="348.5" cy="232.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="341.5" cy="226.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M345 220 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M346.5 217 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="390" cy="240" r="11" fill="#d0262f"/><circle cx="393.9" cy="242.2" r="8.2" fill="#b81d26" opacity=".55"/><circle cx="386.1" cy="236.2" r="3.1" fill="#ff9a9e" opacity=".85"/><path d="M390 229 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M391.5 226 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="180" cy="245" r="9" fill="#d0262f"/><circle cx="183.2" cy="246.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="176.8" cy="241.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M180 236 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M181.5 233 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="230" cy="255" r="11" fill="#d0262f"/><circle cx="233.8" cy="257.2" r="8.2" fill="#b81d26" opacity=".55"/><circle cx="226.2" cy="251.2" r="3.1" fill="#ff9a9e" opacity=".85"/><path d="M230 244 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M231.5 241 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="275" cy="250" r="9" fill="#d0262f"/><circle cx="278.1" cy="251.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="271.9" cy="246.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M275 241 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M276.5 238 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="320" cy="265" r="9" fill="#d0262f"/><circle cx="323.1" cy="266.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="316.9" cy="261.9" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M320 256 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M321.5 253 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="365" cy="270" r="9" fill="#d0262f"/><circle cx="368.1" cy="271.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="361.9" cy="266.9" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M365 261 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M366.5 258 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="260" cy="105" r="10" fill="#d0262f"/><circle cx="263.5" cy="107.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="256.5" cy="101.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M260 95 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M261.5 92 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="310" cy="95" r="10" fill="#d0262f"/><circle cx="313.5" cy="97.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="306.5" cy="91.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M310 85 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M311.5 82 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="345" cy="120" r="9" fill="#d0262f"/><circle cx="348.1" cy="121.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="341.9" cy="116.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M345 111 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M346.5 108 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="205" cy="120" r="9" fill="#d0262f"/><circle cx="208.2" cy="121.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="201.8" cy="116.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M205 111 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M206.5 108 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="160" cy="215" r="9" fill="#d0262f"/><circle cx="163.2" cy="216.8" r="6.8" fill="#b81d26" opacity=".55"/><circle cx="156.8" cy="211.8" r="2.5" fill="#ff9a9e" opacity=".85"/><path d="M160 206 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M161.5 203 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="400" cy="205" r="11" fill="#d0262f"/><circle cx="403.9" cy="207.2" r="8.2" fill="#b81d26" opacity=".55"/><circle cx="396.1" cy="201.2" r="3.1" fill="#ff9a9e" opacity=".85"/><path d="M400 194 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M401.5 191 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="285" cy="185" r="10" fill="#d0262f"/><circle cx="288.5" cy="187.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="281.5" cy="181.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M285 175 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M286.5 172 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><path d="M196 250 L196 278" stroke="#8a6a44" stroke-width="1.6"/><g transform="rotate(-4 196 300)"><rect x="140" y="278" width="112" height="46" rx="10" fill="#fff8e6" stroke="#c9a77a" stroke-width="1.5"/><circle cx="196" cy="284" r="3" fill="#c9a77a"/><text x="196" y="302" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="15" fill="#5b2a14">Grace's Joy</text><text x="196" y="316" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#8a6a44">for Mum · 60 years</text></g><path d="M250 268 c0-6 8-8 10-2 c2-6 10-4 10 2 c0 6-10 12-10 12 s-10-6-10-12z" fill="#e0475a"/><path d="M352 420 h96 l-11 38 h-74z" fill="#b07a45"/><path d="M352 420 h96" stroke="#8a5a30" stroke-width="3"/><path d="M362 432 h76 M366 444 h68" stroke="#8a5a30" stroke-width="1.5" opacity=".6"/><g><circle cx="368" cy="414" r="10" fill="#d0262f"/><circle cx="371.5" cy="416.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="364.5" cy="410.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M368 404 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M369.5 401 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="388" cy="410" r="10" fill="#d0262f"/><circle cx="391.5" cy="412.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="384.5" cy="406.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M388 400 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M389.5 397 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="408" cy="412" r="10" fill="#d0262f"/><circle cx="411.5" cy="414.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="404.5" cy="408.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M408 402 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M409.5 399 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="428" cy="414" r="10" fill="#d0262f"/><circle cx="431.5" cy="416.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="424.5" cy="410.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M428 404 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M429.5 401 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="378" cy="404" r="10" fill="#d0262f"/><circle cx="381.5" cy="406.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="374.5" cy="400.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M378 394 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M379.5 391 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="400" cy="400" r="10" fill="#d0262f"/><circle cx="403.5" cy="402.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="396.5" cy="396.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M400 390 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M401.5 387 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g><circle cx="420" cy="404" r="10" fill="#d0262f"/><circle cx="423.5" cy="406.0" r="7.5" fill="#b81d26" opacity=".55"/><circle cx="416.5" cy="400.5" r="2.8" fill="#ff9a9e" opacity=".85"/><path d="M420 394 l1.5 -5" stroke="#5b3a22" stroke-width="1.6"/><path d="M421.5 391 q7 -5 11 0 q-6 4 -11 0z" fill="#4f9d2f"/></g><g transform="translate(430 250) rotate(6)"><rect x="0" y="0" width="92" height="150" rx="14" fill="#14261a"/><rect x="6" y="12" width="80" height="126" rx="8" fill="#fff"/><rect x="14" y="20" width="64" height="40" rx="6" fill="#dff0d0"/><circle cx="46" cy="44" r="12" fill="#3f8f2a"/><circle cx="42" cy="42" r="3" fill="#d0262f"/><circle cx="51" cy="47" r="3" fill="#d0262f"/><text x="46" y="74" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="9" fill="#14261a">Grace's Joy</text><text x="46" y="86" text-anchor="middle" font-family="DM Mono, monospace" font-size="6.5" fill="#3f8f2a">Healthy · 38 apples</text><g fill="#14261a"><rect x="32" y="96" width="4" height="4"/><rect x="36" y="96" width="4" height="4"/><rect x="40" y="96" width="4" height="4"/><rect x="48" y="96" width="4" height="4"/><rect x="56" y="96" width="4" height="4"/><rect x="32" y="100" width="4" height="4"/><rect x="40" y="100" width="4" height="4"/><rect x="52" y="100" width="4" height="4"/><rect x="56" y="100" width="4" height="4"/><rect x="32" y="104" width="4" height="4"/><rect x="36" y="104" width="4" height="4"/><rect x="40" y="104" width="4" height="4"/><rect x="48" y="104" width="4" height="4"/><rect x="52" y="104" width="4" height="4"/><rect x="44" y="108" width="4" height="4"/><rect x="52" y="108" width="4" height="4"/><rect x="32" y="112" width="4" height="4"/><rect x="40" y="112" width="4" height="4"/><rect x="44" y="112" width="4" height="4"/><rect x="48" y="112" width="4" height="4"/><rect x="56" y="112" width="4" height="4"/><rect x="36" y="116" width="4" height="4"/><rect x="48" y="116" width="4" height="4"/><rect x="52" y="116" width="4" height="4"/><rect x="56" y="116" width="4" height="4"/><rect x="32" y="120" width="4" height="4"/><rect x="36" y="120" width="4" height="4"/><rect x="44" y="120" width="4" height="4"/><rect x="52" y="120" width="4" height="4"/><rect x="56" y="120" width="4" height="4"/></g></g></svg>
     </div>
   </section>
 
   <section class="band tight">
     <div class="wrap">
       <div class="bignums">
-        <div><b>KSh 2,500</b><span>is all it takes to adopt an apple tree</span></div>
-        <div><b>10 to 30 yrs</b><span>of harvests, depending on the tree</span></div>
-        <div><b>Up to 60%</b><span>of your tree's fruit is yours</span></div>
-        <div><b>15 billion</b><span>trees: Kenya's goal by 2032. Yours counts.</span></div>
+        <div><b>KSh 2,500</b><span>once, for an apple tree of your own</span></div>
+        <div><b>10 years</b><span>of apples, with two harvests a year</span></div>
+        <div><b>50%</b><span>of your tree's apples are yours</span></div>
+        <div><b>6,000</b><span>trees on 10 acres in Mweiga, 600 to an acre</span></div>
       </div>
     </div>
   </section>
   <section class="band tight" id="liveStats" hidden><div class="wrap"><div class="livestats" id="liveStatsRow"></div></div></section>
+
   <section class="band" id="projects">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">Two upcoming orchards</p><h2>Pick your tree</h2>
-      <p class="lead">Choose one, or adopt both. Each tree is yours for the whole term.</p></div>
-      <div class="projects">
+      <div class="head"><p class="eyebrow">Our first project</p><h2>The Mweiga apple orchard</h2>
+      <p class="lead">Six thousand apple trees on riverfront farmland in the Nyeri highlands, planted in six batches of 1,000. Every one of them is waiting for a name.</p></div>
+      <div class="projects featured">
         <article class="proj apple"><svg class="fruit" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 28c-12-9-34-2-31 22 3 22 18 36 31 30 13 6 28-8 31-30 3-24-19-31-31-22z"/><path fill="#fff" d="M52 26c0-9 4-15 10-18l2 3c-5 3-8 8-8 15z"/><path fill="#fff" d="M56 18c8-8 20-7 24-2-7 6-17 7-24 2z"/></svg>
-          <span class="tag">Upcoming project</span>
-          <h3>Apple orchard</h3>
-          <p>Wambugu variety, bred in Kenya for Kenya. Fast to fruit, with a first real harvest in year two.</p>
+          <span class="tag">Reservations open · Batch 1 of 6</span>
+          <h3>Wambugu apples, Mweiga</h3>
+          <p>The Wambugu apple was bred in Nyeri for Kenya's highlands. It needs no cold winter, starts fruiting in about two years and gives two harvests a year. We plant it, water it from the river, and care for it for the whole 10 years.</p>
           <div class="kv3"><div><b>KSh 2,500</b><span>per tree, once</span></div><div><b>50%</b><span>of the apples</span></div><div><b>10 years</b><span>of harvests</span></div></div>
-          <div class="cta-row"><button class="btn" data-adopt="apple">Adopt an apple tree</button><button class="btn ghost" data-go="apple">Learn more</button></div>
+          <div class="cta-row"><button class="btn" data-adopt="apple">Reserve an apple tree</button><button class="btn ghost" data-go="apple">Explore the orchard</button></div>
         </article>
-        <article class="proj avo"><svg class="fruit" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 8c-14 0-22 22-25 38-4 24 8 44 25 44s29-20 25-44C72 30 64 8 50 8z"/><circle cx="50" cy="62" r="13" fill="#000" opacity=".25"/></svg>
-          <span class="tag">Upcoming project</span>
+        <article class="proj avo later"><svg class="fruit" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 8c-14 0-22 22-25 38-4 24 8 44 25 44s29-20 25-44C72 30 64 8 50 8z"/><circle cx="50" cy="62" r="13" fill="#000" opacity=".25"/></svg>
+          <span class="tag">Coming later</span>
           <h3>Hass avocado</h3>
-          <p>Kenya's favourite export fruit. A long-lived tree that fruits from year three or four.</p>
-          <div class="kv3"><div><b>KSh 4,000</b><span>per tree, once</span></div><div><b>60%</b><span>of the avocados</span></div><div><b>30 years</b><span>of harvests</span></div></div>
-          <div class="cta-row"><button class="btn" data-adopt="avocado">Adopt an avocado tree</button><button class="btn ghost" data-go="avocado">Learn more</button></div>
+          <p>Kenya's star export fruit, on a tree that bears for decades. Our avocado orchard is our next project, once we secure the long lease it needs. Join the list and hear first.</p>
+          <div class="cta-row"><button class="btn" data-adopt="avocado">Tell me when it opens</button><button class="btn ghost" data-go="avocado">Learn more</button></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="band alt" id="how">
+  <section class="band alt" id="memories">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Fruitful memories</p><h2>Every tree tells a story. Make it yours.</h2>
+      <p class="lead">Name your tree and write what it stands for. Every season it flowers and fruits again, so your moment keeps growing, and keeps giving.</p></div>
+      <div class="memgrid">
+        <div class="moments">
+          <div><span class="mi" aria-hidden="true">🕊️</span><h3>In memory of someone</h3><p class="soft">A living tribute that blossoms every year and feeds the people they loved.</p></div>
+          <div><span class="mi" aria-hidden="true">👶</span><h3>A new baby</h3><p class="soft">A tree that grows up with them, with apples through their childhood years.</p></div>
+          <div><span class="mi" aria-hidden="true">💍</span><h3>Weddings and anniversaries</h3><p class="soft">Plant one together, and share its harvest every season.</p></div>
+          <div><span class="mi" aria-hidden="true">🎓</span><h3>Achievements</h3><p class="soft">A graduation, a promotion, a first job or a finished marathon. Mark it with something that grows.</p></div>
+          <div><span class="mi" aria-hidden="true">🎯</span><h3>Company goals and milestones</h3><p class="soft">A tree for every target met, every year of service, every 1,000 km driven or every hundred sales.</p></div>
+          <div><span class="mi" aria-hidden="true">🎁</span><h3>Birthdays and gifts</h3><p class="soft">A present that comes back again and again, as baskets of apples.</p></div>
+        </div>
+        <aside class="storycard" aria-label="Example of a tree's story page">
+          <div class="sc-photo"><span class="sc-chip">Public · scan to see</span></div>
+          <div class="sc-body">
+            <p class="eyebrow">Tree MW-1-0417 · Wambugu apple</p>
+            <h3>Grace's Joy</h3>
+            <p class="soft">Planted for Mum's 60th birthday, with love from all five of her children. April 2027.</p>
+            <div class="sc-stats"><span><b>Healthy</b>health</span><span><b>Flowering</b>stage</span><span><b>38</b>apples counted</span></div>
+            <p class="small-print">Updated every two weeks by our farm team.</p>
+          </div>
+        </aside>
+      </div>
+      <div class="privacy2">
+        <div><h3>Public</h3><p class="soft">Anyone who scans your tree's tag sees its name, its story and how it is growing. Perfect for a tribute, a team goal or a family tree everyone can visit.</p></div>
+        <div><h3>Private</h3><p class="soft">Only you, and the people you choose, can see it. Switch between the two whenever you like.</p></div>
+        <div><h3>Yours for 10 years</h3><p class="soft">Visit it, gift it or transfer it. If it ever dies, a reserve tree of the same age takes its place, and its story moves with it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="how">
     <div class="wrap">
       <div class="head"><p class="eyebrow">How it works</p><h2>You own the tree. We do the farming.</h2></div>
       <div class="steps4">
-        <div><span class="n">1</span><h3>Adopt</h3><p class="soft">Choose apple or avocado, how many trees, and the name on the tag. One payment, no monthly fees.</p></div>
-        <div><span class="n">2</span><h3>We plant and care</h3><p class="soft">Our team plants your tree in the rainy season, then waters, weeds, feeds and guards it.</p></div>
-        <div><span class="n">3</span><h3>Watch it grow</h3><p class="soft">See photos and health checks of your tree on your phone. Visit the farm whenever you like.</p></div>
-        <div><span class="n">4</span><h3>Share the harvest</h3><p class="soft">Every season your share of the fruit is packed for you. Collect it at our pickup point or the farm.</p></div>
+        <div><span class="n">1</span><h3>Reserve and name it</h3><p class="soft">Choose how many apple trees, the name on each tag and the story behind it. KSh 2,500 a tree, paid once.</p></div>
+        <div><span class="n">2</span><h3>We plant it in Mweiga</h3><p class="soft">Your tree goes into its batch on our farm. Our team waters, feeds, prunes and guards it.</p></div>
+        <div><span class="n">3</span><h3>Watch it grow</h3><p class="soft">Every two weeks: a photo, a health check, its stage from flower to fruit, and the apples counted.</p></div>
+        <div><span class="n">4</span><h3>Enjoy your harvest</h3><p class="soft">Half your tree's apples are yours, twice a year, for 10 years.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="harvest">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Your harvest, your way</p><h2>Three ways to enjoy your apples</h2>
+      <p class="lead">Every harvest, half of your tree's apples are yours. Choose what happens to them, and change your mind any season.</p></div>
+      <div class="way3">
+        <div><span class="wi" aria-hidden="true">📦</span><h3>Receive a package</h3><p class="soft">Your apples picked, graded and packed, then sent to you, ready to eat, share or give away.</p></div>
+        <div><span class="wi" aria-hidden="true">🧺</span><h3>Collect at the farm</h3><p class="soft">Pick up every fruit at our collection point in Mweiga, or come on harvest day and pick with us.</p></div>
+        <div class="sell"><span class="wi" aria-hidden="true">✉️</span><h3>A cheque from your memories</h3><p>Let us sell your share with the rest of the harvest, to supermarkets and buyers who want steady volumes. We pay you what your apples fetched.</p></div>
+      </div>
+      <p class="small-print" style="margin-top:16px">Harvests depend on weather and care, so amounts vary from season to season. Your share comes as fruit, or the money that fruit sold for, never a fixed return. Delivery areas and costs are confirmed before the first harvest.</p>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">The harvest share</p><h2>We share fruit, not fees</h2>
-      <p class="lead">Your share of every harvest comes to you as fruit. And we are paid in fruit too: the farm keeps its share of the harvest to cover land, water and care, so there is never a monthly bill.</p></div>
-      <div class="opt2">
-        <div class="sell"><h3>Collect it, packed and ready</h3><p>We pick, grade and pack your share. Collect it at our pickup point or at the farm on harvest day, then eat it, gift it or sell it yourself.</p></div>
-        <div><h3>Can't collect? We can sell it for you</h3><p class="soft">Ask us to sell your share together with the rest of the harvest, and we pay you what it fetched. Selling together reaches buyers like supermarkets and processors who want big, steady volumes.</p></div>
+      <div class="head"><p class="eyebrow">Tree as a crop</p><h2>Plant once. Harvest year after year.</h2>
+      <p class="lead">Most crops are planted, harvested and planted again. An apple tree is planted once. A Wambugu tree gives about 15 to 40 apples in its first bearing year, and more every year after.</p></div>
+      <div class="compare">
+        <div><h3>Seasonal crop</h3><p>Planted again every season</p><p>One harvest, then start over</p><p>Bare soil between seasons</p><p>Seed and labour costs every time</p></div>
+        <div><h3>Apple tree</h3><p>Planted once</p><p>Two harvests a year, for 10 years and beyond</p><p>Roots and shade protect the soil all year</p><p>More apples as it grows</p></div>
       </div>
     </div>
   </section>
 
   <section class="band alt">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">Tree as a crop</p><h2>Plant once. Harvest year after year.</h2>
-      <p class="lead">Most crops are planted, harvested and planted again. A fruit tree is planted once and keeps giving for years.</p></div>
-      <div class="compare">
-        <div><h3>Seasonal crop</h3><p>Planted again every season</p><p>One harvest, then start over</p><p>Bare soil between seasons</p><p>Seed and labour costs every time</p></div>
-        <div><h3>Fruit tree</h3><p>Planted once</p><p>A harvest every year, for a decade or more</p><p>Roots and shade protect the soil all year</p><p>Gets more productive as it grows</p></div>
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">Farm from your phone</p>
+        <h2>Watch your tree grow, every two weeks</h2>
+        <p class="lead">Every two weeks we check, photograph and update your tree: its health, its stage from flowers to ripe fruit, and the apples counted. We count across the whole batch too, so you always know the likely range of your next harvest.</p>
+        <div class="cta-row"><button class="btn" data-go="journey">See a demo profile</button></div>
       </div>
+      <div class="panel scorecard"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--leaf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="71.9" transform="rotate(-90 60 60)"/></svg><div class="scoretxt"><b>780</b><span>Green score</span></div><div class="stack" style="gap:10px"><p class="eyebrow">Demo member</p><div class="sbar"><div class="row2x"><span>Trees alive</span><b>12 of 12</b></div><div class="meter"><i style="width:100%"></i></div></div><div class="sbar"><div class="row2x"><span>Survival</span><b>96%</b></div><div class="meter"><i style="width:96%"></i></div></div><div class="sbar"><div class="row2x"><span>Community trees</span><b>25</b></div><div class="meter"><i style="width:62%"></i></div></div></div></div>
     </div>
   </section>
 
   <section class="band">
+    <div class="wrap cols2" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">For companies, schools and groups</p>
+        <h2>Turn your goals into an orchard</h2>
+        <p class="lead">Plant a tree for every milestone and watch your goals grow into real fruit. Each tree carries its own name and story, and your whole orchard has one page anyone can open with a scan.</p>
+        <div class="cta-row"><button class="btn" data-org="apple">Join the waitlist as an organisation</button></div>
+      </div>
+      <div class="panel stack">
+        <p><b>Company goals</b> <span class="soft">A tree for every target hit, every kilometre milestone or every year a colleague has served.</span></p>
+        <p><b>Staff and clients</b> <span class="soft">A named tree for every team member, or a thank-you that keeps growing.</span></p>
+        <p><b>Schools and churches</b> <span class="soft">A tree for every class or family, and harvest days to share.</span></p>
+        <p><b>Chamas and SACCOs</b> <span class="soft">Adopt together and follow your trees in one place.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
     <div class="wrap">
       <div class="head"><p class="eyebrow">The bigger picture</p><h2>Good for the land, for jobs and for you</h2></div>
       <div class="impact">
         <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M11 22v-6H7l5-7H9l3-7 3 7h-3l5 7h-4v6z"/></svg></span><h3>The environment</h3>
           <ul><li>Roots hold the soil when it rains.</li><li>Shade keeps the ground cool and moist.</li><li>Growing trees take carbon out of the air.</li><li>Every tree counts toward Kenya's 15 billion.</li></ul></div>
-        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 20c0-4 3-7 6-7s6 3 6 7zM12 20c0-3 2-6 4-7 3 0 6 3 6 7z"/></svg></span><h3>Jobs</h3>
-          <ul><li>Nursery workers and planters.</li><li>Carers, guards and irrigation crews.</li><li>Pickers, packers and drivers at harvest.</li><li>Nearby farmers who grow with our seedlings.</li></ul></div>
-        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M3 17l6-6 4 4 8-8v6h2V3h-10v2h6l-6 6-4-4-8 8z"/></svg></span><h3>The local economy</h3>
-          <ul><li>Money spent on farms stays in rural areas.</li><li>Big shared harvests reach better markets.</li><li>Fruit for processing, like juice and oil.</li><li>Every adopter becomes part of a farm.</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band alt">
-    <div class="wrap cols2" style="align-items:start">
-      <div class="stack">
-        <p class="eyebrow">It's really yours</p>
-        <h2>A tree with your name on it</h2>
-        <p class="lead">Your tree has its own code, tag and GPS pin, registered in your name for the whole term.</p>
-      </div>
-      <div class="panel stack">
-        <p><b>Transfer it.</b> <span class="soft">Give or sell your tree to someone else. We update the register and the tag.</span></p>
-        <p><b>Gift it.</b> <span class="soft">Plant one for a birthday, a wedding, a new baby or in memory of someone.</span></p>
-        <p><b>Replaced if it dies.</b> <span class="soft">A reserve tree of the same age takes its place and your name moves to it.</span></p>
-        <p><b>Visit it.</b> <span class="soft">Come to the farm and stand under your own tree.</span></p>
+        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 20c0-4 3-7 6-7s6 3 6 7zM12 20c0-3 2-6 4-7 3 0 6 3 6 7z"/></svg></span><h3>Jobs in Mweiga</h3>
+          <ul><li>Nursery workers and planters.</li><li>Carers, guards and irrigation crews.</li><li>Pickers, packers and drivers at harvest.</li><li>Nearby farmers who grow and sell with us.</li></ul></div>
+        <div><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="var(--leaf)"><path d="M3 17l6-6 4 4 8-8v6h2V3h-10v2h6l-6 6-4-4-8 8z"/></svg></span><h3>Kenyan apples</h3>
+          <ul><li>Kenya still ships in many of the apples it eats.</li><li>Every local tree grows fruit closer to home.</li><li>Big shared harvests reach better markets.</li><li>Every adopter becomes part of a farm.</li></ul></div>
       </div>
     </div>
   </section>
@@ -692,55 +768,28 @@ footer button.rm { justify-self: start; }
         <p class="small-print">Source: AllAfrica, February 2026.</p>
       </div>
       <div class="panel stack">
-        <p><b>Water</b> <span class="soft">in dry spells, with drip lines where rain falls short.</span></p>
+        <p><b>Water</b> <span class="soft">from the river, with drip lines for dry spells.</span></p>
         <p><b>Weeding and manure</b> <span class="soft">so young roots get food and moisture.</span></p>
         <p><b>Fencing and guards</b> <span class="soft">against animals and theft.</span></p>
-        <p><b>Pest checks</b> <span class="soft">so problems are caught early.</span></p>
+        <p><b>Pest checks</b> <span class="soft">every two weeks, so problems are caught early.</span></p>
       </div>
     </div>
   </section>
 
-  <section class="band alt">
-    <div class="wrap cols2" style="align-items:center">
-      <div class="stack">
-        <p class="eyebrow">Farm from your phone</p>
-        <h2>Watch your tree grow, every two weeks</h2>
-        <p class="lead">Every two weeks we check, photograph and update your tree: its health, its stage from flowers to ripe fruit, and the fruit counted. We count across the whole batch too, so you always know the likely range of your next harvest. A tree is a living crop, and you get to watch it happen.</p>
-        <div class="cta-row"><button class="btn" data-go="journey">See a demo profile</button></div>
-      </div>
-      <div class="panel scorecard"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--leaf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="71.9" transform="rotate(-90 60 60)"/></svg><div class="scoretxt"><b>780</b><span>Green score</span></div><div class="stack" style="gap:10px"><p class="eyebrow">Demo member</p><div class="sbar"><div class="row2x"><span>Trees alive</span><b>12 of 12</b></div><div class="meter"><i style="width:100%"></i></div></div><div class="sbar"><div class="row2x"><span>Survival</span><b>96%</b></div><div class="meter"><i style="width:96%"></i></div></div><div class="sbar"><div class="row2x"><span>Community trees</span><b>25</b></div><div class="meter"><i style="width:62%"></i></div></div></div></div>
-    </div>
-  </section>
-
-  <section class="band alt">
-    <div class="wrap cols2" style="align-items:center">
-      <div class="stack">
-        <p class="eyebrow">For organisations</p>
-        <h2>Adopt trees together</h2>
-        <p class="lead">Companies, schools, churches, chamas and NGOs can adopt a row or a whole block, for staff, clients, members or a community you care about. Every tree gets a name on its tag, and you get one shared report with photos.</p>
-        <div class="cta-row"><button class="btn" data-org="avocado">Join the waitlist as an organisation</button></div>
-      </div>
-      <div class="panel stack">
-        <p><b>Staff and clients</b> <span class="soft">A named tree for every team member, or a thank-you gift that keeps growing.</span></p>
-        <p><b>Schools and churches</b> <span class="soft">A tree for every class or family, and harvest days to share.</span></p>
-        <p><b>Chamas and groups</b> <span class="soft">Adopt together and follow your trees in one place.</span></p>
-        <p><b>Events and campaigns</b> <span class="soft">A tree for every guest, sale or milestone.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="join">
+  <section class="band alt" id="join">
     <div class="wrap joinwrap">
       <div class="stack">
         <p class="eyebrow">Join the waiting list</p>
-        <h2>Reserve your trees for the first planting</h2>
-        <p class="lead">Places in each orchard are limited. Leave your name and phone and we'll call you when planting opens. Nothing is paid today.</p>
+        <h2>Reserve your apple tree in Mweiga</h2>
+        <p class="lead">The first batch is 1,000 trees. Leave your name and phone and we'll call you when planting opens. Nothing is paid today.</p>
         <div class="faq2">
-          <details><summary>How much does a tree cost?</summary><p class="soft">KSh 2,500 for an apple tree (10 years) and KSh 4,000 for a Hass avocado tree (30 years). One payment, no monthly fees.</p></details>
-          <details><summary>When is the first harvest?</summary><p class="soft">Apples from about year two. Avocados from about year three or four. Harvests grow as the tree grows.</p></details>
-          <details><summary>Where is the farm?</summary><p class="soft">We announce each orchard once its land lease is signed and registered. You can visit after that.</p></details>
-          <details><summary>Can I sell or transfer my tree?</summary><p class="soft">Yes. Tell us who it goes to and we move the tree to their name on the register.</p></details>
-          <details><summary>How do I get my fruit?</summary><p class="soft">Your share is picked and packed for you. Collect it at our pickup point or at the farm. If you can't, we can sell it for you and pay you what it fetched.</p></details>
+          <details><summary>How much does a tree cost?</summary><p class="soft">KSh 2,500 per apple tree, paid once, for 10 years of harvests. No monthly fees.</p></details>
+          <details><summary>When is the first harvest?</summary><p class="soft">A grafted Wambugu apple starts fruiting in about year two, with about 15 to 40 apples in its first bearing year and more each year after. Half of every harvest is yours.</p></details>
+          <details><summary>Where is the farm?</summary><p class="soft">On riverfront farmland in Mweiga, Nyeri. Farm visits open once planting begins.</p></details>
+          <details><summary>Can other people see my tree?</summary><p class="soft">Only if you want. Make it public and anyone who scans its tag sees its name, story and progress. Or keep it private, for you and the people you choose.</p></details>
+          <details><summary>How do I get my apples?</summary><p class="soft">Three ways: we pack and send them to you, you collect them at our collection point in Mweiga, or we sell them for you and pay you what they fetched.</p></details>
+          <details><summary>Can I sell or transfer my tree?</summary><p class="soft">Yes. Tell us who it goes to and we move the tree, and its story, to their name.</p></details>
+          <details><summary>What about avocados?</summary><p class="soft">Our Hass avocado orchard is a later project. Choose avocado on the form and you'll hear first when it opens.</p></details>
           <details><summary>Is anything guaranteed?</summary><p class="soft">No. Weather, pests and prices change harvests. A reserve tree replaces yours if it dies.</p></details>
         </div>
       </div>
@@ -1023,7 +1072,7 @@ footer button.rm { justify-self: start; }
     <div class="heroshade" aria-hidden="true"></div>
     <div class="wrap applehero">
       <div class="stack">
-      <p class="eyebrow">Upcoming project · tr33s apple orchard · Wambugu variety</p>
+      <p class="eyebrow">Our first project · Mweiga apple orchard · Wambugu variety</p>
       <h1 style="color:var(--skin-ink);max-width:16ch">Adopt an apple seedling. We water it. You share the harvest for 10 years.</h1>
       <p style="color:var(--skin-soft);font-size:1.2rem;max-width:58ch">For KSh 2,500, paid once, we plant a grafted apple seedling with your name on its tag. We water it, feed it and guard it. Half of every harvest is yours for 10 years, picked and packed for you to collect.</p>
       <div class="cta-row"><button class="btn" data-go="order" data-crop="apple">Adopt an apple seedling</button><button class="btn ghost" data-scroll-only="appleEst">See harvest estimates</button></div>
@@ -1168,16 +1217,16 @@ footer button.rm { justify-self: start; }
 
   <section class="band">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">The plan</p><h2>10 acres, planted in two phases</h2>
-      <p class="lead">We lease 10 acres and plant the first 5. Once phase 1 is planted and adopted, we plant the other 5.</p></div>
+      <div class="head"><p class="eyebrow">The plan</p><h2>10 acres in Mweiga, planted in six batches</h2>
+      <p class="lead">Our first orchard is on riverfront farmland in Mweiga, Nyeri, at 600 trees an acre. We plant 1,000 trees at a time, and the next batch goes in only once the last has been settled for two months.</p></div>
       <div class="terms" style="margin-top:0;margin-bottom:22px">
         <div><strong>10</strong><span>acres leased</span></div>
-        <div><strong>2,250</strong><span>trees in phase 1, on 5 acres</span></div>
-        <div><strong>2,025</strong><span>offered for adoption</span></div>
-        <div><strong>225</strong><span>reserve trees</span></div>
+        <div><strong>6,000</strong><span>trees, 600 an acre</span></div>
+        <div><strong>5,400</strong><span>offered for adoption</span></div>
+        <div><strong>600</strong><span>reserve trees</span></div>
       </div>
       <div class="cols2">
-        <div class="panel stack"><h3>How we choose the land</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>Highland land within the Wambugu apple's range of about 1,200 to 2,100 m.</li><li>Water we can rely on, from a river, borehole or storage.</li><li>Farmers nearby who can grow with our seedlings and sell with us.</li><li>We announce the site once the lease is signed and registered.</li></ul></div>
+        <div class="panel stack"><h3>How we choose the land</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li>Highland land within the Wambugu apple's range of about 1,200 to 2,100 m.</li><li>Water we can rely on, from a river, borehole or storage.</li><li>Farmers nearby who can grow with our seedlings and sell with us.</li><li>Our first site: riverfront land in Mweiga, Nyeri, in an established farming area.</li></ul></div>
         <div class="panel stack"><h3>What we manage</h3><ul class="soft" style="display:grid;gap:8px;padding-left:18px"><li><b>Water.</b> Apples need about 800 to 1,200 mm of rain a year. Where rain falls short, drip irrigation and storage come first.</li><li><b>Pests.</b> Fruit flies, aphids, thrips and powdery mildew are the main threats. The farm team checks and treats the trees all year.</li><li><b>The land.</b> A title search, a lawyer and a registered lease before a single tree goes in.</li></ul></div>
       </div>
     </div>
@@ -1355,7 +1404,7 @@ footer button.rm { justify-self: start; }
 
 <footer>
   <div class="wrap">
-    <p><b>tr33s</b> · Upcoming tree projects in Kenya: Hass avocado, apples (Wambugu variety) and Melia timber</p>
+    <p><b>tr33s</b> · Our first orchard: Wambugu-variety apples in Mweiga, Nyeri. Coming later: Hass avocado and Melia timber</p>
     <p>Wambugu apple is the name of the variety. tr33s is independent and is not affiliated with Peter Wambugu or Wambugu Apples’ Farm.</p>
     <p>We count visits anonymously to improve the site: no cookies for this, no ad trackers, and we never store your IP address.</p>
     <p>Estimates are illustrations based on the sources below. Yields, harvests and prices vary and nothing is guaranteed. Nothing on this site is financial advice. Example records and certificates are illustrations. Registering your interest is not an offer or a payment. Photos from Unsplash by John Cameron, Jonathan Kabugo, Lucas Rosin, John Vid, Pranav Gavali and Ksenia Pixelesse, Thammy Kolb, Vera De, Karin Kim, Emma Swoboda, Nathan Jeon, Sokmean Nou and Shelley Pauls. They are not photos of our farm or our seedlings.</p>
@@ -1376,7 +1425,7 @@ footer button.rm { justify-self: start; }
     <p>© 2026 tr33s</p>
   </div>
 </footer>
-<div class="stickycta" id="stickyCta"><span><b>From KSh 4,000</b> per tree · 60% of the fruit</span><button class="btn small" data-go="order">Join the waitlist</button></div>
+<div class="stickycta" id="stickyCta"><span><b>KSh 2,500</b> per apple tree · half the harvest for 10 years</span><button class="btn small" data-go="order">Join the waitlist</button></div>
 <div class="toast" id="toast" role="status" hidden></div>
 <div class="tdlg" id="treeDlg" hidden><div class="tdbox" role="dialog" aria-modal="true" aria-labelledby="tdName"><button class="tdx" type="button" id="tdClose" aria-label="Close">×</button><div id="tdBody"></div></div></div>
 <div class="adopt" id="adoptPop" role="dialog" aria-modal="false" aria-labelledby="adoptT" hidden>
@@ -1752,7 +1801,7 @@ footer button.rm { justify-self: start; }
     document.querySelectorAll("[data-page]").forEach(function (e) { e.classList.toggle("on", e.getAttribute("data-page") === name); });
     document.querySelectorAll("[data-nav]").forEach(function (b) { if (b.getAttribute("data-nav") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     $("#stickyCta").hidden = name === "order" || name === "profile";
-    $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : name === "apple" ? "<b>KSh 2,500</b> per apple tree · half the harvest for 10 years" : "<b>From KSh 4,000</b> per tree · 60% of the fruit";
+    $("#stickyCta span").innerHTML = name === "melia" ? "<b>KSh 1,000</b> per tree · 70% of the timber" : name === "avocado" ? "<b>KSh 4,000</b> per avocado tree · coming later" : "<b>KSh 2,500</b> per apple tree · half the harvest for 10 years";
     document.body.setAttribute("data-view", name);
     TRK.view(name);
     schedulePop(name);
